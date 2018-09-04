@@ -11,7 +11,7 @@
 		<?php $this->load->view('user/include/navbar.php'); ?>
 		
 				<!--main content start-->
-				<section>
+				<section class="view">
   					<div class="container">
 						<!-- page start-->
 						<?php $this->load->view($view);?>

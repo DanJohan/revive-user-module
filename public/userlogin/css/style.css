@@ -1,9 +1,9 @@
-body {
+.wrapper{
     background-image: url(../img/bg.jpg);
     background-size: cover;
 }
 section.login {
-    padding: 185px 0px 0px 0px;
+    padding: 85px 0px 0px 0px;
 }
 .login-wrapper {
     border-bottom: 8px solid #2da080;
@@ -164,6 +164,51 @@ label {
     text-align: center;
 }
 
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.login-icon {
+    padding: 13px;
+    background: #2da080;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid dodgerblue;
+}
+form.login-wrapper label {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Set a style for the submit button */
+.btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+
+
+
+
+
 /**************Dashboard****************/
 #dash {
     background-image: none;
@@ -261,7 +306,7 @@ h1.title {
     font-weight: 600;
 }
 .text-center {
-    border: 1px solid;
+  
     margin-top: 30px;
 }
 .show-on-hover:hover > ul.dropdown-menu {
@@ -319,4 +364,84 @@ h1.title {
     padding-right: 0px;
     padding-bottom: 0;
     padding-top: 5px;
+}
+
+
+
+
+<!------------------------view------------------------->
+
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+.box-header>.fa, .box-header>.glyphicon, .box-header>.ion, .box-header .box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+}
+.box-header {
+    color: #fff;
+   
+    margin-bottom: 20px;
+    background: #3c8cbd;
+    display: block;
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.box-header:before, .box-body:before, .box-footer:before, .box-header:after, .box-body:after, .box-footer:after {
+    content: " ";
+    display: table;
+}
+.bg-yellow, .callout.callout-warning, .alert-warning, .label-warning, .modal-warning .modal-body {
+    background-color: #f39c12 !important;
+}
+.small-box>.inner {
+    padding: 35px 10px;
+    color: #f9f9f9;
+}
+.small-box .icon {
+    /* -webkit-transition: all .3s linear; */
+    -o-transition: all .3s linear;
+    /* transition: all .3s linear; */
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    z-index: 0;
+    font-size: 90px;
+    color: rgba(0,0,0,0.15);
+}
+.small-box>.small-box-footer {
+    position: relative;
+    text-align: center;
+    padding: 3px 0;
+    color: #fff;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    z-index: 10;
+    background: rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+.small-box:hover .icon {
+    font-size: 95px;
+}
+
+.bg-aqua, .callout.callout-info, .alert-info, .label-info, .modal-info .modal-body {
+    background-color: #00c0ef !important;
+}
+
+
+.user-img {
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    padding: 6px;
+    margin-bottom: 20px;
 }

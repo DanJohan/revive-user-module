@@ -16,6 +16,10 @@
 		  <li class="nav-item">
             <a class="nav-link" href="enquiry_by_user">Enquiry</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="billing">Billing Statements</a>
+          </li>
         </ul>
       </div>
 	  </div>

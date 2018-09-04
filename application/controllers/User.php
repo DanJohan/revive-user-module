@@ -65,7 +65,7 @@ class User extends MY_Controller {
 	public function enquiry_by_user() {
 	
 		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUser($this->session->userdata('id'));
-		
+		//dd($data['enquiries']);
 		if(!empty($data['enquiries'])) {
 			$data['view'] = 'user/enquiry';
 			$this->load->view('user/layout',$data);
@@ -77,9 +77,10 @@ class User extends MY_Controller {
 		}
 	}
 
-	public function view_details() {
+	public function show_enquiry($enquiry_id) {
 	
-		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUid($this->session->userdata('id'));
+		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUserId($enquiry_id);
+
 		
 		if(!empty($data['enquiries'])) {
 			$data['view'] = 'user/view_details';

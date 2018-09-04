@@ -6,8 +6,7 @@
         
         <thead>
             <tr>
-                <th>User ID</th>
-                <th>Car ID</th>
+                <th>Enquiry ID</th>
                 <th>Model Name</th>
                 <th>Brand Name</th>
                 <th>Enquiry</th>
@@ -27,8 +26,7 @@
             ?>
            
             <tr>
-                <td><?php echo $enq['user_id']; ?></td>
-                <td><?php echo $enq['car_id']; ?></td>
+                <td><?php echo $enq['enquiry_id']; ?></td>
                 <td><?php echo $enq['model_name']; ?></td>
                 <td><?php echo $enq['brand_name']; ?></td>
                 <td><?php echo $enq['enquiry']; ?></td>
@@ -36,7 +34,7 @@
                 <td><?php echo $enq['registration_no']; ?></td>
                 <td><?php echo $enq['address']; ?></td>
                 <td><?php echo $enq['updated_at']; ?></td>
-                <td><a class="btn btn-success" data-toggle="tooltip" href="<?php echo base_url(); ?>user/view_details" data-original-title="View"><i class="fa fa-eye"></i></a></td>
+                <td><a class="btn btn-success" data-toggle="tooltip" href="<?= base_url('user/show_enquiry/'.$enq['enquiry_id']); ?>" data-original-title="View"><i class="fa fa-eye"></i></a></td>
             </tr>
 
             <?php } }?>
