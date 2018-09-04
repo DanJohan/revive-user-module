@@ -1,13 +1,15 @@
 <!doctype html>
 <html> 
 <head>
-
 <title>Login-form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url();?>public/userlogin/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+ <!-- for Google Signin -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+<!-- for Google Signin -->
 
   <link href="<?php echo base_url();?>public/userlogin/css/style.css" rel="stylesheet">
 </head>
@@ -26,7 +28,8 @@
           </div>
         <?php
           }
-        ?>
+?>
+<?php $this->load->view('common/flashmessage'); ?>
 <form class="login-wrapper" method="post" action="<?php echo base_url(); ?>user/login">
   <div class="form-group">
     <label >
@@ -59,15 +62,16 @@
 			</div>-->
  
     <input type="submit" name="submit" value="Login" class="btn btn-primary">
-<!--   <div class="social icon">
+ <div class="social icon">
   <span></span>
-  <button class="loginBtn loginBtn--facebook">
+  <!--<button class="loginBtn loginBtn--facebook">
   Login with Facebook
-</button>
+</button>-->
 
-<button class="loginBtn loginBtn--google">
+<a href="<?php echo $fbLoginUrl; ?>"><img src="<?php echo base_url(); ?>public/userlogin/img/icon_facebook.png" />Login with Facebook</a><br/>
+<!--  <button class="loginBtn loginBtn--google">
   Login with Google
-</button></div> -->
+</button>--></div> 
 </form>
 </div>
 </div>
@@ -77,5 +81,6 @@
  <script src="<?php echo base_url();?>public/userlogin/js/jquery.min.js"></script>
  
   <script src="<?php echo base_url();?>public/userlogin/js/bootstrap.min.js"></script>
+  <script type="text/javascript">if (window.location.hash =='#_=_')window.location.hash = '';</script>
 </body>
 </html>
