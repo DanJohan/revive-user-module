@@ -7,6 +7,8 @@ class User extends MY_Controller {
 		parent::__construct();
 		$this->load->model('UserModel');
 		$this->load->model('ServiceEnquiryModel');
+		$this->load->model('UserExternalLoginModel');
+		
 	}
 
 	public function index(){
@@ -16,6 +18,7 @@ class User extends MY_Controller {
 	public function login(){
 		//dd($_POST);die;
 		//echo password_hash("password", PASSWORD_DEFAULT);die;
+		$this->load->library('fblogin');
 		$data =array();
 		if($this->input->post('submit')){
 			//dd($_POST);die;
@@ -54,8 +57,31 @@ class User extends MY_Controller {
 					 }
 
 		}
-			$this->load->view('user/login',$data);
+	
+		$data['fbLoginUrl'] = $this->fblogin->getLoginUrl();
+		$this->load->view('user/login',$data);
 	}// end of login method
+
+	public function fbcallback() {
+		$this->load->library('fblogin');
+		$user = $this->fblogin->getUser();
+		$fbid= $user->getId();
+		$fbuser = $this->UserExternalLoginModel->get(array('external_user_id'=>$fbid,'external_authentication_provider'=>'2'));
+		//echo $this->db->last_query();die;
+		//$fbuser =array();
+		if(!empty($fbuser))
+		{
+		$this->session->set_userdata($fbuser);
+		redirect(base_url('user/dashboard'), 'refresh');
+
+		}else{
+			$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+			redirect('/');
+      }
+		//dd($users);
+
+	}
+
 
 	public function dashboard() {
 		$data['view'] = 'user/dashboard';
