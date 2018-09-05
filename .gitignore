@@ -40,3 +40,5 @@ uploads/admin/*
 migrations.txt
 jwt.php
 
+application/composer.lock
+

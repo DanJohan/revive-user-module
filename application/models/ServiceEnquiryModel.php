@@ -26,7 +26,7 @@ class ServiceEnquiryModel extends MY_Model {
 	}
 
 	public function getEnquiryByUserId($enquiry_id){
-		$this->db->select('u.id AS user_id,e.id AS enquiry_id,e.enquiry,e.service_type,e.address,e.updated_at,c.registration_no,c.id AS car_id,m.model_name,b.brand_name');
+		$this->db->select('u.id AS user_id,e.id AS enquiry_id,e.enquiry,e.service_type,e.address,e.location,e.updated_at,c.registration_no,c.id AS car_id,m.model_name,b.brand_name');
 		$this->db->from($this->table.' AS e');
 		$this->db->join('users AS u', 'e.user_id=u.id');
 		$this->db->join('cars AS c', 'e.car_id=c.id');
