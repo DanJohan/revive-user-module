@@ -6,7 +6,7 @@
                   <h1 class="box-title">User details</h1>
                 </div>
                 <div class="text-center">
-                              <img class="user-img" height="150" width="150" src="img/user.png">
+                              <img class="user-img" height="150" width="150" src="<?php echo base_url();?>public/userlogin/img/user.png">
                           </div>
                 <table class="table table-bordered">
                       <tbody>

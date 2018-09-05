@@ -11,14 +11,10 @@
 		<?php $this->load->view('user/include/navbar.php'); ?>
 		
 				<!--main content start-->
-				<section class="view">
-  					<div class="container">
 						<!-- page start-->
 						<?php $this->load->view($view);?>
 						<!-- page end-->
-					</div>
-				</section>
-				<!--main content end-->
+					<!--main content end-->
 				<!--footer start-->
 				<?php $this->load->view('user/include/footer.php'); ?>
 

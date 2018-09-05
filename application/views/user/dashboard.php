@@ -1,4 +1,5 @@
- 	
+<section class="view">
+ <div class="container">
     <div class="content">
       <div class="box">
         <div class="box-header text-center">
@@ -31,3 +32,5 @@
         </div>
       </div>
     </div>
+ </div>
+</section>    
