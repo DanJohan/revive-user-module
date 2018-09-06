@@ -1,3 +1,5 @@
+   <section class="User-detail">
+        <div class="container">
     <div class="row">
     <div class="cn_diver">
     
@@ -7,12 +9,7 @@
         <thead>
             <tr>
                 <th>Enquiry ID</th>
-                <th>Model Name</th>
-                <th>Brand Name</th>
                 <th>Enquiry</th>
-                <th>Service Type</th>
-                <th>Registration No.</th>
-                <th>Address</th>
                 <th>Updated Time</th>
                 <th>View</th>
                
@@ -27,12 +24,7 @@
            
             <tr>
                 <td><?php echo $enq['enquiry_id']; ?></td>
-                <td><?php echo $enq['model_name']; ?></td>
-                <td><?php echo $enq['brand_name']; ?></td>
                 <td><?php echo $enq['enquiry']; ?></td>
-                <td><?php echo $enq['service_type']; ?></td>
-                <td><?php echo $enq['registration_no']; ?></td>
-                <td><?php echo $enq['address']; ?></td>
                 <td><?php echo $enq['updated_at']; ?></td>
                 <td><a class="btn btn-success" data-toggle="tooltip" href="<?= base_url('user/show_enquiry/'.$enq['enquiry_id']); ?>" data-original-title="View"><i class="fa fa-eye"></i></a></td>
             </tr>
@@ -43,6 +35,8 @@
 
        
     </table>
-       </div>
-     </div>
+                </div>
+            </div>
+        </div>
     </div>
+</section> 
