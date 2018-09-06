@@ -47,12 +47,15 @@
               <input type="password" name="password" class="form-control" placeholder="Type password">
             </div>
 
-      <input type="submit" name="submit" value="Login" class="btn btn-primary">
+            <input type="submit" name="submit" value="Login" class="btn btn-primary">
 <div class="social icon">
-        <p>or</p>
-
-<a class="loginBtn loginBtn--facebook" href="<?php echo filter_var($fbLoginUrl, FILTER_SANITIZE_URL); ?>">Login with Facebook</a><br/>
-<a class="loginBtn loginBtn--google" href="<?php echo filter_var($GLoginUrl, FILTER_SANITIZE_URL); ?>">Login with Gmail</a>
+        <div>or</div>
+<div class="social-btn-container"> 
+  <a class="btn loginBtn loginBtn--facebook" href="<?php echo filter_var($fbLoginUrl, FILTER_SANITIZE_URL); ?>">Login with Facebook</a><br/>
+</div>
+<div class="social-btn-container">
+  <a class="btn loginBtn loginBtn--google" href="<?php echo filter_var($GLoginUrl, FILTER_SANITIZE_URL); ?>">Login with Gmail</a>
+</div>
 
 <!--  <button class="loginBtn loginBtn--google">
   Login with Google

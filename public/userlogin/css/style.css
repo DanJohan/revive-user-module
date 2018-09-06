@@ -18,8 +18,8 @@ form.login-wrapper .btn-primary {
     display: -webkit-box;
     background: #2da080;
     border: none;
-    margin-top: 62px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 form.login-wrapper .btn-primary:hover 
   {
@@ -197,7 +197,7 @@ form.login-wrapper label {
 .btn {
     background-color: dodgerblue;
     color: white;
-    padding: 15px 20px;
+  /*   padding: 15px 20px; */
     border: none;
     cursor: pointer;
     width: 100%;
@@ -450,7 +450,7 @@ h1.title {
   position: relative;
   /* width: 13em;  - apply for fixed size */
   margin: 0.2em;
-  padding: 0 15px 0 46px;
+  padding: 0px 15px 0px 46px;
   border: none;
   text-align: left;
   line-height: 34px;
@@ -492,6 +492,13 @@ h1.title {
   background-color: #5B7BD5;
   background-image: linear-gradient(#5B7BD5, #4864B1);
 }
+
+.social-btn-container{
+  margin-bottom: 10px;
+  width: 50%;
+  margin: auto; 
+}
+
 
 
 /* Google */
