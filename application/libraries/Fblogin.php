@@ -24,7 +24,7 @@ class Fblogin {
 		return $loginUrl;
 	}
 
-	private function getAccessToken() {
+	public function hasAccessToken() {
 		$helper = $this->fb->getRedirectLoginHelper();
 
 		try {
@@ -36,20 +36,6 @@ class Fblogin {
 		} catch(Facebook\Exceptions\FacebookSDKException $e) {
 		  // When validation fails or other local issues
 		  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-		  exit;
-		}
-
-		if (! isset($accessToken)) {
-		  if ($helper->getError()) {
-		    header('HTTP/1.0 401 Unauthorized');
-		    echo "Error: " . $helper->getError() . "\n";
-		    echo "Error Code: " . $helper->getErrorCode() . "\n";
-		    echo "Error Reason: " . $helper->getErrorReason() . "\n";
-		    echo "Error Description: " . $helper->getErrorDescription() . "\n";
-		  } else {
-		    header('HTTP/1.0 400 Bad Request');
-		    echo 'Bad request';
-		  }
 		  exit;
 		}
 
@@ -65,16 +51,20 @@ class Fblogin {
 		  }
 		}
 
-		$this->access_token= $accessToken->getValue();
+		if(isset($accessToken)) {
+			$this->access_token= $accessToken->getValue();
+			return true;
+		}else{
+			return false;
+		}
 
 	}
 
 	public function getUser(){
-		$this->getAccessToken();
 		try {
 		  // Get the \Facebook\GraphNodes\GraphUser object for the current user.
 		  // If you provided a 'default_access_token', the '{access-token}' is optional.
-		  $response = $this->fb->get('/me', $this->access_token);
+		  $response = $this->fb->get('/me?fields=name,first_name,last_name,email,link,gender,locale,cover,picture', $this->access_token);
 		} catch(\Facebook\Exceptions\FacebookResponseException $e) {
 		  // When Graph returns an error
 		  echo 'Graph returned an error: ' . $e->getMessage();
@@ -85,8 +75,8 @@ class Fblogin {
 		  exit;
 		}
 
-		$me = $response->getGraphUser();
-		return $me;
+		$me = $response->getGraphUser()->asArray();
+		return (!empty($me)) ? $me : null;
 	}
 
 }

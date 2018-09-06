@@ -19,6 +19,7 @@ class User extends MY_Controller {
 		//dd($_POST);die;
 		//echo password_hash("password", PASSWORD_DEFAULT);die;
 		$this->load->library('fblogin');
+		$this->load->library('gmailLogin');
 		$data =array();
 		if($this->input->post('submit')){
 			//dd($_POST);die;
@@ -59,27 +60,83 @@ class User extends MY_Controller {
 		}
 	
 		$data['fbLoginUrl'] = $this->fblogin->getLoginUrl();
+		$data['GLoginUrl'] = $this->gmaillogin->getLoginUrl();
 		$this->load->view('user/login',$data);
 	}// end of login method
 
 	public function fbcallback() {
 		$this->load->library('fblogin');
-		$user = $this->fblogin->getUser();
-		$fbid= $user->getId();
-		$fbuser = $this->UserExternalLoginModel->get(array('external_user_id'=>$fbid,'external_authentication_provider'=>'2'));
-		//echo $this->db->last_query();die;
-		//$fbuser =array();
-		if(!empty($fbuser))
-		{
-		$this->session->set_userdata($fbuser);
-		redirect(base_url('user/dashboard'), 'refresh');
-
+		if($this->fblogin->hasAccessToken()){
+			$fbUser = $this->fblogin->getUser();
+			//dd($fbUser);
+			if($fbUser) {
+				$user_external = $this->UserExternalLoginModel->get(array('external_user_id'=>$fbUser['id'],'external_authentication_provider'=>'2'));
+				if(!empty($user_external)){
+					$criteria['field'] = "id,name,profile_image";
+					$criteria['returnType'] = "single";
+					$criteria['conditions'] = array('id'=>$user_external['user_id']);
+					$user= $this->UserModel->search($criteria);
+					if($user){
+						$user_data = array(
+							'id' => $user['id'],
+							'name' => $user['name'],
+							'pic'  => $user['profile_image'],
+						 	'is_user_login' => TRUE
+						);
+						//print_r($user_data);die;
+						$this->session->set_userdata($user_data);
+						redirect(base_url('user/dashboard'), 'refresh');
+					}
+				}
+				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+				redirect('/');
+			}else{
+				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+				redirect('/');
+			}
 		}else{
-			$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+			$this->session->set_flashdata('error_msg','Somthing went wrong!');
 			redirect('/');
-      }
-		//dd($users);
+		}
+		
 
+	}
+
+	public function gmailcallback() {
+		$this->load->library('gmailLogin');
+		if($this->gmaillogin->checkRedirectCode()){
+			$guser=$this->gmaillogin->getUserData();
+			if($guser) {
+				$user_external = $this->UserExternalLoginModel->get(array('external_user_id'=>$guser->id,'external_authentication_provider'=>'1'));
+				if(!empty($user_external)){
+					$criteria['field'] = "id,name,profile_image";
+					$criteria['returnType'] = "single";
+					$criteria['conditions'] = array('id'=>$user_external['user_id']);
+					$user= $this->UserModel->search($criteria);
+					if($user){
+						$user_data = array(
+							'id' => $user['id'],
+							'name' => $user['name'],
+							'pic'  => $user['profile_image'],
+						 	'is_user_login' => TRUE
+						);
+						//print_r($user_data);die;
+						$this->session->set_userdata($user_data);
+						redirect(base_url('user/dashboard'), 'refresh');
+					}
+				}
+				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+				redirect('/');
+			}else{
+				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
+				redirect('/');
+			}
+		}else{
+			$this->session->set_flashdata('error_msg','Somthing went wrong!');
+			redirect('/');
+		}
+
+		
 	}
 
 
