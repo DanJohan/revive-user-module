@@ -18,7 +18,10 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url();?>user/invoice_list">Billing Statements</a>
+            <a class="nav-link" href="<?php echo base_url();?>user/billing">Billing Statements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url();?>user/jobcard">Service Status</a>
           </li>
         </ul>
       </div>

@@ -58,8 +58,14 @@
         <th class="border-right"> Total Amount </th>
       </tr>
             <?php 
+             $labour_sum = 0;
+             $labour_gstsum = 0;
+             $gst = 0;
             if(!empty($invoice['labour'])){
             foreach ($invoice['labour'] as $key => $inv) {
+              $labour_sum += $inv['invoice_labour_total'];
+              $labour_gstsum += $inv['invoice_labour_gst_amount'];
+              $gst += $inv['invoice_labour_gst'];
             ?>
       <tr>
         <td><?php echo $inv['invoice_labour_id'];?></td>
@@ -92,9 +98,16 @@
         <th class="border-right"> Total GST Amount </th>
         <th class="border-right"> Total Amount </th>
       </tr>
+
        <?php 
+            $parts_sum = 0;
+            $parts_gstsum = 0;
+            $gst = 0;
             if(!empty($invoice['parts'])){
             foreach ($invoice['parts'] as $key => $inv) {
+              $parts_sum += $inv['invoice_parts_total'];
+              $parts_gstsum += $inv['invoice_parts_gst_amount'];
+              $gst += $inv['invoice_parts_gst'];
             ?>
       <tr>
         <td><?php echo $inv['invoice_parts_id'];?></td>
@@ -104,9 +117,9 @@
         <td><?php echo $inv['invoice_parts_gst'];?> </td>
         <td><?php echo $inv['invoice_parts_gst_amount'];?> </td>
         <td style="font-weight:600;"><?php echo $inv['invoice_parts_total'];?></td>
-
-      </tr>
+        </tr>
       <?php } } ?>
+
     </table>
   </div>
 </section>
@@ -119,32 +132,36 @@
       
       <tr>
         <td><b>Total labour</b> </td>
-        <td>  3500.00  </td>
+        <td style="font-weight:600;"> <?php echo $labour_sum; ?></td>
        
       </tr>
       <tr>
         <td><b>Total Parts</b> </td>
-        <td> 9100.00   </td>
+        <td style="font-weight:600;"> <?php echo $parts_sum; ?></td>
         
       </tr>
       <tr>
         <td><b>GST</b></td>
-        <td> 1125.00  </td>
+        <?php $gst_total= $parts_gstsum + $labour_gstsum;?>
+        <td style="font-weight:600;"> <?php echo $gst_total; ?></td>
         
       </tr>
       <tr>
-        <td><b>Discount</b></td>
-        <td>  0.00
-  </td>
+        <td><b>Discount in %</b></td>
+        <td style="font-weight:600;">  <?php echo $gst; ?></td>
         
       </tr>
       <tr>
         <td><b>Grand Total</b></td>
-        <td> 13725.00
- </td>
+        <?php $grand_total = $labour_sum + $parts_sum;
+         ?>
+        <td style="font-weight:600;"> <?php echo $grand_total; ?></td>
         
       </tr>
       
     </table>
+   <div><p><span style="font-weight:600;">Notes:</span> <?php echo $invoice['notes']; ?></p></div>
+
   </div>
-</section>
+ </section>
+<br></br><br></br><br></br>

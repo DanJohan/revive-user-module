@@ -15,7 +15,7 @@
                   <h3>Billing</h3>
                 </div>
                 <div class="icon"> <img height="80" width="80" src="<?php echo base_url();?>public/userlogin/img/billing.png"> </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> </div>
+                <a href="<?php echo base_url();?>user/billing" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> </div>
             </div>
             <!-- ./col -->
             
@@ -25,8 +25,8 @@
                 <div class="inner">
                   <h3>Service status</h3>
                 </div>
-                <div class="icon"> <img height="80" width="80" src="<?php echo base_url();?>public/userlogin/img/status.png"> </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> </div>
+                <div class="icon"><img height="80" width="80" src="<?php echo base_url();?>public/userlogin/img/status.png"> </div>
+                <a href="<?php echo base_url();?>user/jobcard" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a></div>
             </div>
           </div>
         </div>

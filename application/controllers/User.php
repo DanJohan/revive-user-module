@@ -9,6 +9,8 @@ class User extends MY_Controller {
 		$this->load->model('ServiceEnquiryModel');
 		$this->load->model('UserExternalLoginModel');
 		$this->load->model('InvoiceModel');
+		$this->load->model('JobcardModel');
+		$this->load->model('RepairOrderModel');
 		
 	}
 
@@ -218,5 +220,24 @@ class User extends MY_Controller {
 		$data['view'] = 'user/billing';
 		$this->load->view('user/layout',$data);
 	}
-  }
+
+	//service status
+	public function jobcard() {
+		$data['jobcard'] = $this->JobcardModel->getUserAllJobCard($this->session->userdata('id'));
+		$data['view'] = 'user/jobcard';
+		$this->load->view('user/layout',$data);
+
+	}
+	public function completeJobs($id=null){
+		if(!$id){
+			redirect('user/jobcard');
+		}
+		$repair_orders = $this->RepairOrderModel->getRepairOrderByJobId($id,$this->session->userdata('id'));
+		$data['repair_orders']=$repair_orders;
+		$data['view'] = 'user/repair_order';
+		$this->load->view('user/layout',$data);
+
+
+	}
+}
 ?>

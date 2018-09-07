@@ -12,6 +12,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Registration No.</th>
+                <th>View</th>
                
             </tr>
         </thead>
