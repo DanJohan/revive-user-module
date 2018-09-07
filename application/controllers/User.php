@@ -8,6 +8,7 @@ class User extends MY_Controller {
 		$this->load->model('UserModel');
 		$this->load->model('ServiceEnquiryModel');
 		$this->load->model('UserExternalLoginModel');
+		$this->load->model('InvoiceModel');
 		
 	}
 
@@ -121,6 +122,44 @@ class User extends MY_Controller {
 	public function logout(){
 			$this->session->sess_destroy();
 			redirect(base_url('user/login'), 'refresh');
+	}
+	public function billing() {
+		$data['invoices'] = $this->InvoiceModel->getInvoiceByUserId($this->session->userdata('id'));
+		//dd($data['invoices']);
+		$data['view'] = 'user/invoice_list';
+		$this->load->view('user/layout',$data);
+
+	}
+
+	public function invoice_view($id=null){
+		if(!$id){
+			redirect('user/billing');
 		}
+		$invoice = $this->InvoiceModel->getInvoiceById($id,$this->session->userdata('id'));
+		if(empty($invoice)){
+			redirect('user/billing');
+		}
+
+		$invoice_labour_keys =  array('invoice_labour_id','invoice_labour_item','invoice_labour_hour','invoice_labour_rate','invoice_labour_cost','invoice_labour_gst','invoice_labour_gst_amount','invoice_labour_total');
+
+		$invoice_labour = array_filter_by_value(array_unique(array_column_multi($invoice,$invoice_labour_keys),SORT_REGULAR),'invoice_labour_id','');
+
+		$invoice_parts_keys =  array('invoice_parts_id','invoice_parts_item','invoice_parts_quantity','invoice_parts_cost','invoice_parts_gst','invoice_parts_gst_amount','invoice_parts_total');
+		$invoice_parts = array_filter_by_value(array_unique(array_column_multi($invoice,$invoice_parts_keys),SORT_REGULAR),'invoice_parts_id','');
+
+		$invoice = $invoice[0];
+
+		$removeKeys = array_merge($invoice_parts_keys,$invoice_labour_keys);
+		foreach($removeKeys as $key) {
+		   unset($invoice[$key]);
+		}
+
+		$invoice['labour'] = $invoice_labour;
+		$invoice['parts'] = $invoice_parts;
+		//dd($invoice['parts']);
+		$data['invoice'] = $invoice;
+		$data['view'] = 'user/billing';
+		$this->load->view('user/layout',$data);
+	}
   }
 ?>
