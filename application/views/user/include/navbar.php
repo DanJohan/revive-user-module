@@ -10,15 +10,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="dashboard">Dashboard</a>
+            <a class="nav-link" href="<?php echo base_url();?>user/dashboard">Dashboard</a>
           </li>
          
 		  <li class="nav-item">
-            <a class="nav-link" href="enquiry_by_user">Enquiry</a>
+            <a class="nav-link" href="<?php echo base_url();?>user/enquiry_by_user">Enquiry</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="billing">Billing Statements</a>
+            <a class="nav-link" href="<?php echo base_url();?>user/invoice_list">Billing Statements</a>
           </li>
         </ul>
       </div>

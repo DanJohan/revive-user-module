@@ -518,5 +518,16 @@ button.btn.btn-purple {
 }
 button.btn.btn-purple:hover {
     color: #ffffff;
+}
 
+/***********************INVOICE****************************/
+.inovice-top
+{
+padding:0px 0px;
+}
+section.inovice-top .table td, .table th {
+border: none;
+}
+tfoot {
+border-top: 1px solid #ccc;
 }
