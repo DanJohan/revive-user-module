@@ -161,10 +161,39 @@
         <td style="font-weight:600;"> <?php echo $grandtotal; ?></td>
         
       </tr>
-      
+    
     </table>
    <div><p><span style="font-weight:600;">Notes:</span> <?php echo $invoice['notes']; ?></p></div>
+  <div class="container">
+            <div class="contact-form">
+                <p class="notice error"><?= $this->session->flashdata('error_msg') ?></p><br/>
+                <p class="notice error"><?= $this->session->flashdata('success_msg') ?></p><br/>
 
+                <form method="post" class="form-horizontal" role="form" action="<?php echo base_url();?>paypal/create_payment_with_paypal">
+                    <fieldset>
+                        <input title="item_name" name="item_name" type="hidden" value="<?php echo $invoice['invoice_number'];?>">
+                        <input title="item_number" name="item_number" type="hidden" value="<?php echo $invoice['vehicle_reg_no'];?>">
+                        <input title="item_description" name="item_description" type="hidden" value="<?php echo $invoice['client_address'];?>">
+                        <input title="item_tax" name="item_tax" type="hidden" value="<?php echo $gst_total; ?>">
+                        <input title="item_price" name="item_price" type="hidden" value="<?php echo $grandtotal; ?>">
+                        <input title="details_tax" name="details_tax" type="hidden" value="<?php echo $gst_total; ?>">
+                        <input title="details_subtotal" name="details_subtotal" type="hidden" value="<?php echo $grandtotal; ?>">
+
+                        <div class="form-group">
+                            <div class="col-sm-2">
+                                <button  type="submit"  class="btn btn-success">Pay with Paypal</button>
+                            </div>
+                            <div class="col-sm-2">
+                              <div class='pm-button'>
+                                <a href='https://www.payumoney.com/paybypayumoney/#/A73CAF1351517308508E17EE241E06DE'>
+                                <img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a>
+                              </div> 
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div><!-- /.container -->
   </div>
  </section>
 <br></br><br></br><br></br>
