@@ -4,6 +4,7 @@
     <div class="cn_diver">
     
       <div class="col-sm-12 col-md-12 col-xs-12">
+        
       <table id="example" class="table table-striped table-bordered" style="width:100%">
         
         <thead>

@@ -148,14 +148,17 @@
       </tr>
       <tr>
         <td><b>Discount in %</b></td>
-        <td style="font-weight:600;">  <?php echo $gst; ?></td>
+        <?php $discount = $invoice['discount'];?>
+        <td style="font-weight:600;"><?php echo $discount;?></td>
         
       </tr>
       <tr>
         <td><b>Grand Total</b></td>
-        <?php $grand_total = $labour_sum + $parts_sum;
+        <?php $gtotal= $labour_sum + $parts_sum;
+              $grand_total = (($gtotal * $discount) / 100);
+              $grandtotal = $gtotal - $grand_total;
          ?>
-        <td style="font-weight:600;"> <?php echo $grand_total; ?></td>
+        <td style="font-weight:600;"> <?php echo $grandtotal; ?></td>
         
       </tr>
       

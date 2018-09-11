@@ -317,7 +317,10 @@ h1.title {
   .navbar-toggler:not(:disabled):not(.disabled) {
     cursor: pointer;
     float: right !important;
+    display: block;
+
 }
+
 .email a {
     color: #fff;
     font-size: 10px;
@@ -366,8 +369,11 @@ h1.title {
     padding-top: 5px;
 }
 
-
-
+a.nav-color.nav-link {
+    color: #313030;
+    text-decoration: none;
+    text-transform: uppercase;
+}
 
 <!------------------------view------------------------->
 
@@ -538,3 +544,7 @@ border: none;
 tfoot {
 border-top: 1px solid #ccc;
 }
+.navbar-toggler-icon{
+    background-image:'<?php echo base_url();?>public/userlogin/img/navbar.png';
+    background-color: red;
+    } 
