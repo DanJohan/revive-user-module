@@ -184,10 +184,13 @@
                                 <button  type="submit"  class="btn btn-success">Pay with Paypal</button>
                             </div>
                             <div class="col-sm-2">
-                              <div class='pm-button'>
+                              <!-- <div class='pm-button'>
                                 <a href='https://www.payumoney.com/paybypayumoney/#/A73CAF1351517308508E17EE241E06DE'>
                                 <img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a>
-                              </div> 
+                              </div>  -->
+                             <form action="http://exampledomain.payu.com/processOrder.php" method="post">
+    <button id="pay-button">Pay now</button>
+</form>
                             </div>
                         </div>
                     </fieldset>
@@ -197,3 +200,17 @@
   </div>
  </section>
 <br></br><br></br><br></br>
+
+<script
+
+    src="https://secure.payu.com/front/widget/js/payu-bootstrap.js"
+    pay-button="#pay-button"
+    merchant-pos-id="145227"
+    shop-name="Shop name"
+    total-amount="9.99"
+    currency-code="PLN"
+    customer-language="en"
+    store-card="true"
+    customer-email="email@exampledomain.com"
+    sig="6c9bb18db84165f53b5918380833723bc5fbb95ec5a9b73a4cb02dd60c11c64e">
+</script>
