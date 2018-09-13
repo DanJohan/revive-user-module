@@ -1,9 +1,107 @@
+<?php  
+//payumoney integration start
+// Merchant key here as provided by Payu
+$MERCHANT_KEY = "rjQUPktU";
+
+// Merchant Salt as provided by Payu
+$SALT = "e5iIg1jwi8";
+
+// End point - change to https://secure.payu.in for LIVE mode
+$PAYU_BASE_URL = "https://test.payu.in";
+
+$action = '';
+
+$posted = array();
+
+//Generate random transaction id
+$txnid = random_string('numeric', 5);
+
+if(!empty($_POST)) {
+    
+    $posted['amount'] = $_POST['amount'];
+    $posted['phone'] = $_POST['phone'];
+    $posted['firstname'] = $_POST['firstname'];
+    $posted['email'] = $_POST['email'];
+    $posted['key'] = $MERCHANT_KEY;
+    $posted['txnid'] = $txnid;
+    $posted['productinfo'] = 'This is a Test Product';
+    $posted['email'] = $_POST['email'];
+    $posted['firstname'] = $_POST['firstname'];
+    $posted['phone'] = $_POST['phone'];
+    $posted['surl'] = base_url("user/success");
+    $posted['furl'] = base_url("user/error");
+    $posted['curl'] = base_url("user/cancel");
+    $posted['service_provider'] = 'payu_paisa';
+
+}
+
+$hash = '';
+
+// Hash Sequence
+$hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10";
+
+if(empty($posted['hash']) && sizeof($posted) > 0) {
+  if(
+        empty($posted['key'])
+        || empty($posted['txnid'])
+        || empty($posted['amount'])
+        || empty($posted['firstname'])
+        || empty($posted['email'])
+        || empty($posted['phone']) 
+        || empty($posted['productinfo'])
+        || empty($posted['surl'])
+        || empty($posted['furl'])
+        || empty($posted['service_provider'])
+    ) {
+    //echo "Fail";
+    redirect('');
+    }
+  else{
+    
+    $hashVarsSeq = explode('|', $hashSequence);
+    $hash_string = '';
+    foreach($hashVarsSeq as $hash_var){
+        $hash_string .= isset($posted[$hash_var]) ? $posted[$hash_var] : '';
+        $hash_string .= '|';
+    }
+
+    $hash_string .= $SALT;
+    $hash = strtolower(hash('sha512', $hash_string));
+    $posted['hash'] = $hash;
+    $action = $PAYU_BASE_URL . '/_payment';
+  }
+}
+elseif(!empty($posted['hash'])){
+  $hash = $posted['hash'];
+  $action = $PAYU_BASE_URL . '/_payment';
+}
+
+?>
+<script>
+    var hash = '<?php echo $hash ?>';
+    function submitPayuForm() {
+     if(hash == '') {
+        return;
+      }
+      var payuForm = document.forms.payuForm;
+      payuForm.submit();
+    }
+ </script>
+ <!-- payumoney integration end script -->
 <section class="inovice-top">
   <div class="container">
     <div class="text-center">
       <h2 >Revive auto car care </h2>
       <p>9/11 Near Atul Kataria Chowk Kila No. 9, Opp Huda Nursery, Sector 17A, Gurgaon, Haryana-122001 GSTIN: 06AFVPJ6337B1ZD Email:customercare@reviveauto.in </p>
     </div>
+    <?php
+        if($this->session->flashdata('msg_error')){
+          echo "<div class='alert alert-danger' role='alert'>".$this->session->flashdata('msg_error')."<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+        }
+        elseif($this->session->flashdata('msg_success')){
+          echo "<div class='alert alert-success' role='alert'>".$this->session->flashdata('msg_success')."<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+        }
+      ?>
     <table class="table  table-bordered ">
       <tr class="border-bottom">
         <th class="border-right">Customer Details</th>
@@ -183,34 +281,33 @@
                             <div class="col-sm-2">
                                 <button  type="submit"  class="btn btn-success">Pay with Paypal</button>
                             </div>
-                            <div class="col-sm-2">
-                              <!-- <div class='pm-button'>
-                                <a href='https://www.payumoney.com/paybypayumoney/#/A73CAF1351517308508E17EE241E06DE'>
-                                <img src='https://www.payumoney.com/media/images/payby_payumoney/new_buttons/21.png' /></a>
-                              </div>  -->
-                             <form action="http://exampledomain.payu.com/processOrder.php" method="post">
-    <button id="pay-button">Pay now</button>
-</form>
-                            </div>
+                           
                         </div>
                     </fieldset>
                 </form>
+      <!-- payumoney details -->
+      <form method="post" class="form-horizontal" action="<?php echo $action; ?>" name="payuForm">
+
+        <input type="hidden" name="key" value="<?php echo (!isset($posted['key'])) ? '' : $posted['key'] ?>" />
+        <input type="hidden" id="hash" name="hash" value="<?php echo (!isset($posted['hash'])) ? '' : $posted['hash'] ?>"/>
+        <input type="hidden" name="txnid" value="<?php echo (!isset($posted['txnid'])) ? '' : $posted['txnid'] ?>" />
+
+        <input type="hidden" name="productinfo" id="productinfo" value="<?php echo (!isset($posted['productinfo'])) ? '' : $posted['productinfo'] ?>">
+        <input type="hidden" name="surl" value="<?php echo (!isset($posted['surl'])) ? '' : $posted['surl'] ?>" size="64" />
+        <input type="hidden" name="curl" value="<?php echo (!isset($posted['curl'])) ? '' : $posted['curl'] ?>" size="64" />
+        <input type="hidden" id="furl" name="furl" value="<?php echo (!isset($posted['furl'])) ? '' : $posted['furl'] ?>" size="64" />
+        <input type="hidden" name="service_provider" value="<?php echo (!isset($posted['service_provider'])) ? '' : $posted['service_provider'] ?>" size="64" />
+        <input type="hidden" class="form-control" name="firstname" id="firstname" value="<?php echo $invoice['client_name'];?>">
+        <input type="hidden" name="email" id="email" class="form-control" value="<?php echo $invoice['client_email'];?>">
+        <input type="hidden" name="phone" class="form-control" id="inputPassword3" value="<?php echo $invoice['client_phone'];?>">
+        <input type="hidden" name="amount" class="form-control" id="inputPassword3"  value="<?php echo $grandtotal; ?>">
+           <div class="col-sm-2">
+              <button type="submit" class="btn btn-primary">Pay via Payumoney</button>
+            </div>
+        </form>
+
             </div>
         </div><!-- /.container -->
   </div>
  </section>
 <br></br><br></br><br></br>
-
-<script
-
-    src="https://secure.payu.com/front/widget/js/payu-bootstrap.js"
-    pay-button="#pay-button"
-    merchant-pos-id="145227"
-    shop-name="Shop name"
-    total-amount="9.99"
-    currency-code="PLN"
-    customer-language="en"
-    store-card="true"
-    customer-email="email@exampledomain.com"
-    sig="6c9bb18db84165f53b5918380833723bc5fbb95ec5a9b73a4cb02dd60c11c64e">
-</script>

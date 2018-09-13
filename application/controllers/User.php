@@ -11,11 +11,9 @@ class User extends MY_Controller {
 		$this->load->model('InvoiceModel');
 		$this->load->model('JobcardModel');
 		$this->load->model('RepairOrderModel');
+		$this->load->helper(array('string', 'url'));
+		$this->load->library('session');
 		
-	}
-
-	public function index(){
-		redirect('user/login');
 	}
 
 	public function login(){
@@ -236,8 +234,59 @@ class User extends MY_Controller {
 		$data['repair_orders']=$repair_orders;
 		$data['view'] = 'user/repair_order';
 		$this->load->view('user/layout',$data);
+	}
 
 
+	//Method to show payment form payumoney
+	public function index(){
+
+		$this->load->view('user/billing');
+
+	}
+		//Method that handle when the payment was successful
+	public function success(){
+		if(empty($_POST)){
+			redirect('user/welcome');
+		}
+
+		$status=$_POST["status"];
+		$firstname=$_POST["firstname"];
+		$amount=$_POST["amount"];
+		$txnid=$_POST["txnid"];
+		$posted_hash=$_POST["hash"];
+		$key=$_POST["key"];
+		$productinfo=$_POST["productinfo"];
+		$email=$_POST["email"];
+		$salt = "e5iIg1jwi8";
+		$sno = $_POST["udf1"];
+
+		$retHashSeq = $salt.'|'.$status.'||||||||||'.$sno.'|'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
+
+		$hash = strtolower(hash("sha512", $retHashSeq));
+
+		if ($hash != $posted_hash) {
+	       $this->session->set_flashdata('msg_error', "An Error occured while processing your payment. Try again..");
+		}
+
+		else{
+			$this->session->set_flashdata('msg_success', "Payment was successful..");
+		}
+		unset($_POST);
+		redirect('user/billing');
+	}
+
+	//Method that handles when payment was failed
+	public function error(){
+		unset($_POST);
+		$this->session->set_flashdata('msg_error', "Your payment was failed. Try again..");
+		redirect('user/billing');
+	}
+
+	//Method that handles when payment was cancelled.
+	public function cancel(){
+		unset($_POST);
+		$this->session->set_flashdata('msg_error', "Your payment was cancelled. Try again..");
+		redirect('user/billing');
 	}
 }
 ?>

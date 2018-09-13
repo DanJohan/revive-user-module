@@ -3,10 +3,12 @@
 if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
-class PaypalModel extends CI_Model {
+class PaypalModel extends MY_Model {
 
 	function __construct() {
 		parent::__construct();
+		$this->load->library('session');
+		$this->load->database();
 	}
 
 	/* This function create new Service. */
