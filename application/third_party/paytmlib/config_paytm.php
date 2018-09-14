@@ -9,9 +9,9 @@
 
 */
 define('PAYTM_ENVIRONMENT', 'TEST'); // PROD
-define('PAYTM_MERCHANT_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxx'); //Change this constant's value with Merchant key downloaded from portal
-define('PAYTM_MERCHANT_MID', 'xxxxxxxxxxxxxxxxxxxxxxx'); //Change this constant's value with MID (Merchant ID) received from Paytm
-define('PAYTM_MERCHANT_WEBSITE', 'xxxxxxx'); //Change this constant's value with Website name received from Paytm
+define('PAYTM_MERCHANT_KEY', 'uC%El&4lJX06AD9U'); //Change this constant's value with Merchant key downloaded from portal
+define('PAYTM_MERCHANT_MID', 'smarts05763277906876'); //Change this constant's value with MID (Merchant ID) received from Paytm
+define('PAYTM_MERCHANT_WEBSITE', 'WEBSTAGING'); //Change this constant's value with Website name received from Paytm
 
 /*$PAYTM_DOMAIN = "pguat.paytm.com";
 if (PAYTM_ENVIRONMENT == 'PROD') {
@@ -24,7 +24,7 @@ define('PAYTM_STATUS_QUERY_NEW_URL', 'https://'.$PAYTM_DOMAIN.'/oltp/HANDLER_INT
 define('PAYTM_TXN_URL', 'https://'.$PAYTM_DOMAIN.'/oltp-web/processTransaction');*/
 
 $PAYTM_STATUS_QUERY_NEW_URL='https://securegw-stage.paytm.in/merchant-status/getTxnStatus';
-$PAYTM_TXN_URL='https://securegw-stage.paytm.in/theia/processTransaction';
+$PAYTM_TXN_URL='https://pguat.paytm.com/oltp-web/processTransaction';
 if (PAYTM_ENVIRONMENT == 'PROD') {
 	$PAYTM_STATUS_QUERY_NEW_URL='https://securegw.paytm.in/merchant-status/getTxnStatus';
 	$PAYTM_TXN_URL='https://securegw.paytm.in/theia/processTransaction';

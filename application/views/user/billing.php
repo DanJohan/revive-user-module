@@ -268,7 +268,7 @@ elseif(!empty($posted['hash'])){
                 <p class="notice error"><?= $this->session->flashdata('success_msg') ?></p><br/>
 
                 <form method="post" class="form-horizontal" role="form" action="<?php echo base_url();?>paypal/create_payment_with_paypal">
-                    <fieldset>
+                 
                         <input title="item_name" name="item_name" type="hidden" value="<?php echo $invoice['invoice_number'];?>">
                         <input title="item_number" name="item_number" type="hidden" value="<?php echo $invoice['vehicle_reg_no'];?>">
                         <input title="item_description" name="item_description" type="hidden" value="<?php echo $invoice['client_address'];?>">
@@ -276,14 +276,10 @@ elseif(!empty($posted['hash'])){
                         <input title="item_price" name="item_price" type="hidden" value="<?php echo $grandtotal; ?>">
                         <input title="details_tax" name="details_tax" type="hidden" value="<?php echo $gst_total; ?>">
                         <input title="details_subtotal" name="details_subtotal" type="hidden" value="<?php echo $grandtotal; ?>">
-
-                        <div class="form-group">
-                            <div class="col-sm-2">
-                                <button  type="submit"  class="btn btn-success">Pay with Paypal</button>
+                          <div class="col-sm-2">
+                                <button  type="submit" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/paypal.png"></button>
                             </div>
-                           
-                        </div>
-                    </fieldset>
+                       
                 </form>
       <!-- payumoney details -->
       <form method="post" class="form-horizontal" action="<?php echo $action; ?>" name="payuForm">
@@ -302,8 +298,21 @@ elseif(!empty($posted['hash'])){
         <input type="hidden" name="phone" class="form-control" id="inputPassword3" value="<?php echo $invoice['client_phone'];?>">
         <input type="hidden" name="amount" class="form-control" id="inputPassword3"  value="<?php echo $grandtotal; ?>">
            <div class="col-sm-2">
-              <button type="submit" class="btn btn-primary">Pay via Payumoney</button>
+              <button  type="submit" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/payu.png"></button>
             </div>
+        </form>
+
+        <!-- paytm form start -->
+        <form method="post" action="<?php echo base_url();?>paytm/paytmpost">
+          <input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20" name="ORDER_ID" autocomplete="off" value="<?php echo  "ORDS" . rand(10000,99999999)?>">
+          <input type="hidden" id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="CUST001">
+          <input type="hidden" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+          <input type="hidden" id="CHANNEL_ID" tabindex="4" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+          <input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="<?php echo $grandtotal; ?>">
+          <div class="col-sm-2">
+         
+            <button  type="submit" onclick="" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/paytm.png"></button>
+             </div>
         </form>
 
             </div>

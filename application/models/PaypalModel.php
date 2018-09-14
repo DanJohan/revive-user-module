@@ -7,8 +7,8 @@ class PaypalModel extends MY_Model {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->library('session');
-		$this->load->database();
+		//$this->load->library('session');
+		//$this->load->database();
 	}
 
 	/* This function create new Service. */

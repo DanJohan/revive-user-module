@@ -7,14 +7,14 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\PaymentExecution;
 
-class Paypal extends CI_Controller
+class Paypal extends MY_Controller
 {
     public $_api_context;
 
     function  __construct()
     {
         parent::__construct();
-        $this->load->model('paypalmodel', 'paypal');
+        $this->load->model('PaypalModel', 'paypal');
         // paypal credentials
         $this->config->load('paypal');
 
@@ -26,17 +26,18 @@ class Paypal extends CI_Controller
     }
 
     function index(){
-        $this->load->view('user/buy_form');
+        $this->load->view('user/billing');
     }
 
 
     function create_payment_with_paypal()
     {
-
+        //dd($this->config->item('settings'));
         // setup PayPal api context
         $this->_api_context->setConfig($this->config->item('settings'));
 
 
+ 
 // ### Payer
 // A resource representing a Payer that funds a payment
 // For direct credit card payments, set payment method
@@ -50,7 +51,7 @@ class Paypal extends CI_Controller
         $item1["name"] = $this->input->post('item_name');
         $item1["sku"] = $this->input->post('item_number');  // Similar to `item_number` in Classic API
         $item1["description"] = $this->input->post('item_description');
-        $item1["currency"] ="USD";
+        $item1["currency"] ="INR";
         $item1["quantity"] =1;
         $item1["price"] = $this->input->post('item_price');
 
@@ -67,7 +68,7 @@ class Paypal extends CI_Controller
 // Lets you specify a payment amount.
 // You can also specify additional details
 // such as shipping, tax.
-        $amount['currency'] = "USD";
+        $amount['currency'] = "INR";
         $amount['total'] = $details['tax'] + $details['subtotal'];
         $amount['details'] = $details;
 // ### Transaction
@@ -99,8 +100,9 @@ class Paypal extends CI_Controller
         try {
             $payment->create($this->_api_context);
         } catch (Exception $ex) {
+
             // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
-            ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $ex);
+            ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $ex->getMessage());
             exit(1);
         }
         foreach($payment->getLinks() as $link) {
@@ -184,11 +186,10 @@ class Paypal extends CI_Controller
         redirect('paypal/cancel');
     }
     function success(){
-        $this->load->view("content/success");
+        $this->load->view("user/success");
     }
     function cancel(){
         $this->paypal->create_payment();
-        $this->load->view("content/cancel");
+        $this->load->view("user/cancel");
     }
 }
-?>
