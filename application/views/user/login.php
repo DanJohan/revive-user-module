@@ -16,7 +16,7 @@
   <link href="<?php echo base_url();?>public/userlogin/css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body  class="wrapper">
   <section class="login">
     <div class="container">
 

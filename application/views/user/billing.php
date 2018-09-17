@@ -53,8 +53,8 @@ if(empty($posted['hash']) && sizeof($posted) > 0) {
         || empty($posted['furl'])
         || empty($posted['service_provider'])
     ) {
-    //echo "Fail";
-    redirect('');
+    echo "Fail";
+    redirect('#');
     }
   else{
     
@@ -266,22 +266,22 @@ elseif(!empty($posted['hash'])){
             <div class="contact-form">
                 <p class="notice error"><?= $this->session->flashdata('error_msg') ?></p><br/>
                 <p class="notice error"><?= $this->session->flashdata('success_msg') ?></p><br/>
-
-                <form method="post" class="form-horizontal" role="form" action="<?php echo base_url();?>paypal/create_payment_with_paypal">
-                 
-                        <input title="item_name" name="item_name" type="hidden" value="<?php echo $invoice['invoice_number'];?>">
-                        <input title="item_number" name="item_number" type="hidden" value="<?php echo $invoice['vehicle_reg_no'];?>">
-                        <input title="item_description" name="item_description" type="hidden" value="<?php echo $invoice['client_address'];?>">
-                        <input title="item_tax" name="item_tax" type="hidden" value="<?php echo $gst_total; ?>">
-                        <input title="item_price" name="item_price" type="hidden" value="<?php echo $grandtotal; ?>">
-                        <input title="details_tax" name="details_tax" type="hidden" value="<?php echo $gst_total; ?>">
-                        <input title="details_subtotal" name="details_subtotal" type="hidden" value="<?php echo $grandtotal; ?>">
-                          <div class="col-sm-2">
-                                <button  type="submit" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/paypal.png"></button>
-                            </div>
-                       
-                </form>
-      <!-- payumoney details -->
+  <!-- paypal details -->
+      <form method="post" class="form-horizontal" role="form" action="<?php echo base_url();?>paypal/create_payment_with_paypal">
+       
+              <input title="item_name" name="item_name" type="hidden" value="<?php echo $invoice['invoice_number'];?>">
+              <input title="item_number" name="item_number" type="hidden" value="<?php echo $invoice['vehicle_reg_no'];?>">
+              <input title="item_description" name="item_description" type="hidden" value="<?php echo $invoice['client_address'];?>">
+              <input title="item_tax" name="item_tax" type="hidden" value="<?php echo $gst_total; ?>">
+              <input title="item_price" name="item_price" type="hidden" value="<?php echo $grandtotal; ?>">
+              <input title="details_tax" name="details_tax" type="hidden" value="<?php echo $gst_total; ?>">
+              <input title="details_subtotal" name="details_subtotal" type="hidden" value="<?php echo $grandtotal; ?>">
+              <div class="col-sm-2">
+              <button  type="submit" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/paypal.png"></button>
+              </div>
+             
+      </form>
+<!-- payumoney details -->
       <form method="post" class="form-horizontal" action="<?php echo $action; ?>" name="payuForm">
 
         <input type="hidden" name="key" value="<?php echo (!isset($posted['key'])) ? '' : $posted['key'] ?>" />
