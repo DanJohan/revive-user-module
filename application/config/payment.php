@@ -1,9 +1,11 @@
 <?php
 /** set your paypal credential **/
 
-$config['client_id'] = 'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS';
-$config['secret'] = 'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL';
+/*$config['client_id'] = 'AYSq3RDGsmBLJE-otTkBtM-jBRd1TCQwFf9RGfwddNXWz0uFU9ztymylOhRS';
+$config['secret'] = 'EGnHDxD_qRPdaLdZz8iCr8N7_MzF-YHPTkjs6NKYQvQSBngp4PTTVWkPZRbL';*/
 
+$config['client_id'] = 'AUvPOPFRg002AdyvE-gbrELklxpyP-XDz2vsolVPdQ-aIp26fgkppiIc-O9ODzD1n29JUC4VpWbrmTVu';
+$config['secret'] = 'ELhNYBFWOYiP_vtVHp8ibHtBjGiRRAODu6evmNWQPz3fQpmS2aGd34YiARLQLQ-Tjjk5z2NL8sMuuajc';
 /**
  * SDK configuration
  */
@@ -33,3 +35,7 @@ $config['settings'] = array(
      */
     'log.LogLevel' => 'FINE'
 );
+
+$config['payu_merchant_key'] = 'HMpd7SQa';
+$config['payu_salt'] = '9fj5C4m4GI';
+$config['payu_base_url'] = "https://sandboxsecure.payu.in";

@@ -1,5 +1,8 @@
    <section class="User-detail">
         <div class="container">
+    <?php 
+    $this->load->view('common/flashmessage');
+    ?>
     <div class="row">
     <div class="cn_diver">
     

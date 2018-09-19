@@ -7,3 +7,4 @@
   <!-- table css -->
  <link href="<?php echo base_url();?>public/userlogin/css/table.css" rel="stylesheet">
 <link href="<?php echo base_url();?>public/userlogin/css/datatable.css" rel="stylesheet">
+<script type="text/javascript" src="<?php echo base_url();?>public/userlogin/js/jquery.min.js"></script>

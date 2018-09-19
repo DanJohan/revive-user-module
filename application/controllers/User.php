@@ -197,6 +197,8 @@ class User extends MY_Controller {
 			redirect('user/billing');
 		}
 
+		$this->config->load('payment');
+
 		$invoice_labour_keys =  array('invoice_labour_id','invoice_labour_item','invoice_labour_hour','invoice_labour_rate','invoice_labour_cost','invoice_labour_gst','invoice_labour_gst_amount','invoice_labour_total');
 
 		$invoice_labour = array_filter_by_value(array_unique(array_column_multi($invoice,$invoice_labour_keys),SORT_REGULAR),'invoice_labour_id','');
@@ -216,6 +218,24 @@ class User extends MY_Controller {
 		//dd($invoice['parts']);
 		$data['invoice'] = $invoice;
 		$data['view'] = 'user/billing';
+		//dd($data['invoice']);
+		
+		$payu=array(
+			'key'=> $this->config->item('payu_merchant_key'),
+			'txnid'=>substr(hash('sha256', mt_rand() . microtime()), 0, 20),
+			'action'=>$this->config->item('payu_base_url')."/_payment",
+			'product_info'=>'Payment for invoice '.$invoice['invoice_number'],
+			'service_provider'=>'payu_paisa',
+			'surl'=> base_url()."payu/paymentSuccess",
+			'furl'=> base_url()."payu/paymentFailure",
+			'curl'=> base_url()."payu/paymentCancel",
+		);
+		//.$invoice['total_amount_after_discount'].
+		$hashSequence = $payu['key']."|".$payu['txnid']."|"."1.00"."|".$payu['product_info']."|".$invoice['client_name']."|".$invoice['client_email']."|||||||||||".$this->config->item('payu_salt');
+		//echo $hashSequence;die;
+		$payu['hash'] = strtolower(hash('sha512', $hashSequence));
+		$data['payu'] = $payu;
+
 		$this->load->view('user/layout',$data);
 	}
 

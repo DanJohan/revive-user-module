@@ -548,3 +548,10 @@ border-top: 1px solid #ccc;
     background-image:'<?php echo base_url();?>public/userlogin/img/navbar.png';
     background-color: red;
     } 
+.flash-msg {
+    display: inline-block;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    z-index: 1;
+}
