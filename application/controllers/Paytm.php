@@ -5,6 +5,9 @@ class Paytm extends MY_Controller
  	function  __construct()
 	    {
 	        parent::__construct();
+	        if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		    }
 	        $this->load->model('TransactionModel');
 	        $this->load->model('InvoiceModel');
 	        $this->load->model('PaymentModel', 'payment');
@@ -44,7 +47,7 @@ class Paytm extends MY_Controller
 		 $paramList["CUST_ID"] = $CUST_ID;
 		 $paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
 		 $paramList["CHANNEL_ID"] = $CHANNEL_ID;
-		 $paramList["TXN_AMOUNT"] = "1.00";//$TXN_AMOUNT;
+		 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 		 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
 		 $paramList["EMAIL"] = $EMAIL;
 		 $paramList["MSISDN"] = $MOBILE_NO;

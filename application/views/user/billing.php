@@ -144,9 +144,10 @@
       </tr>
     
     </table>
-   <div><p><span style="font-weight:600;">Notes:</span> <?php echo $invoice['notes']; ?></p></div>
+   <div><p style="white-space: pre-line;"><span style="font-weight:600;">Notes:</span> <?php echo $invoice['notes']; ?></p></div>
   <div class="container">
             <div class="contact-form">
+                <h3>Proceed to pay</h3>
                 <p class="notice error"><?= $this->session->flashdata('error_msg') ?></p><br/>
                 <p class="notice error"><?= $this->session->flashdata('success_msg') ?></p><br/>
   <!-- paypal details -->
@@ -172,8 +173,7 @@
         <input type="hidden" class="form-control" name="firstname" id="firstname" value="<?php echo $invoice['client_name'];?>">
         <input type="hidden" name="email" id="email" class="form-control" value="<?php echo $invoice['client_email'];?>">
         <input type="hidden" name="phone" class="form-control" id="inputPassword3" value="<?php echo $invoice['client_phone'];?>">
-       <!--  <input type="hidden" name="amount" class="form-control" id="inputPassword3"  value="<?php echo $invoice['total_amount_after_discount']; ?>"> -->
-        <input type="hidden" name="amount" class="form-control" id="inputPassword3"  value="1.00">
+       <input type="hidden" name="amount" class="form-control" id="inputPassword3"  value="<?php echo $invoice['total_amount_after_discount']; ?>"> 
            <div class="col-sm-2">
               <button  type="submit" style="display:contents;width:100%"><img src="<?php echo base_url();?>public/userlogin/img/payu.png"></button>
             </div>

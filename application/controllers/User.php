@@ -11,12 +11,24 @@ class User extends MY_Controller {
 		$this->load->model('InvoiceModel');
 		$this->load->model('JobcardModel');
 		$this->load->model('RepairOrderModel');
-		$this->load->helper(array('string', 'url'));
+		$this->load->helper(array('string'));
 		$this->load->library('session');
 		
 	}
+	public function index(){
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
+		redirect('user/dashboard');
+		$this->load->view('user/billing');
+
+	}
 
 	public function login(){
+
+		if($this->session->has_userdata('is_user_login')){
+			redirect('user/dashboard');
+		}
 		//dd($_POST);die;
 		//echo password_hash("password", PASSWORD_DEFAULT);die;
 		$this->load->library('fblogin');
@@ -38,7 +50,7 @@ class User extends MY_Controller {
 					if($is_verified){
 						// set session
 						$user_data = array(
-							'id' => $user['id'],
+							'user_id' => $user['id'],
 							'name' => $user['name'],
 							'pic'  => $user['profile_image'],
 						 	'is_user_login' => TRUE
@@ -79,7 +91,7 @@ class User extends MY_Controller {
 					$user= $this->UserModel->search($criteria);
 					if($user){
 						$user_data = array(
-							'id' => $user['id'],
+							'user_id' => $user['id'],
 							'name' => $user['name'],
 							'pic'  => $user['profile_image'],
 						 	'is_user_login' => TRUE
@@ -116,7 +128,7 @@ class User extends MY_Controller {
 					$user= $this->UserModel->search($criteria);
 					if($user){
 						$user_data = array(
-							'id' => $user['id'],
+							'user_id' => $user['id'],
 							'name' => $user['name'],
 							'pic'  => $user['profile_image'],
 						 	'is_user_login' => TRUE
@@ -142,13 +154,19 @@ class User extends MY_Controller {
 
 
 	public function dashboard() {
+
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
 		$data['view'] = 'user/dashboard';
 		$this->load->view('user/layout',$data);
 
 	}
 	public function enquiry_by_user() {
-	
-		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUser($this->session->userdata('id'));
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
+		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUser($this->session->userdata('user_id'));
 		//dd($data['enquiries']);
 		if(!empty($data['enquiries'])) {
 			$data['view'] = 'user/enquiry';
@@ -162,7 +180,9 @@ class User extends MY_Controller {
 	}
 
 	public function show_enquiry($enquiry_id) {
-	
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
 		$data['enquiries'] = $this->ServiceEnquiryModel->getEnquiryByUserId($enquiry_id);
 
 		
@@ -181,7 +201,10 @@ class User extends MY_Controller {
 			redirect(base_url('user/login'), 'refresh');
 	}
 	public function billing() {
-		$data['invoices'] = $this->InvoiceModel->getInvoiceByUserId($this->session->userdata('id'));
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
+		$data['invoices'] = $this->InvoiceModel->getInvoiceByUserId($this->session->userdata('user_id'));
 		//dd($data['invoices']);
 		$data['view'] = 'user/invoice_list';
 		$this->load->view('user/layout',$data);
@@ -189,10 +212,14 @@ class User extends MY_Controller {
 	}
 
 	public function invoice_view($id=null){
+
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
 		if(!$id){
 			redirect('user/billing');
 		}
-		$invoice = $this->InvoiceModel->getInvoiceById($id,$this->session->userdata('id'));
+		$invoice = $this->InvoiceModel->getInvoiceById($id,$this->session->userdata('user_id'));
 		if(empty($invoice)){
 			redirect('user/billing');
 		}
@@ -222,7 +249,7 @@ class User extends MY_Controller {
 		
 		$payu=array(
 			'key'=> $this->config->item('payu_merchant_key'),
-			'txnid'=>substr(hash('sha256', mt_rand() . microtime()), 0, 20),
+			'txnid'=>'sdfsdfsdfsd',//substr(hash('sha256', mt_rand() . microtime()), 0, 20),
 			'action'=>$this->config->item('payu_base_url')."/_payment",
 			'product_info'=>'Payment for invoice '.$invoice['invoice_number'],
 			'service_provider'=>'payu_paisa',
@@ -231,7 +258,7 @@ class User extends MY_Controller {
 			'curl'=> base_url()."payu/paymentCancel",
 		);
 		//.$invoice['total_amount_after_discount'].
-		$hashSequence = $payu['key']."|".$payu['txnid']."|"."1.00"."|".$payu['product_info']."|".$invoice['client_name']."|".$invoice['client_email']."|||||||||||".$this->config->item('payu_salt');
+		$hashSequence = $payu['key']."|".$payu['txnid']."|".$invoice['total_amount_after_discount']."|".$payu['product_info']."|".$invoice['client_name']."|".$invoice['client_email']."|||||||||||".$this->config->item('payu_salt');
 		//echo $hashSequence;die;
 		$payu['hash'] = strtolower(hash('sha512', $hashSequence));
 		$data['payu'] = $payu;
@@ -241,72 +268,29 @@ class User extends MY_Controller {
 
 	//service status
 	public function jobcard() {
-		$data['jobcard'] = $this->JobcardModel->getUserAllJobCard($this->session->userdata('id'));
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
+		$data['jobcard'] = $this->JobcardModel->getUserAllJobCard($this->session->userdata('user_id'));
 		$data['view'] = 'user/jobcard';
 		$this->load->view('user/layout',$data);
 
 	}
 	public function completeJobs($id=null){
+		if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
 		if(!$id){
 			redirect('user/jobcard');
 		}
-		$repair_orders = $this->RepairOrderModel->getRepairOrderByJobId($id,$this->session->userdata('id'));
+		$repair_orders = $this->RepairOrderModel->getRepairOrderByJobId($id,$this->session->userdata('user_id'));
 		$data['repair_orders']=$repair_orders;
 		$data['view'] = 'user/repair_order';
 		$this->load->view('user/layout',$data);
 	}
 
 
-	//Method to show payment form payumoney
-	public function index(){
 
-		$this->load->view('user/billing');
 
-	}
-		//Method that handle when the payment was successful
-	public function success(){
-		if(empty($_POST)){
-			redirect('user/welcome');
-		}
-
-		$status=$_POST["status"];
-		$firstname=$_POST["firstname"];
-		$amount=$_POST["amount"];
-		$txnid=$_POST["txnid"];
-		$posted_hash=$_POST["hash"];
-		$key=$_POST["key"];
-		$productinfo=$_POST["productinfo"];
-		$email=$_POST["email"];
-		$salt = "e5iIg1jwi8";
-		$sno = $_POST["udf1"];
-
-		$retHashSeq = $salt.'|'.$status.'||||||||||'.$sno.'|'.$email.'|'.$firstname.'|'.$productinfo.'|'.$amount.'|'.$txnid.'|'.$key;
-
-		$hash = strtolower(hash("sha512", $retHashSeq));
-
-		if ($hash != $posted_hash) {
-	       $this->session->set_flashdata('msg_error', "An Error occured while processing your payment. Try again..");
-		}
-
-		else{
-			$this->session->set_flashdata('msg_success', "Payment was successful..");
-		}
-		unset($_POST);
-		redirect('user/billing');
-	}
-
-	//Method that handles when payment was failed
-	public function error(){
-		unset($_POST);
-		$this->session->set_flashdata('msg_error', "Your payment was failed. Try again..");
-		redirect('user/billing');
-	}
-
-	//Method that handles when payment was cancelled.
-	public function cancel(){
-		unset($_POST);
-		$this->session->set_flashdata('msg_error', "Your payment was cancelled. Try again..");
-		redirect('user/billing');
-	}
 }
 ?>

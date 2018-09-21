@@ -5,6 +5,9 @@ class Payu extends MY_Controller
  	public function  __construct()
 	{
 	     parent::__construct();
+	     if(!$this->session->has_userdata('is_user_login')){
+			redirect('user/login');
+		}
 	     $this->config->load('payment');
 	     $this->load->model('PaymentModel', 'payment');
         	$this->load->model('InvoiceModel');

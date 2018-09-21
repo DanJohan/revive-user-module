@@ -20,6 +20,9 @@ class PayPal extends MY_Controller
     function  __construct()
     {
         parent::__construct();
+        if(!$this->session->has_userdata('is_user_login')){
+            redirect('user/login');
+        }
         $this->load->model('PaymentModel', 'payment');
         $this->load->model('InvoiceModel');
         // paypal credentials
@@ -123,8 +126,7 @@ class PayPal extends MY_Controller
 
             $amount = new Amount();
             $amount->setCurrency('INR');
-           // $amount->setTotal($transactionData['amount']);
-            $amount->setTotal("1.00");
+            $amount->setTotal($transactionData['amount']);
 
             $transaction->setAmount($amount);
             $execution->addTransaction($transaction);
