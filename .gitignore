@@ -42,5 +42,8 @@ migrations.txt
 jwt.php
 
 application/composer.lock
-application/config/constants.php
+
+application/.env.development
+application/.env.production
+
 

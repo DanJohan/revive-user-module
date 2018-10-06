@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		return;
-		$this->load->view('user');
+		$this->load->view('home');
 		
 	}
 }

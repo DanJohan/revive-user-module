@@ -7,6 +7,7 @@ class MY_Controller extends CI_Controller
   public function __construct()
   {
     parent::__construct();
+    require_once APPPATH.'config/MY_constants.php';
 
   }
 
@@ -62,6 +63,5 @@ class MY_Controller extends CI_Controller
   }
 }
 
-// include other controllers that extent My_controller
-require_once 'Rest_Controller.php';
+
 ?>
