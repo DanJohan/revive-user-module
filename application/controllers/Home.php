@@ -8,14 +8,8 @@ class Home extends MY_Controller {
 		
 	}
 	public function index(){
-		$data['view'] = 'web/index';
-		$this->load->view('web/layout',$data);
-
-	}
-
-	public function select(){
-		//$data['view'] = 'web/select';
-		$this->load->view('web/select');
+		$data['view'] = 'home/index';
+		$this->load->view('home/layout',$data);
 
 	}
 	

@@ -1,0 +1,417 @@
+/*----------------------------what do revive do---------------------------*/
+
+.rtd ul li:not([class]) {
+    margin: 0;
+    line-height: 2.777 !important;
+    font-size: initial !important;
+}
+.decor-3:before {
+    display: block;
+    margin: 4% 0 0 32%;
+    line-height: 1;
+    transform: rotate(-45deg);
+    font-size: 8px;
+}
+a, .color_primary, .ui-title-inner .icon:before, .link-img__link:hover .link-img__title, .main-block__title strong, .decor-3, .list-services:hover .list-services__title, .list-progress .icon, .footer-title__inner, .card__price-number, .list-categories__link:before, .list-categories__link:hover, .list-descriptions dt:before, .widget-post1__price, .nav-tabs > li.active > a, .nav-tabs > li > a:hover, .nav-tabs > li.active > a:focus, .social-blog__item:before, blockquote:before, .comments-list .comment-datetime {
+    color: #a01d63;
+}
+.decor-3 {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 14px;
+    margin-left: 3px;
+    font-size: 8px;
+    vertical-align: middle;
+    border: solid 1px #ccc;
+    background-color: #fff;
+    transform: rotate(45deg);
+    text-align: left;
+}
+.vc_btn3.vc_btn3-color-violet.vc_btn3-style-modern {
+    color: #fff;
+    border-color: rgb(88, 44, 79);
+    background-color: rgb(88, 44, 79);
+    border-radius: 5px;
+}
+.vc_btn3.vc_btn3-size-md {
+    font-size: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.about-bg {
+    background-image: url(../img/s-bg.png);
+    background-repeat: no-repeat;
+	    padding: 75px 10px;
+}
+.services-bg
+{
+	background-image:url(../img/bg-denting.png);
+	
+}
+
+
+.decor-1 {
+    width: 30px;
+    margin-bottom: 20px;
+    border-top: 1px solid #ccc;
+	  margin-left: 100px;
+}
+.decor-1:after {
+    display: block;
+    width: 30px;
+    margin-top: 2px;
+    margin-left: 10px;
+    border-top: 1px solid #ccc;
+    content: '';
+}
+.s-bg {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 100px;
+    padding: 25px;
+    border-bottom: 2px solid;
+}
+section#services h1 {
+    color: #fff;
+}
+.s-bg:hover {
+    background-color: #fff;
+    color: #000;
+}
+.s-wrapper
+{
+	background-image:url(../img/prine.png);
+	padding:54px 13px;
+}
+.left {
+    float: left;
+    margin-right: 20px;
+}
+.s-right p {
+    color: #fff;
+    font-size: 18px;
+    overflow: hidden;
+    line-height: 1.777;
+    margin-top: 42px;
+}
+.s-right {
+    color: #fff;
+}
+.s-bottom {
+   /* padding: 70px 0px;*/
+}
+.s-bottom H2 {
+    color: #000;
+    font-size: 27px;
+    font-weight: 600;
+}
+.s-right h5 {
+    font-size: 27px;
+}
+button.btn.get-btn
+{
+	color: #fff;
+    background-color: rgba(0, 0, 0, 0.48);
+    /* transform: skewX(16deg); */
+    border-left: 3px solid rgb(88, 44, 79);
+    border-radius: 5px;
+	float:right;
+	
+
+}
+button.btn.get-btn:hover {
+    background: rgb(88, 44, 79);
+}
+.decor-2 {
+    position: relative;
+    display: inline-block;
+    margin-top: 6px;
+    margin-left: 49%;
+    margin-right: 50%;
+    text-align: center;
+}
+.decor-2:before {
+    right: -10px;
+}
+.decor-2:before, .decor-2:after {
+    position: absolute;
+    top: 5px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    content: '';
+    transform: rotate(45deg);
+}
+.fa-caret-down:before {
+    content: "\f0d7";
+}
+.decor-2 .icon {
+    position: relative;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    font-size: 12px;
+    line-height: 1;
+    color: #555;
+    border: 3px solid #f5f5f5;
+    border-radius: 3px;
+    background-color: #ddd;
+    z-index: 1;
+    transform: rotate(45deg);
+    vertical-align: inherit;
+    margin: 0;
+}
+.decor-2 .icon:before {
+    display: block;
+    margin: 3px 0 0 1px;
+    transform: rotate(-45deg);
+}
+.bg-color_primary, .main-slider__link, .decor-2:before, .decor-2:after, .section-bg_primary, .border-section-top_mod-b:before, .border-section-top_mod-b:after, .slider-grid__price, .btn-default:after, .owl-theme_mod-c .owl-controls .owl-page.active span, .owl-theme_mod-c .owl-controls.clickable .owl-page:hover span, .owl-theme_mod-d .owl-controls .owl-page.active span, .owl-theme_mod-d .owl-controls.clickable .owl-page:hover span, .list-type__link:hover, .list-staff__item:hover .list-staff__info, .progress-bar, .post .entry-date, .post:hover .entry-main__inner_mod-a:after, .btn-effect:after, .yamm .navbar-toggle, .ui-btn_mod-a, .jelect-option:hover, .jelect-option_state_active, .car-details__price, .noUi-origin, .btn-skew-r, .list-tags__link:hover, .about-autor {
+    background-color: #ab6aba;
+}
+.decor-2:after {
+    left: -10px;
+}
+section#testimonals h1 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background-image: url(../img/testi-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 36px 10px;
+   
+    width: 80%;
+    margin: 0 auto;
+}
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle 
+.active, .dot:hover {
+  background-color: #717171;
+}*/
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+img.img-fluid.test-img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    margin-top: -128px;
+    margin-bottom: 50px;
+}
+section#testimonals .decor-2 {
+    margin-bottom: 89px;
+}
+.tfree-client-rating .fa-star {
+    color: #f3bb00;
+}
+section#contact h1 {
+    font-size: 27px;
+	margin-bottom:20px;
+}
+form.f-wrapper {
+    margin: 36px 0px;
+}
+.form-control.c-input {
+    padding: 18px;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 0 0 0.125rem rgba(0, 0, 0, 0);
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+button.btn.send-btn {
+    text-align: center;
+    background-color: rgb(88, 44, 79);
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    left: 40%;
+    right: 40%;
+    margin: 0 auto;
+    padding: 13px 48px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+section#services h1 {
+    font-size: 35px;
+}
+.f-bg {
+    background-image: url(../img/f-bg.png);
+    padding: 60px 0px;
+
+	color:#fff;
+	text-align:center;
+}
+footer.f-bg h1 {
+    font-size: 47px;
+    color: #fff;
+}
+span.f-span {
+    color: #ab6aba;
+}
+.f-img-wrapper {
+    margin-top:50px;
+}
+.f-inner p {
+    color: #6a6868;
+}
+.f-inner .decor-1 {
+    margin-left: 152px;
+}
+.footer__wrap-btn {
+    position: relative;
+    width: 300px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    border-top: 132px solid #000000;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    z-index: 10;
+    text-align: center;
+}
+.footer__btn {
+    position: absolute;
+    top: -53px;
+    left: -10px;
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    text-decoration: none !important;
+}
+.footer__btn:before {
+    border-bottom: 33px solid #a01d63;
+}
+.footer__btn:after {
+    top: -23px;
+    left: 2px;
+    border-right: 9px solid transparent;
+    border-bottom: 10px solid #eee;
+    border-left: 9px solid transparent;
+    z-index: 15;
+}
+
+.footer__btn:before, .footer__btn:after {
+    position: absolute;
+    content: '';
+}
+.footer__btn:before {
+    top: -38px;
+    left: -14px;
+    border-right: 25px solid transparent;
+    border-bottom: 33px solid #ab6aba;
+    border-left: 25px solid transparent;
+    z-index: 15;
+}
+section#about-us h1 {
+    font-size: 35px;
+}
+.g-bg
+{
+	background-image:url(../img/g-bg.png);
+}
+section#gallery h1 {
+    color: #fff;
+    font-size: 35px;
+}
+section.services-bg h1 {
+    font-size: 35px;
+	color:#fff;
+}
+section#testimonals {
+    margin-bottom: -170px;
+}
+
+
+
+
+
+
+/*----------------select------------------------*/
+
+a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-width__auto {
+    background: #47143d;
+    border: #47143d;
+    border-radius: 6.25rem;
+    
+}
+.select-bg {
+    border: 1px solid #582c4f;
+    background: transparent;
+    width: 82%;
+    padding: 8px 4px;
+    color: #582c4f;
+    margin-bottom: 71px;
+}
+button.btn.btn-default.find-btn {
+    background-color: #ab6aba;
+    color: #fff;
+    width: 82%;
+    padding: 12px 12px;
+    font-size: 18px;
+}
