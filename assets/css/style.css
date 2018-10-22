@@ -70,7 +70,7 @@ a, .color_primary, .ui-title-inner .icon:before, .link-img__link:hover .link-img
     width: 30px;
     margin-bottom: 20px;
     border-top: 1px solid #ccc;
-	  margin-left: 100px;
+      margin-left: 100px;
 }
 .decor-1:after {
     display: block;
@@ -131,13 +131,13 @@ section.blog h1 {
 }
 button.btn.get-btn
 {
-	color: #fff;
+    color: #fff;
     background-color: rgba(0, 0, 0, 0.48);
     /* transform: skewX(16deg); */
     border-left: 3px solid rgb(88, 44, 79);
     border-radius: 5px;
-	float:right;
-	
+    float:right;
+    
 
 }
 button.btn.get-btn:hover {
@@ -289,7 +289,7 @@ section#testimonals .decor-2 {
 }
 section#contact h1 {
     font-size: 27px;
-	margin-bottom:20px;
+    margin-bottom:20px;
 }
 form.f-wrapper {
     margin: 36px 0px;
@@ -322,8 +322,8 @@ section#services h1 {
     background-image: url(../img/f-bg.png);
     padding: 60px 0px;
    /* margin: 45px 0px 0px 0px;*/
-	color:#fff;
-	text-align:center;
+    color:#fff;
+    text-align:center;
 }
 img.img-fluid.Login-img {
     margin-top: 109px;
@@ -403,7 +403,7 @@ section#gallery h1 {
 }
 section.services-bg h1 {
     font-size: 35px;
-	color:#fff;
+    color:#fff;
 }
 section#testimonals {
     margin-bottom: -170px;
@@ -413,8 +413,8 @@ section#testimonals {
 /*********Check Out************/
 
 
-	/*****************Add to cart**************/
-	
+    /*****************Add to cart**************/
+    
 .bn {
     height: 33px;
     background-image: url(../../assets/img/dot.png);
@@ -431,7 +431,7 @@ section#testimonals {
     font-size: 12px;
     text-align: center;
 }
-		.top-header {
+        .top-header {
     float: left;
     width: 100%;
 }
@@ -441,22 +441,30 @@ section#testimonals {
     padding-top: 20px;
     padding-bottom: 15px;
 }
-		.car img {
+        .car img {
     width: 38%;
     margin: 0 auto;
     text-align: center;
     display: block;
     padding-top: 0;
 }
-. find-service-bg {
-    clear: both;
-   
+/* . banner_2 {
+     clear: both;
+    
+     background-image: url(../../assets/img/servicesimg.jpg);
+     background-size: cover;
+     background-repeat: no-repeat;
+     z-index: -1;
+     background-position: center top;
+ } */ 
+
+.find-service-bg
+{
     background-image: url(../../assets/img/servicesimg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
-    background-position: center top;
-} 
+    padding: 159px 0px 48px;
+}
 .font-b1 {
     font-size: 16px;
     text-align: center;
@@ -593,7 +601,7 @@ section.product_w {
     padding:64px 0px;;
 }
 .box_3 {
-	transition: 1.1s;
+    transition: 1.1s;
 }
       
 ::placeholder { color: #ccc; 
@@ -646,7 +654,7 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
 
 
 @media only screen and (min-device-width : 1024px){
-	
+    
 }
 /*********Check Out************/
 /* .banner_2 {
@@ -673,7 +681,7 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     padding-right: 43px;
     padding-left: 23px;
     box-shadow: -1px 6px 25px 0px #888888;
-    width: 90%;
+   /*  width: 90%; */
     margin: 0 auto;
     padding-top: 26px;
   border-top: 10px solid;
@@ -743,10 +751,16 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     color: #FFF;
     text-align: center;
 }
-.cart_custom {
+section.cart_custom {
+    padding: 173px 0px;
+}
+.row.margin-bottom {
+    margin-bottom: 30px;
+}
+/* .cart_custom {
     margin-top: 30px;
     margin-bottom: 60px;
-}
+} */
 .boder {
     border-top: 1px solid #bdbcbc;
     margin-top: 10px;
@@ -779,7 +793,7 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     webkit-animation: breathing 3s ease-out infinite normal;
     animation: breathing 3s ease-out infinite normal;
     -webkit-font-smoothing: antialiased;
-    border: 3px dotted #d8525f;
+    border: 3px dotted #582c4f;
     /* width: 150px; */
     padding: 1px 0px 4px 0px;
     text-align: center;
@@ -789,7 +803,17 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     padding: 18px;
     text-decoration: none;
 }
-.proceed::before {
+.proceed a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+.proced-icon {
+    margin-right: 14px;
+    /* font-size: 14px; */
+}
+/* .proceed::before {
     background-color: #c14550;
     position: absolute;
     content: "\f178";
@@ -803,7 +827,7 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     padding-top: 7px;
     font-size: 15px;
     padding-right: 6px;
-}
+} */
 .additem a:hover {
     color: #000;
 }
@@ -1468,8 +1492,8 @@ legend {
     margin-bottom: 0px;
     padding-top: 48px;
     background-color: #f2f2f2;
-    margin-top: 151px;
-    padding-bottom: 60px;
+    /* margin-top: 151px;
+    padding-bottom: 60px; */
 }
 .time_sloat {
     margin: 0 auto;
@@ -1655,7 +1679,7 @@ a.dropdown-item.drp-clr:active {
 
 
 @media only screen and (max-width: 768px){
-	.your_order {
+    .your_order {
     float: left;
     width: 100%;
 }
@@ -1673,8 +1697,8 @@ a.dropdown-item.drp-clr:active {
     position: absolute;
     top: 32px;
 }
-	
-	/* .ts-background {
+    
+    /* .ts-background {
     bottom: 16px;
     left: 0;
     height: 50%;
@@ -1748,7 +1772,8 @@ img.logo {
 }
 .checkout-top {
     background: #f2f2f2;
-    margin-bottom: -45px;
+    /* margin-bottom: -45px; */
+    padding: 150px 0px;
 }
 .checkout-btn {
     text-align: right;
@@ -1766,7 +1791,7 @@ input.invalid {
   background-color: #ffdddd;
 }
 
-  .tab {
+.tab {
   display: none;
 }
 /* Make circles that indicate the steps of the form: */
@@ -1884,7 +1909,7 @@ button.accordion:focus {
 }
 
 button.accordion.active {
-	border-bottom:none;
+    border-bottom:none;
 }
 .accor-wrapper {
     border-bottom: 1px dotted #0000001a;
@@ -1895,7 +1920,7 @@ button.accordion.active {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-	
+    
 }
 .accor-btn {
     margin-bottom: 10px;

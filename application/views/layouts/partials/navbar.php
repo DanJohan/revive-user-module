@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg  navbar-light fixed-top ts-separate-bg-element" data-bg-color="#fff">
   <div class="container"> <a class="navbar-brand" href="#"> <img class="logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
     <!--end navbar-brand-->

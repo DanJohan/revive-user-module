@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top navbarbg-margin"data-bg-color="#fff">
   <div class="container"> <a class="navbar-brand" href="#"> <img class="logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
     <!--end navbar-brand-->
@@ -23,9 +22,13 @@
           <a class="nav-item nav-link ts-scroll" href="#">Gallery</a>
           <a class="nav-item nav-link ts-scroll" href="#">FAQs</a>
           <a class="nav-item nav-link ts-scroll" href="#">Contact us</a>
-          <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#cart">Cart</a>
+          <?php if($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service'){ ?>
+             <?php
+            $cart_count =$GLOBALS['cart_count'];
+          ?> 
+          <a id="cart-count" class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#cart">Cart<?php echo ($cart_count) ? '('.$cart_count.')':''; ?></a>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#cart">Checkout</a>
-
+        <?php }?>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
           <a class="nav-item nav-link ts-scroll" href="#">Login <i class="fa fa-user"></i></a> 
         </div>

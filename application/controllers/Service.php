@@ -44,7 +44,7 @@ class Service extends MY_Controller {
 			
 		}
 
-/*
+
 		public function getCarModels(){
 			if($this->input->post('brand_id')){
 				$brand_id = $this->input->post('brand_id');
@@ -61,7 +61,7 @@ class Service extends MY_Controller {
 					$this->renderJson(array('status'=>false,'message'=>'data not found!'));
 				}
 			}
-		}*/
+		}
 	}
 
 

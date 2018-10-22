@@ -8,12 +8,12 @@
     <!--=========Slider Text===========-->
     <div class="row align-items-center">
       <div class="col-sm-7"> 
-      <h3 class="ts-font-color__black ts-opacity__50">Revive your ride</h3>
+      <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive your ride</h3>
         <h1>All Your Activities In One Place</h1>
         <a href="<?php echo base_url();?>service/select_service" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
         <a href="#" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Service Status</a>
         </div>
-      <div class="col-sm-5 d-none d-sm-block">
+      <div class="col-sm-5 d-none d-sm-block slider-top">
         <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1"> 
           <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
           <img src="<?php echo base_url();?>assets/img/img-phone-3rd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 

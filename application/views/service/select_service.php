@@ -1,7 +1,7 @@
 <!--Crt-page-->
 <section class="select-services-banner">
   <div class="container">
-<form action="<?php echo base_url()."car/find_service"?>" method="get" >
+<form action="<?php echo base_url()."service/find_service"?>" method="get" >
   <div class="row ">
 <div class="col-sm-4">
 	<label class="modl-label">Select Brand</label><br> 
@@ -80,4 +80,4 @@
 
   });// end of ready function
 </script>
-<?php $this->widget->endblock(); ?>
+<?php $this->widget->endBlock(); ?>

@@ -8,6 +8,7 @@ class MY_Controller extends CI_Controller
   {
     parent::__construct();
     require_once APPPATH.'config/MY_constants.php';
+     $GLOBALS['cart_count'] = $this->basket->getTotalItem();
 
   }
 
