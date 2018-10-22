@@ -30,8 +30,8 @@ p.p-txt {
     <div class="col-md-3 col-sm-3 col-xs-12 full_box_23">
       <div id="datepicker"></div>
       <input type="hidden" id="datepicker2" value="<?php echo date('m/d/Y');?>" name="pick_up_date" placeholder="Selected Date" readonly>
-        <select class="time_sloat2" name="pick_up_time" id="pick_up_time">
-                <option value="0">Select Time</option>  
+        <select class="time_sloat2 validation" name="pick_up_time" id="pick_up_time">
+                <option value="">Select Time</option>  
               <option value="10-11AM">10-11AM</option>
               <option value="11-12PM">11-12PM</option>
               <option value="12-01PM">12-01PM</option>
@@ -40,8 +40,8 @@ p.p-txt {
               <option value="03-04PM">03-04PM</option>
               <option value="04-05PM">04-05PM</option>
         </select>
-          <select class="time_sloat2" name="service" id="service">
-              <option value="0">Select Service</option>
+          <select class="time_sloat2 validation" name="service" id="service">
+              <option value="">Select Service</option>
               <option value="1">Denting</option>
               <option value="2">Painting</option>
               <option value="3">Both</option>
@@ -91,7 +91,7 @@ p.p-txt {
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-12">
-              <img class="micra" src="<?php echo base_url(); ?>public/revive-car/assets/img/Micra.png" class="img-responsive">
+              <img class="micra" src="<?php echo base_url(); ?>assets/img/Micra.png" class="img-responsive">
             </div>
           <div class="col-md-3 col-sm-3 col-xs-12 full_box">
               <h2 class="user_d">Car Details</h2>
@@ -149,7 +149,7 @@ p.p-txt {
                     <input placeholder="Address" type="text" name="address" id="pickup_address" class="validation">
               </div>
               <div>
-                  <input placeholder="Landmark" type="text" name="landmark" id="landmark" class="validation">
+                  <input placeholder="Landmark" type="text" name="landmark" id="landmark">
               </div>
            </div>
         </div>
@@ -164,46 +164,17 @@ p.p-txt {
       </div>
     </div>
         <div class="col-sm-4">
-           <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-default find-btn next_C">Previous</button>
-           <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-default find-btn next_C">Next</button>
+           <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-default find-btn next_C ">Next</button>
+           <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-default find-btn next_C nextmargin">Previous</button>
         </div>
 
   </div>
+
+
 </form>
 </div>
 </div>
 
-<!--------Footer-------->
-<footer class="f-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 offset-md-2">
-        <h1 class="text-center">DOWNLOAD THE <span class="f-span">APPLICATION</span>
-          <div class="f-img-wrapper"> <img class="img-fluid f-google" src="<?php echo base_url();?>public/revive-car/assets/img/google.png"> <img class="img-fluid f-ios" src="<?php echo base_url();?>public/revive-car/assets/img/ios.png"></div>
-          <h3 class="text-center">Head Office</h3>
-        </h1>
-      </div>
-    </div>
-    <div class="row">
-      <div  class="col-sm-4"> 
-       </div>
-      <div  class="col-sm-4">
-        <div class="f-inner">
-          <h4>DELHI </h4>
-          <div class="decor-1"></div>
-          <p> 89 FIE Patparganj<br /> Industrial Area, Delhi - 110092
-          <p> 
-        </div>
-      </div>
-      <div  class="col-sm-4"> 
-      </div>
-    </div>
-  </div>
-</footer>
-<div id="back-to-top" class="footer__wrap-btn"> <a class="footer__btn" href="#">top</a> </div>
-<div class="copyright">
-  <p align="center">Copyright 2018. Design by Smart Serve Infotech Pvt. Ltd.</p>
-</div>
 <?php $this->widget->beginBlock('scripts'); ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
   
@@ -243,7 +214,7 @@ $(function() {
         document.getElementById("nextBtn").innerHTML = "Next";
       }
       // ... and run a function that displays the correct step indicator:
-     fixStepIndicator(n)
+     //fixStepIndicator(n)
     }
 
     /*function nextPrev(n) {
@@ -306,7 +277,7 @@ function validateForm() {
       }
       return valid; // return the valid status
     }
-
+/*
     function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
   var i, x = document.getElementsByClassName("step");
@@ -315,7 +286,7 @@ function validateForm() {
   }
   //... and adds the "active" class on the current step:
   x[n].className += " active";
-}
+}*/
 
 </script>
 <?php $this->widget->endBlock();?>

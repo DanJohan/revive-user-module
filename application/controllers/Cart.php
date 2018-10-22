@@ -95,8 +95,8 @@ class Cart extends MY_Controller {
 					'service_center' => '1',
 					'sub_total' => $this->input->post('subtotal'),
 					'net_pay_amount' => $this->input->post('taxtotal'),
-					'model_id' => $this->input->post('model_id'),
-					'registration_no' => $this->input->post('reg_no'),
+					//'model_id' => $this->input->post('model_id'),
+					//'registration_no' => $this->input->post('reg_no'),
 					//'car_id' => '0',
 					'channel' => '1',
 					'created_at' =>date('Y-m-d H:i:s')
@@ -153,7 +153,7 @@ class Cart extends MY_Controller {
 		}
 
 		$data['order'] = $this->OrderModel->getById($id);
-		$this->load->view('home/confirmed',$data);
+		$this->render('cart/confirmed',$data);
 
 	}
 

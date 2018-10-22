@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg  navbar-light fixed-top ts-separate-bg-element" data-bg-color="#fff">
-  <div class="container"> <a class="navbar-brand" href="#"> <img class="logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
+  <div class="container"> <a class="navbar-brand" href="<?php echo base_url();?>"> <img class="logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
     <!--end navbar-brand-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <!--end navbar-toggler-->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto"> <a class="nav-item nav-link ts-scroll active" href="<?php echo base_url()."site/index"?>">Home <span class="sr-only">(current)</span></a> 
-          <a class="nav-item nav-link ts-scroll" href="#">About us</a> 
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#about-us">About us</a> 
           <!-- <a class="nav-item nav-link ts-scroll" href="#services">Services</a> -->
           
          <li class="nav-item dropdown"> <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -19,9 +19,9 @@
           </li>
       
       
-          <a class="nav-item nav-link ts-scroll" href="#">Gallery</a>
-          <a class="nav-item nav-link ts-scroll" href="#">FAQs</a>
-          <a class="nav-item nav-link ts-scroll" href="#">Contact us</a>
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#FAQs">FAQs</a>
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
           <a class="nav-item nav-link ts-scroll" href="#">Login <i class="fa fa-user"></i></a> 
         </div>

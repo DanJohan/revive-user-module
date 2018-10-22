@@ -2439,15 +2439,21 @@ a.dropdown-item.drp-clr {
     margin-bottom: 71px;
 }
 button.btn.btn-default.find-btn {
-    background-color:#582c4f;
+    background-color: #582c4f;
     color: #fff;
-    width: 82%;
-    padding: 12px 12px;
+    /* width: 82%; */
+    padding: 8px 50px;
     font-size: 18px;
 }
 i.fa.fa-minus-circle.mins {
     color: #ccc;
     font-size: 12px;
     margin-right: 20px;
+}
+.nextmargin {
+    margin-right: 20px !important;
+}
+.steps {
+    display: none !important;
 }
 
