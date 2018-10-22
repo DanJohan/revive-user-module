@@ -9,7 +9,6 @@ class Cart extends MY_Controller {
 	}
 
 	public function add(){
-		//$this->basket->clear();
 		$is_added =false;
 		if($this->input->post('service_id')){
 			$service_id = $this->input->post('service_id');
@@ -22,18 +21,39 @@ class Cart extends MY_Controller {
 		}
 
 		if($is_added){
-			return true;
+			$total_items = $this->basket->getTotalItem();
+			$response = array('status'=>true,'total_items'=>$total_items,'message'=>'Item added successfully!');
+			//return true;
+		}else{
+			$response = array('status'=>false,'message'=>'Something went wrong!');
 		}
-		var_dump($a);
-		$allItems = $this->basket->getItems();
-		echo $this->basket->getTotalQuantity();
-		dd($allItems);
-	}
+
+		$this->renderJson($response);
+	}	
 
 	public function remove(){
 
+		$is_remove =false;
+		$service_id = $this->input->post('service_id');
+		$price = $this->input->post('price');
+		$name = $this->input->post('name');
+	// Remove item #id with attributes
+		$is_remove = $this->basket->remove($service_id);
+
+		if($is_remove){
+			$total_items = $this->basket->getTotalItem();
+			$response = array('status'=>true,'total_items'=>$total_items,'message'=>'Item removed successfully!');
+			//return true;
+		}else{
+			$response = array('status'=>false,'message'=>'Something went wrong!');
+		}
+
+		$this->renderJson($response);
 	}	
 
+	public function checkout(){
+		$this->load->view('home/checkout');
+	}
 }
 
 ?>

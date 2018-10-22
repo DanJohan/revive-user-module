@@ -13,6 +13,15 @@
 #ts-hero {
   height: 120px !important;
 }
+.banner_2 {
+    clear: both;
+    height: 64vh;
+    background-image: url(../../assets/img/servicesimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-position: center top;
+}
 </style>
 <script type="text/javascript">
  
@@ -22,7 +31,7 @@
 
 </script>
 </head>
-<body >
+<body>
 <header id="ts-hero" class="ts-full-screen">
   <nav class="navbar navbar-expand-lg navbar-light fixed-top ts-separate-bg-element" data-bg-color="#fff">
     <div class="container"> <a class="navbar-brand" href="<?php echo base_url();?>home/index"> <img class="logo" src="<?php echo base_url();?>public/revive-car/assets/img/logo.png" alt=""> </a> 
@@ -48,8 +57,8 @@
   <div class="container">
   <div class="row text-center">
   <div class="col-sm-6">
-<form action="<?php echo base_url()."car/find_service"?>" method="post" >       
-<select class="select-bg" name="brand_id" id="brand">
+<form action="<?php echo base_url()."car/find_service"?>" method="get" >       
+<select class="select-bg" id="brand">
   <option value="">Please select </option>
       <?php foreach($all_carbrand as $row):?>
          <option value="<?= $row['id']; ?>"><?= $row['brand_name']; ?></option>

@@ -44,12 +44,12 @@ a, .color_primary, .ui-title-inner .icon:before, .link-img__link:hover .link-img
 .about-bg {
     background-image: url(../img/s-bg.png);
     background-repeat: no-repeat;
-        padding: 75px 10px;
+	    padding: 75px 10px;
 }
 .services-bg
 {
-    background-image:url(../img/bg-denting.png);
-    
+	background-image:url(../img/bg-denting.png);
+	
 }
 
 
@@ -57,7 +57,7 @@ a, .color_primary, .ui-title-inner .icon:before, .link-img__link:hover .link-img
     width: 30px;
     margin-bottom: 20px;
     border-top: 1px solid #ccc;
-      margin-left: 100px;
+	  margin-left: 100px;
 }
 .decor-1:after {
     display: block;
@@ -84,8 +84,8 @@ section#services h1 {
 }
 .s-wrapper
 {
-    background-image:url(../img/prine.png);
-    padding:54px 13px;
+	background-image:url(../img/prine.png);
+	padding:54px 13px;
 }
 .left {
     float: left;
@@ -114,13 +114,13 @@ section#services h1 {
 }
 button.btn.get-btn
 {
-    color: #fff;
+	color: #fff;
     background-color: rgba(0, 0, 0, 0.48);
     /* transform: skewX(16deg); */
     border-left: 3px solid rgb(88, 44, 79);
     border-radius: 5px;
-    float:right;
-    
+	float:right;
+	
 
 }
 button.btn.get-btn:hover {
@@ -272,7 +272,7 @@ section#testimonals .decor-2 {
 }
 section#contact h1 {
     font-size: 27px;
-    margin-bottom:20px;
+	margin-bottom:20px;
 }
 form.f-wrapper {
     margin: 36px 0px;
@@ -304,8 +304,8 @@ section#services h1 {
     background-image: url(../img/f-bg.png);
     padding: 60px 0px;
 
-    color:#fff;
-    text-align:center;
+	color:#fff;
+	text-align:center;
 }
 footer.f-bg h1 {
     font-size: 47px;
@@ -373,7 +373,7 @@ section#about-us h1 {
 }
 .g-bg
 {
-    background-image:url(../img/g-bg.png);
+	background-image:url(../img/g-bg.png);
 }
 section#gallery h1 {
     color: #fff;
@@ -381,7 +381,7 @@ section#gallery h1 {
 }
 section.services-bg h1 {
     font-size: 35px;
-    color:#fff;
+	color:#fff;
 }
 section#testimonals {
     margin-bottom: -170px;
@@ -409,164 +409,4 @@ button.btn.btn-default.find-btn {
     width: 82%;
     padding: 12px 12px;
     font-size: 18px;
-}
-
-/***************Add To Cart**************/
-
-.banner_2 {
-    /* background-color: red; */
-    /* display: block; */
-    clear: both;
-    padding:150px 0px;
-    background-image: url(./assets/img/servicesimg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    background-position: center top;
-}
-.box_3 {
-    transition: 1.1s;
-}
-<!-- #ts-hero {
-    height: 120px !important;
-} -->
-
-.box {
-    background: rgb(249, 249, 249);
-    padding-bottom: 4vh;
-    padding-right: 43px;
-    padding-left: 23px;
-    box-shadow: -1px 6px 25px 0px #888888;
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 26px;
-    border-top: 10px solid;
-}
-.cart {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: #333333;
-    padding-top: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-}
-.cart {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: #333333;
-    padding-top: 10px;
-}
-.price {
-    text-align: right;
-    display: block;
-}
-.entr {
-    text-align: right;
-    display: block;
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-.entr b {
-    border: 2px dotted #5d5d5d;
-    border-top-width: 2px;
-    border-right-width: 2px;
-    border-bottom-width: 2px;
-    border-left-width: 2px;
-    border-top-style: dotted;
-    border-right-style: dotted;
-    border-bottom-style: dotted;
-    border-left-style: dotted;
-    border-top-color: rgb(93, 93, 93);
-    border-right-color: rgb(93, 93, 93);
-    border-bottom-color: rgb(93, 93, 93);
-    border-left-color: rgb(93, 93, 93);
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image-source: none;
-    border-image-slice: 100% 100% 100% 100%;
-    border-image-width: 1 1 1 1;
-    border-image-outset: 0 0 0 0;
-    border-image-repeat: stretch stretch;
-    background-color: rgba(255, 255, 255, 0);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    outline: none;
-  
-    border-radius: 5px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    margin-right: 22px;
-}
-.entr a {
-    background-color: #757575;
-    padding: 6px 20px;
-    color: #FFF;
-    text-align: center;
-}
-.cart_custom {
-    margin-top: 30px;
-    margin-bottom: 60px;
-}
-.boder {
-    border-top: 1px solid #bdbcbc;
-    margin-top: 10px;
-    margin-bottom: 13px;
-}
-.topbd {
-    border-top: 1px solid #ccc;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.custom_btn {
-    width: 83%;
-    margin: 0 auto;
-    text-align: right;
-    margin-top: 50px;
-}
-.proceed {
-    background-color: #d8525f;
-    padding: 7px 20px;
-    /* color: #fff; */
-}
-.proceed a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 14px;
-}
-.additem {
-    webkit-animation: breathing 3s ease-out infinite normal;
-    animation: breathing 3s ease-out infinite normal;
-    -webkit-font-smoothing: antialiased;
-    border: 3px dotted #d8525f;
-    /* width: 150px; */
-    padding: 1px 0px 4px 0px;
-    text-align: center;
-}
-.additem a {
-    font-size: 13px;
-    padding: 18px;
-    text-decoration: none;
-}
-.proceed::before {
-    background-color: #c14550;
-    position: absolute;
-    content: "\f178";
-    font-family: FontAwesome;
-    left: 12px;
-    color: #fff;
-    width: 12%;
-    height: 35px;
-    top: -6px;
-    bottom: 0px;
-    padding-top: 7px;
-    font-size: 15px;
-    padding-right: 6px;
-}
-.additem a:hover {
-    color: #000;
 }

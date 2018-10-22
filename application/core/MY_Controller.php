@@ -11,18 +11,10 @@ class MY_Controller extends CI_Controller
 
   }
 
-  protected function render($the_view = NULL, $template = 'admin/layout')
+  protected function render($the_view = NULL,$data=array(), $layout = 'layouts/main')
   {
-    if($template == 'json' || $this->input->is_ajax_request())
-    {
-      header('Content-Type: application/json');
-      echo json_encode($this->data);
-    }
-    else
-    {
-      $this->data['view'] = (is_null($the_view)) ? '' : $this->load->view($the_view,$this->data, TRUE);;
-      $this->load->view($template, $this->data);
-    }
+    $data['view'] = (is_null($the_view)) ? '' : $this->load->view($the_view,$data, TRUE);
+    $this->load->view($layout, $data);
   }
 
 

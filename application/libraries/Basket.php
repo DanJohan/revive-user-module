@@ -281,6 +281,7 @@ class Basket
 	 */
 	public function remove($id, $attributes = [])
 	{
+
 		if (!isset($this->items[$id])) {
 			return false;
 		}

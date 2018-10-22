@@ -24,4 +24,19 @@ class Welcome extends CI_Controller {
 		$this->load->view('home');
 		
 	}
+
+	public function update_service(){
+		for($i=1 ;$i<=15;$i++){
+			for($j=1; $j<=103; $j++){
+				$insert_data = array(
+					'service_id'=>$i,
+					'model_id' => $j,
+					'price' => mt_rand(1000,5000),
+					'created_at' =>date("Y-m-d H:i:s")
+				);
+				$insert_id = $this->db->insert('services',$insert_data);
+				echo $insert_id." inserted </br>";
+			}
+		}
+	}
 }

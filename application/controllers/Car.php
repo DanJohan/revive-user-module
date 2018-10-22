@@ -23,8 +23,9 @@ class Car extends MY_Controller {
 		public function find_service(){ //display findservice page 
 
 			$data=array();
-			$model_id = $this->input->post('model_id');
+			$model_id = $this->input->get('model_id');
 			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id);
+			//dd($data);
 			$this->load->view('home/cart',$data);
 			
 		}
