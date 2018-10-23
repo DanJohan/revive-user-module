@@ -2140,11 +2140,25 @@ span.or-text {
 }
 /********************Login*******************/
 
+
+.drplogout
+{
+    background: #8c8c8c29;
+    width: 55%;
+
+}
+a.dropdown-item.drp-clr.drplogout:hover {
+    background: #47143d;
+    COLOR: #FFF;
+}
+
 section#login {
     background-image: url(../../assets/img/login-bg.png);
-    padding-top: 55px;
+    padding-top: 126px;
     padding-bottom: 83px;
     background-size: cover;
+    /* height: 522px; */
+    background-position: 10px 76px;
 }
 .google-login-button, .facebook-login-button {
     width: 100%;
@@ -2213,9 +2227,11 @@ p.login-box-text {
 }
 section#signup {
     background-image: url(../../assets/img/login-bg.png);
-    padding-top: 18px;
-    padding-bottom: 40px;
+     padding-top: 126px;
+    padding-bottom: 83px;
     background-size: cover;
+    /* height: 522px; */
+    background-position: 10px 76px;
 }
 @media (min-width: 400px) { 
 

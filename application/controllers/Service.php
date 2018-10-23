@@ -29,13 +29,14 @@ class Service extends MY_Controller {
 		public function find_service(){ //display findservice page 
 
 			$data=array();
-			$model_id = 1;//$this->input->get('model_id');
+			$model_id = $this->input->get('model_id');
 			if(!$model_id){
 				redirect('service/select_service');
 			}
 			$this->session->set_userdata('model_id',$model_id);
 			//dd($_SESSION);
 			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
+			//dd($data['all_carimage']);
 			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id);
 			//dd($data['all_carservices']);
 			$cartItems = $this->basket->getItems();

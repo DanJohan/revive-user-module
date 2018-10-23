@@ -30,7 +30,16 @@
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="<?php echo base_url();?>cart/checkout">Checkout</a>
         <?php }?>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
-          <a class="nav-item nav-link ts-scroll" href="#">Login <i class="fa fa-user"></i></a> 
+
+          <?php if($this->session->has_userdata('name')) { ?>
+            <li class="nav-item dropdown"> <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo ($this->session->has_userdata('name'))? ucfirst($this->session->userdata('name')) : '';?></a>
+            <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
+            <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>user/logout">Logout</a>
+            </div>
+          </li>
+          <?php } else {?>
+            <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>user/login">Login<i class="fa fa-user"></i></a>
+          <?php } ?>
         </div>
       <!--end navbar-nav--> 
     </div>

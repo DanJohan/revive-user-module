@@ -90,9 +90,11 @@ p.p-txt {
 <section class="checkout tab sec2">
     <div class="container">
         <div class="row">
+          <?php foreach($car_image as $image):?>
             <div class="col-md-3 col-sm-3 col-xs-12">
-              <img class="micra" src="<?php echo base_url(); ?>assets/img/Micra.png" class="img-responsive">
+              <img class="micra" src="http://crm.reviveauto.in/uploads/admin/<?php echo $image['image'];?>" class="img-responsive">
             </div>
+             <?php endforeach; ?>
           <div class="col-md-3 col-sm-3 col-xs-12 full_box">
               <h2 class="user_d">Car Details</h2>
             
