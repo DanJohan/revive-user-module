@@ -873,7 +873,7 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
     border: 0px solid;
     padding: 25px;
     background-color: #fafafa;
-    height: 302px;
+    /* height: 302px; */
     width: 100%;
     box-shadow: 2px 2px 18px -5px black;
     margin: 10px;
@@ -884,7 +884,7 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
     border: 0px solid;
     padding: 25px;
     background-color: #fafafa;
-    height: 146px;
+  /*   height: 146px; */
     width: 100%;
     box-shadow: 2px 2px 18px -5px black;
     margin: 10px;
@@ -979,7 +979,6 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
   text-decoration: none;
 }
 .ap_ly {
-    margin-top: -22px;
     display: block;
     float: right;
 }
@@ -1119,7 +1118,7 @@ legend {
     border: 0px solid;
     padding: 10px;
     background-color: #fafafa;
-    height: 481px;
+/*     height: 481px; */
     width: 100%;
     box-shadow: 2px 2px 18px -5px black;
     margin: 10px;
@@ -1589,7 +1588,7 @@ a.dropdown-item.drp-clr:active {
     border: 0px solid;
     padding: 25px;
     background-color: #fafafa;
-    height: 250px;
+    height: auto;
     width: 100%;
     box-shadow: 2px 2px 18px -5px black;
     margin: 10px;
@@ -1772,8 +1771,7 @@ img.logo {
 }
 .checkout-top {
     background: #f2f2f2;
-    /* margin-bottom: -45px; */
-    padding: 150px 0px;
+    padding: 150px 0px 0px 100px;
 }
 .checkout-btn {
     text-align: right;
@@ -1837,13 +1835,12 @@ input.invalid {
     /* background-repeat: no-repeat; */
     /* color: #353535; */
 /*}*/
-
 .sec1 input {
-    margin: 35px 0px;
+    margin-bottom: 10px;
     width: 100%;
     display: block;
     border: none;
-    padding: 15px 0 0px;
+    padding: 15px 0 0px 0px;
   border-bottom: solid 1px #373837;
     -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
     background-position: -200px 0; 
@@ -2436,7 +2433,11 @@ a.dropdown-item.drp-clr {
     width: 82%;
     padding: 8px 4px;
     color: #582c4f;
-    margin-bottom: 71px;
+   /*  margin-bottom: 71px; */
+}
+
+.select-container{
+    padding-bottom:71px;
 }
 button.btn.btn-default.find-btn {
     background-color: #582c4f;
@@ -2455,5 +2456,8 @@ i.fa.fa-minus-circle.mins {
 }
 .steps {
     display: none !important;
+}
+.error{
+    color: red;
 }
 

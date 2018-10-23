@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Revive auto care</title>
 	<?php $this->load->view('layouts/partials/head'); ?>
 	<?php $this->widget->beginBlock('stylesheet',true); ?>
  	<?php $this->widget->endBlock(); ?>

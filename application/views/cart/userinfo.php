@@ -10,82 +10,106 @@
     padding: .2em 0.2em 0;
     display: none;
 }
+
 p.p-txt {
     font-size: 12px;
 }
 </style>
 <?php $this->widget->endBlock(); ?>
 <div class="checkout-top">
-  <div class="container">
+<div class="container">
 <form id="regForm" action="<?php echo base_url()."cart/store_order"?>" method="post"> 
 <section class="checkout tab sec1">
 <div class="container">
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12 full_box">
-        <h2 class="user_d">User Details</h2>
-        <input placeholder="Name" type="text" name="name" class="validation">
-          <input placeholder="Phone" type="text" name="phone" class="validation">
-      <input placeholder="Email" type="email" name="email" class="validation"> 
-    </div>
-    <div class="col-md-3 col-sm-3 col-xs-12 full_box_23">
-      <div id="datepicker"></div>
-      <input type="hidden" id="datepicker2" value="<?php echo date('m/d/Y');?>" name="pick_up_date" placeholder="Selected Date" readonly>
-        <select class="time_sloat2 validation" name="pick_up_time" id="pick_up_time">
-                <option value="">Select Time</option>  
-              <option value="10-11AM">10-11AM</option>
-              <option value="11-12PM">11-12PM</option>
-              <option value="12-01PM">12-01PM</option>
-              <option value="01-02PM">01-02PM</option>
-              <option value="02-03PM">02-03PM</option>
-              <option value="03-04PM">03-04PM</option>
-              <option value="04-05PM">04-05PM</option>
-        </select>
-          <select class="time_sloat2 validation" name="service" id="service">
-              <option value="">Select Service</option>
-              <option value="1">Denting</option>
-              <option value="2">Painting</option>
-              <option value="3">Both</option>
-              <option value="4">Other</option>
-        </select>
-   
-    </div>
-    <div class="col-md-5 col-sm-5 col-xs-12 full_box1 last">
-        <div class="promocode"><input placeholder="Have a promocode?" type="text" name="promocode" id="promocode"></div>
-      <span class="ap_ly"><a href="#">Apply</a></span>
-        <div class="your_order">
-                  <div class="row checkout-margin">
-            <div class="col-sm-8">
-             <span class="subt">Subtotal</span>
-          </div>
-          <div class="col-sm-4">
-                   <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
-                </div>
-                </div>
-
-        <div class="row checkout-margin">
-          <div class="col-sm-8">
-              <span class="subt3">Discount applied</span>
-            </div>
-            <div class="col-sm-4">
-               <span class="subt4">0 %</span>
-            </div>
-               
+            <h2 class="user_d">User Details</h2>
+            <input placeholder="Name" type="text" name="name" class="validation" required="">
+            <input placeholder="Phone" type="text" name="phone" class="validation" required="">
+            <input placeholder="Email" type="email" name="email" class="validation" required=""> 
         </div>
-         <p class="border-bottom"></p>
-          <div class="row">
-            <div class="col-sm-8">
-                  <span class="total1">Total</span>
+        <div class="col-md-3 col-sm-3 col-xs-12 full_box_23">
+            <div id="datepicker"></div>
+            <input type="hidden" id="datepicker2" value="<?php echo date('m/d/Y');?>" name="pick_up_date" placeholder="Selected Date" readonly required>
+            <select class="time_sloat2 validation" name="pick_up_time" id="pick_up_time" required="">
+                    <option value="">Select Time</option>  
+                  <option value="10-11AM">10-11AM</option>
+                  <option value="11-12PM">11-12PM</option>
+                  <option value="12-01PM">12-01PM</option>
+                  <option value="01-02PM">01-02PM</option>
+                  <option value="02-03PM">02-03PM</option>
+                  <option value="03-04PM">03-04PM</option>
+                  <option value="04-05PM">04-05PM</option>
+            </select>
+            <select class="time_sloat2 validation" name="service" id="service" required="">
+                  <option value="">Please select</option>
+                    <?php
+                      if($this->session->has_userdata('service_cat_id')) {
+                        $service_cat_id = $this->session->userdata('service_cat_id');
+                      }else{
+                        $service_cat_id = null;
+                      }
+                      $services = array(
+                          array('id'=>1,'name'=>'Dent repair jobs'),
+                          array('id'=>2, 'name'=>'Paint repair jobs'),
+                          array('id'=>3, 'name' => 'Full Body car paint'),
+                          array('id'=>4, 'name'=>'Exterior customisations'),
+                          array('id' =>5, 'name' =>'Interior Customisations')
+                      );
+                      foreach ($services as $index => $service) {
+                    ?>
+                      <option value="<?php echo $service['id']; ?>"  <?php echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option>
+                    <?php
+                      }
+                    ?>
+            </select>
+   
+        </div>
+    <div class="col-xs-12 col-sm-5">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 full_box1 last">
+                <div class="promocode"><input placeholder="Have a promocode?" type="text" name="promocode" id="promocode"></div>
+                <div>
+                    <span class="ap_ly"><a href="#">Apply</a></span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-12 col-sm-12 full_box1 last">
+                
+                <div class="">
+                    <div class="row checkout-margin">
+                        <div class="col-sm-8">
+                             <span class="subt">Subtotal</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
+                        </div>
+                    </div>
+
+                    <div class="row checkout-margin">
+                      <div class="col-sm-8">
+                          <span class="subt3">Discount applied</span>
+                        </div>
+                        <div class="col-sm-4">
+                           <span class="subt4">0 %</span>
+                        </div>
+                           
+                    </div>
+                    <p class="border-bottom"></p>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <span class="total1">Total</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <span class="order_p20">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
+                            <p class="p-txt">Inclusive of taxes</p>
+                      </div>
+                  </div>
               </div>
-            <div class="col-sm-4">
-              <span class="order_p20">
-            Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
-            <p class="p-txt">Inclusive of taxes</p>
-          </div>
-          </div>
-      </div>
-    </div>    
+        </div>
+        </div>
     </div>
-</div>
+    </div>   
+    </div>
 </section>
 <section class="checkout tab sec2">
     <div class="container">
@@ -102,12 +126,18 @@ p.p-txt {
             <input placeholder="Car Model" type="text" name="car_model"value="<?php echo $car_detail['model_name'];?>" readonly>
              
            
-            <input type="text" name="reg_no" placeholder="Registration Number" class="validation">
+            <input type="text" name="reg_no" placeholder="Registration Number" class="validation" required="">
       </div>
-            <div class="col-md-5 col-sm-5 col-xs-12 full_box1 last">
-        <div class="promocode"><input placeholder="Have a promocode?" type="text" name="promocode" id="promocode"></div>
-      <span class="ap_ly"><a href="#">Apply</a></span>
-        <div class="your_order">
+        <div class="col-md-5 col-sm-5 col-xs-12 ">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 full_box1 last">
+                <div class="promocode">
+                    <input placeholder="Have a promocode?" type="text" name="promocode" id="promocode">
+                    <span class="ap_ly"><a href="#">Apply</a></span>
+                </div>
+            </div>
+        <div class="col-xs-12 col-sm-12 full_box1 last">
+        <div class="">
                   <div class="row checkout-margin">
             <div class="col-sm-8">
              <span class="subt">Subtotal</span>
@@ -139,14 +169,16 @@ p.p-txt {
           </div>
           </div>
       </div>
+      </div>
+      </div>
     </div>  
 
 
 
-            <div class="col-md-6 col-sm-6 col-xs-12 full_box__1">
+    <div class="col-md-6 col-sm-6 col-xs-12 full_box__1">
               <span class="orde__r">Pickup Address</span>
               <div>
-                    <input placeholder="Address" type="text" name="address" id="pickup_address" class="validation">
+                    <input placeholder="Address" type="text" name="address" id="pickup_address" class="validation" required="">
               </div>
               <div>
                   <input placeholder="Landmark" type="text" name="landmark" id="landmark">
@@ -155,20 +187,20 @@ p.p-txt {
         </div>
     </div>
 </section>
-    <div class="row">
-      <div class="col-sm-4"></div>
-       <div class="col-sm-4">
-      <div class="steps">   <!-- Circles which indicates the steps of the form: -->
-          <span class="step"></span>
-          <span class="step"></span>
-      </div>
-    </div>
+<div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-3">
+            <div class="steps">   <!-- Circles which indicates the steps of the form: -->
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+        </div>
         <div class="col-sm-4">
            <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-default find-btn next_C ">Next</button>
            <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-default find-btn next_C nextmargin">Previous</button>
         </div>
 
-  </div>
+</div>
 
 
 </form>
@@ -176,7 +208,8 @@ p.p-txt {
 </div>
 
 <?php $this->widget->beginBlock('scripts'); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
   
 <!-- datepicker script start -->
   <script>
@@ -193,16 +226,12 @@ $(function() {
   </script>
   <!-- datepicker script end -->
   <script type="text/javascript">
- // (function(){
-    var currentTab = 0; // Current tab is set to be the first tab (0)
-    showTab(currentTab); // Display the current tab
+    var currentTab = 0;
+    showTab(currentTab);
 
     function showTab(n) {
-      // This function will display the specified tab of the form ...
       var x = document.getElementsByClassName("tab");
-      console.log(x);
       x[n].style.display = "block";
-      // ... and fix the Previous/Next buttons:
       if (n == 0) {
         document.getElementById("prevBtn").style.display = "none";
       } else {
@@ -213,41 +242,20 @@ $(function() {
       } else {
         document.getElementById("nextBtn").innerHTML = "Next";
       }
-      // ... and run a function that displays the correct step indicator:
-     //fixStepIndicator(n)
     }
 
-    /*function nextPrev(n) {
-      // This function will figure out which tab to display
-      var x = document.getElementsByClassName("tab");
-      // Exit the function if any field in the current tab is invalid:
-    //  if (n == 1 ) return false;
-      // Hide the current tab:
-      x[currentTab].style.display = "none";
-      // Increase or decrease the current tab by 1:
-      currentTab = currentTab + n;
-      // if you have reached the end of the form... :
-      if (currentTab >= x.length) {
-        //...the form gets submitted:
-        document.getElementById("regForm").submit();
-        return false;
-      }
-      // Otherwise, display the correct tab:
-      showTab(currentTab);
-    }*/
-
 function nextPrev(n) {
-  // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
-  // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
-  // Hide the current tab:
+  if (n == 1 && !validateForm()){ 
+    return false;
+  }
+
   x[currentTab].style.display = "none";
-  // Increase or decrease the current tab by 1:
+
   currentTab = currentTab + n;
-  // if you have reached the end of the form...
+
   if (currentTab >= x.length) {
-    // ... the form gets submitted:
+
     document.getElementById("regForm").submit();
     return false;
   }
@@ -255,38 +263,17 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 function validateForm() {
-      // This function deals with validation of the form fields
-      var x, y, i, valid = true;
-      x = document.getElementsByClassName("tab");
-      y = x[currentTab].getElementsByClassName("validation");
-     // y = x[currentTab].getElementById("pick_up_time");
-      //console.log(y);
-      // A loop that checks every input field in the current tab:
-      for (i = 0; i < y.length; i++) {
-        // If a field is empty...
-        if (y[i].value == "") {
-          // add an "invalid" class to the field:
-          y[i].className += " invalid";
-          // and set the current valid status to false:
-          valid = false;
-        }
-      }
-      // If the valid status is true, mark the step as finished and valid:
-      if (valid) {
-        document.getElementsByClassName("step")[currentTab].className += " finish";
-      }
-      return valid; // return the valid status
+    var v = $("#regForm").validate({
+        debug: true,
+        errorClass: "error"
+    });
+    v.form();
+    if($('#regForm').valid()){
+        return true;
+    }else{
+        return false;
     }
-/*
-    function fixStepIndicator(n) {
-  // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
-  }
-  //... and adds the "active" class on the current step:
-  x[n].className += " active";
-}*/
+}
 
 </script>
 <?php $this->widget->endBlock();?>

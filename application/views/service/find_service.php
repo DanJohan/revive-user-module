@@ -11,7 +11,6 @@
       </div>
     </section>
     <!--PRODUCT-LIST-->
-
     <section class="product_w">
        <div class="container">
           <div class="row">
@@ -21,7 +20,7 @@
            <div class="box_1">
              <h1 class="font-b1"><?php echo $carservice['name']; ?></h1>
                <span class="price1"><?php echo $carservice['price']; ?></span>
-               <div class="car-img"><a href="#"><img src="<?php echo base_url();?>public/revive-car/assets/img/<?php echo $carservice['image'];?>"></a></div>
+               <div class="car-img"><a href="#"><img src="<?php echo base_url();?>assets/img/<?php echo $carservice['image'];?>"></a></div>
                <?php if(in_array($carservice['id'],$cart_items_id)){ ?>
                <span class="btn_car"><a href="javascript:void(0)" class="cart-remove-item" data-service-id="<?php echo $carservice['id']; ?>" data-price="<?php echo $carservice['price']; ?>" data-service-name="<?php echo $carservice['name']; ?>">Remove</a></span>
              <?php } else { ?>
