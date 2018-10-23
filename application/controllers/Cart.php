@@ -58,7 +58,7 @@ class Cart extends MY_Controller {
 	public function checkout(){
 		if($this->basket->isEmpty()){
 			redirect('service/select_service');
-		}
+		} 
 		// Get all items in the cart
 		$data = array();
 		$data['allItems'] = $this->basket->getItems();
@@ -66,16 +66,18 @@ class Cart extends MY_Controller {
 		
 	}
 
-	public function userinfo(){
+	public function userinfo(){ 
+
+		if(! $this->session->has_userdata('is_user_login')){
+			redirect('user/login/?redirect_to_checkout=true');
+		}
 
 		if($this->basket->isEmpty()){
 			redirect('service/select_service');
 		}
-		/*if(! $this->session->has_userdata('is_user_login')){
-			redirect('user/login/?redirect_to_checkout=true');
-		}*/
 		$data = array();
 		$model_id= $this->session->userdata('model_id');
+		$data['car_image'] = $this->CarModelsModel->getImageByModelName($model_id);
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
 		$this->render('cart/userinfo',$data);
 	

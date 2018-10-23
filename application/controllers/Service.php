@@ -30,7 +30,9 @@ class Service extends MY_Controller {
 
 			$data=array();
 			$model_id = $this->input->get('model_id');
+
             $service_cat_id = $this->input->get('service_cat_id');
+
 			if(!$model_id){
 				redirect('service/select_service');
 			}
@@ -38,6 +40,7 @@ class Service extends MY_Controller {
             $this->session->set_userdata('service_cat_id',$service_cat_id);
 			//dd($_SESSION);
 			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
+			//dd($data['all_carimage']);
 			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id);
 			//dd($data['all_carservices']);
 			$cartItems = $this->basket->getItems();
