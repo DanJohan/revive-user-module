@@ -41,7 +41,7 @@ class Service extends MY_Controller {
 			//dd($_SESSION);
 			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
 			//dd($data['all_carimage']);
-			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id);
+			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id,$service_cat_id);
 			//dd($data['all_carservices']);
 			$cartItems = $this->basket->getItems();
 			$data['cart_items_id'] = array_keys($cartItems);

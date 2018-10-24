@@ -53,6 +53,7 @@ class Fblogin {
 
 		if(isset($accessToken)) {
 			$this->access_token= $accessToken->getValue();
+
 			return true;
 		}else{
 			return false;
