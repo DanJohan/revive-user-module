@@ -82,7 +82,7 @@ class Cart extends MY_Controller {
 		$this->render('cart/userinfo',$data);
 	
 	} 
-
+	
 	public function store_order(){
 		//dd($_POST);
 			if(count($_POST) > 0 ) { 
@@ -97,14 +97,12 @@ class Cart extends MY_Controller {
 					'service_center' => '1',
 					'sub_total' => $this->input->post('subtotal'),
 					'net_pay_amount' => $this->input->post('taxtotal'),
-					//'model_id' => $this->input->post('model_id'),
-					//'registration_no' => $this->input->post('reg_no'),
-					//'car_id' => '0',
 					'channel' => '1',
 					'created_at' =>date('Y-m-d H:i:s')
 
 
 			);
+				
 
 				$order_id = $this->OrderModel->insert($order_data);
 				if($order_id) {
@@ -117,7 +115,7 @@ class Cart extends MY_Controller {
 						'phone' => $this->input->post('phone'),
 						'address' => $this->input->post('address')."\n".$this->input->post('landmark')
 					);
-				
+					
 					$this->CustomerDetailModel->insert($customer_data);
 
 					$order_items = $this->basket->getItems();
@@ -149,6 +147,22 @@ class Cart extends MY_Controller {
 			redirect('cart/checkout');
 		}// end of store method
 
+
+
+	public function selectPaymentMethod(){
+		$data = array();
+		$this->session->set_userdata('post_data',$this->input->post());
+		//dd($this->session);
+		$this->render('cart/selectpaymentmethod',$data);
+	}
+
+
+	public function cashOnDelievery($payment_type,$payment_id=null){
+		$data = array();
+		$this->order_store($type,"cash");
+	}
+
+/*
 	public function confirmed($id){
 		if(!$id){
 			redirect('cart/checkout');
@@ -158,7 +172,7 @@ class Cart extends MY_Controller {
 		$this->render('cart/confirmed',$data);
 
 	}
-
+*/
 }
-
+ 
 ?>

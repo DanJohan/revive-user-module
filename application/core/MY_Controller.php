@@ -54,6 +54,29 @@ class MY_Controller extends CI_Controller
 
       }
   }
+
+    protected function order_store($payment_type,$payment_id){
+      $post_data = $this->session->userdata('post_data');
+      if(!empty($post_data))
+        {
+          if($type == 'cash'){
+          $model_id= $this->session->userdata('model_id');
+          dd($model_id);
+          /*if($model_id) {
+          $car_data = array(
+            'order_id' => $order_id,
+            'name' => $this->input->post('name'),
+            'email' => $this->input->post('email'),
+            'phone' => $this->input->post('phone'),
+            'address' => $this->input->post('address')."\n".$this->input->post('landmark')
+          );
+          
+          $this->CustomerDetailModel->insert($customer_data);
+*/
+         
+      }
+    }
+  }
 }
 
 

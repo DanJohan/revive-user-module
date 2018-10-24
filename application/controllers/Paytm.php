@@ -93,6 +93,7 @@ class Paytm extends MY_Controller
 		if(!empty($_POST)){
 			$status = $this->input->post('STATUS');
 			if($status=="TXN_SUCCESS"){
+
 				$order_id = $this->input->post('ORDERID');
 				$amount = $this->input->post('TXNAMOUNT');
 				$txn_id = $this->input->post('TXNID');
@@ -112,6 +113,7 @@ class Paytm extends MY_Controller
 
 					$insert_id = $this->payment->insert($insert_data);
 					if($insert_id){
+					
 						$this->InvoiceModel->update(array('paid'=>1,'payment_id'=>$insert_id),array('id'=>$transaction['invoice_id']));
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
 				         	redirect('user/billing');
