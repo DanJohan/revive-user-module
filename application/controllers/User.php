@@ -60,8 +60,7 @@ class User extends MY_Controller {
 					//redirect(base_url('user/signup'), 'refresh');
 					
 				}
-			}
-				else {
+			}else {
 						$data['msg'] = 'Missing Email/Phone Or Password';
 					 }
 
