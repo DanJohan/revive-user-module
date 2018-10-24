@@ -116,34 +116,110 @@ class User extends MY_Controller {
 			$guser=$this->gmaillogin->getUserData();
 
 			if($guser) {
-				$user_external = $this->UserExternalLoginModel->get(array('external_user_id'=>$guser->id,'external_authentication_provider'=>'1'));
-				if(!empty($user_external)){
-					$criteria['field'] = "id,name,profile_image";
-					$criteria['returnType'] = "single";
-					$criteria['conditions'] = array('id'=>$user_external['user_id']);
-					$user= $this->UserModel->search($criteria);
+				$user_external = $this->UserExternalLoginModel->get(array('external_user_id'=>$guser->getId(),'external_authentication_provider'=>'1'));
 
-					if($user){
-						$user_data = array(
-							'user_id' => $user['id'],
-							'name' => $user['name'],
-							'pic'  => $user['profile_image'],
+				if(!empty($user_external)){
+
+					$user_id= $user_external['user_id'];
+					$criteria['field'] = 'id,name,phone,profile_image,email,created_at';
+					$criteria['conditions'] = array('id'=>$user_id);
+					$criteria['returnType'] = 'single';
+					$user_data = $this->UserModel->search($criteria);
+					unset($criteria);
+
+					$user = array(
+							'user_id' => $user_data['id'],
+							'name' => $user_data['name'],
+							'pic'  => $user_data['profile_image'],
 						 	'is_user_login' => TRUE
+					);
+					
+					$this->session->set_userdata($user);
+
+					redirect(base_url('cart/userinfo'), 'refresh');
+				}else{
+					$email = $guser->getEmail();
+					$is_exists_email = $this->UserModel->checkEmailExists($email);
+					if(!empty($is_exists_email)){
+						$user_id = $is_exists_email['id'];
+						$insert_data= array(
+			 			 	'user_id' =>$user_id,
+			 			 	'name'=>$guser->getName(),
+			 			 	'email'=>$guser->getEmail(),
+			 			 	'external_authentication_provider'=>1,
+			 			 	'external_user_id'=>$guser->getId(),
+			 			 	'created_at' => date("Y-m-d H:i:s")
+		 			 	);
+
+		 			 	$this->UserExternalLoginModel->insert($insert_data);
+
+		 			 	$criteria['field'] = 'id,name,phone,profile_image,email,created_at';
+						$criteria['conditions'] = array('id'=>$user_id);
+						$criteria['returnType'] = 'single';
+						$user_data = $this->UserModel->search($criteria);
+
+						unset($criteria);
+
+						$user = array(
+								'user_id' => $user_data['id'],
+								'name' => $user_data['name'],
+								'pic'  => $user_data['profile_image'],
+							 	'is_user_login' => TRUE
 						);
-						//print_r($user_data);die;
-						$this->session->set_userdata($user_data);
+					
+						$this->session->set_userdata($user);
+
 						redirect(base_url('cart/userinfo'), 'refresh');
+					}else{
+
+						$register_data =array(
+							'name' => $guser->getName(),
+							'email'=>$guser->getEmail(),
+							'created_at'=>date("Y-m-d H:i:s")
+						);
+
+						$insert_id = $this->UserModel->insert($register_data);
+
+						if($insert_id) {
+							$insert_data= array(
+				 			 	'user_id' =>$insert_id,
+				 			 	'name'=> $guser->getName(),
+				 			 	'email'=>$guser->getEmail(),
+				 			 	'external_authentication_provider'=>1,
+				 			 	'external_user_id'=>$guser->getId(),
+				 			 	'created_at' => date("Y-m-d H:i:s")
+				 			 );
+
+							//dd($insert_data);
+							$this->UserExternalLoginModel->insert($insert_data);
+							$criteria['field'] = 'id,name,phone,profile_image,email,created_at';
+							$criteria['conditions'] = array('id'=>$insert_id);
+							$criteria['returnType'] = 'single';
+							$userInfo = $this->UserModel->search($criteria);
+							unset($criteria);
+
+							$user = array(
+								'user_id' => $userInfo['id'],
+								'name' => $userInfo['name'],
+								'pic'  => $userInfo['profile_image'],
+							 	'is_user_login' => TRUE
+							);
+						
+							$this->session->set_userdata($user);
+
+							redirect(base_url('cart/userinfo'), 'refresh');
+							
+						}else{
+							// flash message and redirect
+						}
 					}
 				}
-				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
-				//redirect('/');
 			}else{
-				$this->session->set_flashdata('error_msg','Sorry, this account is not registered with us!');
-				//redirect('/');
+				// flash message and redirect
 			}
+
 		}else{
-			$this->session->set_flashdata('error_msg','Somthing went wrong!');
-			//redirect('/');
+			// flash message and redirect
 		}
 
 		
