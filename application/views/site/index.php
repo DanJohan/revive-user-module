@@ -9,17 +9,18 @@
     <div class="row align-items-center">
       <div class="col-sm-7"> 
       <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive your ride</h3>
-        <h1>All Your Activities In One Place</h1>
-        <a href="<?php echo base_url();?>service/select_service" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
-        <a href="#" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Service Status</a>
+        <h1 class="color_white">All Your Activities<br> In One Place</h1>
+        <a href="<?php echo base_url();?>service/select_service" class=" book-now-btn">Book Now</a>
+        <a href="#" class="book-now-btn">Service Status</a>
         </div>
       <div class="col-sm-5 d-none d-sm-block slider-top">
         <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1"> 
           <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-          <img src="<?php echo base_url();?>assets/img/img-phone-3rd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
-          <img src="<?php echo base_url();?>assets/img/img-phone-4th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
-          <img src="<?php echo base_url();?>assets/img/img-phone-5th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-          <img src="<?php echo base_url();?>assets/img/img-phone-6th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial2.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial3.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+          <img src="<?php echo base_url();?>assets/img/tutorial4.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial5.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
            <img src="<?php echo base_url();?>assets/img/img-phone-2nd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">  
         </div>
       </div>
@@ -535,9 +536,6 @@
 <section id="testimonals">
   <div class="container">
     <h1 class="text-center">TESTIMONIALS</h1>
-    <div class="">
-      <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
-    </div>
     <div class="slideshow-container">
       <div class="mySlides"> <img class="img-fluid test-img center" src="<?php echo base_url();?>assets/img/test-img1.jpg">
         <h3>Jane Deo</h3>
@@ -577,40 +575,54 @@
 <!--======Contact-Start=======-->
 <section id="contact">
   <div class="container">
-    <h1 class="text-center">CONTACT US</h1>
-    <div class="">
-      <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
-    </div>
     <div class="row">
-      <div class="col-md-10 offset-md-1">
-        <form class="f-wrapper">
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text"class="form-control c-input" placeholder="First-name">
-            </div>
-            <div class="col-sm-6">
-              <input type="text" class="form-control c-input"placeholder="Last-name">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text"class="form-control c-input" placeholder="Email">
-            </div>
-            <div class="col-sm-6">
-              <input type="text" class="form-control c-input"placeholder="Subject">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <textarea class="form-control c-input "  rows="10"></textarea>
-            </div>
-          </div>
-          <button type="button" class="btn send-btn">Send</button>
-        </form>
+      <div class="col-md-4">
+        <h1>Contact Us</h1>
+        <address>
+          <figure>
+          <b>Email:</b><br><a href="#">contact@reviveauto.in</a>.<br> </figure>
+          <figure>
+          <b>Phone:</b><br>9999-645-800<br></figure>
+          <figure>
+          <b>Address:</b><br>89 FIE Patparganj Industrial Area, Delhi -<br> 110092<br></figure>
+        </address>
       </div>
+      <div class="col-md-8">
+        <h1>Contact Form</h1>
+        <form class="contact-form">
+           <div class="row">
+             <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" name="name" placeholder="Your Name">
+              </div>
+               
+             </div>
+             <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                <label>Your Email *</label>
+                <input type="text" class="form-control" name="email" placeholder="Your Email">
+              </div>
+               
+             </div>
+
+           </div>
+           <div class="row">
+             <div class="col-md-12 col-sm-12">
+              <label>Your Message *</label>
+               <textarea class="form-control " name="message" rows="5" placeholder="Your Message"></textarea>
+
+             </div>
+           </div>
+           
+        </form>
+        <button type="button" class="btn send-btn float-right">Send a Message</button>
+      </div>
+
     </div>
   </div>
 </section>
+<!--======Contact-End=======-->
 
 <?php $this->widget->beginBlock('scripts'); ?>
 
@@ -649,7 +661,7 @@ if ($('#back-to-top').length) {
 }
 
 </script>
-<!-- <script>
+<script>
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -678,9 +690,7 @@ function showSlides(n) {
 }
 
 
-</script> -->
-
-
+</script>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;

@@ -399,14 +399,13 @@ B. Helpers
     color: #fff;
 }
 
-.ts-background-is-dark .form-control {
+/* .ts-background-is-dark .form-control {
     box-shadow: 0 0 0 .125rem rgba(255, 255, 255, .2);
-}
-
-.ts-background-is-dark .form-control:focus {
+} */
+/*.ts-background-is-dark .form-control:focus {
     box-shadow: 0 0 0 .125rem rgba(255, 255, 255, .4);
 }
-
+ */
 .ts-background-is-dark .ts-btn-border-muted {
     border-color: rgba(255, 255, 255, .1);
 }
@@ -1016,7 +1015,7 @@ blockquote h6 {
   -- Buttons
 -------------------------------------------*/
 
-.btn {
+/* .btn {
     border-radius: 6.25rem;
     border-width: .125rem;
     box-shadow: .125rem .1875rem .9375rem rgba(0, 0, 0, .15);
@@ -1026,8 +1025,8 @@ blockquote h6 {
     position: relative;
     outline: none !important;
 }
-
-.btn span {
+ */
+/* .btn span {
     transition: .3s ease;
 }
 
@@ -1085,23 +1084,23 @@ blockquote h6 {
 .btn.done .status-icon {
     transform: scale(1);
     opacity: 1;
-}
+} */
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    /*background-color: darken( var(--color-primary), 20% );
-    border-color: darken( var(--color-primary), 20% );*/
+/* .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: darken( var(--color-primary), 20% );
+    border-color: darken( var(--color-primary), 20% );
     background-color: #47143d;
     border-color: #47143d;
     box-shadow: .125rem .1875rem .9375rem rgba(0, 0, 0, .3);
 }
-
-.btn-primary {
+ */
+/* .btn-primary {
     background-color: #47143d;
     border-color: #47143d;
     color: #fff;
-}
+} */
 
-.btn-primary.disabled, .btn-primary:disabled {
+/* .btn-primary.disabled, .btn-primary:disabled {
     background-color: rgb(237, 44, 66);
     border-color: rgb(237, 44, 66);
 }
@@ -1152,14 +1151,13 @@ blockquote h6 {
     font-size: .8125rem;
     padding: .375rem 1rem;
 }
-
 .btn-xs {
     font-size: .75rem;
     font-weight: 600;
     padding: .125rem .6875rem;
     text-transform: uppercase;
 }
-
+ */
 [class*="btn-outline-"] {
     box-shadow: none;
 }
@@ -1485,11 +1483,11 @@ body.has-loading-screen.loading-done:after {
     transition: 1s ease;
 }
 
-[class*="navbar-expand"] .navbar-nav .nav-link {
+/* [class*="navbar-expand"] .navbar-nav .nav-link {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
 }
-
+ */
 /*XL*/
 
 /*LG*/

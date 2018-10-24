@@ -21,7 +21,7 @@
                 <input type="password" class="form-control login-input" id="password" name="password">
               </div>
               <p> By clicking Sign Up, I agree to the Terms of Service and Privacy Policy</p>
-              <input type="submit" name="submit" class="btn btn-primary sign-in" value="signup">
+              <input type="submit" name="submit" class="sign-in" value="Signup">
           </form>
 
       </div>

@@ -36,7 +36,7 @@
               </div>
               <p class="login-box-text">Not registered yet? <a href="<?php echo base_url(); ?>user/signup">Sign Up</a></p>
               <p class="login-box-text"><a href="#">Forgot Password?</a></p>
-              <input type="submit" name="submit" class="btn btn-primary sign-in" value="sign-in">
+              <input type="submit" name="submit" class="sign-in" value="Sign-in">
           </form>
 
       </div>
