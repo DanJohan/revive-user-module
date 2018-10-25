@@ -157,9 +157,10 @@ class Cart extends MY_Controller {
 	}
 
 
-	public function cashOnDelievery($payment_type,$payment_id=null){
+	public function cashOnDelievery(){
 		$data = array();
-		$this->order_store($type,"cash");
+
+		$this->order_store('1');
 	}
 
 /*
