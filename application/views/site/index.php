@@ -75,13 +75,7 @@
 
     <div class="row">
       <div class="col-md-3">
-        <div class="offer com_box" id="offer1" data-toggle="collapse" >Fast & Committed <br>Delivery timelines </div>
-          <div id="view-btn1" class="collapse offer-bg">
-            We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
-          </div>
-      </div>
-      <div class="col-md-3">
-        <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience</div>
+        <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience &<br> Peace of mind</div>
           <div id="view-btn2" class="collapse offer-bg">
            
             <ul class="cirlist1">
@@ -92,7 +86,12 @@
             </ul>
           </div>
       </div>
-
+      <div class="col-md-3">
+        <div class="offer com_box" id="offer1" data-toggle="collapse" >Fast & Committed <br>Delivery timelines </div>
+          <div id="view-btn1" class="collapse offer-bg">
+            We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
+          </div>
+      </div>
       <div class="col-md-3">
         <div class="offer  com_box " id="offer3" data-toggle="collapse">Quality Repairs <br>and workmanship</div>
           <div id="view-btn3" class="collapse offer-bg">
@@ -155,45 +154,69 @@
               <div class="accor-wrapper">
                 <button class="accordion">Dent Repair Jobs</button>
                   <div class="panel">
-                    <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
+                    <div class="row">
+                    <div class="col-md-6">
+                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/dent-jobs.png"></div>
+                  <div class="col-md-6">
+                    <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p></div>
                     <a href="<?php echo base_url(); ?>service/select_service/1" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                     </div>
+                  </div>
               </div>
             <div class="accor-wrapper">
               <button class="accordion">Paint Repair Jobs</button>
                 <div class="panel">
-                  <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p>
-
-                   <a href="<?php echo base_url(); ?>service/select_service/2" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                  <div class="row">
+                    <div class="col-md-6">
+                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/paint.png"></div>
+                  <div class="col-md-6">
+                  <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p></div>
+                   <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                   </div>
+                </div>
             </div>
             <div class="accor-wrapper">
               <button class="accordion">Full Car Body Paint</button>
                 <div class="panel">
+                    <div class="row">
+                    <div class="col-md-6">
+                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/full-body.png"></div>
+                  <div class="col-md-6">
                   <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle’s color and spray the vehicle with the exact match - Giving out exactly the way you pictured.
-
-                </p>
-                 <a href="<?php echo base_url(); ?>service/select_service/3" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                   </p>
+                  </div>
+                 <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                  </div> 
+               </div>
               </div>
             </div>
             <div class="col-md-6">
                 <div class="accor-wrapper">
                   <button class="accordion">Exterior Customization</button>
                     <div class="panel">
-                      <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p>
-                      <a href="<?php echo base_url(); ?>service/select_service/4" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                      <div class="row">
+                      <div class="col-md-6">
+                          <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/exterior.png"></div>
+                          <div class="col-md-6">
+                          <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p></div>
+                         <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
 
                     </div>
+                  </div>
                   </div>
                   <div class="accor-wrapper">
                     <button class="accordion">Interior Customization</button>
                       <div class="panel">
-                        <p>Re-trim, upholster and customise yo ur car interior with some of the best accessories recommended by our techinicians to suit your style. The dashboard, door panels, car seats and even the steering wheel can be upholstered in a range of different materials from leather to felt and velvet feeling fabrics and a lot more.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/interior.png"></div>
+                            <div class="col-md-6">
+                            <p>Re-trim, upholster and customise yo ur car interior with some of the best accessories recommended by our techinicians to suit your style. The dashboard, door panels, car seats and even the steering wheel can be upholstered in a range of different materials from leather to felt and velvet feeling fabrics and a lot more.</p></div>
 
-                         <a href="<?php echo base_url(); ?>service/select_service/5" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                         <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                         </div>
                       </div>
+                    </div>
             </div>
 
         </div>
@@ -220,224 +243,6 @@
         <h4 class="mb-3">Cool Car Paint Jobs We Love</h4>
         <p> <a href="#">read full article</a> </p>
       </div>
-      
-      <!-- <div class="col-md-6">
-         
-       <div class="d-flex flex-row mt-2">
-            <ul class="col-md-4 nav nav-tabs nav-tabs--vertical nav-tabs--left" role="navigation">
-              <li class="nav-item">
-                <a href="#lorem" class="tab-btn nav-link active" data-toggle="tab" role="tab" aria-controls="lorem">  mdall Hatchback</a>
-              </li>
-              <li class="nav-item">
-                <a href="#ipsum" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="ipsum">Premium Hatchback  </a>
-              </li>
-              
-              <li class="nav-item">
-                <a href="#sit-amet" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="sit-amet">Compact Sedan</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#car4" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="car4">Premium Sedan</a>
-              </li>
-              <li class="nav-item">
-                <a href="#car5" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="car5">Compact SUV</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#car6" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="car6">Premium SUV  </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="#car7" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="car7">Luxury Vehicles </a>
-              </li>
-            </ul>
-
-
-            <div class="tab-content col-md-8  ">
-              <div class="tab-pane fade show active" id="lorem" role="tabpanel">
-               <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>PAINT JOBS  </th>
-                        <th>DENT JOBS (WITH PAINT)</th>
-                        <th>FULL BODY PAINT </th>
-                      
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td> 1,999  </td>
-                        <td> 2,199  </td>
-                        <td> 25,000 </td>
-                        </tr>
-                    </tbody>
-                </table>
-                  <h5 class="text-center border-text">Alto, Wagon R, Tiago, i10, Datsun GO etc
-                </h5>
-
-                    <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                      
-                  </ul>
-              </div>
-              <div class="tab-pane fade" id="ipsum" role="tabpanel">
-                  <table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>PAINT JOBS  </th>
-                        <th> DENT JOBS (WITH PAINT) </th>
-                        <th>FULL BODY PAINT </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>2,399 </td>
-                        <td>2,499 </td>
-                        <td> 28,000</td>
-                        </tr>
-                    </tbody>
-                  </table>
-                  <h5 class="text-center border-text">Swift, Baleno, i20, Polo, Micra, Figo etc
-                </h5> 
-                <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                      
-                  </ul>
-              </div>
-             
-              <div class="tab-pane fade" id="sit-amet" role="tabpanel">
-                <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>PAINT JOBS  </th>
-                          <th>DENT JOBS (WITH PAINT)</th>
-                          <th>FULL BODY PAINT </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>2,399 </td>
-                          <td> 2,699   </td>
-                          <td> 29,000</td>
-                          </tr>
-                      </tbody>
-                    </table>
-                    <h5 class="text-center border-text">Dzire, Amaze, Aspire, Ameo etc
-                  </h5> 
-                  <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                  </ul>
-              </div>
-               <div class="tab-pane fade" id="car4" role="tabpanel">
-                  <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>PAINT JOBS  </th>
-                          <th>DENT JOBS (WITH PAINT)</th>
-                          <th>FULL BODY PAINT </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>2,699 </td>
-                          <td> 2,899</td>
-                          <td>32,000</td>
-                          </tr>
-                      </tbody>
-                    </table>
-                    <h5 class="text-center border-text">Ciaz, Verna, Sunny, Vento,City etc
-                  </h5>
-                  <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                      
-                  </ul> 
-
-                
-              </div>
-
-               <div class="tab-pane fade" id="car5" role="tabpanel">
-                   <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>PAINT JOBS  </th>
-                          <th>DENT JOBS (WITH PAINT)</th>
-                          <th>FULL BODY PAINT </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>2,499</td>
-                          <td>2,799</td>
-                          <td>32,000</td>
-                          </tr>
-                      </tbody>
-                    </table>
-                    <h5 class="text-center border-text">Brezza, Ecosport, WRV, Nexon etc
-                  </h5> 
-                  <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li> 
-                  </ul>
-
-
-                
-              </div>
-
-              <div class="tab-pane fade" id="car6" role="tabpanel">
-                  <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>PAINT JOBS  </th>
-                          <th>DENT JOBS (WITH PAINT)</th>
-                          <th>FULL BODY PAINT </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>2,799</td>
-                          <td>2,999</td>
-                          <td> 35,000 </td>
-                          </tr>
-                      </tbody>
-                    </table>
-                    <h5 class="text-center border-text">S Cross, Creta, Terrano, Duster, BRV,<br> Jeep etc.</h5> 
-                  <ul class="cirlist">
-                      <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                      <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                  </ul>
-               </div>
-               <div class="tab-pane fade" id="car7" role="tabpanel">
-                 <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>PAINT JOBS  </th>
-                          <th>DENT JOBS (WITH PAINT)</th>
-                          <th>FULL BODY PAINT </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>6,999</td>
-                          <td>8,499</td>
-                          <td> 49,000 </td>
-                          </tr>
-                      </tbody>
-                    </table>
-                    <h5 class="text-center border-text">Audi, Mercedes, BMW, Jaguar Landrover, Volvo etc.
-                  </h5> 
-                    <ul class="cirlist">
-                        <li>EXTERIOR CUSTOMIZATION => Rs. 14,999/- onwards</li>
-                        <li>INTERIOR CUSTOMIZATION => RS. 14,999/- onwards</li>
-                        
-                    </ul>
-              </div>
-            </div>
-      </div>
-      </div> -->
     </div>
   </div>
 </section>
@@ -595,42 +400,6 @@
 </section>
 <!--======Testimonals-End=====-->
 <!--======Contact-Start=======-->
-<!-- <section id="contact">
-  <div class="container">
-    <h1 class="text-center">CONTACT US</h1>
-    <div class="">
-      <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
-    </div>
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
-        <form class="f-wrapper">
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text"class="form-control c-input" placeholder="First-name">
-            </div>
-            <div class="col-sm-6">
-              <input type="text" class="form-control c-input"placeholder="Last-name">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-6">
-              <input type="text"class="form-control c-input" placeholder="Email">
-            </div>
-            <div class="col-sm-6">
-              <input type="text" class="form-control c-input"placeholder="Subject">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12">
-              <textarea class="form-control c-input "  rows="10"></textarea>
-            </div>
-          </div>
-          <button type="button" class="btn send-btn">Send</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section> -->
 <section id="contact">
   <div class="container">
     <div class="row">
@@ -648,7 +417,7 @@
       <div class="col-md-8">
         <h1>Contact Form</h1>
 
-        <form class="contact-form" method="post" action = "<?php echo base_url()?>email/send_mail">
+        <form class="contact-form" id="contact_mail" method="post" action = "<?php echo base_url()?>site/contact">
            <div class="row">
              <div class="col-md-6 col-md-6">
               <div class="form-group">
@@ -669,7 +438,7 @@
            <div class="row">
              <div class="col-md-12 col-md-12">
               <label>Your Message *</label>
-               <textarea class="form-control " name="message" rows="5" placeholder="Your Message"></textarea>
+               <textarea class="form-control" name="message" rows="5" placeholder="Your Message"></textarea>
 
              </div>
            </div>
@@ -695,6 +464,22 @@
 <script src="<?php echo base_url();?>assets/js/jquery.wavify.js"></script> 
 <script src="<?php echo base_url();?>assets/js/TweenMax.min.js"></script> 
 <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+<script type="text/javascript">
+  $("#contact_mail").validate({
+      errorClass: "error",
+      rules: {
+        'name':{
+          required:true
+        },
+        'email':{
+          required:true
+        },
+        'message': {
+          required: true,
+        }
+      }
+  });
+</script>
 <script>
 if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px

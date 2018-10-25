@@ -9,7 +9,7 @@ class ServiceModel extends MY_Model {
 	    parent::__construct();
 	}
 
-	public function getServicesByModel($model_id,$cat_id=1) {
+	public function getServicesByModel($model_id,$cat_id) {
 		$this->db->select('s.id,cs.name,cs.image,s.price');
 		$this->db->from($this->table.' AS s');
 		$this->db->join('car_services AS cs','s.service_id= cs.id');

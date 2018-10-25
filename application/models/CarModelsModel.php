@@ -47,6 +47,5 @@ class CarModelsModel extends MY_Model {
 		return (!empty($result))? $result :false;
 	}
 
-		
-}
+  }
 ?>
