@@ -69,7 +69,7 @@ class Cart extends MY_Controller {
 	public function userinfo(){ 
 
 		if(! $this->session->has_userdata('is_user_login')){
-			redirect('user/login/?redirect_to_checkout=true');
+			redirect('user/login/');
 		}
 
 		if($this->basket->isEmpty()){

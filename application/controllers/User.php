@@ -17,7 +17,7 @@ class User extends MY_Controller {
 		$this->load->library('gmailLogin');
 		$data = array();
 			
-		if($this->session->has_userdata('is_user_login')){
+		if($this->session->has_userdata('is_user_login') && $this->session->userdata('is_user_login')){
 			redirect('cart/userinfo');
 		}
 		
@@ -110,6 +110,7 @@ class User extends MY_Controller {
 
 			$criteria['field'] = 'id,user_id';
 			$criteria['returnType'] = 'single';
+            unset($criteria);
 			$user_external = $this->UserExternalLoginModel->search($criteria);
 
 			if(!empty($user_external)){
