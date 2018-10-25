@@ -1,8 +1,7 @@
 <section id="login">
 	<div class="container">
 		<div class="row">
-
-        <div class="col-sm-4">
+        <div class="col-md-4 col-xs-12">
          <?php 
           if(isset($msg) && !empty($msg)) {
             ?>
@@ -36,12 +35,12 @@
               </div>
               <p class="login-box-text">Not registered yet? <a href="<?php echo base_url(); ?>user/signup">Sign Up</a></p>
               <p class="login-box-text"><a href="#">Forgot Password?</a></p>
-              <input type="submit" name="submit" class="btn btn-primary sign-in" value="sign-in">
+              <input type="submit" name="submit" class="sign-in" value="Sign-in">
           </form>
 
       </div>
-			<div class="col-sm-8">
-			
+			<div class="col-md-8 col-xs-12">
+		
 			</div>
 		
 		</div>

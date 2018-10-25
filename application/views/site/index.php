@@ -7,19 +7,20 @@
  <a href="#top"></a> <div class="container align-self-center"> 
     <!--=========Slider Text===========-->
     <div class="row align-items-center">
-      <div class="col-sm-7"> 
+      <div class="col-md-7"> 
       <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive your ride</h3>
-        <h1>All Your Activities In One Place</h1>
-        <a href="<?php echo base_url();?>service/select_service" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
-        <a href="#" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Service Status</a>
+        <h1 class="color_white">All Your Activities<br> In One Place</h1>
+        <a href="<?php echo base_url();?>service/select_service" class=" book-now-btn">Book Now</a>
+        <a href="#" class="book-now-btn">Service Status</a>
         </div>
-      <div class="col-sm-5 d-none d-sm-block slider-top">
+      <div class="col-md-5 d-none d-md-block slider-top">
         <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1"> 
           <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-          <img src="<?php echo base_url();?>assets/img/img-phone-3rd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
-          <img src="<?php echo base_url();?>assets/img/img-phone-4th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
-          <img src="<?php echo base_url();?>assets/img/img-phone-5th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-          <img src="<?php echo base_url();?>assets/img/img-phone-6th-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial2.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial3.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+          <img src="<?php echo base_url();?>assets/img/tutorial4.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
+          <img src="<?php echo base_url();?>assets/img/tutorial5.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt=""> 
            <img src="<?php echo base_url();?>assets/img/img-phone-2nd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">  
         </div>
       </div>
@@ -46,7 +47,7 @@
   <div class="container">
     <h1 class="text-center">WHAT DOES REVIVE DO</h1>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-md-6">
         <div class="vc_column-inner ">
           <div class="wpb_wrapper">
             <div class="wpb_text_column wpb_content_element  vc_custom_1537946551113">
@@ -61,7 +62,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-6"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/a-img.png"> </div>
+      <div class="col-md-6"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/a-img.png"> </div>
     </div>
   </div>
 </section>
@@ -73,13 +74,13 @@
 
 
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="offer com_box" id="offer1" data-toggle="collapse" >Fast & Committed <br>Delivery timelines </div>
           <div id="view-btn1" class="collapse offer-bg">
             We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
           </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience</div>
           <div id="view-btn2" class="collapse offer-bg">
            
@@ -92,7 +93,7 @@
           </div>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-md-3">
         <div class="offer  com_box " id="offer3" data-toggle="collapse">Quality Repairs <br>and workmanship</div>
           <div id="view-btn3" class="collapse offer-bg">
            
@@ -105,7 +106,7 @@
           </div>
       </div>
 
-     <div class="col-sm-3">
+     <div class="col-md-3">
         <div class="offer com_box" id="offer4" data-toggle="collapse">Affordable Transparent <br>Pricing</div>
 
           <div id="view-btn4" class="collapse offer-bg">
@@ -122,17 +123,21 @@
 <section  class="about-bg">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon1.png">
-        <h4 class="text-center">INTERNATIONAL STANDARD</h4>
-        <p>We bring to you state-of-the-art equipment to compliment your car. We make sure that each of the services that we offer exceed your expectation</p>
+      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon1.png">
+        <h4 class="text-center">Complete Convenience & Peace of mind</h4>
+        <!-- <p>We bring to you state-of-the-art equipment to compliment your car. We make sure that each of the services that we offer exceed your expectation</p> -->
       </div>
-      <div class="col-sm-4 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon2.png">
-        <h4 class="text-center">ON-SITE SERVICE</h4>
-        <p>Now you won’t have to spoil your day at the body shop. Revive is 100% on site service from pick up to delivery.</p>
+      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon2.png">
+        <h4 class="text-center">Fast & Committed Delivery Timelines</h4>
+        <!-- <p>Now you won’t have to spoil your day at the body shop. Revive is 100% on site service from pick up to delivery.</p> -->
       </div>
-      <div class="col-sm-4 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon3.png">
-        <h4 class="text-center">HASSLE FREE EXPERIENCE </h4>
-        <p>We brings to an amazing mobile app with great interactive interface. It’s absolutely easy from start to end. You can also track the process from your phone. </p>
+      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon3.png">
+        <h4 class="text-center">Quality Repairs & Uncompromised Workmanship</h4>
+        <!-- <p>We brings to an amazing mobile app with great interactive interface. It’s absolutely easy from start to end. You can also track the process from your phone. </p> -->
+      </div>
+       <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon4.png">
+        <h4 class="text-center">Affordable Transparent Pricing</h4>
+        <!-- <p>We brings to an amazing mobile app with great interactive interface. It’s absolutely easy from start to end. You can also track the process from your phone. </p> -->
       </div>
     </div>
 
@@ -146,7 +151,7 @@
     	<p class="text-center">When's the last time you gave your car a second look? Or ran your fingers along the hood? It's time you fell back in love with your car again. Let us transform your weathered wagon with a new coat of paint, and soon you'll be driving the car you always wanted, again.</p>
 	
         <div class="row">	
-            <div class="col-sm-6">
+            <div class="col-md-6">
               <div class="accor-wrapper">
                 <button class="accordion">Dent Repair Jobs</button>
                   <div class="panel">
@@ -172,11 +177,11 @@
                  </div> 
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
                 <div class="accor-wrapper">
                   <button class="accordion">Exterior Customization</button>
                     <div class="panel">
-                      <p>For Exterior Car Modifications, we deal in accessory and cosmetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p>
+                      <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p>
                       <a href="<?php echo base_url(); ?>service/select_service/4" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
 
                     </div>
@@ -221,7 +226,7 @@
        <div class="d-flex flex-row mt-2">
             <ul class="col-md-4 nav nav-tabs nav-tabs--vertical nav-tabs--left" role="navigation">
               <li class="nav-item">
-                <a href="#lorem" class="tab-btn nav-link active" data-toggle="tab" role="tab" aria-controls="lorem">  Small Hatchback</a>
+                <a href="#lorem" class="tab-btn nav-link active" data-toggle="tab" role="tab" aria-controls="lorem">  mdall Hatchback</a>
               </li>
               <li class="nav-item">
                 <a href="#ipsum" class="tab-btn nav-link" data-toggle="tab" role="tab" aria-controls="ipsum">Premium Hatchback  </a>
@@ -442,15 +447,15 @@
     <div class="container">
       <h1 class="text-center">GALLERY</h1>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-md-4">
            <img class="img-fluid" src="<?php echo base_url();?>assets/img/g-1.png">
 
           </div>
-          <div class="col-sm-4">
+          <div class="col-md-4">
            <img class="img-fluid" src="<?php echo base_url();?>assets/img/g-2.png">
 
           </div>
-          <div class="col-sm-4">
+          <div class="col-md-4">
            <img class="img-fluid" src="<?php echo base_url();?>assets/img/g-3.png">
           </div>
         </div>
@@ -465,7 +470,7 @@
 
 
     <div class="row">	
-      <div class="col-sm-12">
+      <div class="col-md-12">
         <div class="accor-wrapper">
             <button class="accordion">Are there any specific brand of cars that you work on?</button>
         <div class="panel">
@@ -502,22 +507,40 @@
               <p>We work with only approved supplier base, who have passed quality checks as mentioned by different auto brands. We don’t compromise on the quality one bit, and aim to provide the most convenient experience for your repair needs. Our workshops are better equipped in most cased than even authorised dealerships in terms of equipments available and technical know-how. Our prices are still far lower than then since we have optimised strictly for body repair works in terms of location, infrastructure and customer facilities.
             </p>
 
-            <h6>Can I see your facility before handing over my car for repairs?</h6>
-            <p>Absolutely, if you feel the need to. Just give us a call and we can arrange a visit at the workshop of your choice. Each of our workshop has been carefully chosen and optimised for fastest and best quality body repairs. We have taken the efforts and the pains to take care of this very aspect, so that YOU DON’T NEED TO.</p>
+         
            </div> 
         </div>
-        
+
+        <div class="accor-wrapper">
+            <button class="accordion">Can I see your facility before handing over my car for repairs?
+            </button>
+          <div class="panel">
+              <p>Absolutely, if you feel the need to. Just give us a call and we can arrange a visit at the workshop of your choice. Each of our workshop has been carefully chosen and optimised for fastest and best quality body repairs. We have taken the efforts and the pains to take care of this very aspect, so that YOU DON’T NEED TO.</p>
+
+         
+           </div> 
+        </div>
+           
+           
         
           <div class="accor-wrapper">
               <button class="accordion">Can I book directly from your website?
               </button>
             <div class="panel">
               <p>You can, but for best experience, we would strongly recommend downloading the mobile app, which is available in Play Store & App Store both. Certain functionalities like real time location tracking, latest updates, before & after photos inventory would be only available through the app.</p>
-              <h6>But I have to go to office tomorrow?</h6>
+             
+            </div> 
+          </div>
+
+          <div class="accor-wrapper">
+              <button class="accordion">But I have to go to office tomorrow?
+              </button>
+            <div class="panel">
               <p>No worries, please choose the spare-a-car option, and we would provide your own ride to you till the time we work on yours.</p>
             </div> 
           </div>
-        
+       
+              
           <div class="accor-wrapper">
               <button class="accordion">How do I trust you guys?
                 </button>
@@ -535,9 +558,6 @@
 <section id="testimonals">
   <div class="container">
     <h1 class="text-center">TESTIMONIALS</h1>
-    <div class="">
-      <div class="decor-2"><i class="icon fa fa-caret-down"></i></div>
-    </div>
     <div class="slideshow-container">
       <div class="mySlides"> <img class="img-fluid test-img center" src="<?php echo base_url();?>assets/img/test-img1.jpg">
         <h3>Jane Deo</h3>
@@ -575,7 +595,7 @@
 </section>
 <!--======Testimonals-End=====-->
 <!--======Contact-Start=======-->
-<section id="contact">
+<!-- <section id="contact">
   <div class="container">
     <h1 class="text-center">CONTACT US</h1>
     <div class="">
@@ -610,7 +630,57 @@
       </div>
     </div>
   </div>
+</section> -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Contact Us</h1>
+        <address>
+          <figure>
+          <b>Email:</b><br><a href="#">contact@reviveauto.in</a>.<br> </figure>
+          <figure>
+          <b>Phone:</b><br> +91-9899645800 <br></figure>
+          <figure>
+          <b>Address:</b><br>89 FIE Patparganj Industrial Area, Delhi –<br> 110092<br></figure>
+        </address>
+      </div>
+      <div class="col-md-8">
+        <h1>Contact Form</h1>
+        <form class="contact-form">
+           <div class="row">
+             <div class="col-md-6 col-md-6">
+              <div class="form-group">
+                <label>Your Name *</label>
+                <input type="text" class="form-control" name="name" placeholder="Your Name">
+              </div>
+               
+             </div>
+             <div class="col-md-6 col-md-6">
+              <div class="form-group">
+                <label>Your Email *</label>
+                <input type="text" class="form-control" name="email" placeholder="Your Email">
+              </div>
+               
+             </div>
+
+           </div>
+           <div class="row">
+             <div class="col-md-12 col-md-12">
+              <label>Your Message *</label>
+               <textarea class="form-control " name="message" rows="5" placeholder="Your Message"></textarea>
+
+             </div>
+           </div>
+           
+        </form>
+        <button type="button"  class="btn send-btn float-right">Send a Message</button>
+      </div>
+
+    </div>
+  </div>
 </section>
+<!--======Contact-End=======-->
 
 <?php $this->widget->beginBlock('scripts'); ?>
 
@@ -649,7 +719,7 @@ if ($('#back-to-top').length) {
 }
 
 </script>
-<!-- <script>
+<script>
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -678,9 +748,7 @@ function showSlides(n) {
 }
 
 
-</script> -->
-
-
+</script>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
