@@ -3,7 +3,7 @@
   <div class="container">
 <form id="find_service_form" action="<?php echo base_url()."service/find_service"?>" method="get" >
   <div class="row ">
-<div class="col-sm-4">
+<div class="col-md-4">
   <label class="modl-label">Select Brand</label><br> 
   <div class="select-container">    
     <select class="select-bg" id="brand" name="brand_id">
@@ -16,7 +16,7 @@
     </select>
   </div>
 </div>
-<div class="col-sm-4">
+<div class="col-md-4">
 <label class="modl-label">Select Model</label><br>
       
   <div class="select-container">
@@ -26,7 +26,7 @@
   </div>
 
 </div>
-<div class="col-sm-4">
+<div class="col-md-4">
 <label class="modl-label">Select Service</label><br>
    <div class="select-container">  
   <select class="select-bg" name="service_cat_id" id="service_id">
@@ -51,7 +51,7 @@
   
 <!--   </div>
 <div class="row"> -->
-  <div class="col-sm-12 text-center">
+  <div class="col-md-12 text-center">
        <button style="width:25%;" type="submit" class="btn btn-default find-btn">Book Now</button>
  </div>
 </div>

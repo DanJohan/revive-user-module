@@ -71,15 +71,8 @@
 <section class="uniqueoffer">
   <div class="container">
     <h1 class="text-center">Unique Offerings</h1>
-
-
-    <div class="row">
-      <div class="col-md-3">
-        <div class="offer com_box" id="offer1" data-toggle="collapse" >Fast & Committed <br>Delivery timelines </div>
-          <div id="view-btn1" class="collapse offer-bg">
-            We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
-          </div>
-      </div>
+      <div class="row">
+      
       <div class="col-md-3">
         <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience</div>
           <div id="view-btn2" class="collapse offer-bg">
@@ -90,6 +83,12 @@
                 <li>Real time location tracking and work updates</li>
                 <li> Workshop close to your location</li>
             </ul>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div class="offer com_box" id="offer1" data-toggle="collapse" >Fast & Committed <br>Delivery timelines </div>
+          <div id="view-btn1" class="collapse offer-bg">
+            We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
           </div>
       </div>
 

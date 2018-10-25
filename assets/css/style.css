@@ -4,7 +4,7 @@
 .navbar.navbarbg-margin {
     font-size: .875rem;
     font-weight: 500;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     padding-top: 2rem;
     transition: .3s ease;
 }
@@ -2178,8 +2178,14 @@ span.or-text {
     cursor: pointer;
 }
 /********************Login*******************/
-
+/* .login-wrapper
+{    
+    width: 600px;
+    margin: 0 auto;
+    text-align: left;
+} */
 section#login {
+  
     background-image: url(../../assets/img/login-bg.png);
     padding-top: 150px;
     padding-bottom: 83px;
@@ -2227,7 +2233,7 @@ p.login-box-text a {
    
 }
 a.loginBtn .fab {
-    margin-right: 4px;
+    margin-right:10px;
 }
 
 /* .form-control:focus {
@@ -2239,7 +2245,7 @@ a.loginBtn .fab {
     width: 100%;
     border-radius: inherit;
     color: #fff;
-    padding: 12px 24px;
+    padding: 8px 12px;
     font-size: 20px;
     border-color: #47143d;
     cursor: pointer;
@@ -2248,25 +2254,29 @@ p.login-box-text {
     margin-bottom: 2px;
     color: #000;
 }
-.login-form
-{
+.login-form {
     box-sizing: border-box;
-  
-    margin: 4em 0 0 0;
+    margin: 5em 0 0 0;
     padding: 3em 2em 2em 2em;
     background: #f8f8f8;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+   /*  width: 340px; */
 }
+/* .user-login-form {
+    width: 273px;
+} */
 
-.register-form
-{
-
- box-sizing: border-box;
-  
+.register-form {
+    box-sizing: border-box;
     margin: 4em 0 0 0;
     padding: 3em 2em 2em 2em;
     background: #f8f8f8;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    width: 378px;
+}
+.reg-wrapper {
+    margin: 0 auto;
+    /* width: 616px; */
 }
 section#signup {
     background-image: url(../../assets/img/login-bg.png);
@@ -2503,4 +2513,32 @@ i.fa.fa-minus-circle.mins {
 a.dropdown-item.drp-clr.drplogout:hover {
     background: #47143d;
     color: #FFF;
+}
+/**********************paytem-css 25-10-18***********/
+
+.paytem-wrapper {
+    margin: 0 auto;
+    width: 96%;
+}
+img.img-fluid.pay {
+    width: 31%;
+    margin-right: 0px;
+}
+span.pay-text {
+    font-size: 14px;
+    color: #47143d;
+    font-weight: 400;
+}
+.paytem-text {
+    border: 2px dotted #47143d;
+    width: 29%;
+    margin: 0 auto;
+    padding: 6px;
+    margin-bottom: 16px;
+    margin-top: 9px;
+    color: #47143d;
+    cursor: pointer;
+}
+.row.paytem-wrapper a {
+    text-decoration: none;
 }
