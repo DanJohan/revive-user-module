@@ -110,7 +110,7 @@ section  h1 {
 .about-bg {
     background-image: url(../img/s-bg.png);
     background-repeat: no-repeat;
-    padding: 75px 10px;
+    padding: 107px 10px;
     background-size: cover;
 }
 .services-bg {
@@ -346,7 +346,7 @@ img.img-fluid.test-img.center {
 form.f-wrapper {
     margin: 36px 0px;
 }
-.send-btn {
+.send-btn{
     background: #47143d;
     color: #fff;
     margin-top: 20px;
@@ -480,7 +480,7 @@ section#testimonals {
     margin: 0 auto;
     text-align: center;
     display: block;
-    padding-top: 0;
+    padding-top: 45px;
 }
 /* . banner_2 {
      clear: both;
@@ -1650,7 +1650,13 @@ a.dropdown-item.drp-clr:active {
     width: 100%;
     margin-top: 25px;
 }
-
+ul.customer li {
+    margin-top: 19px;
+}
+a.pay_cash:hover {
+    color: #fff;
+    text-decoration: none;
+}
 .confirm h1 {
     text-align: center;
     font-size: 23px;
@@ -2184,6 +2190,10 @@ section#login {
     color: #fff;
     text-decoration: none;
 }
+.loginBtn:hover {
+    color: #fff;
+    text-decoration: none;
+}
 .google-login-button, .facebook-login-button {
     width: 100%;
     height: 40px;
@@ -2371,14 +2381,14 @@ img.img-fluid.f-google {
 .check-btn {
     margin-top: 20px;
 }
-.about-bg {
+/* .about-bg {
     background-image: url(../img/s-bg.png);
     background-repeat: no-repeat;
     padding: 21px 10px;
     background-size: auto;
     width: 100%;
     background-size: contain;
-}
+} */
 a.dropdown-item.drp-clr {
     color: rgba(0,0,0,.5);
     font-size: 11px;
