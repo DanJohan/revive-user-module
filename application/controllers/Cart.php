@@ -159,7 +159,6 @@ class Cart extends MY_Controller {
 
 	public function cashOnDelievery(){
 		$data = array();
-
 		$this->order_store('1');
 	}
 

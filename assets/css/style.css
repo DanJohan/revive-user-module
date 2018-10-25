@@ -2542,3 +2542,26 @@ span.pay-text {
 .row.paytem-wrapper a {
     text-decoration: none;
 }
+
+/*25 oct 2018 komal*/
+ul.customer li {
+    margin-top: 19px;
+}
+
+.flash-msg {
+display: inline-block;
+position: absolute;
+top: 50px;
+right: 0px;
+z-index: 9999;
+}
+img.img-fluid.f-body {
+    width: 50%;
+    /* display: inline-block; */
+    margin-right: 18px;
+    float: left;
+}
+.panel p {
+    /* font-size: 13px; */
+    text-align: justify;
+}

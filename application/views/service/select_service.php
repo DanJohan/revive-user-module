@@ -68,7 +68,7 @@
        //alert(brand_id);
        $('#model_id').html('<option value="">Please Select Model Name</option>')
         $.ajax({
-          url:config.baseUrl+"car/getCarModels",
+          url:config.baseUrl+"service/getCarModels",
           method:"POST",
           data:{'brand_id':brand_id},
           success:function(response){

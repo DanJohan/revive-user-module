@@ -10,7 +10,7 @@
 			       <li><b class="booking">Select Payment Method</b></li>
 				   <li><a class="pay_cash" href="#">Pay via Paytm</a></li>
 				   <li class="or_i">Or</li>
-				   <a href="cart/cashOnDelievery"><li>Pay Cash on Delivery</li></a>
+				   <a href="<?php echo base_url();?>cart/cashOnDelievery"><li>Pay Cash on Delivery</li></a>
 			</ul>
 		  </div>
 		</div>
