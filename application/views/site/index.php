@@ -647,7 +647,16 @@
       </div>
       <div class="col-md-8">
         <h1>Contact Form</h1>
-        <form class="contact-form">
+         <?php 
+          if(isset($msg) && !empty($msg)) {
+            ?>
+            <div class="alert alert-danger">
+              <?php echo $msg; ?>
+            </div>
+            <?php
+          }
+          ?>
+        <form class="contact-form" method="post" action = "<?php echo base_url()?>email/send_mail">
            <div class="row">
              <div class="col-md-6 col-md-6">
               <div class="form-group">
@@ -672,9 +681,9 @@
 
              </div>
            </div>
-           
-        </form>
-        <button type="button"  class="btn send-btn float-right">Send a Message</button>
+      
+        <input type="submit" name="submit" class="btn send-btn float-right" value="Send a Message">
+</form>
       </div>
 
     </div>
