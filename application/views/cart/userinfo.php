@@ -18,7 +18,7 @@ p.p-txt {
 <?php $this->widget->endBlock(); ?>
 <div class="checkout-top">
 <div class="container">
-<form id="regForm" action="<?php echo base_url()."cart/store_order"?>" method="post"> 
+<form id="regForm" action="<?php echo base_url()."cart/selectpaymentmethod"?>" method="post"> 
 <section class="checkout tab sec1">
 <div class="container">
     <div class="row">
