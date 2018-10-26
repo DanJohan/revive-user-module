@@ -2,6 +2,7 @@
 	<div class="container">
 		<div class="row">
         <div class="col-md-4 col-xs-12">
+          <form class="login-form" method="post" id="login_form_valid" action="<?php echo base_url(); ?>user/login">
          <?php 
           if(isset($msg) && !empty($msg)) {
             ?>
@@ -11,7 +12,6 @@
             <?php
           }
           ?>
-          <form class="login-form" method="post" id="login_form_valid" action="<?php echo base_url(); ?>user/login">
             <div class="social icon">
               <div class="facebook-login-button">
                 <a class="loginBtn" href="<?php echo filter_var($fbLoginUrl, FILTER_SANITIZE_URL); ?>"><i class="fab fa-facebook-square"></i>Login with Facebook</a>
@@ -34,7 +34,7 @@
                 </label>
               </div>
               <p class="login-box-text">Not registered yet? <a href="<?php echo base_url(); ?>user/signup">Sign Up</a></p>
-              <p class="login-box-text"><a href="#">Forgot Password?</a></p>
+              <p class="login-box-text"><a href="<?php echo base_url(); ?>user/forgot_password">Forgot Password?</a></p>
               <input type="submit" name="submit" class="sign-in" value="Sign-in">
           </form>
 
@@ -57,11 +57,13 @@ if (window.location.hash =='#_=_')window.location.hash = '';
   $("#login_form_valid").validate({
       errorClass: "error",
       rules: {
-       'email':{
+       'username':{
           required:true
         },
-       'pwd': {
+       'password': {
           required: true,
+          minlength:6,
+          maxlength:20
         }
       }
   });

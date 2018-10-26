@@ -21,7 +21,7 @@
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Phone Number</label>
-                        <input type="password" class="form-control login-input" id="phone" name="phone">
+                        <input type="text" class="form-control login-input" id="phone" name="phone">
                       </div>
                     </div>
                     <div class="col-xs-12">
@@ -33,6 +33,11 @@
                     <div class="col-xs-12">
                       <p> By clicking Sign Up, I agree to the Terms of Service and Privacy Policy</p>
                       <input type="submit" name="submit" class="sign-in" value="Signup">
+                    </div>
+                    <div class="col-xs-12">
+                      <div class="text-center">Or</div>
+                      <hr>
+                      <div class="text-center"><a href="<?php echo base_url();?>user/login">Sign in</a></div>
                     </div>
                 </form>
             </div>
@@ -61,13 +66,19 @@
           required:true
         },
         'email':{
-          required:true
+          required:true,
+          email:true
         },
         'phone': {
           required: true,
+          number:true,
+          minlength:10,
+          maxlength:10
         },
         'password': {
           required: true,
+          minlength:6,
+          maxlength:20
           
         }
       }

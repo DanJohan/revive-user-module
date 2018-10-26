@@ -52,7 +52,7 @@ class User extends MY_Controller {
 				}
 			}else {
 						$data['msg'] = 'Missing Email/Phone Or Password';
-					 }
+			}
 
 		}
 		$data['fbLoginUrl'] = $this->fblogin->getLoginUrl();
@@ -259,7 +259,7 @@ class User extends MY_Controller {
 						if(!empty($userEmailInfo)){
 							$errors .= "<p>Email already exists</p>";
 						}
-						$this->session->set_flashdata('validation_error',$errors);
+						$this->session->set_flashdata('error_msg',$errors);
 						redirect(base_url('user/signup'));
 					}
 
@@ -270,5 +270,74 @@ class User extends MY_Controller {
 			$this->session->sess_destroy();
 			redirect(base_url('user/login'), 'refresh');
 	}
+
+    public function forgot_password() {
+        $data= array();
+        if($this->input->post('submit')){
+            $this->load->library('mailer');
+            $email = $this->input->post('email');
+            $user = $this->UserModel->get(array('email'=>$email));
+            if(!empty($user)) {
+                $password_hash= md5(uniqid(mt_rand(1000,9999),true));
+                $link = base_url()."user/change_password/".$user['email']."/".$password_hash;
+
+                $this->mailer->setFrom(MAIL_USERNAME);
+                $this->mailer->addAddress($user['email']);
+                $this->mailer->subject('Change password');
+                $this->mailer->body($this->load->view('user/change_password_email',array('user'=>$user,'link'=>$link),true));
+                $this->mailer->isHTML();
+                $mail=$this->mailer->send();
+                $update_data = array(
+                    'password_reset_hash'=>$password_hash
+                );
+
+                $this->UserModel->update($update_data,array('id'=>$user['id']));
+                $this->session->set_flashdata('success_msg','We check your email to reset password!');
+            }else{
+                $this->session->set_flashdata('error_msg','This email is not registered with us!');
+            }
+
+        }
+        $this->render('user/forgot_password',$data);
+    }
+
+    public function change_password($email,$hash){
+        if(!$email || !$hash){
+            return ;
+        }
+        $data=array('email'=>$email,'hash'=>$hash);
+        $this->render('user/change_password',$data);
+    }
+
+    public function change_password_post(){
+        if($this->input->post('email')){
+            $email= $this->input->post('email');
+            $hash = $this->input->post('hash');
+            $pwd = $this->input->post('pwd');
+
+            $criteria['field'] = 'id,name,email';
+
+            $criteria['conditions']=array('email'=>$email,'password_reset_hash'=>$hash);
+            $criteria['returnType'] = 'single';
+            $user = $this->UserModel->search($criteria);
+
+            if($user){
+                $user_id = $user['id'];
+                $options = [
+                    'cost' => 12,
+                ];
+
+                $update_data= array(
+                    'password'=>password_hash($pwd,PASSWORD_BCRYPT,$options)
+                );
+                $this->UserModel->update($update_data,array('id'=>$user_id));
+                $response = array('status'=>true,'message'=>'Password changed successfully!');
+            }else{
+                $response= array('status'=>false,'message'=>'User not found!');
+            }
+            
+            $this->renderJson($response);
+        }
+    }
 }
 ?>

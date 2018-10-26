@@ -69,6 +69,7 @@ class Cart extends MY_Controller {
 	public function userinfo(){ 
 
 		if(! $this->session->has_userdata('is_user_login')){
+            $this->session->set_flashdata('error_msg','Please login to continue');
 			redirect('user/login/');
 		}
 
