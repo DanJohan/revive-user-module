@@ -114,16 +114,16 @@ p.p-txt {
 <section class="checkout tab sec2">
     <div class="container">
         <div class="row">
-          <?php foreach($car_image as $image):?>
+
             <div class="col-md-3 col-sm-3 col-xs-12">
-              <img class="micra" src="http://crm.reviveauto.in/uploads/admin/<?php echo $image['image'];?>" class="img-responsive">
+              <img class="micra" src="http://crm.reviveauto.in/uploads/admin/<?php echo $car_detail['image'];?>" class="img-responsive">
             </div>
-             <?php endforeach; ?>
           <div class="col-md-3 col-sm-3 col-xs-12 full_box">
               <h2 class="user_d">Car Details</h2>
             
             <input placeholder="Car Brand" type="text" name="car_brand" value="<?php echo $car_detail['brand_name'];?>" readonly>
-            <input placeholder="Car Brand" type="hidden" name="model_id" value="<?php echo $car_detail['id'];?>" readonly>
+            <input type="hidden" name="model_id" value="<?php echo $car_detail['id'];?>" >
+            <input  type="hidden" name="brand_id" value="<?php echo $car_detail['brand_id'];?>" >
             
             <input placeholder="Car Model" type="text" name="car_model"value="<?php echo $car_detail['model_name'];?>" readonly>
              
@@ -241,7 +241,7 @@ $(function() {
         document.getElementById("prevBtn").style.display = "inline";
       }
       if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
+        document.getElementById("nextBtn").innerHTML = "Select Payment Method";
       } else {
         document.getElementById("nextBtn").innerHTML = "Next";
       }

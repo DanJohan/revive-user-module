@@ -500,7 +500,7 @@ section#testimonals {
     padding: 159px 0px 48px;
 }
 .font-b1 {
-    font-size: 16px;
+    font-size: 22px;
     text-align: center;
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
@@ -2564,4 +2564,76 @@ img.img-fluid.f-body {
 .panel p {
     /* font-size: 13px; */
     text-align: justify;
+}
+/*****************10-25-18 balwinder****************/ 
+.add_tocard {
+    padding-top: 20px;
+}
+.standed {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+.confirm__2 {
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 5px 24px -5px #888888;
+    border-top: 10px solid #47143d;
+    width: 50%;
+    margin: 0 auto;
+    border-bottom: 10px solid #47143d;
+}
+.basic {
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.price_f {
+    text-align: center;
+    display: block;
+    font-size: 25px;
+    padding-top: 0px;
+}
+.every {
+    text-align: center;
+    font-size: 14px;
+    width: 38%;
+    margin: 0 auto;
+    line-height: 18px;
+}
+
+.add__tocard a {
+    background-color: #47143d;
+    padding: 10px 30px;
+    color: #fff;
+}
+.add__tocard {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.car__img {
+    text-align: center;
+    padding-top: 100px;
+}
+.car__02 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/*25/10/2018 sheenam*/
+.extr_p{
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+.extr_pb{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 600;
 }

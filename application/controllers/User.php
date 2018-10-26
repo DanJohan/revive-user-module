@@ -110,9 +110,9 @@ class User extends MY_Controller {
 
 			$criteria['field'] = 'id,user_id';
 			$criteria['returnType'] = 'single';
-            unset($criteria);
 			$user_external = $this->UserExternalLoginModel->search($criteria);
-
+			unset($criteria);
+			
 			if(!empty($user_external)){
 
 				$user_id= $user_external['user_id'];

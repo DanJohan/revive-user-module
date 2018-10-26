@@ -71,7 +71,7 @@
 <section class="uniqueoffer">
   <div class="container">
     <h1 class="text-center">Unique Offerings</h1>
-    <div class="row">
+    <div class="row"> 
       <div class="col-md-3">
         <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience &<br> Peace of mind</div>
 
@@ -170,7 +170,7 @@
                   <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/paint.png"></div>
                   <div class="col-md-6">
                   <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p></div>
-                   <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                   <a href="<?php echo base_url(); ?>service/select_service/2" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                   </div>
                 </div>
             </div>
@@ -184,7 +184,7 @@
                   <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle’s color and spray the vehicle with the exact match - Giving out exactly the way you pictured.
                    </p>
                   </div>
-                 <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                 <a href="<?php echo base_url(); ?>service/select_service/3" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                  </div> 
                </div>
               </div>
@@ -198,7 +198,7 @@
                           <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/exterior.png"></div>
                           <div class="col-md-6">
                           <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p></div>
-                         <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                         <a href="<?php echo base_url(); ?>service/select_service/4" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
 
                     </div>
                   </div>
@@ -212,7 +212,7 @@
                             <div class="col-md-6">
                             <p>Re-trim, upholster and customise yo ur car interior with some of the best accessories recommended by our techinicians to suit your style. The dashboard, door panels, car seats and even the steering wheel can be upholstered in a range of different materials from leather to felt and velvet feeling fabrics and a lot more.</p></div>
 
-                         <a href="#" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                         <a href="<?php echo base_url(); ?>service/select_service/5" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
                         </div>
                       </div>
                     </div>

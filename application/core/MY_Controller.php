@@ -56,21 +56,85 @@ class MY_Controller extends CI_Controller
   }
 
     protected function order_store($payment_type,$payment_id=null){
+      $this->load->library('sequence');
       $post_data = $this->session->userdata('post_data');
-     // dd($post_data);
       if(!empty($post_data))
         {
-          $model_id= $this->session->userdata('model_id');
-          $data =array();
-          $data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
-          dd($data);
+          $car_data = array(
+            'user_id'=>$this->session->userdata('user_id'),
+            'brand_id'=>$post_data['brand_id'],
+            'model_id'=>$post_data['model_id'],
+            'registration_no'=>$post_data['reg_no'],
+          );
+          $car_id = $this->CarModel->insert($car_data);
          
-          $this->CarModelsModel->insert($car_data);
+          if($car_id) {
+            $location = $this->session->userdata('location');
+            //dd($location);
+            if($location == "delhi"){
+              $service_center = '1';
+            }
+            else if($location == "noida"){
+              $service_center = '2';
+            }
+           else if($location == "gurugram"){
+              $service_center = '3';
+            }
+            
+            $this->sequence->createSequence('order');
+            $sequence = $this->sequence->getNextSequence();
+            $order_data = array(
+              'order_no' =>$sequence['sequence'],
+              'hash'=> md5(uniqid(true)),
+              'pick_up_date' => date('Y-m-d',strtotime($post_data['pick_up_date'])),
+              'pick_up_time' => $post_data['pick_up_time'],
+              'service_type' => $post_data['service'],
+              'service_center' => $service_center,
+              'sub_total' => $post_data['subtotal'],
+              'net_pay_amount' => $post_data['taxtotal'],
+              'channel' => '1',
+              'user_id'=> $this->session->userdata('user_id'),
+              'car_id'=>  $car_id,
+              'payment_type_id' => $payment_type,
+              'paid' => '0',
+              'created_at' =>date('Y-m-d H:i:s')
+          );
+        
+          $order_id = $this->OrderModel->insert($order_data);
+          $this->sequence->updateSequence();
+          $customer_data = array(
+            'order_id' => $order_id,
+            'name'=>$post_data['name'],
+            'email'=>$post_data['email'],
+            'phone'=>$post_data['phone'],
+            'address'=>$post_data['address']."\n".$post_data['landmark'],
+           );
 
-         
-    }
+         $this->CustomerDetailModel->insert($customer_data);
+         $order_items = $this->basket->getItems();
+          if(!empty($order_items)) {
+            foreach ($order_items as $index => $order_item) {
+              foreach($order_item as $item) {
+                $order_item_data[] = array(
+                    'order_id'=>$order_id,
+                    'service_id'=> $item['id'],
+                    'name' => $item['attributes']['service'],
+                    'price' =>$item['attributes']['price'],
+                );
+              }
+            }
+
+            if(!empty($order_item_data)){
+              $this->OrderItemModel->insert_batch($order_item_data);
+            }
+          }
+
+          $order_detail = $this->OrderModel->getById($order_id);
+          $this->basket->clear();
+          redirect('cart/confirmed/'.$order_detail['id']);
+
+        }
+      }
+    }  
   }
-}
-
-
 ?>
