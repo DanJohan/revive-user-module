@@ -32,7 +32,7 @@ class Service extends MY_Controller {
 			$model_id = $this->input->get('model_id');
 
             $service_cat_id = $this->input->get('service_cat_id');
-
+            $data['service_cat_id'] = $service_cat_id;
 			if(!$model_id){
 				redirect('service/select_service');
 			}

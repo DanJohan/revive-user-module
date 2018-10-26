@@ -11,14 +11,12 @@
          <li class="nav-item dropdown"> <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
             <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
             <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/1">Dent Repair Jobs</a>
-             <a class="dropdown-item drp-clr" href="#"">Paint Repair Jobs</a>
-              <a class="dropdown-item drp-clr" href="#">Full Body Car Paint</a> 
-              <a class="dropdown-item drp-clr" href="#"> Exterior Customisations</a>
-               <a class="dropdown-item drp-clr" href="#">Interior Customisations</a>
+             <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/2">Paint Repair Jobs</a>
+              <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/3">Full Body Car Paint</a> 
+              <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/4"> Exterior Customisations</a>
+               <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/5">Interior Customisations</a>
               </div>
           </li>
-      
-      
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#FAQs">FAQs</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>

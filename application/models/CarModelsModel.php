@@ -38,7 +38,7 @@ class CarModelsModel extends MY_Model {
 	}
 
 	public function getCarByModelId($model_id) {
-		$this->db->select('m.id,m.model_name, b.brand_name');
+		$this->db->select('m.id,m.brand_id,m.image,m.model_name, b.brand_name');
 		$this->db->from($this->table.' AS m');
 		$this->db->join('car_brands AS b','m.brand_id = b.id');
 		$this->db->where('m.id',$model_id);

@@ -5,11 +5,11 @@ class Cart extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->library('sequence');
 		$this->load->model('OrderModel');
 		$this->load->model('OrderItemModel');
 		$this->load->model('CustomerDetailModel');
 		$this->load->model('CarModelsModel');
+		$this->load->model('CarModel');
 	}
 
 	public function add(){
@@ -77,13 +77,15 @@ class Cart extends MY_Controller {
 		}
 		$data = array();
 		$model_id= $this->session->userdata('model_id');
-		$data['car_image'] = $this->CarModelsModel->getImageByModelName($model_id);
+		//$data['car_image'] = $this->CarModelsModel->getImageByModelName($model_id);
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+		//dd($data);
 		$this->render('cart/userinfo',$data);
 	
 	} 
 	
 	public function store_order(){
+
 		//dd($_POST);
 			if(count($_POST) > 0 ) { 
 				$this->sequence->createSequence('order');
@@ -162,7 +164,7 @@ class Cart extends MY_Controller {
 		$this->order_store('1');
 	}
 
-/*
+
 	public function confirmed($id){
 		if(!$id){
 			redirect('cart/checkout');
@@ -172,5 +174,5 @@ class Cart extends MY_Controller {
 		$this->render('cart/confirmed',$data);
 
 	}
-*/
+
 }
