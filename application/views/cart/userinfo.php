@@ -219,7 +219,8 @@ p.p-txt {
   $('#datepicker').datepicker({
     onSelect: function(dateText) {
         $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
-    }
+    },
+    minDate:0
   });
 });
 $(function() {
