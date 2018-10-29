@@ -55,7 +55,7 @@ class MY_Controller extends CI_Controller
       }
   }
 
-    protected function order_store($payment_type,$payment_id=null){
+  protected function order_store($payment_type,$payment_id=null){
       $this->load->library('sequence');
       $post_data = $this->session->userdata('post_data');
       if(!empty($post_data))

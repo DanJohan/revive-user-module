@@ -17,6 +17,7 @@ class ServiceModel extends MY_Model {
 		$this->db->join('services_category AS sc', 's.category_id=sc.id');
 		$this->db->where('s.model_id',$model_id);
 		$this->db->where('s.category_id',$cat_id);
+		$this->db->order_by('s.service_id', 'asc');
 		$query = $this->db->get();
 		$result = $query->result_array();
 		//$this->db->last_query();die;

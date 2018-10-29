@@ -190,14 +190,14 @@ p.p-txt {
     </div>
 </section>
 <div class="row">
-        <div class="col-sm-4"></div>
+        <div class="col-sm-2"></div>
         <div class="col-sm-3">
             <div class="steps">   <!-- Circles which indicates the steps of the form: -->
               <span class="step"></span>
               <span class="step"></span>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-6">
            <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-default find-btn next_C ">Next</button>
            <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-default find-btn next_C nextmargin">Previous</button>
         </div>
@@ -241,7 +241,7 @@ $(function() {
         document.getElementById("prevBtn").style.display = "inline";
       }
       if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Select Payment Method";
+        document.getElementById("nextBtn").innerHTML = "Pay Now";
       } else {
         document.getElementById("nextBtn").innerHTML = "Next";
       }

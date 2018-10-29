@@ -68,9 +68,9 @@
 </section>
 <!--===========Abour-End===============-->
 <!--=========uniqueoffer-Start==========-->  
-<section class="uniqueoffer">
+<!-- <section class="uniqueoffer">
   <div class="container">
-    <h1 class="text-center">Unique Offerings</h1>
+    
     <div class="row"> 
       <div class="col-md-3">
         <div class="offer com_box" id="offer2" data-toggle="collapse">Complete convenience &<br> Peace of mind</div>
@@ -115,11 +115,12 @@
 
     </div>
   </div>
-</section>
+</section> -->
 <!--=========uniqueoffer-End==========--> 
 <!--=========About-bg-Start==========--> 
 <section  class="about-bg">
   <div class="container">
+    <h1 class="text-center">Unique Offerings</h1>
     <div class="row">
       <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon1.png">
         <h4 class="text-center">Complete Convenience & Peace of mind</h4>

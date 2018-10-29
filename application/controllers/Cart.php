@@ -176,4 +176,29 @@ class Cart extends MY_Controller {
 
 	}
 
+	public function my_order(){
+		$data = array();
+		$user_id = $this->session->userdata('user_id');
+		$data['my_order'] = $this->OrderModel->getByUserId($user_id);
+		$this->render('cart/my_order',$data);
+	}
+	public function order_detail($id){
+		$data = array();
+		$user_id = $this->session->userdata('user_id');
+		$order_details = $this->OrderModel->getDetailByOrderId($id);
+
+		$order_item_keys= array('item_id','name','price');
+		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
+		$order_details = $order_details[0];
+		foreach($order_item_keys as $key) {
+		   unset($order_details[$key]);
+		}
+
+		$order_details['order_items'] = $order_items;
+		$data['orderdetails'] =$order_details;
+
+		$this->render('cart/order_detail',$data);
+	}
+
 }
+?>

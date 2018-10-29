@@ -2637,3 +2637,169 @@ img.img-fluid.f-body {
     margin-bottom: 0px;
     font-weight: 600;
 }
+.view_order_btn {
+    background: #47143d;
+    width: 30%;
+    border-radius: inherit;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-color: #47143d;
+    margin-left:35%;
+    cursor: pointer;
+}
+
+/******************ORDER-LIST*************************/
+
+.order__id {
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #6d6d6d;
+}
+.order__list {
+    width: 100%;
+}
+.order__list {
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 15px;
+    box-shadow: 0px 4px 8px 1px #ccc;
+    border-top: 3px solid #444;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.order__list3 {
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 15px;
+    
+}
+.order__list4 {
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 20px 10px;
+    border-top: 1px solid #ccc;
+}
+.order__list5 {
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 0;
+    border-bottom: 1px solid #525252;
+    padding-bottom: 20px;
+}
+.order__list2 {
+    width: 100%;
+    background-color: white;
+    float: left;
+    padding: 15px;
+    /* box-shadow: 0px 4px 8px 1px #ccc; */
+    /* border-top: 3px solid #444; */
+    margin-bottom: 5px;
+    margin-top: 0;
+    border-bottom: 1px solid #d8d8d8;
+    /* border-top: 1px solid #d8d8d8; */
+}
+.booking__date {
+    width: 50%;
+    text-align: center;
+    float: left;
+    color: #6d6d6d;
+    font-size: 15px;
+    font-weight: bold;
+}
+.car__D {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid #5d5d5d;
+    width: 14%;
+    margin: 0px auto;
+}
+
+.order__time a {
+    text-align: center;
+    display: block;
+    background-color: red;
+    width: 100%;
+    margin: 0px auto;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+}
+.order__time {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 28px;
+}
+.top__list {
+    padding-top: 200px;
+    background-color: #f1f1f1;
+}
+
+.pend__ing {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+.maruti_auto {
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #636363;
+}
+
+.pend__ing a {
+    border: 1px solid #2b2b2b;
+    padding: 10px 30px;
+}
+.appontment {
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.appontment li {
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #757575;
+}
+.open__Details2 {
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+.open__Details2 a {
+    font-size: 15px;
+    font-weight: bold;
+    color: #484848;
+    border: 1px solid;
+    padding: 10px 20px;
+}
+
+/**********Responsive*************/
+@media only screen and (max-width:768px){
+    
+    .car__D {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid #5d5d5d;
+    width: 77%;
+    margin: 0px auto;
+}
+}

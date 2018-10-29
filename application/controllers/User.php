@@ -292,7 +292,7 @@ class User extends MY_Controller {
                 );
 
                 $this->UserModel->update($update_data,array('id'=>$user['id']));
-                $this->session->set_flashdata('success_msg','We check your email to reset password!');
+                $this->session->set_flashdata('success_msg','Please check your email to reset password!'); 
             }else{
                 $this->session->set_flashdata('error_msg','This email is not registered with us!');
             }

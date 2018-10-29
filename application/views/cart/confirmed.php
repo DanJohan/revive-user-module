@@ -12,25 +12,9 @@
 				   <li><b style="font-size:16px;color:#8c8b8b;font-weight:800;">Order ID: <?php echo $order['order_no']; ?></b></li>
 				   <li>05:49PM 09 Oct 2018</li>
 			</ul>
-			<!-- <h6 class="text-center paytem-text">Select Paytem Method</h6>
-				<div class="row paytem-wrapper">
-				<div class="col-md-4">
-			 		<a href="#">
-						<img class="img-fluid pay" src="<?php //echo base_url();?>assets/img/paytem.png">
-						
-			 			<span class="pay-text">Pay via Paytm</span>
-					</a>
-				</div>
-				<div class="col-md-4">
-			 		<a href="#"><img class="img-fluid pay" src="<?php //echo base_url();?>assets/img/cash.png"><span class="pay-text">Pay Cash on Delivery</span>
-					</a>
-				</div>
-				<div class="col-md-4">
-			 	<a href="#"><img class="img-fluid pay" src="<?php //echo base_url();?>assets/img/m-card.png"> <span class="pay-text">Pay via  Debit or Visa Card </span>
-					</a>
-				</div>
-			</div> -->
-		  </div>
+			<br>
+			<a href="<?php echo base_url()?>cart/my_order"><button type="button" class="view_order_btn">View Order</button></a>
+		 </div>
 		</div>
 	 </div>
 	
