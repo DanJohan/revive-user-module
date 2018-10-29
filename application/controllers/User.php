@@ -239,8 +239,9 @@ class User extends MY_Controller {
 							'phone' => ($this->input->post('phone')) ? '+91'.$this->input->post('phone') : '',
 							'created_at' => date('Y-m-d H:i:s')
 						);
-						
+
 						$result = $this->UserModel->insert($data);
+						$this->session->set_userdata($data);
 						
 						if($result){
 							$this->session->set_flashdata('success_msg', 'User is Added Successfully!');

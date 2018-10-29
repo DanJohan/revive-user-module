@@ -11,7 +11,7 @@
       <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive your ride</h3>
         <h1 class="color_white">All Your Activities<br> In One Place</h1>
         <a href="<?php echo base_url();?>service/select_service" class=" book-now-btn">Book Now</a>
-        <a href="#" class="book-now-btn">Service Status</a>
+        <a href="<?php echo base_url();?>user/login" class="book-now-btn">Service Status</a>
         </div>
       <div class="col-md-5 d-none d-md-block slider-top">
         <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1"> 

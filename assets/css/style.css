@@ -2501,7 +2501,7 @@ i.fa.fa-minus-circle.mins {
 .drplogout
 {
     background: #8c8c8c29;
-    width: 55%;
+    /*width: 55%;*/
 
 }
 a.dropdown-item.drp-clr.drplogout:hover {
@@ -2799,6 +2799,7 @@ img.img-fluid.f-body {
 }
 
 
+
 /*****************************About bg tooltip2  29-10-18 komal*******************/
  
 .tooltip2 {
@@ -2879,4 +2880,5 @@ h1.text-center.unique-head {
     border: 1px solid #47143d;
     background: #fcfdfd url(images/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x;
     color: #222222;
+
 }

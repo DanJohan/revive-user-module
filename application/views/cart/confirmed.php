@@ -13,7 +13,7 @@
 				   <li>05:49PM 09 Oct 2018</li>
 			</ul>
 			<br>
-			<a href="<?php echo base_url()?>cart/my_order"><button type="button" class="view_order_btn">View Order</button></a>
+			<a href="<?php echo base_url();?>cart/order_detail/<?php echo $order['id'];?>"><button type="button" class="view_order_btn">View Order</button></a>
 		 </div>
 		</div>
 	 </div>
