@@ -2,7 +2,8 @@
 <section class="top__list">
   <div class="container">
      <div class="row">
-     	 <?php foreach($my_order as $order):?>
+     	<?php if (!empty($my_order)){ ?>
+     	 <?php foreach($my_order as $order){?>
 	   <div class="col-sm-12 col-md-12 col-xs-12">
 		   <div class="order__list3">
 		   	<input type ="hidden" value="<?php echo $order['id'];?>">
@@ -24,7 +25,10 @@
 			  <div class="open__Details2"><a href="<?php echo base_url();?>cart/order_detail/<?php echo $order['id'];?>">Open Details</a></div>
 		   </div>
 	   </div>
-	  <?php endforeach; ?> 
+	  <?php }
+			}else {
+	  		 echo "NO ORDER FOUND"; }
+	   ?> 
     </div>
   </div>
 </section>

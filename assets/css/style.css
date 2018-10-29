@@ -2507,7 +2507,7 @@ i.fa.fa-minus-circle.mins {
 .drplogout
 {
     background: #8c8c8c29;
-    width: 55%;
+    /*width: 55%;*/
 
 }
 a.dropdown-item.drp-clr.drplogout:hover {
@@ -2802,4 +2802,13 @@ img.img-fluid.f-body {
     width: 77%;
     margin: 0px auto;
 }
+}
+/*29/10/2018 sheenam cart popup*/
+.mdl-style {
+    position: relative;
+    left: 10%;
+    right: 10%;
+    top: 160px;
+    padding: 12px;
+    width: 80%;
 }

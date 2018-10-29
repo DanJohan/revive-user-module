@@ -165,7 +165,10 @@ class Cart extends MY_Controller {
 		$this->order_store('1');
 	}
 
-
+	public function paytm(){
+		$data = array();
+		$this->order_store('3');
+	}
 	public function confirmed($id){
 		if(!$id){
 			redirect('cart/checkout');
@@ -195,8 +198,9 @@ class Cart extends MY_Controller {
 		}
 
 		$order_details['order_items'] = $order_items;
+		//dd($order_details);
 		$data['orderdetails'] =$order_details;
-
+		//dd($data);
 		$this->render('cart/order_detail',$data);
 	}
 

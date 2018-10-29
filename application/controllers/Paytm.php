@@ -8,8 +8,8 @@ class Paytm extends MY_Controller
 	        if(!$this->session->has_userdata('is_user_login')){
 			redirect('user/login');
 		    }
-	        $this->load->model('TransactionModel');
-	        $this->load->model('InvoiceModel');
+	       // $this->load->model('TransactionModel');
+	        //$this->load->model('InvoiceModel');
 	        $this->load->model('PaymentModel', 'payment');
 	        //$this->load->model('PaytmModel');
 	    }
@@ -36,11 +36,11 @@ class Paytm extends MY_Controller
 		 $TXN_AMOUNT = $_POST["TXN_AMOUNT"];
 		 $EMAIL = $_POST['EMAIL'];
 		 $MOBILE_NO = str_replace('+', '',$_POST['MOBILE_NO']);
-		 $this->TransactionModel->insert(array(
+		 /*$this->TransactionModel->insert(array(
 		 	'transaction_id'=>$ORDER_ID,
 		 	'invoice_id'=>$INVOICE_ID,
 		 	'created_at'=>date('Y-m-d H:i:s')
-		 ));
+		 ));*/
 		// Create an array having all required parameters for creating checksum.
 		 $paramList["MID"] = PAYTM_MERCHANT_MID;
 		 $paramList["ORDER_ID"] = $ORDER_ID;

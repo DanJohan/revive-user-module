@@ -24,9 +24,9 @@ p.p-txt {
     <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12 full_box">
             <h2 class="user_d">User Details</h2>
-            <input placeholder="Name" type="text" name="name" class="validation" required="">
-            <input placeholder="Phone" type="text" name="phone" class="validation" required="">
-            <input placeholder="Email" type="email" name="email" class="validation" required=""> 
+            <input placeholder="Name" type="text" name="name" value="<?php echo $this->session->userdata('name')?>" class="validation" required="">
+            <input placeholder="Phone" type="text" name="phone" value="<?php echo $this->session->userdata('phone')?>" class="validation" required="">
+            <input placeholder="Email" type="email" name="email" value="<?php echo $this->session->userdata('email')?>" class="validation" required=""> 
         </div>
         <div class="col-md-3 col-sm-3 col-xs-12 full_box_23">
             <div id="datepicker"></div>
@@ -129,51 +129,51 @@ p.p-txt {
              
            
             <input type="text" name="reg_no" placeholder="Registration Number" class="validation" required="">
-      </div>
-        <div class="col-md-5 col-sm-5 col-xs-12 ">
-        <div class="row">
+          </div>
+          <div class="col-md-5 col-sm-5 col-xs-12 ">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 full_box1 last">
+                    <div class="promocode">
+                        <input placeholder="Have a promocode?" type="text" name="promocode" id="promocode">
+                        <span class="ap_ly"><a href="#">Apply</a></span>
+                    </div>
+                </div>
             <div class="col-xs-12 col-sm-12 full_box1 last">
-                <div class="promocode">
-                    <input placeholder="Have a promocode?" type="text" name="promocode" id="promocode">
-                    <span class="ap_ly"><a href="#">Apply</a></span>
-                </div>
-            </div>
-        <div class="col-xs-12 col-sm-12 full_box1 last">
-        <div class="">
-                  <div class="row checkout-margin">
-            <div class="col-sm-8">
-             <span class="subt">Subtotal</span>
-          </div>
-          <div class="col-sm-4">
-                   <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
-                   <input class="subt2" type="hidden" name="subtotal" value="<?php echo $this->basket->getAttributeTotal('price'); ?>">
-                </div>
-                </div>
-
-        <div class="row checkout-margin">
-          <div class="col-sm-8">
-              <span class="subt3">Discount applied</span>
-            </div>
-            <div class="col-sm-4">
-               <span class="subt4">0 %</span>
-            </div>
-               
-        </div>
-         <p class="border-bottom"></p>
-          <div class="row">
-            <div class="col-sm-8">
-                  <span class="total1">Total</span>
+            <div class="">
+                      <div class="row checkout-margin">
+                <div class="col-sm-8">
+                 <span class="subt">Subtotal</span>
               </div>
-            <div class="col-sm-4">
-           <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
-                   <input class="subt2" type="hidden" name="taxtotal" value="<?php echo $this->basket->getAttributeTotal('price'); ?>">
-            <p class="p-txt">Inclusive of taxes</p>
+              <div class="col-sm-4">
+                       <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
+                       <input class="subt2" type="hidden" name="subtotal" value="<?php echo $this->basket->getAttributeTotal('price'); ?>">
+                    </div>
+                    </div>
+
+            <div class="row checkout-margin">
+              <div class="col-sm-8">
+                  <span class="subt3">Discount applied</span>
+                </div>
+                <div class="col-sm-4">
+                   <span class="subt4">0 %</span>
+                </div>
+                   
+            </div>
+             <p class="border-bottom"></p>
+              <div class="row">
+                <div class="col-sm-8">
+                      <span class="total1">Total</span>
+                  </div>
+                <div class="col-sm-4">
+               <span class="subt1">Rs. <?php echo number_format($this->basket->getAttributeTotal('price'), 2, '.', ','); ?></span>
+                       <input class="subt2" type="hidden" name="taxtotal" value="<?php echo $this->basket->getAttributeTotal('price'); ?>">
+                <p class="p-txt">Inclusive of taxes</p>
+              </div>
+              </div>
           </div>
           </div>
-      </div>
-      </div>
-      </div>
-    </div>  
+          </div>
+        </div>  
 
 
 
@@ -206,6 +206,7 @@ p.p-txt {
 
 
 </form>
+
 </div>
 </div>
 
