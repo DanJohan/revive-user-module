@@ -2086,10 +2086,7 @@ section.uniqueoffer a:hover {
 section.uniqueoffer {
     padding-top: 0px;
 }
-ul.cirlist1 {
-    list-style-type: circle;
-    
-  }
+
 /***************location-top-bar************/
 
 .modal-content {
@@ -2286,85 +2283,84 @@ section#signup {
     background-position: 0px 77px;
 }
 
-
-/** Medium devices (tablets, 768px and up)**/
-@media (min-width: 768px) { 
-
- }
-
-
  @media only screen and (min-width : 320px) and (max-width : 480px) {
 
-  .com_box {
-    background: #ab6aba;
-    display: inline-block;
-    height: 100px;
-    margin-top: 0px;
-    position: relative;
-    /*width: 69%;*/
-    color: #fff;
-    text-align: center;
-    padding-top: 35px;
-   /* margin-left: 53px;*/
-}
-.com_box:after {
-    border-top: 35px solid #ab6aba;
-    border-left: 126px solid transparent;
-    border-right: 129px solid transparent;
-    content: "";
-    height: 0;
-    left: 0;
-    position: absolute;
-    top: 100px;
-    
-}
-  .decor-1 {
-    display: none;
-}
-.about-bg {
-    background-image: none;
-   
-}
-.navbar-brand {
-    margin-right: -1rem;
-}
-a.dropdown-item.drp-clr {
-    color: rgba(0,0,0,.5);
-    font-size: 11px !important;
-}
-.f-img-wrapper {
-    margin-top: 9px;
-}
-.f-inner p {
-    color: #6a6868;
-    margin-bottom: 6px;
-}
-.f-bg {
-    background-image: url(../img/f-bg.png);
-    padding: 27px 0px;
-    margin: 45px 0px 0px 0px;
-    color: #fff;
-    text-align: center;
-    background-repeat: no-repeat;
-}
-footer.f-bg h1 {
-    font-size: 32px;
-    color: #fff;
-}
-.footer__wrap-btn {
-   
-    margin-top: -1px;
-   
-}
-img.img-fluid.f-google {
-    margin-bottom: 5px;
-}
-.s-right h5 {
-    font-size: 26px;
-}
-.check-btn {
-    margin-top: 20px;
-}
+        .modal-content {
+            position: absolute;
+            left: 47% !important;
+            top: 30px;
+            padding: 12px;
+        }
+       .com_box {
+        background: #ab6aba;
+        display: inline-block;
+        height: 100px;
+        margin-top: 0px;
+        position: relative;
+        /*width: 69%;*/
+        color: #fff;
+        text-align: center;
+        padding-top: 35px;
+       /* margin-left: 53px;*/
+       }
+        .com_box:after {
+        border-top: 35px solid #ab6aba;
+        border-left: 126px solid transparent;
+        border-right: 129px solid transparent;
+        content: "";
+        height: 0;
+        left: 0;
+        position: absolute;
+        top: 100px;
+        
+         }
+      .decor-1 {
+        display: none;
+        }
+        .about-bg {
+            background-image: none;
+           
+        }
+        .navbar-brand {
+            margin-right: -1rem;
+        }
+        a.dropdown-item.drp-clr {
+            color: rgba(0,0,0,.5);
+            font-size: 11px !important;
+        }
+        .f-img-wrapper {
+            margin-top: 9px;
+        }
+        .f-inner p {
+            color: #6a6868;
+            margin-bottom: 6px;
+        }
+        .f-bg {
+            background-image: url(../img/f-bg.png);
+            padding: 27px 0px;
+            margin: 45px 0px 0px 0px;
+            color: #fff;
+            text-align: center;
+            background-repeat: no-repeat;
+        }
+        footer.f-bg h1 {
+            font-size: 32px;
+            color: #fff;
+        }
+        .footer__wrap-btn {
+           
+            margin-top: -1px;
+           
+        }
+        img.img-fluid.f-google {
+            margin-bottom: 5px;
+        }
+        .s-right h5 {
+            font-size: 26px;
+        }
+        .check-btn {
+            margin-top: 20px;
+        }
 
 /*.com_box:after {
     border-top: 35px solid #ab6aba;
@@ -2456,8 +2452,6 @@ a.dropdown-item.drp-clr {
 }*/
 }
 
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  }
 
  /* select service page style start */
   #ts-hero {
@@ -2802,4 +2796,87 @@ img.img-fluid.f-body {
     width: 77%;
     margin: 0px auto;
 }
+}
+
+
+/*****************************About bg tooltip2  29-10-18 komal*******************/
+ 
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black;*/ 
+}
+.tooltip2 .tooltip2text {
+    visibility: hidden;
+    width: 194px;
+    background-color: #e3e6e4;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px 0px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* height: auto; */
+    font-size: 12px;
+}
+.tooltip2 .tooltip2text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #e3e6e4 transparent transparent transparent;
+}
+
+.tooltip2:hover .tooltip2text {
+    visibility: visible;
+    opacity: 1;
+}
+ul.cirlist1 {
+    list-style-type: circle;
+    line-height: 1.5;
+    font-size: 12px;
+    text-align: left;
+}
+.tooltip2text P
+{
+  color: #000;
+}
+h1.text-center.unique-head {
+    font-size: 35px;
+    font-variant: all-small-caps;
+}
+/***************Calendar css 29-10-18*************/
+
+.ui-widget-header {
+    border: 1px solid #47143d !important;
+    /* background: #2191c0 url(images/ui-bg_gloss-wave_75_2191c0_500x100.png) 50% 50% repeat-x; */
+    color: #ffffff !important;
+    font-weight: bold;
+    background-color: #47143d !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #47143d !important;
+    /* background: #0078ae url(images/ui-bg_glass_45_0078ae_1x400.png) 50% 50% repeat-x; */
+    font-weight: normal;
+    color: #ffffff !important;
+    background: #47143d !important;
+}
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
+    opacity: 2.35;
+    /* filter: Alpha(Opacity=35);
+    background-image: none; */
+}
+.ui-widget-content {
+    border: 1px solid #47143d;
+    background: #fcfdfd url(images/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x;
+    color: #222222;
 }

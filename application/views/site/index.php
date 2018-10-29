@@ -28,6 +28,7 @@
     <!--=========Slider Text==End=========--> 
   </div>
   <!--=========Svg===========-->
+<div class="waves-wrapper1">
   <div id="ts-dynamic-waves" class="ts-background">
    <svg class="ts-svg ts-z-index__1 ts-flip-x" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs></defs>
@@ -40,11 +41,12 @@
     <div class="ts-background-image ts-parallax-element" data-bg-image="<?php echo base_url();?>assets/img/bg-blurred-run.jpg">
     </div>
   </div>
+</div>
   <!--=========Svg=End==========--> 
 </header>
 <!--============Abour-Start==============-->
 <section class="about" id="about-us">
-  <div class="container">
+  <div class="container abc">
     <h1 class="text-center">WHAT DOES REVIVE DO</h1>
     <div class="row">
       <div class="col-md-6">
@@ -117,26 +119,56 @@
   </div>
 </section> -->
 <!--=========uniqueoffer-End==========--> 
-<!--=========About-bg-Start==========--> 
+<!--=========About-bg-Start==========-->
+<h1 class="text-center unique-head">Unique Offerings</h1> 
 <section  class="about-bg">
+
   <div class="container">
-    <h1 class="text-center">Unique Offerings</h1>
+    
     <div class="row">
-      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon1.png">
+      <div class="col-md-3 text-center">
+
+        <div class="tooltip2"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon1.png">
         <h4 class="text-center">Complete Convenience & Peace of mind</h4>
+            <span class="tooltip2text"> 
+              <ul class="cirlist1">
+                <li> Free doorstep Pick up and Drop services</li>
+                <li>Spare car facility on request</li>
+                <li>Real time location tracking and work updates</li>
+                <li> Workshop close to your location</li>
+            </ul></span>
+      </div>
         <!-- <p>We bring to you state-of-the-art equipment to compliment your car. We make sure that each of the services that we offer exceed your expectation</p> -->
       </div>
-      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon2.png">
-        <h4 class="text-center">Fast & Committed Delivery Timelines</h4>
-        <!-- <p>Now you won’t have to spoil your day at the body shop. Revive is 100% on site service from pick up to delivery.</p> -->
+      <div class="col-md-3 text-center"> 
+          <div class="tooltip2">  <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon2.png">
+           <h4 class="text-center">Fast & Committed Delivery Timelines</h4>
+            <span class="tooltip2text"> 
+              <p > We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
+              </p>
+            </span>
+        </div>
       </div>
-      <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon3.png">
-        <h4 class="text-center">Quality Repairs & Uncompromised Workmanship</h4>
-        <!-- <p>We brings to an amazing mobile app with great interactive interface. It’s absolutely easy from start to end. You can also track the process from your phone. </p> -->
+      <div class="col-md-3 text-center"> 
+          <div class="tooltip2">  <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon3.png">
+           <h4 class="text-center">Quality Repairs & Uncompromised Workmanship</h4>
+            <span class="tooltip2text"> 
+              <ul class="cirlist1">
+                      <li> Only auto brands approved paint material</li>
+                      <li>Use of complete range of bodyshop equipments</li>
+                      <li>  All manpower is trained by a leading paint company, and specializes in quick quality repair</li>
+                      <li>1-year Paint Warranty against any discoloration / chipping or any other fault</li>
+                  </ul>
+            </span>
+          </div>
       </div>
-       <div class="col-md-3 text-center"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon4.png">
-        <h4 class="text-center">Affordable Transparent Pricing</h4>
-        <!-- <p>We brings to an amazing mobile app with great interactive interface. It’s absolutely easy from start to end. You can also track the process from your phone. </p> -->
+      <div class="col-md-3 text-center">
+          <div class="tooltip2">   <img class="img-fluid" src="<?php echo base_url();?>assets/img/icon4.png">
+          <h4 class="text-center">Affordable Transparent Pricing</h4>
+            <span class="tooltip2text"> 
+             <P>No hidden charges or taxes. What you see is what you pay. What everyone else pays. Absolutely No pre-repair anxiety of being overcharged.</P>
+            </span>
+          </div>
       </div>
     </div>
 
@@ -459,7 +491,7 @@
 <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script> 
 <script src="<?php echo base_url();?>assets/js/scrolla.jquery.min.js"></script> 
 <script src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script> 
-<script src="<?php echo base_url();?>assets/js/jquery-validate.bootstrap-tooltip.min.js"></script> 
+<script src="<?php echo base_url();?>assets/js/jquery-validate.bootstrap-tooltip2.min.js"></script> 
 <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script> 
 <script src="<?php echo base_url();?>assets/js/jquery.wavify.js"></script> 
 <script src="<?php echo base_url();?>assets/js/TweenMax.min.js"></script> 
@@ -590,6 +622,14 @@ $("#myModal").modal({
 });
 
 <?php } ?>
+/*$('#wave-1').wavify({
+  height: 50,
+});
 
+$('#wave-2').wavify({
+  height: 50,
+
+});*/
+ 
 </script>
 <?php $this->widget->endBlock(); ?>

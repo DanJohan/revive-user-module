@@ -1,5 +1,4 @@
 <?php $this->widget->beginBlock('stylesheet'); ?>
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
@@ -14,6 +13,7 @@
 p.p-txt {
     font-size: 12px;
 }
+
 </style>
 <?php $this->widget->endBlock(); ?>
 <div class="checkout-top">
