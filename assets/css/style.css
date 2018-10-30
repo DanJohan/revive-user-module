@@ -151,6 +151,14 @@ section  h1 {
 section.blog h1 {
     font-size: 35px;
 }
+/******************30-10-18 Komal***************/
+.jobs-wrapper .img-fluid {
+    width: 36%;
+    margin-right: 14px;
+    float: left;
+    overflow: hidden;
+    margin-top: 7px;
+}
 /*.s-wrapper {
     background-image: url(../img/prine.png);
     padding: 54px 13px;
@@ -2862,7 +2870,7 @@ h1.text-center.unique-head {
     font-size: 35px;
     font-variant: all-small-caps;
 }
-/***************Calendar css 30-10-18 Kommal*************/
+/***************Calendar css 30-10-18 Komal*************/
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
     border: 1px solid #ab6aba !important;
     background: #47143d !important;
@@ -2880,6 +2888,24 @@ h1.text-center.unique-head {
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
     opacity: 1.0 !important;
    
+}
+.ui-widget-header {
+    border: 1px solid #47143d !important;;
+    background: #47143d !important;
+    color: #eaf5f7;
+    font-weight: bold;
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
+    background-color: #ab6aba !important;;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    border: 1px solid #ffffff !important;
+    background: #ab6aba !important;
+    font-weight: normal;
+    color: #026890;
+}
+a.ui-state-default:hover {
+    color: #fff;
 }
 /* .ui-datepicker .ui-datepicker-title:before {
     content: "";
@@ -2904,14 +2930,9 @@ button.edit-car {
     float: right;
 }
 
-
-
-@media only screen 
-and (min-device-width : 414px) 
-and (max-device-width : 736px) 
-and (orientation : landscape) 
-and (-webkit-min-device-pixel-ratio : 3) 
-{
-
-
+button.pay-text {
+    float: right;
+    border: none;
+    background: none;
 }
+

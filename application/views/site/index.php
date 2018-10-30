@@ -179,74 +179,62 @@
 <section id="services" class="services-bg">
   <div class="container">
     <h1 class="text-center">Our Services</h1>
-    	<p class="text-center">When's the last time you gave your car a second look? Or ran your fingers along the hood? It's time you fell back in love with your car again. Let us transform your weathered wagon with a new coat of paint, and soon you'll be driving the car you always wanted, again.</p>
-	
-        <div class="row">	
+      <p class="text-center">When's the last time you gave your car a second look? Or ran your fingers along the hood? It's time you fell back in love with your car again. Let us transform your weathered wagon with a new coat of paint, and soon you'll be driving the car you always wanted, again.</p>
+  
+        <div class="row"> 
             <div class="col-md-6">
               <div class="accor-wrapper">
                 <button class="accordion">Dent Repair Jobs</button>
                   <div class="panel">
-                    <div class="row">
-                    <div class="col-md-6">
-                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/dent-jobs.png"></div>
-                  <div class="col-md-6">
-                    <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p></div>
-                    <a href="<?php echo base_url(); ?>service/select_service/1" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                    <div class="jobs-wrapper">
+                      <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/dent-jobs.png">
+                      <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
                     </div>
-                  </div>
+                    <a href="<?php echo base_url(); ?>service/select_service/1" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                   </div>
               </div>
             <div class="accor-wrapper">
               <button class="accordion">Paint Repair Jobs</button>
                 <div class="panel">
-                  <div class="row">
-                    <div class="col-md-6">
-                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/paint.png"></div>
-                  <div class="col-md-6">
-                  <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p></div>
-                   <a href="<?php echo base_url(); ?>service/select_service/2" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                  <div class="jobs-wrapper">
+                    <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/paint.png">
+                    <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p>
                   </div>
+                   <a href="<?php echo base_url(); ?>service/select_service/2" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                  
                 </div>
             </div>
             <div class="accor-wrapper">
               <button class="accordion">Full Car Body Paint</button>
                 <div class="panel">
-                    <div class="row">
-                    <div class="col-md-6">
-                  <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/full-body.png"></div>
-                  <div class="col-md-6">
-                  <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle’s color and spray the vehicle with the exact match - Giving out exactly the way you pictured.
-                   </p>
-                  </div>
+                    <div class="jobs-wrapper">
+                      <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/full-body.png">
+                      <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle’s color and spray the vehicle with the exact match - Giving out exactly the way you pictured.
+                       </p>
+                    </div>
                  <a href="<?php echo base_url(); ?>service/select_service/3" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
-                 </div> 
-               </div>
+                </div>
               </div>
             </div>
             <div class="col-md-6">
                 <div class="accor-wrapper">
                   <button class="accordion">Exterior Customization</button>
-                    <div class="panel">
-                      <div class="row">
-                      <div class="col-md-6">
-                          <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/exterior.png"></div>
-                          <div class="col-md-6">
-                          <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p></div>
+                    <div class="panel"> 
+                      <div class="jobs-wrapper">
+                        <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/exterior.png">
+                        <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p>
+                      </div>
                          <a href="<?php echo base_url(); ?>service/select_service/4" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
-
-                    </div>
                   </div>
                   </div>
                   <div class="accor-wrapper">
                     <button class="accordion">Interior Customization</button>
                       <div class="panel">
-                        <div class="row">
-                            <div class="col-md-6">
-                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/interior.png"></div>
-                            <div class="col-md-6">
+                          <div class="jobs-wrapper">
+                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/img/interior.png">
                             <p>Re-trim, upholster and customise yo ur car interior with some of the best accessories recommended by our techinicians to suit your style. The dashboard, door panels, car seats and even the steering wheel can be upholstered in a range of different materials from leather to felt and velvet feeling fabrics and a lot more.</p></div>
-
-                         <a href="<?php echo base_url(); ?>service/select_service/5" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
-                        </div>
+                            <a href="<?php echo base_url(); ?>service/select_service/5" class="btn btn-primary  ts-scroll accor-btn" data-bg-color="#582c4f" style="background-color: rgb(88, 44, 79); border-color: rgb(88, 44, 79);">Book Now</a>
+                       
                       </div>
                     </div>
             </div>
@@ -258,7 +246,7 @@
 <!--======Blog-Start====-->
 <section class="blog-bottom">
   <div class="container">
-  	<h1 class="text-center">Blog</h1>
+    <h1 class="text-center">Blog</h1>
     <div class="row">
       <div class="col-md-4">
         <img class="img-fluid mb-5" src="<?php echo base_url();?>assets/img/blog1.png">
@@ -306,7 +294,7 @@
     
 
 
-    <div class="row">	
+    <div class="row"> 
       <div class="col-md-12">
         <div class="accor-wrapper">
             <button class="accordion">Are there any specific brand of cars that you work on?</button>

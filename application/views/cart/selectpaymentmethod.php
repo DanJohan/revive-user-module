@@ -27,7 +27,11 @@
 				            <input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="<?php echo $this->basket->getAttributeTotal('price'); ?>">
 				            <input type="hidden" title="EMAIL" tabindex="10" type="text" name="EMAIL" value="<?php echo $this->session->userdata('email'); ?>">
 				            <input type="hidden" title="MOBILE_NO" tabindex="10" type="text" name="MOBILE_NO" value="<?php echo $this->session->userdata('phone'); ?>">
-				            <button type="submit" class="pay-text">Pay via Paytm</button>
+				            
+
+				        </form>
+				        <button type="submit" class="pay-text">Pay via Paytm</button>
+
 				       		
 						
 			 		<!-- 	<span class="pay-text">Pay via Paytm</span> -->
