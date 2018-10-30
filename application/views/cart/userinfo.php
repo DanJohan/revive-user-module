@@ -41,7 +41,7 @@ p.p-txt {
                   <option value="03-04PM">03-04PM</option>
                   <option value="04-05PM">04-05PM</option>
             </select>
-            <select class="time_sloat2 validation" name="service" id="service" required="">
+           <select class="time_sloat2 validation" name="service" id="service" required=""> 
                   <option value="">Please select</option>
                     <?php
                       if($this->session->has_userdata('service_cat_id')) {
@@ -60,10 +60,10 @@ p.p-txt {
                     ?>
                       <option value="<?php echo $service['id']; ?>"  <?php echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option>
                     <?php
-                      }
+                     }
                     ?>
-            </select>
-   
+           </select>
+          
         </div>
     <div class="col-xs-12 col-sm-5">
         <div class="row">
@@ -282,9 +282,16 @@ function validateForm() {
     }
 }
 /*loaner car popup on load*/
-  bootbox.confirm({
-  size: "medium",
-  message: "Do you need a loaner car?", 
+bootbox.confirm({
+    message: "Do you need a loaner car?",
+    buttons: {
+        cancel: {
+            label: '<i class="fa fa-times"></i> No'
+        },
+        confirm: {
+            label: '<i class="fa fa-check"></i> Yes'
+        }
+    },
   callback: function(result){ 
     if(result === true){
       $('#regForm').prepend('<input type="hidden" name="loaner_vehicle" value="1">');
