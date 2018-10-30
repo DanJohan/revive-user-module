@@ -72,7 +72,7 @@ class MY_Controller extends CI_Controller
             $location = $this->session->userdata('location');
             //dd($location);
             if($location == "delhi"){
-              $service_center = '1';
+             echo $service_center = '1';
             }
             else if($location == "noida"){
               $service_center = '2';
@@ -97,9 +97,10 @@ class MY_Controller extends CI_Controller
               'car_id'=>  $car_id,
               'payment_type_id' => $payment_type,
               'paid' => '0',
+              'loaner_vehicle' => $post_data['loaner_vehicle'],
               'created_at' =>date('Y-m-d H:i:s')
           );
-        
+          //dd($order_data);
           $order_id = $this->OrderModel->insert($order_data);
           $this->sequence->updateSequence();
           $customer_data = array(

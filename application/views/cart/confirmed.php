@@ -7,10 +7,10 @@
 		  <div class="confirm">
 		      <span class="che__ck"><i class="fa fa-check-circle" aria-hidden="true"></i></span>
 			  <ul class="customer">
-			       <li><b class="booking">Success! Your booking is confirmed.</b></li>
-				   <li>Our customer representative will call you shortly.</li>
+			       <li><b class="booking">Success! Your booking is under process.</b></li>
+				   <li>Our customer representative will call you shortly for confirmation.</li>
 				   <li><b style="font-size:16px;color:#8c8b8b;font-weight:800;">Order ID: <?php echo $order['order_no']; ?></b></li>
-				   <li>05:49PM 09 Oct 2018</li>
+				   <li><?php echo $order['created_at']; ?></li>
 			</ul>
 			<br>
 			<a href="<?php echo base_url();?>cart/order_detail/<?php echo $order['id'];?>"><button type="button" class="view_order_btn">View Order</button></a>
