@@ -129,6 +129,8 @@ p.p-txt {
              
            
             <input type="text" name="reg_no" placeholder="Registration Number" class="validation" required="">
+            <button type="button" class="btn btn-default edit-car">Edit Your Car</button>
+
           </div>
           <div class="col-md-5 col-sm-5 col-xs-12 ">
             <div class="row">
