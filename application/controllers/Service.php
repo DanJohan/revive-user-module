@@ -14,7 +14,7 @@ class Service extends MY_Controller {
 			if($location){
 				$this->session->set_userdata('location',$location);
 			}
-			redirect('/site');
+			redirect($this->agent->referrer());
 		}
 
 		public function select_service($service_id=null){ //display carservice page 

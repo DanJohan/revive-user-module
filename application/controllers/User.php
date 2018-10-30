@@ -18,6 +18,8 @@ class User extends MY_Controller {
 		$data = array();
 			
 		if($this->session->has_userdata('is_user_login') && $this->session->userdata('is_user_login')){
+			
+
 			redirect('cart/userinfo');
 		}
 		
@@ -38,6 +40,8 @@ class User extends MY_Controller {
 						$user_data = array(
 							'user_id' => $user['id'],
 							'name' => $user['name'],
+							'phone' => $user['phone'],
+							'email' => $user['email'],
 							'pic'  => $user['profile_image'],
 						 	'is_user_login' => TRUE
 						);
@@ -241,12 +245,9 @@ class User extends MY_Controller {
 						);
 
 						$result = $this->UserModel->insert($data);
-						$this->session->set_userdata($data);
-						
 						if($result){
-							$this->session->set_flashdata('success_msg', 'User is Added Successfully!');
+						$this->session->set_flashdata('success_msg', 'User is Added Successfully!');
 							redirect(base_url('cart/userinfo'));
-
 						}else{
 						$this->session->set_flashdata('error_msg', 'Some problem occur!');
 						redirect(base_url('user/signup'));

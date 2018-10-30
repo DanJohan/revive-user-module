@@ -82,6 +82,7 @@ class Cart extends MY_Controller {
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
 		//dd($data);
 		$this->render('cart/userinfo',$data);
+
 	
 	} 
 	
@@ -133,7 +134,7 @@ class Cart extends MY_Controller {
 								);
 							}
 						}
-
+						$this->session->set_userdata($order_item_data);
 						if(!empty($order_item_data)){
 							$this->OrderItemModel->insert_batch($order_item_data);
 						}

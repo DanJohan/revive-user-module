@@ -30,7 +30,7 @@
         <?php }?>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
 
-          <?php if($this->session->has_userdata('name')) { ?>
+          <?php if($this->session->has_userdata('is_user_login')) { ?>
             <li class="nav-item dropdown"> 
               <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <?php echo ($this->session->has_userdata('name'))? ucfirst($this->session->userdata('name')) : '';?></a>
             <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 

@@ -29,7 +29,7 @@
 					<div class="col-sm-4">
 						<div class="location-outer" onclick="location.assign(config.baseUrl+'service/set_location/gurugram')">
 							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/city-gurgaon.png">
-							<h4 class="m-head">Gurgaon</h4>
+							<h4 class="m-head">Gurugram</h4>
 						</div>
 					</div>
 					<div class="col-sm-4">

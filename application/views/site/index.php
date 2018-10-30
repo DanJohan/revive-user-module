@@ -616,12 +616,7 @@ var id = $(this).attr('id');
   }
 
   });
-<?php if(!$this->session->has_userdata('location')) { ?>
-$("#myModal").modal({
-  'backdrop':"static"
-});
 
-<?php } ?>
 /*$('#wave-1').wavify({
   height: 50,
 });

@@ -28,7 +28,7 @@ class Paytm extends MY_Controller
 
 		 $checkSum = "";
 		 $paramList = array();
-		 $INVOICE_ID = $_POST['invoice_id'];
+		 //$INVOICE_ID = $_POST['INVOICE_ID'];
 		 $ORDER_ID = $_POST["ORDER_ID"];
 		 $CUST_ID = $_POST["CUST_ID"];
 		 $INDUSTRY_TYPE_ID = $_POST["INDUSTRY_TYPE_ID"];
@@ -116,7 +116,7 @@ class Paytm extends MY_Controller
 					
 						$this->InvoiceModel->update(array('paid'=>1,'payment_id'=>$insert_id),array('id'=>$transaction['invoice_id']));
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
-				         	redirect('user/billing');
+				         	redirect('cart/order_detail');
 				         	exit;
 					}
 				}
@@ -124,7 +124,7 @@ class Paytm extends MY_Controller
 			}
 		}
 		$this->session->set_flashdata('error_msg','Something went wrong!');
-		redirect('user/billing');
+		redirect('service/select_service');
 		exit;
 	}// end of paytm callback method
 }// end of class

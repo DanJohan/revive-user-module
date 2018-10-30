@@ -278,6 +278,19 @@ function validateForm() {
         return false;
     }
 }
+/*loaner car popup on load*/
+  bootbox.confirm({
+  size: "medium",
+  message: "Do you need a loaner car?", 
+  callback: function(result){ 
+    if(result === true){
+      $('#regForm').prepend('<input type="hidden" name="loaner_vehicle" value="1">');
+    }else{
+    $('#regForm').prepend('<input type="hidden" name="loaner_vehicle" value="0">');
+   }
+  } 
+});
+
 
 </script>
 <?php $this->widget->endBlock();?>
