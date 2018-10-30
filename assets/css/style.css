@@ -2187,7 +2187,7 @@ section#login {
     padding-top: 150px;
     padding-bottom: 83px;
     background-size: cover;
-    background-position: 0px 80px;
+    /* background-position: 0px 80px; */
 }
 .loginBtn {
     color: #fff;
@@ -2796,6 +2796,14 @@ img.img-fluid.f-body {
     width: 77%;
     margin: 0px auto;
 }
+.color_white {
+color: #fff;
+font-weight: 700;
+margin-top: 160px !important;
+}
+#about-us {
+margin-top: 146px;
+}
 }
 
 
@@ -2854,31 +2862,56 @@ h1.text-center.unique-head {
     font-size: 35px;
     font-variant: all-small-caps;
 }
-/***************Calendar css 29-10-18*************/
-
-.ui-widget-header {
-    border: 1px solid #47143d !important;
-    /* background: #2191c0 url(images/ui-bg_gloss-wave_75_2191c0_500x100.png) 50% 50% repeat-x; */
-    color: #ffffff !important;
-    font-weight: bold;
-    background-color: #47143d !important;
-}
-
+/***************Calendar css 30-10-18 Kommal*************/
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid #47143d !important;
-    /* background: #0078ae url(images/ui-bg_glass_45_0078ae_1x400.png) 50% 50% repeat-x; */
-    font-weight: normal;
-    color: #ffffff !important;
+    border: 1px solid #ab6aba !important;
     background: #47143d !important;
+    font-weight: normal;
+    color: #ffffff;
 }
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #ab6aba !important;
+    background: #ab6aba !important;
+    font-weight: normal;
+    color: #ffffff;
+}
+
 .ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled {
-    opacity: 2.35;
-    /* filter: Alpha(Opacity=35);
-    background-image: none; */
+    opacity: 1.0 !important;
+   
 }
-.ui-widget-content {
+/* .ui-datepicker .ui-datepicker-title:before {
+    content: "";
+    content: "\f054";
+    display: block;
+    border-collapse: collapse;
+    font-family: FontAwesome;
+    left: 89%;
+    right: 67%;
+    position: absolute;
+    font-size: 15px;
+    color: #47143d;
+    top: 5px;
     border: 1px solid #47143d;
-    background: #fcfdfd url(images/ui-bg_inset-hard_100_fcfdfd_1x100.png) 50% bottom repeat-x;
-    color: #222222;
+    cursor: pointer;
+} */
+
+
+button.edit-car {
+    background: #47143d;
+    color: #ffff;
+    float: right;
+}
+
+
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) 
+and (orientation : landscape) 
+and (-webkit-min-device-pixel-ratio : 3) 
+{
+
 
 }

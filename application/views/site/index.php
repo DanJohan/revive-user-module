@@ -8,7 +8,7 @@
     <!--=========Slider Text===========-->
     <div class="row align-items-center">
       <div class="col-md-7"> 
-      <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive your ride</h3>
+      <h3 class="ts-font-color__black ts-opacity__50 slider-font">Revive Your Ride</h3>
         <h1 class="color_white">All Your Activities<br> In One Place</h1>
         <a href="<?php echo base_url();?>service/select_service" class=" book-now-btn">Book Now</a>
         <a href="<?php echo base_url();?>user/login" class="book-now-btn">Service Status</a>
@@ -46,10 +46,10 @@
 </header>
 <!--============Abour-Start==============-->
 <section class="about" id="about-us">
-  <div class="container abc">
+  <div class="container">
     <h1 class="text-center">WHAT DOES REVIVE DO</h1>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="vc_column-inner ">
           <div class="wpb_wrapper">
             <div class="wpb_text_column wpb_content_element  vc_custom_1537946551113">
@@ -64,7 +64,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/a-img.png"> </div>
+      <div class="col-md-6 col-sm-6 col-xs-12"> <img class="img-fluid" src="<?php echo base_url();?>assets/img/a-img.png"> </div>
     </div>
   </div>
 </section>
