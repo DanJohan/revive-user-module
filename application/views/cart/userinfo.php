@@ -41,10 +41,10 @@ p.p-txt {
                   <option value="03-04PM">03-04PM</option>
                   <option value="04-05PM">04-05PM</option>
             </select>
-           <select class="time_sloat2 validation" name="service" id="service" required=""> 
-                  <option value="">Please select</option>
+           <!-- <select class="time_sloat2 validation" name="service" id="service" required=""> 
+                  <option value="">Please select</option> -->
                     <?php
-                      if($this->session->has_userdata('service_cat_id')) {
+                      /*if($this->session->has_userdata('service_cat_id')) {
                         $service_cat_id = $this->session->userdata('service_cat_id');
                       }else{
                         $service_cat_id = null;
@@ -56,11 +56,11 @@ p.p-txt {
                           array('id'=>4, 'name'=>'Exterior customisations'),
                           array('id' =>5, 'name' =>'Interior Customisations')
                       );
-                      foreach ($services as $index => $service) {
+                      foreach ($services as $index => $service) {*/
                     ?>
-                      <option value="<?php echo $service['id']; ?>"  <?php echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option>
+                     <!--  <option value="<?php echo $service['id']; ?>"  <?php echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option> -->
                     <?php
-                     }
+                     //}
                     ?>
            </select>
           
@@ -120,7 +120,7 @@ p.p-txt {
             </div>
           <div class="col-md-3 col-sm-3 col-xs-12 full_box">
               <h2 class="user_d">Car Details</h2>
-            
+            <form>
             <input placeholder="Car Brand" type="text" name="car_brand" value="<?php echo $car_detail['brand_name'];?>" readonly>
             <input type="hidden" name="model_id" value="<?php echo $car_detail['id'];?>" >
             <input  type="hidden" name="brand_id" value="<?php echo $car_detail['brand_id'];?>" >
@@ -128,8 +128,9 @@ p.p-txt {
             <input placeholder="Car Model" type="text" name="car_model"value="<?php echo $car_detail['model_name'];?>" readonly>
              
            
-            <input type="text" name="reg_no" placeholder="Registration Number" class="validation" required="">
-           
+            <input type="text" name="reg_no" id="upcase" placeholder="Registration Number" class="validation">
+           </form>
+          <a href="<?php echo base_url();?>service/select_service" <button type="button" class="btn btn-default edit-car ">Edit your car</button></a>
 
           </div>
           
@@ -245,7 +246,7 @@ $(function() {
         document.getElementById("prevBtn").style.display = "inline";
       }
       if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Pay Now";
+        document.getElementById("nextBtn").innerHTML = "Book Now";
       } else {
         document.getElementById("nextBtn").innerHTML = "Next";
       }
@@ -283,15 +284,18 @@ function validateForm() {
 }
 /*loaner car popup on load*/
 bootbox.confirm({
-    message: "Do you need a loaner car?",
+    message: "Do you need a loaner or replacement vehicle? It will cost Rs. 500/- per day.The total charges for replacement car will be mentioned in the final bill.",
     buttons: {
-        cancel: {
-            label: '<i class="fa fa-times"></i> No'
-        },
         confirm: {
-            label: '<i class="fa fa-check"></i> Yes'
-        }
+            label: 'Yes',
+            className: 'btn-yes'
+        },
+        cancel: {
+            label: 'No',
+            className: 'btn-no'
+        } 
     },
+
   callback: function(result){ 
     if(result === true){
       $('#regForm').prepend('<input type="hidden" name="loaner_vehicle" value="1">');
@@ -301,6 +305,9 @@ bootbox.confirm({
   } 
 });
 
-
+/*uppercase registration number input box*/
+ $('#upcase').keyup(function(){
+        $(this).val($(this).val().toUpperCase());
+    });
 </script>
 <?php $this->widget->endBlock();?>

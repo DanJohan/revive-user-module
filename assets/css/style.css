@@ -37,6 +37,10 @@ section  h1 {
     font-variant: all-petite-caps;
     margin-bottom:20px;
 }
+
+section#about-us {
+    padding: 140px 0px;
+}
 /****************** Slider-btn *************************/
 .book-now-btn {
     border-radius: 6.25rem;
@@ -351,6 +355,10 @@ img.img-fluid.test-img.center {
     font-size: 27px;
     
 } */
+
+section#contact {
+    padding: 179px 0px;
+}
 form.f-wrapper {
     margin: 36px 0px;
 }
@@ -438,6 +446,7 @@ span.f-span {
     background-image: url(../img/g-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 179px 0px;
 }
 section#gallery h1 {
     color: #fff;
@@ -1979,8 +1988,8 @@ button.accordion.active {
 
 
 .faq-bg {
-    background-color: rgb(255, 254, 254);
-    padding: 150px 0px 0px;
+background-color: rgb(255, 254, 254);
+padding: 175px 0px 0px;
 }
 
 
@@ -2525,12 +2534,26 @@ a.dropdown-item.drp-clr.drplogout:hover {
 img.img-fluid.pay {
     width: 31%;
     margin-right: 0px;
+    float:left;
 }
-span.pay-text {
-    font-size: 14px;
+
+.pay-text {
+    font-size: 13px;
     color: #47143d;
     font-weight: 400;
+    display: block;
+    line-height: 18px;
+    padding-top: 6px;
 }
+.pay-text__cash {
+    font-size: 13px;
+    color: #47143d;
+    font-weight: 400;
+    display: block;
+    line-height: 18px;
+    padding-top: 14px;
+}
+
 .paytem-text {
     border: 2px dotted #47143d;
     width: 29%;
@@ -2927,7 +2950,7 @@ a.ui-state-default:hover {
 } */
 
 
-button.edit-car {
+a.btn.btn-default.edit-car  {
     background: #47143d;
     color: #ffff;
     float: right;
@@ -2937,5 +2960,22 @@ button.pay-text {
     float: right;
     border: none;
     background: none;
+    color: #47143d;
+    margin-right: 53px;
+    cursor: pointer;
+    font-size: 14px;
+    /* padding-bottom: 6px; */
+    position: relative;
+    top: 12px;
+    right: 13px;
+}
+/*30/10/2018 sheenam*/
+button.btn.btn-yes {
+    background-color: #652458;
+    color: #fff;
 }
 
+button.btn.btn-no {
+    background-color: #b7b4b5;
+    color: #fff;
+}

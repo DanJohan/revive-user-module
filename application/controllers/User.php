@@ -244,13 +244,27 @@ class User extends MY_Controller {
 							'created_at' => date('Y-m-d H:i:s')
 						);
 
-						$result = $this->UserModel->insert($data);
-						if($result){
-						$this->session->set_flashdata('success_msg', 'User is Added Successfully!');
-							redirect(base_url('cart/userinfo'));
+						$insert_id= $this->UserModel->insert($data);
+						if($insert_id){
+							$criteria['field'] = 'id,phone,name,email,profile_image,created_at';
+							$criteria['conditions'] = array('id'=>$insert_id);
+							$criteria['returnType'] = 'single';
+							$user = $this->UserModel->search($criteria);
+							if($user){
+								$user_data = array(
+									'user_id' => $user['id'],
+									'name' => $user['name'],
+									'phone' => $user['phone'],
+									'email' => $user['email'],
+									'pic'  => $user['profile_image'],
+								 	'is_user_login' => TRUE
+								);
+								$this->session->set_userdata($user_data);
+								redirect(base_url('cart/userinfo'));
+							}
 						}else{
-						$this->session->set_flashdata('error_msg', 'Some problem occur!');
-						redirect(base_url('user/signup'));
+							$this->session->set_flashdata('error_msg', 'Some problem occur!');
+							redirect(base_url('user/signup'));
 						
 					   }
 					} else{

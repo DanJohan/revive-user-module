@@ -33,14 +33,12 @@ class MY_Controller extends CI_Controller
       $config['max_width'] =(isset($params['max_width']))?$params['max_width']:0;
       $config['max_height']=(isset($params['max_height']))?$params['max_height']: 0;
 
-     // if(isset($params['encrypt_name']) && $params['encrypt_name'] ==true) { 
-      $config['encrypt_name'] =true;   
-     // }else{
-      // $new_name =  time().uniqid(rand()).'_'.$_FILES[$file]['name'];
-       // $new_name = time().mt_rand(1000,9999).'_'.$_FILES[$file]['name'];
-      //  $config['file_name'] =  $new_name;
-     // }
-
+      if(isset($params['new_name']) && $params['new_name'] ==true) { 
+        $new_name =  time().'_'.uniqid(mt_rand(1000,9999)).'_'.$_FILES[$file]['name'];
+        $config['file_name'] =  $new_name;
+      }else{
+          $config['encrypt_name'] =true;   
+      }
       $this->load->library('upload', $config);
 
       if ( ! $this->upload->do_upload($file))
@@ -83,15 +81,27 @@ class MY_Controller extends CI_Controller
             
             $this->sequence->createSequence('order');
             $sequence = $this->sequence->getNextSequence();
+            if($this->session->has_userdata('service_cat_id')) {
+              $service_cat_id = $this->session->userdata('service_cat_id');
+            }
+            if(!empty($post_data['loaner_vehicle'])){
+               if($post_data['loaner_vehicle'] == '1'){
+                  $net_pay_amount = $post_data['taxtotal'] + 500;
+               }
+
+            }
+            else {
+                    $net_pay_amount = $post_data['taxtotal'];
+               }
             $order_data = array(
               'order_no' =>$sequence['sequence'],
               'hash'=> md5(uniqid(true)),
               'pick_up_date' => date('Y-m-d',strtotime($post_data['pick_up_date'])),
               'pick_up_time' => $post_data['pick_up_time'],
-              'service_type' => $post_data['service'],
+              'service_type' => $service_cat_id,
               'service_center' => $service_center,
               'sub_total' => $post_data['subtotal'],
-              'net_pay_amount' => $post_data['taxtotal'],
+              'net_pay_amount' => $net_pay_amount,
               'channel' => '1',
               'user_id'=> $this->session->userdata('user_id'),
               'car_id'=>  $car_id,
@@ -100,6 +110,7 @@ class MY_Controller extends CI_Controller
               'loaner_vehicle' => $post_data['loaner_vehicle'],
               'created_at' =>date('Y-m-d H:i:s')
           );
+
           //dd($order_data);
           $order_id = $this->OrderModel->insert($order_data);
           $this->sequence->updateSequence();
