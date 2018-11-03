@@ -4,15 +4,6 @@
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style>
-.ui-datepicker {
-    width: 14.7em;
-    padding: .2em 0.2em 0;
-    display: none;
-}
-
-p.p-txt {
-    font-size: 12px;
-}
 
 </style>
 <?php $this->widget->endBlock(); ?>

@@ -1,4 +1,4 @@
-<section>
+<section class="custom-wrapper">
       <div class="container custom__car">
         <div class="row">
              <?php if(!empty($car_detail)){
@@ -16,9 +16,8 @@
                <button class="btn btn-book__now" id="book_now" data-model-id="<?php echo $cardetail['model_id']?>" data-car-id="<?php echo $cardetail['id']?>">Book Now</button>
                </div>
           </div>
-       <?php } } else{
-                        echo "NO CAR ADDED";
-       }?>
+       <?php }
+      }else {?><h2 class="record">NO CAR ADDED</h2><?php } ?>
           <div class="col-md-12 col-sm-12 col-xs-12 text-center">
            <a href="<?php echo base_url(); ?>car/add_car"><button type="button" class="btn book__now">ADD CAR</button></a>
           </div>
@@ -33,7 +32,7 @@
      $(document).on('click','#book_now',function(){
             var model_id = $(this).data('model-id');
             var car_id = $(this).data('car-id');
-            var html = '<form action="'+config.baseUrl+'service/find_service" method="GET">'+
+            var html = '<form action="'+config.baseUrl+'service/find_service" method="GET" class="car-book-wrapper">'+
                         '<input type="hidden" name="model_id" value="'+model_id+'">'+
                         '<input type="hidden" name="car_id" value="'+car_id+'">'+
                         '<div class="form-group">'+
@@ -47,7 +46,7 @@
                             '</select>'+
                         '</div>'+
                         '<div class="form-group">'+
-                            '<button type="submit">Submit</button>'
+                            '<button type="submit" class="car-modal-btn">Submit</button>'
                         '</div>'+
                    '</form>';
 
