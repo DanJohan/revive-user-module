@@ -1834,7 +1834,7 @@ img.logo {
 }
 .checkout-top {
     background: #f2f2f2;
-    padding: 150px 0px 0px 100px;
+    padding: 150px 0px 0px 0px;
 }
 .checkout-btn {
     text-align: right;
@@ -2816,30 +2816,6 @@ img.img-fluid.f-body {
     padding: 10px 20px;
 }
 
-/**********Responsive*************/
-@media only screen and (max-width:768px){
-    
-    .car__D {
-    display: block;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 3px solid #5d5d5d;
-    width: 77%;
-    margin: 0px auto;
-}
-.color_white {
-color: #fff;
-font-weight: 700;
-margin-top: 160px !important;
-}
-#about-us {
-margin-top: 146px;
-}
-.slider-font {
-    margin-top: 281px !important;
-}
-}
 
 
 
@@ -3167,7 +3143,10 @@ h2.record {
 .slider-top {
     margin-top:50px !important;
 }
-
+section.custom-wrapper {
+    background: #f1f1f1;
+    padding-top: 20px;
+}
 @media screen and (max-width: 480px) {
 .select-car-wrapper {
     margin: 0 auto;
@@ -3245,11 +3224,13 @@ input[type="password"] {
     float: right;
     display: block;
 }
+
 /* komal */
 section.custom-wrapper {
     background: #f1f1f1;
     padding-top: 20px;
 }
+
 form.car-book-wrapper {
     padding: 35px;
     background: #e5e4e4;
@@ -3258,25 +3239,116 @@ form.car-book-wrapper {
     top: 100px;
 }
 form.car-book-wrapper .form-control {
-padding: 7px 10px;
-background: transparent;
-border: 1px solid #240a1f;
+    padding: 7px 10px;
+    background: transparent;
+    border: 1px solid #240a1f;
 }
 button.car-modal-btn {
-background: #240a1f;
-color: #fff;
-padding: 5px 12px;
-border-radius: 22px;
-box-shadow: none;
-cursor: pointer;
-float: right;
+    background: #240a1f;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 22px;
+    box-shadow: none;
+    cursor: pointer;
+    float: right;
 }
 button.car-modal-btn:focus {
-outline: 1px dotted ;
-/ outline: 5px auto -webkit-focus-ring-color; /
+    outline: 1px dotted ;
+    /* outline: 5px auto -webkit-focus-ring-color; */
 }
+select#pick_up_time {
+    padding: 5px 10px;
+}
+
+.ui-datepicker {
+    width: 100%;
+    padding: .2em 0.2em 0;
+    display: none;
+}
+
+p.p-txt {
+    font-size: 12px;
+}
+
+
+/* .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #ab6aba !important;
+    background: #47143d !important;
+    font-weight: normal;
+    color: #ffffff;
+    font-size: 8px;
+}  */
+/**********Responsive*************/
+@media only screen and (max-width:768px){
+    
+    .car__D {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid #5d5d5d;
+    width: 77%;
+    margin: 0px auto;
+}
+.color_white {
+color: #fff;
+font-weight: 700;
+margin-top: 160px !important;
+}
+#about-us {
+margin-top: 146px;
+}
+.slider-font {
+    margin-top: 281px !important;
+}
+/* .ui-datepicker {
+    width: 100%;
+    padding: 2px 0px;
+    display: none;
+    font-size: 10px;
+} */
+.ui-datepicker td span, .ui-datepicker td a {
+    display: block;
+    padding: .2em;
+    text-align: center !important;
+    text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+    font-size: 10px;
+}
+.ui-datepicker table {
+    width: 100%;
+    font-size: 9px;
+    border-collapse: collapse;
+    /* margin: 0 0 .4em; */
+}
+}
+@media only screen and (max-width:425px){
+
+ .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #ab6aba !important;
+    background: #47143d !important;
+    font-weight: normal;
+    color: #ffffff;
+    padding: x;
+    font-size: 20px;
+}
+    }
+@media only screen and (max-width:600px){
+    .ui-datepicker .ui-datepicker-title {
+    margin: 0 2.3em;
+    line-height: 1.8em;
+    text-align: center;
+    font-size: 16px;
+}
+}
+
 
 /* sheenam */
 .bootbox.modal.fade.loanerpopup.show {
     top: 130px;
 }
+
