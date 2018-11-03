@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-8 col-sm-8 col-xs-12">
                         <div class="row float-right">
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                             <div class="social-icons">
                             <ul>
                                 <li>
@@ -24,9 +24,12 @@
                                     
                             </div>
                             </div>
-                            <div class="col-md-4">    
+                            <div class="col-md-6">    
                             <div class="models_list">
-                               <button type="button" class="btn btn-info modal-btn" data-toggle="modal" data-target="#myModal"><?php echo ($this->session->has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?></button>
+                                <a href="#"><p class="btn btn-modal" data-toggle="modal" data-target="#myModal"><?php echo ($this->session->has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?>
+        <i class="fa fa-angle-down" aria-hidden="true"></i></p></a>
+
+                               <!-- <a href="#"><p class="btn btn-info modal-btn" data-toggle="modal" data-target="#myModal"><?php //echo ($this->session->//has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?></p></a> -->
 
                                 <!-- The Modal -->
                             <?php $this->load->view('common/location_modal');?>

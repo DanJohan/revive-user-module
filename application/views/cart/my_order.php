@@ -28,9 +28,8 @@
 		   </div>
 	   </div>
 	  <?php }
-			}else {
-	  		 echo "NO ORDER FOUND"; }
-	   ?> 
+			}else {?><h2 class="record">NO  RECORD FOUND</h2><?php } ?>
+	  
     </div>
   </div>
 </section>

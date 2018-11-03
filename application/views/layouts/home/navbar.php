@@ -59,7 +59,7 @@
             <a href="<?php echo base_url();?>user/login" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#47143d">Service Status</a>
         </div>
 <!--end col-sm-7 col-md-7-->
-        <div class="col-sm-5 d-none d-sm-block">
+        <div class="col-sm-5 d-none d-sm-block slider-top">
             <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1">
                 <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
                 <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">

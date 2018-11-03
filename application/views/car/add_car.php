@@ -2,8 +2,7 @@
 <section class="select-services-banner">
   <div class="container">
 <form id="add_car_form" action="<?php echo base_url()."car/insert_car"?>" method="post" enctype="multipart/form-data">
-  <div class="row ">
-<div class="col-md-3">
+  <div class="select-car-wrapper">
   <label class="modl-label">Select Brand</label><br> 
   <div class="select-container">    
     <select class="select-bg" id="brand" name="brand_id">
@@ -16,7 +15,8 @@
     </select>
   </div>
 </div>
-<div class="col-md-3">
+
+<div class="select-car-wrapper">
 <label class="modl-label">Select Model</label><br>
       
   <div class="select-container">
@@ -25,10 +25,11 @@
     </select>
   </div>
 </div>
-<div class="col-md-3">
+
+<div class="select-car-wrapper">
 <label class="modl-label">Select Car Type</label><br>
    <div class="select-container">  
-     <select name="car_body" id="car_body" class="form-control" required>
+     <select name="car_body" id="car_body" class="select-bg" required>
         <option value="">Please select</option>
         <?php
           foreach ($car_bodies as $index => $car_body) {
@@ -38,28 +39,25 @@
           }
         ?>
      </select>
-  </div>
 </div>
-<div class="col-md-3">
+</div>
+
+<div class="select-car-wrapper">
 <label class="modl-label">Registration Number</label><br>
    <div class="select-container">  
-    <input type="text" class="form-control login-input" name="reg_no" id="reg_no">
-  </div>
+    <input type="text" class="select-bg login-input" name="reg_no" id="reg_no">
 </div>
- <div class="col-md-3">
+</div>
+
+<div class="select-car-wrapper">
 <label class="modl-label">Upload Car Image</label><br>
    <div class="select-container">  
     <input type="file" class="" name="image" id="image">
   </div>
 </div> 
-
- 
-<!--   </div>
-<div class="row"> -->
-  <div class="col-md-12 text-center">
-       <button style="width:25%;" type="submit" name="submit" class="btn btn-default find-btn">Add Car</button>
+<div class="col-md-12 text-center">
+       <button type="submit" name="submit" class="btn btn-default find-btn">Add Car</button>
  </div>
-</div>
 </form>
 
 </section>

@@ -41,5 +41,8 @@
      </div> -->
     </div>
 </footer>    
-
+<div id="back-to-top" class="footer__wrap-btn show"> <a class="footer__btn" href="#">top</a> </div>
+<div class="copyright">
+  <p align="center">Copyright 2018. Design by Smart Serve Infotech Pvt. Ltd.</p>
+</div>
 <!--***********Footer end***********--> 

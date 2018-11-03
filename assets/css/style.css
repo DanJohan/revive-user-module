@@ -1806,7 +1806,7 @@ i.icon.fa.fa-envelope.icon-margin {
     padding-top: 13px;
     padding-bottom: 7px;
     margin-bottom: 1px;
-    opacity: 0.6;
+   /*  opacity: 0.6; */
     /* color: #fff !important; */
     font-size: 11px;
     position: fixed;
@@ -2485,7 +2485,7 @@ a.dropdown-item.drp-clr {
 .select-bg {
     border: 1px solid #582c4f;
     background: transparent;
-    width: 82%;
+    width: 100%;
     padding: 8px 4px;
     color: #582c4f;
    /*  margin-bottom: 71px; */
@@ -2498,7 +2498,7 @@ button.btn.btn-default.find-btn {
     background-color: #582c4f;
     color: #fff;
     /* width: 82%; */
-    padding: 8px 50px;
+    padding: 8px 70px;
     font-size: 18px;
 }
 i.fa.fa-minus-circle.mins {
@@ -2752,7 +2752,7 @@ img.img-fluid.f-body {
 .order__time a {
     text-align: center;
     display: block;
-    background-color: red;
+    background-color: #47143d;
     width: 100%;
     margin: 0px auto;
     color: #fff;
@@ -2785,8 +2785,9 @@ img.img-fluid.f-body {
 }
 
 .pend__ing a {
-    border: 1px solid #2b2b2b;
+    border: 1px solid #000000;
     padding: 10px 30px;
+    color: #000000;
 }
 .appontment {
     margin: 0;
@@ -3063,9 +3064,19 @@ button.btn.btn-no {
     padding-bottom: 20px;
 }
 .circle img {
-    width: 30%;
+    width: 63%;
     margin: 0 auto;
     text-align: center;
+    height: 54PX;
+}
+button#book_now {
+    border-radius: 22px;
+    background: #47143d;
+    color: #fff;
+    padding: 8px 18px;
+}
+button.btn.book__now {
+    margin-bottom: 30px;
 }
 .defaul_t {
     margin-bottom: 30px;
@@ -3132,4 +3143,34 @@ button.btn.btn-no {
 .default a {
   width: 73%;    
 }
+}
+
+/*****************Add-car****************/
+
+.select-car-wrapper {
+    margin: 0 auto;
+    width: 50%;
+}
+.select-car-wrapper .select-container {
+    padding-bottom: 26px;
+}
+
+h2.record {
+    border: 2px dotted #47143d;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 36px;
+    color: #47143d;
+    font-weight: 500;
+}
+.slider-top {
+    margin-top:50px !important;
+}
+
+@media screen and (max-width: 480px) {
+.select-car-wrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+
 }

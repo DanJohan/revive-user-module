@@ -52,7 +52,7 @@
 <!--   </div>
 <div class="row"> -->
   <div class="col-md-12 text-center">
-       <button style="width:25%;" type="submit" class="btn btn-default find-btn">Book Now</button>
+       <button type="submit" class="btn btn-default find-btn">Book Now</button>
  </div>
 </div>
 </form>

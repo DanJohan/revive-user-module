@@ -3,9 +3,9 @@
 <!--*********************************************************************************************************-->
 <main id="ts-content">
 <!--******* WHAT DOES REVIVE DO start *************-->
-<section id="about-us" class="ts-block">
+<section id="about-us" class="about">
         <div class="container">
-            <div class="ts-title">
+            <div class="about-head">
                 <h2 class="text-center">WHAT DOES REVIVE DO</h2>
             </div>
             <!--end ts-title-->
@@ -17,7 +17,7 @@
                  <!--end col-xl-5-->
                 <div class="col-md-6 col-xl-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
                     <div class="px-3">
-                        <img src="<?php echo base_url();?>assets/img/car.png" class="mw-100 ts-border-radius__md" alt="">
+                        <img src="<?php echo base_url();?>assets/img/a-car.png" class="mw-100 ts-border-radius__md" alt="">
                     </div>
             </div>
             <!--end col-xl-7-->
@@ -28,9 +28,9 @@
 </section>
 <!--****************WHAT DOES REVIVE DO end********-->
 <!--********HOW IT WORKS Start*********-->
-<section id="how-it-works" class="ts-block text-center s-bg">
+<section id="how-it-works" class="text-center s-bg">
         <div class="container">
-            <div class="ts-title">
+            <div class="unique-head">
                 <h2>Unique Offerings</h2>
             </div>
             <!--end ts-title-->
@@ -108,11 +108,11 @@
 </section>
 <!--************END HOW IT end ***********-->
 <!--*******Services Start******-->
-<section id="services" class="ts-block">
+<section id="services" class="services-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-xl-12" data-animate="ts-fadeInUp" data-offset="100">
-                    <div class="ts-title">
+                    <div class="service-head">
                         <h2 class="text-center">Our Services</h2>
                     </div>
                     <!--end ts-title-->
@@ -205,9 +205,9 @@
 </section>
 <!--***********services end***********--> 
 <!--*********Our clients start********-->
-<section id="our-clients" class="ts-block text-center">
+<section id="our-clients" class="clients text-center">
     <div class="container">
-            <div class="ts-title">
+            <div class="clients-head">
                 <h2>Testimonials</h2>
             </div>
     <!--end ts-title-->
@@ -254,8 +254,8 @@
             </section>
             <!--end #our-clients.ts-block-->
 <!--Gallery start-->
-<section id="gallery" class="ts-block  g-bg">
-        <div class="ts-title text-center">
+<section id="gallery" class="g-bg">
+        <div class="gallery-head text-center">
             <h2>Gallery</h2>
         </div>
                 <!--end ts-title-->
@@ -276,11 +276,12 @@
  <!--gallery end-->
 <!--***********Our clients end***********--> 
 <!--***************FAQS*******************-->
-<section id="faqs" class="ts-block"  data-bg-color="#f7f7f7">
+<section id="faqs" class="faqs-wrapper"  data-bg-color="#f7f7f7">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-xl-12" data-animate="ts-fadeInUp" data-offset="100">
-                <div class="ts-title text-center"><h2>FAQs</h2>
+                <div class="faq-head text-center">
+                    <h2>FAQs</h2>
                 </div>
                 <!--end ts-title-->
             </div>
@@ -381,9 +382,9 @@
 </section>
 <!--***********Faqs end***********-->    
 <!--***********Blog Start**********-->        
-<section class="ts-block ts-separate-bg-element text-center">
+<section id="blog" class="blogs text-center">
     <div class="container">
-        <div class="ts-title">
+        <div class="blog-head">
             <h2>Blog</h2>
         </div>
         <!--end ts-title-->
@@ -414,11 +415,11 @@
 <!--***********Blog end***********--> 
 </div>
 <!--***********Contact start***********-->     
-<section id="contact">
+<section id="contact" class="contact-us">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
         <address>
           <figure>
           <b>Email:</b><br><a href="#">contact@reviveauto.in</a>.<br> </figure>
@@ -429,7 +430,7 @@
         </address>
       </div>
       <div class="col-md-8">
-        <h1>Contact Form</h1>
+        <h2>Contact Form</h2>
 
         <form class="contact-form" id="contact_mail" method="post" action="<?php echo base_url();?>site/contact" novalidate="novalidate">
            <div class="row">
