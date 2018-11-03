@@ -8,10 +8,10 @@
 - Above details will be different for testing and production environment.
 
 */
-define('PAYTM_ENVIRONMENT', 'TEST'); // PROD
-define('PAYTM_MERCHANT_KEY', '03GDDfyhiaI@X9xD'); //Change this constant's value with Merchant key downloaded from portal
-define('PAYTM_MERCHANT_MID', 'smarts95630040440822'); //Change this constant's value with MID (Merchant ID) received from Paytm
-define('PAYTM_MERCHANT_WEBSITE', 'WEBSTAGING'); //Change this constant's value with Website name received from Paytm
+define('PAYTM_ENVIRONMENT', getenv('PAYTM_ENVIRONMENT')); // PROD
+define('PAYTM_MERCHANT_KEY', getenv('PAYTM_MERCHANT_KEY')); //Change this constant's value with Merchant key downloaded from portal
+define('PAYTM_MERCHANT_MID', getenv('PAYTM_MERCHANT_MID')); //Change this constant's value with MID (Merchant ID) received from Paytm
+define('PAYTM_MERCHANT_WEBSITE', getenv('PAYTM_MERCHANT_WEBSITE')); //Change this constant's value with Website name received from Paytm
 
 /*$PAYTM_DOMAIN = "pguat.paytm.com";
 if (PAYTM_ENVIRONMENT == 'PROD') {

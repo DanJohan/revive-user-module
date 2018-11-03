@@ -57,4 +57,12 @@ class UserModel extends MY_Model {
 		return (!empty($result))? $result :false;
 	}
 
+	/*public function getHumanDate(){
+		return date('dS M Y',strtotime($this->created_at));
+	}
+
+	public getFullName(){
+		return $this->first_name.' '.$this->last_name;
+	}*/
+
 }

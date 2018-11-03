@@ -2106,7 +2106,7 @@ section.uniqueoffer {
 
 /***************location-top-bar************/
 
-.modal-content {
+.top-bar .modal-content {
     position: absolute;
     left: 85%;
     top: 30px;
@@ -2978,4 +2978,158 @@ button.btn.btn-yes {
 button.btn.btn-no {
     background-color: #b7b4b5;
     color: #fff;
+}
+
+
+/*my car css balwinder*/
+.book__now {
+    color: #fff;
+    background-color: #47143d;
+    border-color: #47143d;
+    border-radius: 50px;
+    padding: 10px 32px;
+}
+.custom__car {
+    padding-top: 170px;
+}
+.my_car__2 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.default a {
+    text-align: center;
+    display: block;
+    background-color: #47143d;
+    width: 54%;
+    padding: 10px;
+    color: #fff;
+    border-radius: 22px;
+    margin: 0 auto;
+}
+
+.default_2 a {
+    text-align: center;
+    display: block;
+    background-color: #891672;
+    width: 53%;
+    padding: 10px;
+    color: #fff;
+    border-radius: 22px;
+    margin: 5px auto;
+    float: left;
+}
+.default_2 i {
+    padding-top: 14px;
+    color: #891672;
+    margin-left: 28px;
+}
+.tata__r {
+    float: left;
+    width: 50%;
+    margin-top: 33px;
+}
+
+.bn {
+    height: 33px;
+    background-image: url(./assets/img/dot.png);
+    background-repeat: no-repeat;
+    background-position: 128px 16px;
+    background-size: 77%;
+    position: relative;
+    top: 17px;
+    z-index: 99999;
+}
+.car img {
+    width: 38%;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    padding-top: 0px;
+}
+    .banner_2 {
+    /* background-color: red; */
+    /* display: block; */
+    clear: both;
+    height: 64vh;
+    background-image: url(./assets/img/servicesimg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-position: center top;
+}
+.circle {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.circle img {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+.defaul_t {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    box-shadow: 1px 1px 10px 3px #a0a0a0;
+    padding-bottom: 20px;
+}
+.defaul_t {
+  margin: 10px auto;
+}
+
+.img__sec {
+    float: left;
+    width: 50%;
+}
+.defaul_t {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.car {
+    display: block;
+    text-align: left;
+}
+.reg {
+    text-align: left;
+    display: block;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+
+.my__car {
+    box-shadow: 1px 1px 10px 3px #a0a0a0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    margin: 0 auto;
+}
+.ca__r {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.car {
+    display: block;
+    text-align: left;
+}
+.reg {
+    text-align: left;
+    display: block;
+    padding-bottom: 6px;
+}
+.default_2 a {
+    text-align: center;
+    display: block;
+    background-color: #891672;
+    width: 53%;
+    padding: 10px;
+    color: #fff;
+    border-radius: 22px;
+    margin: 5px auto;
+    float: none;
+}
+.default a {
+  width: 73%;    
+}
 }

@@ -20,13 +20,13 @@ class Car extends MY_Controller {
 		}
 
 		public function insert_car(){
-			if(! $this->session->has_userdata('is_user_login')){
+		if(! $this->session->has_userdata('is_user_login')){
             $this->session->set_flashdata('error_msg','Please login to continue');
 			redirect('user/login/');
 		}
 			$file_name = '';
 				if(isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
-					$path= CRM_BASE_PATH.'uploads/admin/';
+					$path= CRM_BASE_PATH.'uploads/app/';
 					$config['new_name']=true;
 					$upload= $this->do_upload('image',$path,$config);
 					//dd($upload);
@@ -50,7 +50,7 @@ class Car extends MY_Controller {
 
 			    if($result){
 					$this->session->set_flashdata('success_msg', 'Car is Added Successfully!');
-					redirect(base_url('car/add_car'));
+					redirect(base_url('car/show_car'));
 					//print_r($data);die;
 				}
 				
@@ -60,5 +60,24 @@ class Car extends MY_Controller {
 					
 				}
 			}
+
+			public function my_car(){
+				$data = array();
+				$this->render('car/my_car',$data);
+			}
+
+			public function show_car(){ 
+
+				if(! $this->session->has_userdata('is_user_login')){
+					redirect('user/login/');
+				}
+				$data = array();
+				$user_id= $this->session->userdata('user_id');
+				$data['car_detail']= $this->CarModel->getByUserId($user_id);
+				//dd($data);
+				$this->render('car/my_car',$data);
+	
+			}
+
 		}
 	?>	

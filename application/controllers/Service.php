@@ -30,26 +30,28 @@ class Service extends MY_Controller {
 
 			$data=array();
 			$model_id = $this->input->get('model_id');
-
             $service_cat_id = $this->input->get('service_cat_id');
+            $car_id = $this->input->get('car_id');
             $data['service_cat_id'] = $service_cat_id;
+
 			if(!$model_id){
 				redirect('service/select_service');
 			}
+			if(!$car_id){
+				$this->session->unset_userdata('car_id');
+			}else{
+				$this->session->set_userdata('car_id',$car_id);
+			}
 			$this->session->set_userdata('model_id',$model_id);
             $this->session->set_userdata('service_cat_id',$service_cat_id);
-			//dd($_SESSION);
+          	//dd($_SESSION);
 			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
-			//dd($data['all_carimage']);
 			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id,$service_cat_id);
-			//dd($data['all_carservices']);
 			$cartItems = $this->basket->getItems();
 			$data['cart_items_id'] = array_keys($cartItems);
 			$this->render('service/find_service',$data);
 			
 		}
-
-
 		public function getCarModels(){
 			if($this->input->post('brand_id')){
 				$brand_id = $this->input->post('brand_id');

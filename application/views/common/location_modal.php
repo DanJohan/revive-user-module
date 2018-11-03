@@ -1,7 +1,7 @@
 <!-- The Modal -->
 <div class="modal" id="myModal">
 	<div class="modal-dialog">
-		<div class="modal-content">
+		<div class="modal-content location__select">
 			<!-- Modal Header -->
 			<h1 class="modal-main-head">Where do you stay? </h1>
 			<div class="modal-header header-m-border" onclick="location.assign(config.baseUrl+'service/set_location/delhi')">

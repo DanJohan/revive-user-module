@@ -18,7 +18,7 @@ p.p-txt {
 <?php $this->widget->endBlock(); ?>
 <div class="checkout-top">
 <div class="container">
-<form id="regForm" action="<?php echo base_url()."cart/selectpaymentmethod"?>" method="post"> 
+<form id="regForm" action="<?php echo base_url()."cart/store_order"?>" method="post"> 
 <section class="checkout tab sec1">
 <div class="container">
     <div class="row">
@@ -31,8 +31,8 @@ p.p-txt {
         <div class="col-md-3 col-sm-3 col-xs-12 full_box_23">
             <div id="datepicker"></div>
             <input type="hidden" id="datepicker2" value="<?php echo date('m/d/Y');?>" name="pick_up_date" placeholder="Selected Date" readonly required>
-            <select class="time_sloat2 validation" name="pick_up_time" id="pick_up_time" required="">
-                    <option value="">Select Time</option>  
+            <select class="time_sloat2 validation form-control" name="pick_up_time" id="pick_up_time" required="">
+                  <option value="">Select Time</option>  
                   <option value="10-11AM">10-11AM</option>
                   <option value="11-12PM">11-12PM</option>
                   <option value="12-01PM">12-01PM</option>
@@ -58,7 +58,7 @@ p.p-txt {
                       );
                       foreach ($services as $index => $service) {*/
                     ?>
-                     <!--  <option value="<?php echo $service['id']; ?>"  <?php echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option> -->
+                     <!--  <option value="<?php //echo $service['id']; ?>"  <?php //echo ($service_cat_id==$service['id']) ? 'selected' :''; ?> ><?php //echo $service['name']; ?></option> -->
                     <?php
                      //}
                     ?>
@@ -128,7 +128,7 @@ p.p-txt {
             <input placeholder="Car Model" type="text" name="car_model"value="<?php echo $car_detail['model_name'];?>" readonly>
              
            
-            <input type="text" name="reg_no" id="upcase" placeholder="Registration Number" class="validation">
+            <input type="text" name="reg_no" id="upcase" placeholder="Registration Number" value="<?php echo $car_reg_no['registration_no'];?>" class="validation">
            </form>
           <a href="<?php echo base_url();?>service/select_service" <button type="button" class="btn btn-default edit-car ">Edit your car</button></a>
 

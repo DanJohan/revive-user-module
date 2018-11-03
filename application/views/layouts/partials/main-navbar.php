@@ -35,6 +35,7 @@
               <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <?php echo ($this->session->has_userdata('name'))? ucfirst($this->session->userdata('name')) : '';?></a>
             <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
                <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>cart/my_order">My Orders</a>
+               <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>car/show_car">My Cars</a>
                 <!-- <a class="dropdown-item drp-clr drplogout" href="#">My Cars</a> -->
                 <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>user/logout">Logout</a>
             </div>

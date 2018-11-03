@@ -39,4 +39,18 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
+
+	/*public function test(){
+		$this->load->model('UserModel');
+		$this->db->select('id,name,email,created_at');
+		$this->db->from('users');
+		$query = $this->db->get();
+		dd($this->UserModel,false);
+		$results = $query->result('UserModel');
+		dd($results);
+		foreach ($results as $key => $result) {
+			echo $result->getHumanDate(),"</br>";
+		}
+		dd($result);
+	}*/
 }

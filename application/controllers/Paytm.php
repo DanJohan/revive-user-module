@@ -8,10 +8,10 @@ class Paytm extends MY_Controller
 	        if(!$this->session->has_userdata('is_user_login')){
 			redirect('user/login');
 		    }
-	       // $this->load->model('TransactionModel');
-	        //$this->load->model('InvoiceModel');
+	        $this->load->model('TransactionModel');
+	        $this->load->model('OrderModel');
 	        $this->load->model('PaymentModel', 'payment');
-	        //$this->load->model('PaytmModel');
+	       
 	    }
 
 	public function paytmpost()
@@ -28,7 +28,7 @@ class Paytm extends MY_Controller
 
 		 $checkSum = "";
 		 $paramList = array();
-		 //$INVOICE_ID = $_POST['INVOICE_ID'];
+		 $order_id = $_POST['order_id'];
 		 $ORDER_ID = $_POST["ORDER_ID"];
 		 $CUST_ID = $_POST["CUST_ID"];
 		 $INDUSTRY_TYPE_ID = $_POST["INDUSTRY_TYPE_ID"];
@@ -36,11 +36,12 @@ class Paytm extends MY_Controller
 		 $TXN_AMOUNT = $_POST["TXN_AMOUNT"];
 		 $EMAIL = $_POST['EMAIL'];
 		 $MOBILE_NO = str_replace('+', '',$_POST['MOBILE_NO']);
-		 /*$this->TransactionModel->insert(array(
+		 $this->TransactionModel->insert(array(
 		 	'transaction_id'=>$ORDER_ID,
-		 	'invoice_id'=>$INVOICE_ID,
+		 	'order_id'=>$order_id,
+		 	'amount' => $TXN_AMOUNT,
 		 	'created_at'=>date('Y-m-d H:i:s')
-		 ));*/
+		 ));
 		// Create an array having all required parameters for creating checksum.
 		 $paramList["MID"] = PAYTM_MERCHANT_MID;
 		 $paramList["ORDER_ID"] = $ORDER_ID;
@@ -90,6 +91,7 @@ class Paytm extends MY_Controller
 	}
 
 	public function paytmCallback(){
+		//dd($_POST);
 		if(!empty($_POST)){
 			$status = $this->input->post('STATUS');
 			if($status=="TXN_SUCCESS"){
@@ -101,11 +103,11 @@ class Paytm extends MY_Controller
 
 				if($transaction) {
 					$insert_data = array(
-						'merchant_transaction_id'=>$txn_id,
+						'transaction_id'=>$txn_id,
 						'client_transaction_id'=>$order_id,
 						'payment_type_id'=>3,
 						'channel'=>1,
-						'invoice_id'=>$transaction['invoice_id'],
+						//'invoice_id'=>$transaction['invoice_id'],
 						'amount'=>$amount,
 						'status'=>1,
 						'created_at'=>date("Y-m-d H:i:s")
@@ -113,15 +115,22 @@ class Paytm extends MY_Controller
 
 					$insert_id = $this->payment->insert($insert_data);
 					if($insert_id){
-					
-						$this->InvoiceModel->update(array('paid'=>1,'payment_id'=>$insert_id),array('id'=>$transaction['invoice_id']));
+
+						$this->OrderModel->update(array('paid'=>1,'payment_id'=>$insert_id,'payment_type_id'=>3),array('id'=>$transaction['order_id']));
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
-				         	redirect('cart/order_detail');
+				         	redirect('cart/order_detail/'.$transaction['order_id']);
 				         	exit;
 					}
 				}
 
+			}else{
+				echo 'cart/order_detail/'.$transaction['order_id'];
+				//die("here");
+				$this->session->set_flashdata('error_msg','Looks like you cancelled the payment. You can try again now or if you faced any issues in completing the payment, please contact us');
+				redirect('cart/order_detail/'.$transaction['order_id']);
+				exit;
 			}
+
 		}
 		$this->session->set_flashdata('error_msg','Something went wrong!');
 		redirect('service/select_service');
