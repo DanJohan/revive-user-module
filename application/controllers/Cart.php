@@ -250,6 +250,7 @@ class Cart extends MY_Controller {
 		if(!$id){
 			redirect('/');
 		}
+		
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
 		$order_details = $this->OrderModel->getDetailByOrderId($id);

@@ -16,8 +16,6 @@ class Paytm extends MY_Controller
 
 	public function paytmpost()
 	{
-
-		
 		 header("Pragma: no-cache");
 		 header("Cache-Control: no-cache");
 		 header("Expires: 0");
@@ -117,6 +115,7 @@ class Paytm extends MY_Controller
 					if($insert_id){
 
 						$this->OrderModel->update(array('paid'=>1,'payment_id'=>$insert_id,'payment_type_id'=>3),array('id'=>$transaction['order_id']));
+						
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
 				         	redirect('cart/order_detail/'.$transaction['order_id']);
 				         	exit;
@@ -124,11 +123,9 @@ class Paytm extends MY_Controller
 				}
 
 			}else{
-				echo 'cart/order_detail/'.$transaction['order_id'];
-				//die("here");
-				$this->session->set_flashdata('error_msg','Looks like you cancelled the payment. You can try again now or if you faced any issues in completing the payment, please contact us');
-				redirect('cart/order_detail/'.$transaction['order_id']);
-				exit;
+						$this->session->set_flashdata('error_msg','Looks like you cancelled the payment. You can try again now or if you faced any issues in completing the payment, please contact us');
+							redirect('cart/order_detail/'.$transaction['order_id']);
+							exit;
 			}
 
 		}

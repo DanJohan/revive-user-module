@@ -10,8 +10,8 @@
                </div>
                
                <div class="tata__r">
-              <span class="car">Car : <?php echo $cardetail['brand_name'];?>&nbsp;<?php echo $cardetail['model_name'];?></span>
-              <span class="reg">Reg No : <?php echo $cardetail['registration_no'];?></span>
+              <span class="car">Car :<?php echo $cardetail['brand_name'];?>&nbsp;<?php echo $cardetail['model_name'];?></span>
+              <span class="reg">Reg No :<?php echo $cardetail['registration_no'];?></span>
               <span class="default_2">
                <button class="btn btn-book__now" id="book_now" data-model-id="<?php echo $cardetail['model_id']?>" data-car-id="<?php echo $cardetail['id']?>">Book Now</button>
                </div>
