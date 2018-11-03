@@ -32,11 +32,19 @@
 			   <div class="order__list2">
 					 <span class="order__id"><?php echo $order_item['name'];?></span>
 					 <span class="booking__date"><?php echo $order_item['price'];?></span>
+
 			   </div>
 			   <?php endforeach; ?>
 		   </div>
-		    <span class="order__time"><a href="#">Cancel Order</a></span>
-		     <span class="order__time"><a href="<?php echo base_url();?>cart/selectpaymentmethod/<?php echo $orderdetails['id']; ?>">Pay Now</a></span>
+		 		
+			 <?php if($orderdetails['paid'] == 1){?>
+				<span class="order__time"><a href="#">Order Confirmed</a></span>
+			<?php }else {?>			 
+
+				<span class="order__time"><a href="#">Cancel Order</a></span>
+				<span class="order__time"><a href="<?php echo base_url();?>cart/selectpaymentmethod/<?php echo $orderdetails['id']; ?>">Pay Now</a></span>
+			<?php } ?>
+			
 	</div>
   </div>
 </section>

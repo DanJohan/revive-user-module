@@ -282,9 +282,39 @@ class User extends MY_Controller {
 				}
 			}	
 
+    public function profile(){
+    	$data =array();
+		if($this->session->has_userdata('user_id')){
+			$user_id = $this->session->userdata('user_id');
+			}
+			$data['user_data'] = $this->UserModel->get(array('id'=>$user_id));
+			//dd($data);
+			$this->render('user/profile',$data);
+		}	
+	
+
+	public function update_profile($id=null){
+		if(count($_POST) > 0 ) { 
+				$id = $this->input->post('id');
+				$update_data = array(
+					'name'  =>   $this->input->post('name'),
+					'email' =>   $this->input->post('email'),
+					'phone' =>   $this->input->post('phone')
+				);
+			
+			$result = $this->UserModel->update($update_data,array('id'=>$id));
+				if($result){
+				$this->session->set_flashdata('success_msg','Your profile is successfully updated'); 
+            }else{
+                $this->session->set_flashdata('error_msg','Some error occur, Try again');
+            }
+            redirect('user/profile');
+		}
+	}
+
 	public function logout(){
 			$this->session->sess_destroy();
-			redirect(base_url('user/login'), 'refresh');
+			redirect(base_url('user/login'),'refresh');
 	}
 
     public function forgot_password() {

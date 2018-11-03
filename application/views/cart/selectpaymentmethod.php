@@ -13,7 +13,7 @@
 				   <li class="or_i">Or</li>
 				   <a href="<?php //echo base_url();?>cart/cashOnDelievery"><li>Pay Cash on Delivery</li></a>
 			</ul> -->
-			<h6 class="text-center paytem-text">Select Paytm Mode</h6>
+			<h6 class="text-center paytem-text">Select Payment Mode</h6>
 				<div class="row paytem-wrapper">
 			 <div class="col-md-4">
 			 	<a href="#"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/m-card.png">

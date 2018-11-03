@@ -18,7 +18,7 @@ class Site extends MY_Controller {
 		$this->load->library('mailer');
 		$from_email = $this->input->post('email');
 	    $name = $this->input->post('name'); 
-	    $to_email = "sheenam.smartserve@gmail.com";
+	    $to_email = "contact@reviveauto.in";
 	    $message = $this->input->post('message'); 
 		$this->mailer->setFrom(MAIL_USERNAME);
 		$this->mailer->addAddress($to_email);
