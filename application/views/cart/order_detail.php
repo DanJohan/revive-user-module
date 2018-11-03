@@ -41,7 +41,7 @@
 				<span class="order__time"><a href="#">Order Confirmed</a></span>
 			<?php }else {?>			 
 
-				<span class="order__time"><a href="#">Cancel Order</a></span>
+				<span class="order__time"><a href="<?php echo base_url();?>service/select_service/">Cancel Order</a></span>
 				<span class="order__time"><a href="<?php echo base_url();?>cart/selectpaymentmethod/<?php echo $orderdetails['id']; ?>">Pay Now</a></span>
 			<?php } ?>
 			

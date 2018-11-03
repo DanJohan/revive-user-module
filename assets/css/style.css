@@ -3224,6 +3224,13 @@ input[type="password"] {
     float: right;
     display: block;
 }
+
+/* komal */
+section.custom-wrapper {
+    background: #f1f1f1;
+    padding-top: 20px;
+}
+
 form.car-book-wrapper {
     padding: 35px;
     background: #e5e4e4;
@@ -3340,4 +3347,8 @@ margin-top: 146px;
 }
 
 
-/***************End***************/
+/* sheenam */
+.bootbox.modal.fade.loanerpopup.show {
+    top: 130px;
+}
+

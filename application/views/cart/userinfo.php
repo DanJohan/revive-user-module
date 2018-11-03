@@ -276,6 +276,7 @@ function validateForm() {
 /*loaner car popup on load*/
 bootbox.confirm({
     message: "Do you need a loaner or replacement vehicle? It will cost Rs. 500/- per day.The total charges for replacement car will be mentioned in the final bill.",
+    className: "loanerpopup",
     buttons: {
         confirm: {
             label: 'Yes',

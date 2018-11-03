@@ -27,7 +27,7 @@
                             <div class="col-md-6">    
                             <div class="models_list">
                                 <a href="#"><p class="btn btn-modal" data-toggle="modal" data-target="#myModal"><?php echo ($this->session->has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?>
-        <i class="fa fa-angle-down" aria-hidden="true"></i></p></a>
+                                <i class="fa fa-angle-down" aria-hidden="true"></i></p></a>
 
                                <!-- <a href="#"><p class="btn btn-info modal-btn" data-toggle="modal" data-target="#myModal"><?php //echo ($this->session->//has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?></p></a> -->
 
