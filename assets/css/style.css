@@ -3245,4 +3245,38 @@ input[type="password"] {
     float: right;
     display: block;
 }
+/* komal */
+section.custom-wrapper {
+    background: #f1f1f1;
+    padding-top: 20px;
+}
+form.car-book-wrapper {
+    padding: 35px;
+    background: #e5e4e4;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+}
+form.car-book-wrapper .form-control {
+padding: 7px 10px;
+background: transparent;
+border: 1px solid #240a1f;
+}
+button.car-modal-btn {
+background: #240a1f;
+color: #fff;
+padding: 5px 12px;
+border-radius: 22px;
+box-shadow: none;
+cursor: pointer;
+float: right;
+}
+button.car-modal-btn:focus {
+outline: 1px dotted ;
+/ outline: 5px auto -webkit-focus-ring-color; /
+}
 
+/* sheenam */
+.bootbox.modal.fade.loanerpopup.show {
+    top: 130px;
+}
