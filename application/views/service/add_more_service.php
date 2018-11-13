@@ -2,24 +2,24 @@
 <!--PRODUCT-LIST-->
 <section class="find-service-bg">
       <div class="container">
- <div id="steps" class="hidden-xs hidden-sm">
-          <ul class="progressbar">
-            <li class="done" style="width: 25%;">
-              <a id="carBrand"><?php echo $car_detail['brand_name'];?></a>
-              <span>&gt;</span><a id="carModel" onclick="setFlag(2);"><?php echo $car_detail['model_name'];?></a>
-              </li>
-              <li class="current" style="width: 25%;">Select Service</li>
-              <li  style="width: 25%;">Enter Pick-Up Details</li>
-              <li style="width: 25%;">Confirm Order</li>
-            </ul>
-          </div>
+<!--  <div id="steps" class="hidden-xs hidden-sm">
+         <ul class="progressbar">
+           <li class="done" style="width: 25%;">
+             <a id="carBrand"><?php echo $car_detail['brand_name'];?></a>
+             <span>&gt;</span><a id="carModel" onclick="setFlag(2);"><?php echo $car_detail['model_name'];?></a>
+             </li>
+             <li class="current" style="width: 25%;">Select Service</li>
+             <li  style="width: 25%;">Enter Pick-Up Details</li>
+             <li style="width: 25%;">Confirm Order</li>
+           </ul>
+         </div> -->
 
         <div class="row">
-       <?php foreach($all_carimage as $carimage):?>
+      
         <div class="col-md-12 col-sm-12 col-xs-12">
-         <div class="car find-car"><img src="<?php echo CRM_BASE_URL; ?>uploads/admin/<?php echo $carimage['image'];?>"></div>
+         <div class="car find-car"><img src="<?php echo CRM_BASE_URL; ?>uploads/admin/<?php echo $car_detail['image'];?>"></div>
         </div>
-        <?php endforeach; ?>
+ 
       </div>
       </div>
     </section>
@@ -28,20 +28,15 @@
        <div class="container">
           <?php 
           if($service_cat_id == 1 || $service_cat_id==2){
-            $this->load->view('service/partials/dent_and_paint_service');
+            $this->load->view('service/partials/modify/dent_and_paint_service');
           }elseif ($service_cat_id==3) {
-            $this->load->view('service/partials/full_body');
+            $this->load->view('service/partials/modify/full_body');
           }else if($service_cat_id == 4 || $service_cat_id == 5) {
-              $this->load->view('service/partials/exterior_interior');
+              $this->load->view('service/partials/modify/exterior_interior');
           }
           ?>
         </div>
-        <!--checkout button start here-->
-         <?php if($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service'){ ?>
-      
-           <span class="chekout"><a href="<?php echo base_url();?>cart/checkout">Checkout</a></span>
-        <?php }?>
-        <!--checkout button end here--> 
+ 
     </section>
     
     <!--PRODUCT-LIST-End--> 
@@ -53,15 +48,16 @@
           var serviceId= cartBtn.data('service-id');
           var price= cartBtn.data('price');
           var serviceName= cartBtn.data('service-name');
+          var orderId = cartBtn.data('order-id');
           //console.log(serviceName,serviceId,price);
           if(serviceId && price && serviceName){
             $.ajax({
-              url:config.baseUrl+'cart/add',
+              url:config.baseUrl+'cart/add_order',
               method:"POST",
-              data:{'service_id':serviceId,'price':price,'service_name':serviceName},
+              data:{'service_id':serviceId,'price':price,'service_name':serviceName,'order_id':orderId},
               success:function(response){
                 if(response.status){
-                   $('#cart-count').text('Cart('+response.total_items+')');
+                   $('#cart-count').text('View Order('+response.total_items+')');
                    cartBtn.text("Remove");
                    cartBtn.removeClass('cart-item');
                    cartBtn.addClass('cart-remove-item');
@@ -75,22 +71,24 @@
           var serviceId= cartBtn.data('service-id');
           var price= cartBtn.data('price');
           var serviceName= cartBtn.data('service-name');
+          var orderId = cartBtn.data('order-id');
           //console.log(serviceName,serviceId,price);
           if(serviceId && price && serviceName){
             $.ajax({
-              url:config.baseUrl+'cart/remove',
+              url:config.baseUrl+'cart/remove_order',
               method:"POST",
-              data:{'service_id':serviceId,'price':price,'service_name':serviceName},
+              data:{'service_id':serviceId,'price':price,'service_name':serviceName,'order_id':orderId},
               success:function(response){
+                console.log(response);
                 if(response.status){
                    if(response.total_items == 0){
-                    $('#cart-count').text('Cart');
+                    $('#cart-count').text('View Order');
                    }else{
-                    $('#cart-count').text('Cart('+response.total_items+')');
+                    $('#cart-count').text('View Order('+response.total_items+')');
                   }
-                   cartBtn.text("Add To Cart");
-                   cartBtn.removeClass('cart-remove-item');
-                   cartBtn.addClass('cart-item');
+                  cartBtn.text("Add To Order");
+                  cartBtn.removeClass('cart-remove-item');
+                  cartBtn.addClass('cart-item');
                 }
               }
             });

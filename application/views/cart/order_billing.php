@@ -86,7 +86,8 @@
 					<th class="item_s">Services</th>
 					<th>Price</th>
 				  </tr>
-				 <?php $count =1;
+				  <?php if(!empty($orderdetails['order_items'])){
+				  $count =1;
 				 foreach($orderdetails['order_items'] as $order_item){	 ?>
 					  <tr>
 					 	<td><?php echo $count;?></td>
@@ -95,8 +96,11 @@
 							<?php echo $order_item['price'];?></td>
 					  </tr>
 				<?php 
-					$count++; }?>
-
+					$count++; }}else{?>
+					 <tr>
+			            <td>No Items Added In Table</td>
+			          </tr>
+			        <?php }?>
 				   
 				   <tr>
 					<th class="sr_no">TOTAL</th>
