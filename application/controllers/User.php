@@ -12,7 +12,7 @@ class User extends MY_Controller {
 		
 	}
 	public function login(){
-
+		//dd($this->session);
 		$this->load->library('fblogin');
 		$this->load->library('gmailLogin');
 		$data = array();
@@ -260,7 +260,8 @@ class User extends MY_Controller {
 								 	'is_user_login' => TRUE
 								);
 								$this->session->set_userdata($user_data);
-								redirect(base_url('cart/userinfo'));
+								//redirect(base_url('cart/userinfo'));
+								redirect(base_url('user/profile'));
 							}
 						}else{
 							$this->session->set_flashdata('error_msg', 'Some problem occur!');
@@ -291,6 +292,15 @@ class User extends MY_Controller {
 			//dd($data);
 			$this->render('user/profile',$data);
 		}	
+	public function edit_profile(){
+    	$data =array();
+		if($this->session->has_userdata('user_id')){
+			$user_id = $this->session->userdata('user_id');
+			}
+			$data['user_data'] = $this->UserModel->get(array('id'=>$user_id));
+			//dd($data);
+			$this->render('user/edit_profile',$data);
+		}
 	
 
 	public function update_profile($id=null){
@@ -313,7 +323,16 @@ class User extends MY_Controller {
 	}
 
 	public function logout(){
-			$this->session->sess_destroy();
+			//$location = $this->session->userdata('location');
+			//dd($this->session);
+			$this->session->unset_userdata('user_id');
+			$this->session->unset_userdata('name');
+			$this->session->unset_userdata('is_user_login');
+			$this->session->unset_userdata('email');
+			$this->session->unset_userdata('pic');
+			//$this->session->sess_destroy();
+
+			//$this->session->set_userdata('location',$location);
 			redirect(base_url('user/login'),'refresh');
 	}
 

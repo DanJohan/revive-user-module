@@ -20,9 +20,10 @@
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="text" class="form-control login-input" id="phone" name="phone">
-                      </div>
+                        <label>Phone Number</label><br>
+                           <span class="input-group-addon" id="output"> </span>
+                        <input type="text" class="form-control login-input login_phone" id="phone" name="phone" autocomplete="off">
+                        </div>
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
@@ -57,6 +58,7 @@
 
 </section>
 <?php $this->widget->beginBlock('scripts');?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
   $("#user_form_valid").validate({
@@ -83,5 +85,12 @@
         }
       }
   });
+
+  $("#phone").keypress(function(){
+    var txtVal = this.value;
+    $("#output").text("+91");
+  
+  });
+
 </script>
 <?php $this->widget->endBlock();?>

@@ -13,7 +13,8 @@
 				   <li><?php echo $order['created_at']; ?></li>
 			</ul>
 			<br>
-			<a href="<?php echo base_url();?>cart/order_detail/<?php echo $order['id'];?>"><button type="button" class="view_order_btn">View Order</button></a>
+			<a href="<?php echo base_url();?>cart/order_billing/<?php echo $order['hash']; ?>">
+				<button type="button" class="view_order_btn">View Order</button></a>
 		 </div>
 		</div>
 	 </div>

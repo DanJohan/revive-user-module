@@ -8,7 +8,7 @@
 				<div class="city-top row">
 
 					<div class="col-sm-6">
-						<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/city-gurgaon.png" alt="Gurgaon City Pic">
+						<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/delhi.png" alt="Gurgaon City Pic">
 					</div>
 					<div class="col-sm-6">
 						<h2 class="selected-city-name">Delhi</h2>
@@ -28,19 +28,19 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="location-outer" onclick="location.assign(config.baseUrl+'service/set_location/gurugram')">
-							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/city-gurgaon.png">
+							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/gurugram.png">
 							<h4 class="m-head">Gurugram</h4>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="location-outer" onclick="location.assign(config.baseUrl+'service/set_location/delhi')">
-							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/city-gurgaon.png">
+							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/delhi.png">
 							<h4 class="m-head">Delhi</h4>
 						</div>
 					</div>
 					<div class="col-sm-4">
 						<div class="location-outer" onclick="location.assign(config.baseUrl+'service/set_location/noida')">
-							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/city-gurgaon.png">
+							<img class="img-fluid m-img" src="<?php echo base_url();?>assets/img/noida.png">
 							<h4 class="m-head">Noida</h4> 
 						</div>
 					</div>

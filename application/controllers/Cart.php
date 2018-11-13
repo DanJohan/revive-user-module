@@ -10,6 +10,7 @@ class Cart extends MY_Controller {
 		$this->load->model('CustomerDetailModel');
 		$this->load->model('CarModelsModel');
 		$this->load->model('CarModel');
+		$this->load->model('ServiceCategoryModel');
 		$this->load->library('sequence');
 	}
 
@@ -60,9 +61,17 @@ class Cart extends MY_Controller {
 		if($this->basket->isEmpty()){
 			redirect('service/select_service');
 		} 
+		
+		//dd($data);
 		// Get all items in the cart
 		$data = array();
+		$model_id= $this->session->userdata('model_id');
+		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+		$service_id = $this->session->userdata('service_cat_id');
+		$data['service_detail']= $this->ServiceCategoryModel->getCategoryName($service_id);
+		//dd($data['service_detail']);
 		$data['allItems'] = $this->basket->getItems();
+
 		$this->render('cart/checkout',$data);
 		
 	}
@@ -79,8 +88,8 @@ class Cart extends MY_Controller {
 		}
 		$data = array();
 		$model_id= $this->session->userdata('model_id');
-		//$data['car_image'] = $this->CarModelsModel->getImageByModelName($model_id);
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+
 		if($this->session->has_userdata('car_id')){
 			$car_id = $this->session->userdata('car_id');
 			$data['car_reg_no'] = $this->CarModel->getRegNoByCarID($car_id);
@@ -108,8 +117,7 @@ class Cart extends MY_Controller {
 	            	'registration_no'=>$this->input->post('reg_no'),
 	            	'created_at' => date('Y-m-d H:i:s')
           		);
-			//dd($car_data);
-         	 $car_id = $this->CarModel->insert($car_data);
+        	$car_id = $this->CarModel->insert($car_data);
          	}
 
 
@@ -127,21 +135,13 @@ class Cart extends MY_Controller {
             if($this->session->has_userdata('service_cat_id')) {
               $service_cat_id = $this->session->userdata('service_cat_id');
             }
-
-            /*if(!empty($this->input->post('loaner_vehicle'))){
-               if($this->input->post('loaner_vehicle') == '1'){
-                  $net_pay_amount = $this->input->post('taxtotal') + 500;
-               }
-
-            }
-            else {
-                    $net_pay_amount = $this->input->post('taxtotal');
-               }*/
 			$this->sequence->createSequence('order');
 			$sequence = $this->sequence->getNextSequence();
+			$user_id =$this->session->userdata('user_id');
+			$hash =md5(uniqid($user_id,true));
 			$order_data = array(
 				'order_no' =>$sequence['sequence'],
-				'hash'=> md5(uniqid(true)),
+				'hash'=> $hash,
 				'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
 				'pick_up_time' => $this->input->post('pick_up_time'),
 				'service_type' => $service_cat_id,
@@ -151,7 +151,7 @@ class Cart extends MY_Controller {
 				'net_pay_amount' => $this->input->post('taxtotal'),
 				'channel' => '1',
 				'paid' => '0',
-				'user_id' => $this->session->userdata('user_id'),
+				'user_id' =>$user_id,
 				'car_id' => $car_id,
 				'created_at' =>date('Y-m-d H:i:s')
 			);
@@ -164,7 +164,8 @@ class Cart extends MY_Controller {
 					'name' => $this->input->post('name'),
 					'email' => $this->input->post('email'),
 					'phone' => $this->input->post('phone'),
-					'address' => $this->input->post('address')."\n".$this->input->post('landmark')
+					'address' => $this->input->post('address'),
+					'landmark' => $this->input->post('landmark')
 				);
 				
 				$this->CustomerDetailModel->insert($customer_data);
@@ -190,8 +191,8 @@ class Cart extends MY_Controller {
 			     $this->session->unset_userdata('car_id');
 			     $this->session->unset_userdata('model_id');
 			     $this->session->unset_userdata('service_cat_id');
-			    /* $this->session->unset_userdata('location');*/
-				redirect('cart/order_detail/'.$order_id);
+			  /* $this->session->unset_userdata('location');*/
+				redirect('cart/order_billing/'.$hash);
 
 			}
 			
@@ -200,45 +201,56 @@ class Cart extends MY_Controller {
 		
 	}// end of store method
 
-
-
-	public function selectPaymentMethod($id=null){
+	public function selectPaymentMethod($hash=null){
 		//dd($_SESSION);
-		if(!$id){
+		if(!$hash){
 			redirect('/');
 		}
 		$data = array();
-		$criteria['field'] = 'id,order_no,net_pay_amount';
-		$criteria['conditions'] = array('id'=>$id);
+		$criteria['field'] = 'id,hash,net_pay_amount';
+		$criteria['conditions'] = array('hash'=>$hash);
 		$criteria['returnType'] ='single';
 		$data['order'] = $this->OrderModel->search($criteria);
-		
+		if(!$data){
+			redirect('cart/checkout');
+		}
 		$this->render('cart/selectpaymentmethod',$data);
 	}
 
 
-	public function cashOnDelievery($order_id=null){
-		if(!$order_id){
+	public function cashOnDelievery($hash=null){
+		if(!$hash){
 			redirect('/');
 		}
-
-		$this->OrderModel->update(array('payment_type_id'=>1),array('id'=>$order_id));
-		redirect('cart/my_order');
+	    $this->OrderModel->update(array('payment_type_id'=>1),array('hash'=>$hash));
+		redirect('cart/confirmed/'.$hash);
 	}
 
 	public function paytm(){
 		$data = array();
 		$this->order_store('3');
 	}
-	public function confirmed($id){
-		if(!$id){
+	public function confirmed($hash=null){
+		if(!$hash){
 			redirect('cart/checkout');
 		}
+		$criteria['field'] = 'id';
+		$criteria['conditions'] = array('hash'=>$hash);
+		$criteria['returnType'] = 'single';
 
-		$data['order'] = $this->OrderModel->getById($id);
+		$order = $this->OrderModel->search($criteria);
+
+		if(!$order){
+			redirect('/');
+		}
+
+		$data = array();
+		$data['order'] = $this->OrderModel->getById($order['id']);
+		//dd($data);
 		$this->render('cart/confirmed',$data);
 
 	}
+
 
 	public function my_order(){
 		$data = array();
@@ -246,26 +258,87 @@ class Cart extends MY_Controller {
 		$data['my_order'] = $this->OrderModel->getByUserId($user_id);
 		$this->render('cart/my_order',$data);
 	}
-	public function order_detail($id =null){
-		if(!$id){
+	public function order_billing($hash =null){
+		if(!$hash){
 			redirect('/');
 		}
 		
+		$criteria['field'] = 'id';
+		$criteria['conditions'] = array('hash'=>$hash);
+		$criteria['returnType'] = 'single';
+
+		$order = $this->OrderModel->search($criteria);
+
+		if(!$order){
+			redirect('/');
+		}
+
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
-		$order_details = $this->OrderModel->getDetailByOrderId($id);
-
-		$order_item_keys= array('item_id','name','price');
+		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
+		//echo $this->db->last_query();
+		//dd($order_details);
+		$order_item_keys= array('item_id','sname','price');
 		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
 		$order_details = $order_details[0];
 		foreach($order_item_keys as $key) {
 		   unset($order_details[$key]);
 		}
 		$order_details['order_items'] = $order_items;
-		//dd($order_details);
 		$data['orderdetails'] =$order_details;
 		//dd($data);
-		$this->render('cart/order_detail',$data);
+		$this->render('cart/order_billing',$data);
+	}
+	public function modify_order($hash=null){
+		if(!$hash){
+			redirect('/');
+		}
+		
+		$criteria['field'] = 'id';
+		$criteria['conditions'] = array('hash'=>$hash);
+		$criteria['returnType'] = 'single';
+
+		$order = $this->OrderModel->search($criteria);
+
+		if(!$order){
+			redirect('/');
+		}
+
+		$data = array();
+		$user_id = $this->session->userdata('user_id');
+		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
+		//dd($order_details);
+		$order_item_keys= array('item_id','sname','price');
+		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
+		$order_details = $order_details[0];
+		foreach($order_item_keys as $key) {
+		   unset($order_details[$key]);
+		}
+		$order_details['order_items'] = $order_items;
+		$data['orderdetails'] =$order_details;
+		//dd($data);
+		$this->render('cart/modify_order',$data);
+	}
+
+	public function cancel_order($order_id){
+		$this->OrderModel->delete(array('id'=>$order_id));
+		redirect('cart/my_order');
+	}
+	public function remove_order_item($id=null,$order_id=null,$hash=null){
+		if(!$id || !$order_id || !$hash){
+			redirect('cart/my_order');
+		}
+
+		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order_id));
+		if($is_delete){
+			$total_items = $this->OrderModel->update(array('id'=>$id);
+			dd($total_items);
+			$this->session->set_flashdata('success_msg','Your item is successfully deleted'); 
+            }else{
+                $this->session->set_flashdata('error_msg','Some error occur, Try again');
+            }
+
+		redirect('cart/modify_order/'.$hash);
 	}
 
 }

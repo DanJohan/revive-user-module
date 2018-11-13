@@ -141,9 +141,9 @@ class MY_Controller extends CI_Controller
             }
           }
 
-          $order_detail = $this->OrderModel->getById($order_id);
+          $order_detail = $this->OrderModel->getByHash($hash);
           $this->basket->clear();
-          redirect('cart/confirmed/'.$order_detail['id']);
+          redirect('cart/confirmed/'.$order_detail['hash']);
 
         }
       }

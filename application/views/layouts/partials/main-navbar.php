@@ -28,15 +28,16 @@
            <?php //$this->load->view('common/car_modal'); ?>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="<?php echo base_url();?>cart/checkout">Checkout</a>
         <?php }?>
-          <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
+          <!-- <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a>  -->
 
           <?php if($this->session->has_userdata('is_user_login')) { ?>
             <li class="nav-item dropdown"> 
               <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <?php echo ($this->session->has_userdata('name'))? ucfirst($this->session->userdata('name')) : '';?></a>
             <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
                <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>user/profile">My Profile</a>
-               <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>cart/my_order">My Orders</a>
                <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>car/show_car">My Cars</a>
+               <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>cart/my_order">My Orders</a>
+               
                 <!-- <a class="dropdown-item drp-clr drplogout" href="#">My Cars</a> -->
                 <a class="dropdown-item drp-clr drplogout" href="<?php echo base_url();?>user/logout">Logout</a>
             </div>

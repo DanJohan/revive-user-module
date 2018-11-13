@@ -27,6 +27,7 @@ class CarModel extends MY_Model {
 		$result = $query->row_array();
 		return (!empty($result))? $result :false;
 	}
+	
 
 }
 ?>	

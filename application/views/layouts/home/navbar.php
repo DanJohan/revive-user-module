@@ -1,6 +1,6 @@
 <header id="ts-hero" class="ts-full-screen">
  <!--*****************NAVIGATION **************************-->
-     <nav class="navbar navbar-expand-lg navbar-light  fixed-top ts-separate-bg-element" data-bg-color="#fff">
+     <nav class="navbar navbar-expand-lg navbar-light navbar-bg fixed-top ts-separate-bg-element">
         <div class="container">
             <a class="navbar-brand" href="#page-top">
             <img class="img-fluid logo" src="<?php echo base_url();?>assets/img/logo.png" alt="">
@@ -27,7 +27,15 @@
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#faqs">FAQs</a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
-                    <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
+                     <?php 
+                     if($this->session->has_userdata('is_user_login')) {
+                     if($this->router->fetch_class() == 'site' && $this->router->fetch_method() == 'index'){ ?>
+                         <?php
+                        $cart_count =$GLOBALS['cart_count'];
+                      ?> 
+          <a href="<?php echo base_url(); ?>cart/checkout" id="cart-count" class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn">Cart<?php echo ($cart_count) ? '('.$cart_count.')':''; ?></a>
+        <?php }}?>
+                    <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download App</a> 
          <?php if($this->session->has_userdata('name')) { ?>
             <li class="nav-item dropdown"> 
               <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi <?php echo ($this->session->has_userdata('name'))? ucfirst($this->session->userdata('name')) : '';?></a>

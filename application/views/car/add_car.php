@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<div class="select-car-wrapper">
+<!-- <div class="select-car-wrapper">
 <label class="modl-label">Select Car Type</label><br>
    <div class="select-container">  
      <select name="car_body" id="car_body" class="select-bg" required>
@@ -34,13 +34,13 @@
         <?php
           foreach ($car_bodies as $index => $car_body) {
         ?>
-          <option value="<?php echo $car_body['id']; ?>"><?php echo $car_body['name']; ?></option>
+          <option value="<?php //echo $car_body['id']; ?>"><?php //echo $car_body['name']; ?></option>
         <?php
           }
         ?>
      </select>
 </div>
-</div>
+</div> -->
 
 <div class="select-car-wrapper">
 <label class="modl-label">Registration Number</label><br>
@@ -52,7 +52,7 @@
 <div class="select-car-wrapper">
 <label class="modl-label">Upload Car Image</label><br>
    <div class="select-container">  
-    <input type="file" class="" name="image" id="image">
+    <input type="file" class="" name="image">
   </div>
 </div> 
 <div class="col-md-12 text-center">
@@ -98,15 +98,15 @@
         },
         reg_no: {
           required: true
-        },
-        image: {
-          required: true
         }
+       /* image: {
+          required: true
+        }*/
     },
     messages:{
-      image: {
+     /* image: {
         required:"Please select Image!"
-      },
+      },*/
       brand_id:{
          required:"Please select car brand!"
       },

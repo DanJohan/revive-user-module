@@ -20,6 +20,14 @@
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#FAQs">FAQs</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
+           <?php 
+                        //if($this->session->has_userdata('name')){
+                            if($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service'){ ?>
+                     <?php
+                     $cart_count =$GLOBALS['cart_count'];
+                    ?> 
+                  <a href="<?php echo base_url(); ?>cart/checkout" id="cart-count" class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn">Cart<?php echo ($cart_count) ? '('.$cart_count.')':''; ?></a>
+                    <?php } //}?>
           <a class="nav-item nav-link ts-scroll btn btn-primary btn-sm text-white ml-3 px-3 ts-width__auto down-btn" href="#download">Download</a> 
          <?php if($this->session->has_userdata('name')) { ?>
             <li class="nav-item dropdown"> 

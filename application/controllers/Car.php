@@ -40,7 +40,7 @@ class Car extends MY_Controller {
 					'brand_id' => $this->input->post('brand_id'),
 					'model_id' => $this->input->post('model_id'),
 					'registration_no' => $this->input->post('reg_no'),
-					'body' => $this->input->post('car_body'),
+					//'body' => $this->input->post('car_body'),
 					'image' => $file_name,
 					'created_at' => date('Y-m-d H:i:s')
 
@@ -79,5 +79,15 @@ class Car extends MY_Controller {
 	
 			}
 
+			public function del_car($id){
+				$result = $this->CarModel->delete(array('id'=>$id));
+				if($result){
+				$this->session->set_flashdata('success_msg', 'Car is deleted Successfully!');
+				redirect('car/show_car');
+			}else{
+					$this->session->set_flashdata('error_msg', 'Some problem occur!');
+					redirect('car/show_car');
+			}
 		}
-	?>	
+	}
+?>	

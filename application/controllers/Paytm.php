@@ -99,6 +99,13 @@ class Paytm extends MY_Controller
 				$txn_id = $this->input->post('TXNID');
 				$transaction = $this->TransactionModel->get(array('transaction_id'=>$order_id));
 
+				$criteria['field'] = 'hash';
+				$criteria['conditions'] =array('id'=>$transaction['order_id']);
+				$criteria['returnType'] = 'single';
+
+				$order_result = $this->OrderModel->search($criteria);
+
+
 				if($transaction) {
 					$insert_data = array(
 						'transaction_id'=>$txn_id,
@@ -117,14 +124,14 @@ class Paytm extends MY_Controller
 						$this->OrderModel->update(array('paid'=>1,'payment_id'=>$insert_id,'payment_type_id'=>3),array('id'=>$transaction['order_id']));
 						
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
-				         	redirect('cart/order_detail/'.$transaction['order_id']);
+				         	redirect('cart/confirmed/'.$order_result['hash']);
 				         	exit;
 					}
 				}
 
 			}else{
 						$this->session->set_flashdata('error_msg','Looks like you cancelled the payment. You can try again now or if you faced any issues in completing the payment, please contact us');
-							redirect('cart/order_detail/'.$transaction['order_id']);
+							redirect('cart/order_billing/'.$order_result['hash']);
 							exit;
 			}
 

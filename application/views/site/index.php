@@ -6,21 +6,21 @@
 <section id="about-us" class="about">
         <div class="container">
             <div class="about-head">
-                <h2 class="text-center">WHAT DOES REVIVE DO</h2>
+                <h2 class="text-center">What does Revive do</h2>
             </div>
             <!--end ts-title-->
             <div class="row">
-                <div class="col-md-6 col-xl-6 text-justify" data-animate="ts-fadeInUp" data-offset="100">
+                <div class="col-md-6 col-xs-6 text-justify" data-animate="ts-fadeInUp" data-offset="100">
                     <p>Revive is a network of dedicated bodyshops for dent repairs of your car with complete ease and convenience. Our mission is to make sure the love towards your car remains forever. We help you maintain your car spot-free, hassle-free. We understand not everybody is comfortable driving in a scratched car.</p>
                     <p>We specialize in making your car dent and scratch free, in the minimum time and with maximum comfort. We treat your car with utmost care and give it the quality treatment it deserves, all the while keeping you updated and anxiety-free. We also make sure the separation doesn't affect your daily routines, and offer alternate cars for your use till the time the repairs are completed.</p>
                 </div>
-                 <!--end col-xl-5-->
-                <div class="col-md-6 col-xl-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
+                 <!--end col-xs-5-->
+                <div class="col-md-6 col-xs-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
                     <div class="px-3">
                         <img src="<?php echo base_url();?>assets/img/a-car.png" class="mw-100 ts-border-radius__md" alt="">
                     </div>
             </div>
-            <!--end col-xl-7-->
+            <!--end col-xs-7-->
         </div>
         <!--end row-->
     </div>
@@ -35,11 +35,11 @@
             </div>
             <!--end ts-title-->
             <div class="row">
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xl-3">
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
                     <div class="tooltip2">  
                         <figure data-animate="ts-fadeInUp">
                             <figure class="icon mb-5 p-2">
-                                <img src="<?php echo base_url();?>assets/img/icon-watch-heart.png" alt="">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-watch-heart.png" alt="">
                                 <h4>Complete Convenience & Peace of mind</h4>
                             </figure>
                         </figure>
@@ -53,27 +53,30 @@
                         </span>
                     </div>
                 </div>
-                <!--end col-xl-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xl-3">
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
                     <div class="tooltip2">
                         <figure data-animate="ts-fadeInUp" data-delay="0.1s">
                             <figure class="icon mb-5 p-2">
-                                <img src="<?php echo base_url();?>assets/img/icon-lcd-chart.png" alt="">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-lcd-chart.png" alt="">
                                 <h4>Fast & Committed Delivery Timelines</h4>
                             </figure>
                         </figure>
                         <span class="tooltip2text"> 
-                            <p > We use advanced tech-based tools for forecasting and planning our bodyshop. No unnecessary operational or work-related delays, so that we deliver on our commitments.
-                            </p>
+                            <ul class="cirlist1">
+                                <li>Use of advanced tech-based tools for forecasting and planning our bodyshop</li>
+                                <li>No unnecessary operational or work-related delays, and constant real time updates</li>
+                                
+                            </ul>
                         </span>
                     </div>
                 </div>
-                <!--end col-xl-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xl-3">
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
                     <div class="tooltip2">  
                         <figure data-animate="ts-fadeInUp" data-delay="0.2s">
                             <figure class="icon mb-5 p-2">
-                                <img src="<?php echo base_url();?>assets/img/icon-cup-winner.png" alt="">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-cup-winner.png" alt="">
                                 <h4>Quality Repairs & Uncompromised Workmanship</h4>
                             </figure>
                         </figure>
@@ -87,17 +90,21 @@
                             </span>
                      </div>
                 </div>
-                <!--end col-xl-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xl-3">
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
                     <div class="tooltip2"> 
                         <figure data-animate="ts-fadeInUp" data-delay="0.2s">
                             <figure class="icon mb-5 p-2">
-                                <img src="<?php echo base_url();?>assets/img/icon4.png" alt="">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon4.png" alt="">
                                 <h4>Affordable Transparent Pricing</h4>
                             </figure>
                             </figure>
                                 <span class="tooltip2text"> 
-                                 <P>No hidden charges or taxes. What you see is what you pay. What everyone else pays. Absolutely No pre-repair anxiety of being overcharged.</P>
+                                 <ul class="cirlist1">
+                                <li>No hidden charges or taxes. What you see is what you pay. What everyone else pays.</li>
+                                <li>All repair estimates given prior to using our services. Absolutely No pre-repair anxiety of being overcharged.</li>
+                                <li>Optimized bodyshop facility in terms of location and operations to keep costs under check</li>
+                            </ul>
                                 </span>
                     </div>
                 </div>
@@ -111,7 +118,7 @@
 <section id="services" class="services-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-xl-12" data-animate="ts-fadeInUp" data-offset="100">
+                <div class="col-md-12 col-xs-12" data-animate="ts-fadeInUp" data-offset="100">
                     <div class="service-head">
                         <h2 class="text-center">Our Services</h2>
                     </div>
@@ -120,7 +127,7 @@
                         When's the last time you gave your car a second look? Or ran your fingers along the hood? It's time you fell back in love with your car again. Let us transform your weathered wagon with a new coat of paint, and soon you'll be driving the car you always wanted, again.
                     </p>
                 </div>
-                <div class="col-md-6 col-xl-6" data-animate="ts-fadeInUp" data-offset="100">
+                <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
                             <!--features list-->
                             <ul class="list-unstyled ts-list-divided">
                                 <li>
@@ -165,7 +172,7 @@
                             </ul>
                             <!--end features list-->
                 </div>
-                <div class="col-md-6 col-xl-6" data-animate="ts-fadeInUp" data-offset="100">
+                <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
                             <!--features list-->
                 <ul class="list-unstyled ts-list-divided">
                     <li>
@@ -197,7 +204,7 @@
                 </ul>
                  <!--end features list-->
             </div>
-        <!--end col-xl-5-->
+        <!--end col-xs-5-->
         </div>
         <!--end row-->
     </div>
@@ -255,37 +262,95 @@
             <!--end #our-clients.ts-block-->
 <!--Gallery start-->
 <section id="gallery" class="g-bg">
+    <div class="container">
         <div class="gallery-head text-center">
             <h2>Gallery</h2>
         </div>
-                <!--end ts-title-->
-        <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
-                    <div class="slide">
-                        <img src="<?php echo base_url();?>assets/img/g-1.png" class="ts-shadow__md ts-border-radius__md" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="<?php echo base_url();?>assets/img/g-2.png" class="ts-shadow__md ts-border-radius__md" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="<?php echo base_url();?>assets/img/g-3.png" class="ts-shadow__md ts-border-radius__md" alt="">
-                    </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-1.png"  alt="">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-2.png"  alt="">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-3.png"  alt="">
+            </div>
+
         </div>
-        <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
+        <div class="row gallery-img">
+            <div class="col-md-4">
+                
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-4.png"  alt="">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-5.png"  alt="">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-6.png"  alt="">
+            </div>
+
         </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+        <a href="<?php echo base_url()?>site/gallery" class="btn btn-primary read-more">View All</a></div>
+       <!--          end ts-title
+               <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
+           <div class="slide">
+               <img src="<?php //echo base_url();?>assets/img/g-1.png" class="ts-shadow__md ts-border-radius__md" alt="">
+           </div>
+           <div class="slide">
+               <img src="<?php //echo base_url();?>assets/img/g-2.png" class="ts-shadow__md ts-border-radius__md" alt="">
+           </div>
+           <div class="slide">
+               <img src="<?php //echo base_url();?>assets/img/g-3.png" class="ts-shadow__md ts-border-radius__md" alt="">
+           </div>
+               </div> -->
+       <!--  <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
+       </div> -->
+   </div>
 </section>
  <!--gallery end-->
-<!--***********Our clients end***********--> 
+<!--*****Appp store IMG start*********--->
+ <section id="download" class="app-store-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <div class=" text-center">
+                                <div class="bg-white  ts-border-radius__round-shape">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#">
+                                                <img src="<?php echo base_url();?>assets/img/download-appstore.png" class="mw-100 py-3" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="#">
+                                                <img src="<?php echo base_url();?>assets/img/download-play.png" class="mw-100 py-3" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="position-absolute ts-top__0 ts-bottom__0 m-auto w-100 ts-z-index__-1">
+</section>
+<!--*****Appp store IMG end*********--->
 <!--***************FAQS*******************-->
 <section id="faqs" class="faqs-wrapper"  data-bg-color="#f7f7f7">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 col-xl-12" data-animate="ts-fadeInUp" data-offset="100">
+            <div class="col-md-12 col-xs-12" data-animate="ts-fadeInUp" data-offset="100">
                 <div class="faq-head text-center">
-                    <h2>FAQs</h2>
+                    <h2>Faqs</h2>
                 </div>
                 <!--end ts-title-->
             </div>
-            <div class="col-md-12 col-xl-12" data-animate="ts-fadeInUp" data-offset="100">
+            <div class="col-md-12 col-xs-12" data-animate="ts-fadeInUp" data-offset="100">
             <!--features list-->
                 <ul class="list-unstyled ts-list-divided">
                     <li>
@@ -374,7 +439,7 @@
                 </ul>
                 <!--end features list-->
             </div>
-            <!--end col-xl-5-->
+            <!--end col-xs-5-->
         </div>
         <!--end row-->
     </div>
@@ -390,22 +455,22 @@
         <!--end ts-title-->
         <div class="row">
             <div class="col-md-4">
-                <img src="<?php echo base_url();?>assets/img/icon-preview-01.png" width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">How to get rid of the stubborn road paint from your car?</h4>
-                    <p><a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank">read full article</a>
-                    </p>
+                <a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-01.png" width="300px" class="mb-5" alt="">
+                    <h4 class="mb-3">How to get rid of the stubborn road paint from your car?</h4></a>
+                    <!-- <p><a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank">read full article</a>
+                    </p> -->
             </div>
             <div class="col-md-4">
-                <img src="<?php echo base_url();?>assets/img/icon-preview-02.png"  width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">How To Take Care of Your Car's Paint Job</h4>
-                    <p><a href="https://medium.com/@revive.auto/how-to-take-care-of-your-cars-paint-job-e0e5f086235a" target="_blank">read full article</a>
-                    </p>
+                <a href="https://medium.com/@revive.auto/how-to-take-care-of-your-cars-paint-job-e0e5f086235a" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-02.png"  width="300px" class="mb-5" alt="">
+                    <h4 class="mb-3">How To Take Care of Your Car's Paint Job</h4></a>
+                    <!-- <p><a href="https://medium.com/@revive.auto/how-to-take-care-of-your-cars-paint-job-e0e5f086235a" target="_blank">read full article</a>
+                    </p> -->
             </div>
             <div class="col-md-4">
-                <img src="<?php echo base_url();?>assets/img/icon-preview-03.png"  width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">Cool Car Paint Jobs We Love</h4>
-                    <p><a href="https://medium.com/@revive.auto/cool-car-paint-jobs-we-love-8de5dea3b7cc" target="_blank">read full article</a>
-                    </p>
+                <a href="https://medium.com/@revive.auto/cool-car-paint-jobs-we-love-8de5dea3b7cc" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-03.png"  width="300px" class="mb-5" alt="">
+                    <h4 class="mb-3">Cool Car Paint Jobs We Love</h4></a>
+                    <!-- <p><a href="https://medium.com/@revive.auto/cool-car-paint-jobs-we-love-8de5dea3b7cc" target="_blank">read full article</a>
+                    </p> -->
             </div>
         </div>
         <!--end row-->

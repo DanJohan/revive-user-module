@@ -13,6 +13,11 @@ class Site extends MY_Controller {
 		$this->render('site/index',$data,'layouts/home');
 
 	}
+	public function gallery(){
+		$data= array();
+		$this->render('site/gallery',$data);
+
+	}
 
 	public function contact(){
 		$this->load->library('mailer');

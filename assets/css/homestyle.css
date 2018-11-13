@@ -1,11 +1,13 @@
-/*----------------------------------------------------------------------------------------------------------------------
-Project:	    AppStorm
+img.ts-shadow__md.ts-border-radius__md {
+    width: 100%;
+}/*----------------------------------------------------------------------------------------------------------------------
+Project:      AppStorm
 Version:        1.0.0
 
 Default Color   #47143d;
 
-Body copy:		'Poppins', sans-serif; 15px;
-Headers:		'Poppins', sans-serif;
+Body copy:    'Poppins', sans-serif; 15px;
+Headers:    'Poppins', sans-serif;
 
 ----------------------------------------------------------------------------------------------------------------------*/
 
@@ -1102,7 +1104,7 @@ blockquote h6 {
 .show > .btn-primary.dropdown-toggle:focus {
     background-color:#47143d;
     border-color:#47143d;
-	box-shadow: 0 .1875rem .9375rem rgba(0, 0, 0, .2);
+  box-shadow: 0 .1875rem .9375rem rgba(0, 0, 0, .2);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -1456,8 +1458,8 @@ body.has-loading-screen.loading-done:after {
 -------------------------------------------*/
 
 .navbar {
-    font-size: .875rem;
-    font-weight: 500;
+    font-size: 13px !important;
+    font-weight: 400 !important;
     padding-bottom: 2rem;
     padding-top: 3rem;
     transition: .3s ease;
@@ -2370,7 +2372,7 @@ figure.icon {
     background: #47143d;
     color: #fff;
     margin-top: 20px;
-	margin-bottom:25px;
+  margin-bottom:25px;
 }
 
 .f-bg {
@@ -2433,16 +2435,30 @@ span.f-span {
 }
 
 .s-bg {
-    background-image: url(../img/s-bg.png);
+    /* background-image: url(../img/s-bg.png); */
     background-repeat: no-repeat;
     padding: 0px 10px;
     background-size: cover;
 }
 .unique-head h2 {
     font-size: 35px;
-    text-transform: uppercase;
     margin-bottom: 35px;
 }
+figure.icon img {
+    width: 28%;
+}
+figure.icon h4 {
+    font-size: 17px;
+}
+
+.icon .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transition: transform 0.5s;
+}
+.icon .zoom {
+    transition: transform 0.5s;
+}
+
 
 
 /*****************************About bg tooltip2  29-10-18 komal*******************/
@@ -2454,31 +2470,32 @@ span.f-span {
 }
 .tooltip2 .tooltip2text {
     visibility: hidden;
-    width: 194px;
+    width: 100%;
     background-color: #e3e6e4;
     color: #000;
     text-align: center;
     border-radius: 6px;
-    padding: 6px 0px;
+    padding: 6px 2px;
     position: absolute;
     z-index: 1;
-    bottom: 100%;
-    left: 50%;
+    left: 20%;
     margin-left: -60px;
     opacity: 0;
     transition: opacity 0.3s;
     /* height: auto; */
     font-size: 12px;
+    top: 65%;
 }
 .tooltip2 .tooltip2text::after {
     content: "";
     position: absolute;
-    top: 100%;
+    bottom: 100%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
     border-color: #e3e6e4 transparent transparent transparent;
+    transform: rotate(543deg);
 }
 
 .tooltip2:hover .tooltip2text {
@@ -2491,9 +2508,10 @@ ul.cirlist1 {
     font-size: 12px;
     text-align: left;
 }
-.tooltip2text P
-{
-  color: #000;
+.tooltip2text P {
+    color: #000;
+    line-height: 24px;
+    padding: 12px;
 }
 h1.text-center.unique-head {
     font-size: 35px;
@@ -2564,6 +2582,7 @@ p.btn.btn-modal {
     color: #000;
     padding-top: 7px;
     margin-bottom: 0px;
+    font-weight: normal;
 }
 .modal-btn .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
     background: no-repeat;
@@ -2594,7 +2613,7 @@ h1.modal-main-head {
     cursor: pointer;
 }
 img.img-fluid.m-img {
-    width: 40%;
+    width:50%;
     text-align: center;
     margin: 0 auto;
 }
@@ -2654,6 +2673,15 @@ img.img-fluid.logo {
 /* Responsive */
 
 @media screen and (max-width: 480px) {
+  .tooltip2 {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    margin-bottom: 128px;
+}
+figure.icon h4 {
+    font-size: 15px;
+}
     
 .modal-content {
     position: absolute;
@@ -2666,7 +2694,16 @@ img.img-fluid.logo {
 }
  }
  .slider-top {
-    margin-top:70px !important;
+    margin-top:150px !important;
+}
+ul.list-unstyled h6 {
+    font-size: 13px;
+}
+.list-unstyled.ts-list-divided p {
+    font-size: 11px;
+}
+.copyright p {
+    font-size: 12px;
 }
 
  @media screen and (max-width: 768px) {
@@ -2699,26 +2736,29 @@ section#services {
 }
 .service-head h2 {
     font-size: 35px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 35px;
 }
 /******************testimonals************/
 .clients-head h2 {
     font-size: 35px;
-    text-transform: uppercase;
+   /*  text-transform: uppercase; */
     margin-bottom: 35px;
 }
 
 /**************gallery*************/
 
 section#gallery {
-    padding: 150px 0px 0px 0px;
+    padding: 150px 0px;
 }
 .gallery-head h2 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     margin-bottom: 35px;
     font-size: 35px;
    
+}
+.row.gallery-img {
+    margin-top: 40px;
 }
 
 /**************faqs**************/
@@ -2727,7 +2767,7 @@ section#faqs {
     padding: 150px 0px;
 }
 .faq-head h2 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 35px;
     margin-bottom: 35px;
 }
@@ -2736,7 +2776,7 @@ section#faqs {
 
 .blog-head h2 {
     font-size: 35px;
-    text-transform: uppercase;
+   /*  text-transform: uppercase; */
     margin-bottom: 35px;
 }
 
@@ -2746,8 +2786,29 @@ section#contact {
     padding: 150px 0px;
 }
 section#contact h2 {
-    font-size: 35px;
-    text-transform: uppercase;
+    font-size: 35px !important;
     font-weight: 500;
     margin-bottom: 35px;
+}
+
+
+/***************04-11-18***************/
+
+
+.navbar-bg.fixed-top.ts-separate-bg-element {
+    background: #fff;
+    padding-bottom: 2px;
+    padding-top: 29px;
+}
+
+a.btn.btn-primary.read-more {
+    float: right;
+    margin-top: 25px;
+}
+
+.g-bg img.ts-shadow__md.ts-border-radius__md {
+    width: 100%;
+}
+section#blog img {
+    width: 100%;
 }

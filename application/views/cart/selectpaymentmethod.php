@@ -41,7 +41,7 @@
 				
 				</div>
 				<div class="col-md-4">
-			 		<a href="<?php echo base_url();?>cart/cashOnDelievery/<?php echo $order['id']; ?>"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/cash.png"><span class="pay-text__cash">Pay Cash on Delivery</span>
+			 		<a href="<?php echo base_url();?>cart/cashondelievery/<?php echo $order['hash']; ?>"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/cash.png"><span class="pay-text__cash">Pay Cash on Delivery</span>
 					</a>
 				</div>
 				
