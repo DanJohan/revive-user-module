@@ -328,11 +328,12 @@ class Cart extends MY_Controller {
 		if(!$id || !$order_id || !$hash){
 			redirect('cart/my_order');
 		}
-
+		$data =array();
 		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order_id));
-		if($is_delete){
-			$total_items = $this->OrderModel->update(array('id'=>$id);
-			dd($total_items);
+		$total_items = $this->OrderItemModel->getItemPriceByOrderId($order_id);
+		$final_total = array_sum(array_column($total_items, 'price'));
+		$this->OrderModel->update(array('sub_total'=>$final_total,'net_pay_amount'=>$final_total),array('id'=>$order_id));
+			if($is_delete){
 			$this->session->set_flashdata('success_msg','Your item is successfully deleted'); 
             }else{
                 $this->session->set_flashdata('error_msg','Some error occur, Try again');

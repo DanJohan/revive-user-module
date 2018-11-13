@@ -102,10 +102,11 @@
         <?php }?>
           <tr>
             <th class="sr_no">TOTAL</th>
-            <th ><?php echo $orderdetails['sub_total'];?></th>
+
+            <th><?php echo $orderdetails['sub_total'];?></th>
           </tr>
       </table>
-       <a href="<?php echo base_url();?>service/find_service?model_id=<?php echo $orderdetails['model_id'];?>&car_id=<?php echo $order_item['item_id'];?>&service_cat_id=<?php echo $orderdetails['id'];?>">
+       <a href="<?php echo base_url();?>service/add_more_service?model_id=<?php echo $orderdetails['model_id'];?>&car_id=<?php echo $order_item['item_id'];?>&service_cat_id=<?php echo $orderdetails['id'];?>">
         <button type="button" class="btn btn-primary">Add More Items</button></a>
     </div> 
   </div><!--row--end-->

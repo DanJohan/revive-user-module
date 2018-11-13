@@ -74,6 +74,34 @@ class Service extends MY_Controller {
 				}
 			}
 		}
+
+		public function add_more_service(){ //display add_more_service page 
+			$data=array();
+			$model_id = $this->input->get('model_id');
+            $service_cat_id = $this->input->get('service_cat_id');
+            $car_id = $this->input->get('car_id');
+            $data['service_cat_id'] = $service_cat_id;
+			if(!$model_id){
+				redirect('service/select_service');
+			}
+			if(!$car_id){
+				$this->session->unset_userdata('car_id');
+			}else{
+				$this->session->set_userdata('car_id',$car_id);
+			}
+			$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+			//dd($data['car_detail']);
+			$this->session->set_userdata('model_id',$model_id);
+            $this->session->set_userdata('service_cat_id',$service_cat_id);
+          	//dd($_SESSION);
+			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
+			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id,$service_cat_id);
+			$cartItems = $this->basket->getItems();
+			$data['cart_items_id'] = array_keys($cartItems);
+			
+				$this->render('service/add_more_service',$data);
+		
+		}
 	}
 
 
