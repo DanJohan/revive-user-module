@@ -247,11 +247,23 @@ class Cart extends MY_Controller {
 
 		$data = array();
 		$data['order'] = $this->OrderModel->getById($order['id']);
+		$data['customerdetail'] = $this->CustomerDetailModel->getByOrderId($order['id']);
+		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
+		//print_r($order_details);die;
+		//echo $this->db->last_query();die;
+		
+		$order_item_keys= array('item_id','sname','price');
+		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
+		$order_details = $order_details[0];
+		foreach($order_item_keys as $key) {
+		   unset($order_details[$key]);
+		}
+		$order_details['order_items'] = $order_items;
+		$data['orderdetails'] =$order_details;
 		//dd($data);
 		$this->render('cart/confirmed',$data);
 
 	}
-
 	public function my_order(){
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
@@ -277,7 +289,7 @@ class Cart extends MY_Controller {
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
 		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
-		//echo $this->db->last_query();
+		//echo $this->db->last_query();die;
 		//dd($order_details);
 		$order_item_keys= array('item_id','sname','price');
 		$order_items = array_filter_by_value(array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR),'item_id','');
@@ -416,8 +428,9 @@ class Cart extends MY_Controller {
 	}
 
 	public function update_order($hash=null){
+		//dd($_POST);
+		$data=array();
 		if(count($_POST) > 0 ) { 
-			//$data = array();
 			$order_id =$this->input->post('order_id');
 
 				$update_user_data = array(
@@ -428,29 +441,37 @@ class Cart extends MY_Controller {
 					'landmark' => $this->input->post('landmark')
 	            
           		);
-		      $update_id = $this->CustomerDetailModel->update($update_user_data, array('order_id'=>$order_id));
-		      $hash = md5(uniqid($order_id,true));
+          		//dd($update_user_data);
+		     	$update_id = $this->CustomerDetailModel->update($update_user_data, array('order_id'=>$order_id));
+		    
 		      	$update_order_data = array(
-		      	'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
-				'pick_up_time' => $this->input->post('pick_up_time'),
-				'created_at' =>date('Y-m-d H:i:s')
-			);
-			$udated_order_id = $this->OrderModel->update($update_order_data, array('id'=>$order_id));
-			//echo $this->db->last_query();die;
-			//if($updated_order_id){
-				$car_id = $this->OrderModel->getById($order_id);
-				//print_r($car_id);die;
+			      	'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
+					'pick_up_time' => $this->input->post('pick_up_time'),
+				//'created_at' =>date('Y-m-d H:i:s')
+				);
+				$this->OrderModel->update($update_order_data, array('id'=>$order_id));
+			
+				$criteria['field'] = 'hash,car_id';
+				$criteria['conditions'] = array('id'=>$order_id);
+				$criteria['returnType'] ='single';
+				$order_details = $this->OrderModel->search($criteria);
+					//dd($data);		
+				if(!$order_details){
+					redirect('cart/my_order');
+				}
+				//$car_details = $this->OrderModel->getById($order_id);
 				$car_data = array(
 	            	'registration_no'=>$this->input->post('reg_no'),
-	            	'created_at' => date('Y-m-d H:i:s')
+	            	//'created_at' => date('Y-m-d H:i:s')
           		);
-        	$car_id = $this->CarModel->update($car_data, array('id'=>$car_id));
-      			echo $this->db->last_query();die;
-      	//}
-    }
-      	redirect('cart/selectpaymentmethod/'.$hash);
-
-      
+        		$this->CarModel->update($car_data, array('id'=>$order_details['car_id']));
+        			
+        		
+        		redirect('cart/selectpaymentmethod/'.$order_details['hash']);
+        		
+        }
+        redirect('/');
+      		
 	}// end of store method
 
 }
