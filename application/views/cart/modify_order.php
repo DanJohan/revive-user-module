@@ -93,10 +93,11 @@
   </div>
  </div>
 </div>
+<div class="container">
 <div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12 full_box_23">
+  <div class="col-md-12 col-sm-12 col-xs-12 full_box_23 modify-wrapper">
     <!--tables comes here-->
-      <table>
+      <table class="modify-margin">
         <tr>
           <th class="item_s">Services</th>
           <th>Price</th>
@@ -123,11 +124,12 @@
           </tr>
       </table>
        <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>">
-        <button type="button" class="btn btn-primary">Add More Items</button></a>
+        <button type="button" class="btn btn-primary btn-round">Add More Items</button></a>
     
-        <button type="submit" class="btn btn-primary">Proceed</button></a>
+        <button type="submit" class="btn btn-primary btn-round">Proceed</button></a>
     </div> 
   </div><!--row--end-->
+</div>
 </section>
 </form>
 </div>
