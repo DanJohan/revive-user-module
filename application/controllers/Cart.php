@@ -411,9 +411,11 @@ class Cart extends MY_Controller {
 		//redirect('cart/modify_order/'.$hash);
 	}
 
-	public function update_order(){
+	public function update_order($hash=null){
 		if(count($_POST) > 0 ) { 
+			//$data = array();
 			$order_id =$this->input->post('order_id');
+
 				$update_user_data = array(
 	            	'name'=>$this->input->post('name'),
 	            	'email'=>$this->input->post('email'),
@@ -423,81 +425,28 @@ class Cart extends MY_Controller {
 	            
           		);
 		      $update_id = $this->CustomerDetailModel->update($update_user_data, array('order_id'=>$order_id));
-
+		      $hash = md5(uniqid($order_id,true));
 		      	$update_order_data = array(
 		      	'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
 				'pick_up_time' => $this->input->post('pick_up_time'),
-				'sub_total' => $this->input->post('subtotal'),
-				'net_pay_amount' => $this->input->post('taxtotal'),
 				'created_at' =>date('Y-m-d H:i:s')
 			);
-			dd($update_order_data);
-			$order_id = $this->OrderModel->update($update_order_data, array('order_id'=>$order_id));
-      		}
+			$udated_order_id = $this->OrderModel->update($update_order_data, array('id'=>$order_id));
+			//echo $this->db->last_query();die;
+			//if($updated_order_id){
+				$car_id = $this->OrderModel->getById($order_id);
+				//print_r($car_id);die;
+				$car_data = array(
+	            	'registration_no'=>$this->input->post('reg_no'),
+	            	'created_at' => date('Y-m-d H:i:s')
+          		);
+        	$car_id = $this->CarModel->update($car_data, array('id'=>$car_id));
+      			echo $this->db->last_query();die;
+      	//}
+    }
+      	redirect('cart/selectpaymentmethod/'.$hash);
 
-
-/*
-          
-			$order_data = array(
-				'order_no' =>$sequence['sequence'],
-				'hash'=> $hash,
-				'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
-				'pick_up_time' => $this->input->post('pick_up_time'),
-				'service_type' => $service_cat_id,
-				'loaner_vehicle' => $this->input->post('loaner_vehicle'),
-				'service_center' => $service_center,
-				'sub_total' => $this->input->post('subtotal'),
-				'net_pay_amount' => $this->input->post('taxtotal'),
-				'channel' => '1',
-				'paid' => '0',
-				'user_id' =>$user_id,
-				'car_id' => $car_id,
-				'created_at' =>date('Y-m-d H:i:s')
-			);
-			//dd($order_data);
-			$order_id = $this->OrderModel->insert($order_data);
-			if($order_id) {
-				$this->sequence->updateSequence();
-				$customer_data = array(
-					'order_id' => $order_id,
-					'name' => $this->input->post('name'),
-					'email' => $this->input->post('email'),
-					'phone' => $this->input->post('phone'),
-					'address' => $this->input->post('address'),
-					'landmark' => $this->input->post('landmark')
-				);
-				
-				$this->CustomerDetailModel->insert($customer_data);
-
-				$order_items = $this->basket->getItems();
-				if(!empty($order_items)) {
-					foreach ($order_items as $index => $order_item) {
-						foreach($order_item as $item) {
-							$order_item_data[] = array(
-									'order_id'=>$order_id,
-									'service_id'=> $item['id'],
-									'name' => $item['attributes']['service'],
-									'price' =>$item['attributes']['price'],
-							);
-						}
-					}
-					//$this->session->set_userdata($order_item_data);
-					if(!empty($order_item_data)){
-						$this->OrderItemModel->insert_batch($order_item_data);
-					}
-				}
-			     $this->basket->clear();
-			     $this->session->unset_userdata('car_id');
-			     $this->session->unset_userdata('model_id');
-			     $this->session->unset_userdata('service_cat_id');
-			   $this->session->unset_userdata('location');
-				//redirect('cart/order_billing/'.$hash);
-
-			}
-			
-		}
-		redirect('cart/checkout');
-		*/
+      
 	}// end of store method
 
 }

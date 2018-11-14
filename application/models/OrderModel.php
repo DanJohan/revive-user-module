@@ -10,7 +10,7 @@ class OrderModel extends MY_Model {
 	}
 
 	public function getById($order_id) {
-		$this->db->select('id,order_no,hash,sub_total,pick_up_date,pick_up_time,discount_amount,net_pay_amount,created_at');
+		$this->db->select('id,order_no,car_id,hash,sub_total,pick_up_date,pick_up_time,discount_amount,net_pay_amount,created_at');
 		$this->db->from($this->table);
 		$this->db->where('id',$order_id);
 		$result = $this->db->get()->row_array();

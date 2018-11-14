@@ -11,7 +11,7 @@
 <div class="container">
   <!-- processing bar -->
 
-<form id="regForm" action="<?php echo base_url()."cart/update_order"?>" method="post"> 
+<form id="regForm" action="<?php echo base_url()."cart/update_order/"?>" method="post"> 
 <section class="checkout">
 <div class="container">
     <div class="row">
@@ -39,7 +39,7 @@
         </div>  
 
          <div class="col-md-3 col-sm-3 col-xs-12 full_box">
-           <div id="datepicker"><?php echo implode(',',explode('-',$orderdetails['pick_up_date']));?></div>
+           <div id="datepicker"></div>
             <input type="hidden" id="datepicker2" value="<?php echo $orderdetails['pick_up_date'];?>" name="pick_up_date" readonly required>
             <select class="time_sloat2 validation form-control" name="pick_up_time" id="pick_up_time" required="">
                 <?php

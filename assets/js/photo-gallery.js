@@ -10,16 +10,22 @@ $(document).ready(function(){
 		var index = $(this).parent('li').index();   
        // console.log(index);
 		if(index == 0) {
-            index= total-1;
+            prevIndex = total-1;
+            nextIndex = index;
+            console.log("here")
+        }else if(index == total-2){
+            nextIndex = -1;
+            prevIndex = index;
+        }else{
+            prevIndex = index;
+            nextIndex = index;
         }
-        if(index == total-2){
-            index = -1;
-        }
+        console.log(prevIndex,nextIndex);
 		var html = '';
 		html += img;                
 		html += '<div style="height:25px;clear:both;display:block;">';
-		html += '<a class="controls g-next" href="javascript:void(0)" data-href="'+ (index+2) + '">next &raquo;</a>';
-		html += '<a class="controls g-previous" href="javascript:void(0)" data-href="' + (index) + '">&laquo; prev</a>';
+		html += '<a class="controls g-next" href="javascript:void(0)" data-href="'+ (nextIndex+2) + '">next &raquo;</a>';
+		html += '<a class="controls g-previous" href="javascript:void(0)" data-href="' + (prevIndex) + '">&laquo; prev</a>';
 		html += '</div>';
 		
 		$('#galleryModal').modal();

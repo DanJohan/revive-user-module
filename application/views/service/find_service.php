@@ -15,11 +15,11 @@
           </div>
 
         <div class="row">
-       <?php foreach($all_carimage as $carimage):?>
+       <?php //foreach($all_carimage as $carimage):?>
         <div class="col-md-12 col-sm-12 col-xs-12">
-         <div class="car find-car"><img src="<?php echo CRM_BASE_URL; ?>uploads/admin/<?php echo $carimage['image'];?>"></div>
+         <div class="car find-car"><img src="<?php echo CRM_BASE_URL; ?>uploads/admin/<?php echo $car_detail['image'];?>"></div>
         </div>
-        <?php endforeach; ?>
+        <?php //endforeach; ?>
       </div>
       </div>
     </section>
