@@ -39,7 +39,7 @@
         <!--checkout button start here-->
          <?php if($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service'){ ?>
       
-           <span class="chekout"><a href="<?php echo base_url();?>cart/checkout">Checkout</a></span>
+           <span class="chekout "><a class="btn-lg-cir" href="<?php echo base_url();?>cart/checkout">Checkout</a></span>
         <?php }?>
         <!--checkout button end here--> 
     </section>

@@ -78,7 +78,7 @@
            <div class="col-md-3 col-sm-3 col-xs-12 full_box1 last">
                 <div class="promocode"><input placeholder="Have a promocode?" type="text" name="promocode" id="promocode"></div>
                 <div>
-                    <span class="ap_ly"><a href="#">Apply</a></span>
+                    <span class="ap_ly"><a class="btn-s-cir" href="#">Apply</a></span>
                 </div>
             </div>
 
@@ -146,7 +146,7 @@
     </div>
     
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <button type="submit" name="submit" class="btn btn-default find-btn next_C nextmargin">Book Now</button>
+      <button type="submit" name="submit" class="btn btn-primary btn-round  find-btn next_C nextmargin">Book Now</button>
     </div>
 
 

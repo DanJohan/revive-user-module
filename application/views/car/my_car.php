@@ -20,7 +20,7 @@
               <span class="car">Car :<?php echo $cardetail['brand_name'];?>&nbsp;<?php echo $cardetail['model_name'];?></span>
               <span class="reg">Reg No :<?php echo $cardetail['registration_no'];?></span>
               <span class="default_2">
-               <button class="btn btn-book__now" id="book_now" data-model-id="<?php echo $cardetail['model_id']?>" data-car-id="<?php echo $cardetail['id']?>">Book Now</button>
+               <button class="btn btn-book__now btn btn-primary  btn-s-cir" id="book_now" data-model-id="<?php echo $cardetail['model_id']?>" data-car-id="<?php echo $cardetail['id']?>">Book Now</button>
                <a href="<?php echo base_url();?>car/del_car/<?php echo $cardetail['id'];?>"><i class="delete fa fa-trash" aria-hidden="true"></i></a>
                </div>
           </div>
@@ -29,7 +29,7 @@
              }else {?><h2 class="record">NO CAR ADDED</h2><?php } ?>
 
           <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-           <a href="<?php echo base_url(); ?>car/add_car"><button type="button" class="btn book__now">ADD CAR</button></a>
+           <a href="<?php echo base_url(); ?>car/add_car"><button type="button" class="btn book__now btn btn-primary  btn-lg-cir">ADD CAR</button></a>
           </div>
                   
         </div>
@@ -59,7 +59,7 @@
                 '</select>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<button type="submit" class="car-modal-btn">Submit</button>'
+                '<button type="submit" class="car-modal-btn btn btn-primary  btn-s-cir">Submit</button>'
                 '</div>'+
                 '</form>';
 
