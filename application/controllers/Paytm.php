@@ -125,14 +125,14 @@ class Paytm extends MY_Controller
 						
 						$this->session->set_flashdata('success_msg','Payment received succussfully!');
 				         	redirect('cart/confirmed/'.$order_result['hash']);
-				         	exit;
+				         	//exit;
 					}
-				}
-
-			}else{
+				}else{
 						$this->session->set_flashdata('error_msg','Looks like you cancelled the payment. You can try again now or if you faced any issues in completing the payment, please contact us');
 							redirect('cart/order_billing/'.$order_result['hash']);
 							exit;
+			}
+
 			}
 
 		}
