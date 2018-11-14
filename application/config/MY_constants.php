@@ -16,4 +16,9 @@ define('GMAIL_API_KEY',getenv('GMAIL_API_KEY'));
 
 define('CRM_BASE_URL',getenv('CRM_BASE_URL'));
 define('CRM_BASE_PATH', getenv('CRM_BASE_PATH'));
+
+define('PUSHER_APP_ID',getenv('PUSHER_APP_ID'));
+define('PUSHER_KEY',getenv('PUSHER_KEY'));
+define('PUSHER_SECRET',getenv('PUSHER_SECRET'));
+define('PUSHER_CLUSTER',getenv('PUSHER_CLUSTER'));
 ?>

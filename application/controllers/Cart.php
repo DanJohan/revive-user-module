@@ -187,6 +187,11 @@ class Cart extends MY_Controller {
 						$this->OrderItemModel->insert_batch($order_item_data);
 					}
 				}
+
+                $pusher = new Pusher\Pusher(PUSHER_KEY,PUSHER_SECRET,PUSHER_APP_ID,array('cluster' => PUSHER_CLUSTER,'useTLS' => true));
+                 $data['message'] = 'You have new order received!';
+                 $pusher->trigger('order', 'receive-order', $data);
+
 			     $this->basket->clear();
 			     $this->session->unset_userdata('car_id');
 			     $this->session->unset_userdata('model_id');
