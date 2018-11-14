@@ -11,16 +11,17 @@
 <div class="container">
   <!-- processing bar -->
 
-<form id="regForm" action="<?php echo base_url()."cart/store_order"?>" method="post"> 
+<form id="regForm" action="<?php echo base_url()."cart/update_order/"?>" method="post"> 
 <section class="checkout">
 <div class="container">
     <div class="row">
 	
         <div class="col-md-4 col-sm-4 col-xs-12 full_box">
             <h2 class="user_d">User Details</h2>
-            <input placeholder="Name" type="text" name="name" value="<?php echo $this->session->userdata('name')?>" class="validation" required="">
-            <input placeholder="Phone" type="text" name="phone" value="<?php echo $this->session->userdata('phone')?>" class="validation" required="">
-            <input placeholder="Email" type="email" name="email" value="<?php echo $this->session->userdata('email')?>" class="validation" required=""> 
+            <input type="hidden" name="order_id" value="<?php echo $orderdetails['id'];?>">
+            <input placeholder="Name" type="text" name="name" value="<?php echo $orderdetails['customer_name'];?>" class="validation" required="">
+            <input placeholder="Phone" type="text" name="phone" value="<?php echo $orderdetails['customer_phone'];?>" class="validation" required="">
+            <input placeholder="Email" type="email" name="email" value="<?php echo $orderdetails['customer_email'];?>" class="validation" required=""> 
         </div>
 
         <div class="col-md-4 col-sm-4 col-xs-12 full_box">
@@ -38,24 +39,33 @@
         </div>  
 
          <div class="col-md-3 col-sm-3 col-xs-12 full_box">
-           <div id="datepicker"><?php echo $orderdetails['pick_up_date'];?></div>
+           <div id="datepicker"></div>
             <input type="hidden" id="datepicker2" value="<?php echo $orderdetails['pick_up_date'];?>" name="pick_up_date" readonly required>
             <select class="time_sloat2 validation form-control" name="pick_up_time" id="pick_up_time" required="">
-                  <option value="<?php echo $orderdetails['pick_up_time'];?>"><?php echo $orderdetails['pick_up_time'];?></option>  
-                  <option value="10:00-10:30 hrs">10:00-10:30 hrs</option>
-                  <option value="10:30-11:00 hrs">10:30-11:00 hrs</option>
-                  <option value="11:00-11:30 hrs">11:00-11:30 hrs</option>
-                  <option value="11:30-12:00 hrs">11:30-12:00 hrs</option>
-                  <option value="12:00-12:30 hrs">12:00-12:30 hrs</option>
-                  <option value="12:30-01:00 hrs">12:30-01:00 hrs</option>
-                  <option value="01:00-01:30 hrs">01:00-01:30 hrs</option>
-                  <option value="01:30-02:00 hrs">01:30-02:00 hrs</option>
-                  <option value="02:00-02:30 hrs">02:00-02:30 hrs</option>
-                  <option value="02:30-03:00 hrs">02:30-03:00 hrs</option>
-                  <option value="03:00-03:30 hrs">03:00-03:30 hrs</option>
-                  <option value="03:30-04:00 hrs">03:30-04:00 hrs</option>
-                  <option value="04:00-04:30 hrs">04:00-04:30 hrs</option>
-                  <option value="04:30-05:00 hrs">04:30-05:00 hrs</option>
+                <?php
+                $pick_up_time_values = array(
+                  '10:00-10:30 hrs',
+                  '10:30-11:00 hrs',
+                  '11:00-11:30 hrs',
+                  '11:30-12:00 hrs',
+                  '12:00-12:30 hrs',
+                  '12:30-01:00 hrs',
+                  '01:00-01:30 hrs',
+                  '01:30-02:00 hrs',
+                  '02:00-02:30 hrs',
+                  '02:30-03:00 hrs',
+                  '03:00-03:30 hrs',
+                  '03:30-04:00 hrs',
+                  '04:00-04:30 hrs',
+                  '04:30-05:00 hrs'
+                );
+
+                foreach ($pick_up_time_values as  $pick_time_value) {
+                ?>
+                  <option value="<?php echo $pick_time_value; ?>" <?php echo ($pick_time_value==$orderdetails['pick_up_time'])?'selected':''; ?> ><?php echo $pick_time_value; ?></option>
+                <?php
+                }
+                ?>
             </select>
         </div>
       </div>
@@ -93,20 +103,29 @@
           <th>Delete</th>
         </tr>
          <?php
-         foreach($orderdetails['order_items'] as $order_item){   ?>
+         if(!empty($orderdetails['order_items'])){
+          foreach($orderdetails['order_items'] as $order_item){   ?>
           <tr>
             <td><?php echo $order_item['sname'];?></td>
             <td class="custom_list"><?php echo $order_item['price'];?></td>
             <td><a href="<?php echo base_url()?>cart/remove_order_item/<?php echo $order_item['item_id']."/".$orderdetails['id']."/".$orderdetails['hash'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
           </tr>
+        <?php }}else{?>
+          <tr>
+            <td>No Items Added In Table</td>
+          </tr>
         <?php }?>
+
           <tr>
             <th class="sr_no">TOTAL</th>
-            <th ><?php echo $orderdetails['sub_total'];?></th>
+
+            <th><?php echo $orderdetails['sub_total'];?></th>
           </tr>
       </table>
-       <a href="<?php echo base_url();?>service/find_service?model_id=<?php echo $orderdetails['model_id'];?>&car_id=<?php echo $order_item['item_id'];?>&service_cat_id=<?php echo $orderdetails['id'];?>">
+       <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>">
         <button type="button" class="btn btn-primary">Add More Items</button></a>
+    
+        <button type="submit" class="btn btn-primary">Proceed</button></a>
     </div> 
   </div><!--row--end-->
 </section>
@@ -122,6 +141,7 @@
   <script>
   $(function() {
   $('#datepicker').datepicker({
+    defaultDate: new Date('<?php echo implode(',',explode('-',$orderdetails['pick_up_date'])); ?>'),
     onSelect: function(dateText) {
         $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
     },

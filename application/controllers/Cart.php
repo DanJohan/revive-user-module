@@ -230,6 +230,7 @@ class Cart extends MY_Controller {
 		$data = array();
 		$this->order_store('3');
 	}
+	
 	public function confirmed($hash=null){
 		if(!$hash){
 			redirect('cart/checkout');
@@ -251,13 +252,13 @@ class Cart extends MY_Controller {
 
 	}
 
-
 	public function my_order(){
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
 		$data['my_order'] = $this->OrderModel->getByUserId($user_id);
 		$this->render('cart/my_order',$data);
 	}
+
 	public function order_billing($hash =null){
 		if(!$hash){
 			redirect('/');
@@ -271,7 +272,7 @@ class Cart extends MY_Controller {
 
 		if(!$order){
 			redirect('/');
-		}
+		} 
 
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
@@ -279,7 +280,7 @@ class Cart extends MY_Controller {
 		//echo $this->db->last_query();
 		//dd($order_details);
 		$order_item_keys= array('item_id','sname','price');
-		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
+		$order_items = array_filter_by_value(array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR),'item_id','');
 		$order_details = $order_details[0];
 		foreach($order_item_keys as $key) {
 		   unset($order_details[$key]);
@@ -309,7 +310,7 @@ class Cart extends MY_Controller {
 		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
 		//dd($order_details);
 		$order_item_keys= array('item_id','sname','price');
-		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
+		$order_items = array_filter_by_value(array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR),'item_id','');
 		$order_details = $order_details[0];
 		foreach($order_item_keys as $key) {
 		   unset($order_details[$key]);
@@ -319,27 +320,138 @@ class Cart extends MY_Controller {
 		//dd($data);
 		$this->render('cart/modify_order',$data);
 	}
-
+	
 	public function cancel_order($order_id){
 		$this->OrderModel->delete(array('id'=>$order_id));
 		redirect('cart/my_order');
 	}
+	
 	public function remove_order_item($id=null,$order_id=null,$hash=null){
 		if(!$id || !$order_id || !$hash){
 			redirect('cart/my_order');
 		}
-
+		$data =array();
 		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order_id));
+
 		if($is_delete){
 			$total_items = $this->OrderModel->update(array('id'=>$id));
-			//dd($total_items);
+
+			$total_items = $this->OrderItemModel->getItemPriceByOrderId($order_id);
+			$final_total = array_sum(array_column($total_items, 'price'));
+			$this->OrderModel->update(array('sub_total'=>$final_total,'net_pay_amount'=>$final_total),array('id'=>$order_id));
+
 			$this->session->set_flashdata('success_msg','Your item is successfully deleted'); 
-            }else{
+        }else{
                 $this->session->set_flashdata('error_msg','Some error occur, Try again');
-            }
+        }
 
 		redirect('cart/modify_order/'.$hash);
 	}
+
+	public function add_order(){
+
+		if($this->input->post('service_id')){
+			$order_id =$this->input->post('order_id');
+			$insert_data = array(
+				'service_id' => $this->input->post('service_id'),
+				'price' => $this->input->post('price'),
+				'name' => $this->input->post('service_name'),
+				'order_id' => $order_id,
+			);
+			$insert_id = $this->OrderItemModel->insert($insert_data);
+
+			$criteria['field'] = 'discount_amount';
+			$criteria['conditions'] = array('id'=>$order_id);
+			$criteria['returnType'] = 'single';
+
+			$discount = $this->OrderModel->search($criteria);
+
+			$total_items = $this->OrderItemModel->get_all(array('order_id'=>$order_id));
+			
+			$sub_total = array_sum(array_column($total_items, 'price'));
+			$net_pay_amount = $sub_total-$discount['discount_amount'];
+			$is_update = $this->OrderModel->update(array('sub_total'=>$sub_total,'net_pay_amount'=>$net_pay_amount),array('id'=>$order_id));
+			
+			$response = array('status'=>true,'message'=>'inserted successfully','total_items'=>count($total_items));
+		}else{
+			$response = array('status'=>false,'message'=>'parameter required!');
+		}
+
+		$this->renderJson($response);
+
+	}
+
+	public function remove_order(){
+		if($this->input->post('service_id')){
+			$order_id =$this->input->post('order_id');
+			$remove_data = array(
+				'service_id' => $this->input->post('service_id'),
+				'price' => $this->input->post('price'),
+				'name' => $this->input->post('service_name'),
+				'order_id' => $order_id,
+			);
+			$remove_id = $this->OrderItemModel->delete($remove_data);
+
+			$criteria['field'] = 'discount_amount';
+			$criteria['conditions'] = array('id'=>$order_id);
+			$criteria['returnType'] = 'single';
+
+			$discount = $this->OrderModel->search($criteria);
+
+			$total_items = $this->OrderItemModel->get_all(array('order_id'=>$order_id));
+			if(!$total_items) {
+				$total_items = array();
+			}
+			$sub_total = array_sum(array_column($total_items, 'price'));
+			$net_pay_amount = $sub_total-$discount['discount_amount'];
+			$is_update = $this->OrderModel->update(array('sub_total'=>$sub_total,'net_pay_amount'=>$net_pay_amount),array('id'=>$order_id));
+			
+			$response = array('status'=>true,'message'=>'deleted successfully','total_items'=>count($total_items));
+		}else{
+			$response = array('status'=>false,'message'=>'parameter required!');
+		}
+
+		$this->renderJson($response);
+		//redirect('cart/modify_order/'.$hash);
+	}
+
+	public function update_order($hash=null){
+		if(count($_POST) > 0 ) { 
+			//$data = array();
+			$order_id =$this->input->post('order_id');
+
+				$update_user_data = array(
+	            	'name'=>$this->input->post('name'),
+	            	'email'=>$this->input->post('email'),
+	            	'phone'=>$this->input->post('phone'),
+	            	'address' => $this->input->post('address'),
+					'landmark' => $this->input->post('landmark')
+	            
+          		);
+		      $update_id = $this->CustomerDetailModel->update($update_user_data, array('order_id'=>$order_id));
+		      $hash = md5(uniqid($order_id,true));
+		      	$update_order_data = array(
+		      	'pick_up_date' => date('Y-m-d',strtotime($this->input->post('pick_up_date'))),
+				'pick_up_time' => $this->input->post('pick_up_time'),
+				'created_at' =>date('Y-m-d H:i:s')
+			);
+			$udated_order_id = $this->OrderModel->update($update_order_data, array('id'=>$order_id));
+			//echo $this->db->last_query();die;
+			//if($updated_order_id){
+				$car_id = $this->OrderModel->getById($order_id);
+				//print_r($car_id);die;
+				$car_data = array(
+	            	'registration_no'=>$this->input->post('reg_no'),
+	            	'created_at' => date('Y-m-d H:i:s')
+          		);
+        	$car_id = $this->CarModel->update($car_data, array('id'=>$car_id));
+      			echo $this->db->last_query();die;
+      	//}
+    }
+      	redirect('cart/selectpaymentmethod/'.$hash);
+
+      
+	}// end of store method
 
 }
 ?>

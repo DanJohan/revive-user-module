@@ -8,6 +8,8 @@ class Service extends MY_Controller {
 			$this->load->model('CarBrandModel');
 			$this->load->model('CarModelsModel');
 			$this->load->model('ServiceModel');
+			$this->load->model('OrderModel');
+			$this->load->model('OrderItemModel');
 		}
 
 		public function set_location($location =null){
@@ -49,7 +51,7 @@ class Service extends MY_Controller {
 			$this->session->set_userdata('model_id',$model_id);
             $this->session->set_userdata('service_cat_id',$service_cat_id);
           	//dd($_SESSION);
-			$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
+			//$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
 			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id,$service_cat_id);
 			$cartItems = $this->basket->getItems();
 			$data['cart_items_id'] = array_keys($cartItems);
@@ -73,6 +75,43 @@ class Service extends MY_Controller {
 					$this->renderJson(array('status'=>false,'message'=>'data not found!'));
 				}
 			}
+		}
+
+		public function add_more_service($hash=null){ //display add_more_service page 
+			$hash = $this->input->get('hash');
+			$model_id = $this->input->get('model_id');
+			$service_cat_id = $this->input->get('service_cat_id');
+
+			if(!$hash || !$model_id || !$service_cat_id){
+				redirect('cart/modify_order/'.$hash);
+			}
+
+			$criteria['field'] = 'id';
+			$criteria['conditions'] = array('hash'=>$hash);
+			$criteria['returnType'] = 'single';
+
+			$order = $this->OrderModel->search($criteria);
+
+			if(!$order){
+				redirect('/');
+			}
+			$data['order_id'] = $order['id'];
+			$data['service_cat_id'] = $service_cat_id;
+			$data['model_id'] = $model_id;
+			$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+			//$data['all_carimage'] = $this->CarModelsModel->getImageByModelName($model_id);
+			$data['all_carservices'] = $this->ServiceModel->getServicesByModel($model_id,$service_cat_id);
+
+			$data['order_items'] = $this->OrderItemModel->get_all(array('order_id'=>$order['id']));
+			if($data['order_items']) {
+				$data['service_ids'] = array_column($data['order_items'],'service_id');
+			}else{
+				$data['service_ids'] = array();
+				$data['order_items'] =array();
+			}
+			//dd($data);
+			$this->render('service/add_more_service',$data);
+		
 		}
 	}
 
