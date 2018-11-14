@@ -3117,12 +3117,12 @@ form.car-book-wrapper .form-control {
     border: 1px solid #240a1f;
 }
 button.car-modal-btn {
-    background: #240a1f;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 22px;
-    box-shadow: none;
-    cursor: pointer;
+  /*   background: #240a1f;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 22px;
+  box-shadow: none;
+  cursor: pointer; */
     float: right;
 }
 button.car-modal-btn:focus {
@@ -4056,18 +4056,71 @@ table.modify-margin .fa-trash {
 
 
 .btn-round {
-    background: #582c4f;
-    border: #582c4f;
+    background: #47143d;
+    border:#47143d;
     padding: 7px 23px;
 }
 .btn-round:hover {
-    background: #582c4f;
-    border: #582c4f;
+    background:#47143d;
+    border: #47143d;
 }
 button.btn.btn-primary.btn-round:active {
-    background: #582c4f;
-    border: #582c4f;
+    background: #47143d;
+    border: #47143d;
 }
 .btn.btn-primary.btn-round.focus, .btn.btn-primary.btn-round:focus {
     box-shadow: none !important;
 }
+
+/************btn-small-cir-css*******************/
+
+.btn-s-cir {
+    background:#47143d;
+    color: #fff;
+    border-radius: 22px;
+    font-size: 14px;
+    padding: 6px 18px;
+    border:#47143d;
+}
+
+.btn-s-cir:hover {
+    background: #47143d;
+    border:#47143d;
+}
+button.btn.btn-primary.btn-s-cir:active {
+    background: #47143d;
+    border: #47143d;
+}
+.btn.btn-primary.btn-s-cir.focus, .btn.btn-primary.btn-s-cir:focus {
+    box-shadow: none !important;
+}
+
+
+
+
+/************btn-lg-cir-css*******************/
+
+.btn-lg-cir {
+    background:#47143d;
+    color: #fff;
+    border-radius: 22px;
+    font-size: 14px;
+    padding: 10px 32px;
+    border:#47143d;
+}
+
+.btn-lg-cir:hover {
+    background: #47143d;
+    border:#47143d;
+}
+button.btn.btn-primary.btn-lg-cir:active {
+    background: #47143d;
+    border: #47143d;
+}
+.btn.btn-primary.btn-lg-cir.focus, .btn.btn-primary.btn-lg-cir:focus {
+    box-shadow: none !important;
+}
+
+
+
+
