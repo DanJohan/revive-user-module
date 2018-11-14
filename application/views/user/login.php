@@ -28,11 +28,11 @@
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control login-input" name="password" id="pwd">
               </div>
-              <div class="form-group form-check">
-                <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox"> Remember me
-                </label>
-              </div>
+             <!--  <div class="form-group form-check">
+               <label class="form-check-label">
+                 <input class="form-check-input" type="checkbox"> Remember me
+               </label>
+             </div> -->
               <p class="login-box-text">Not registered yet? <a href="<?php echo base_url(); ?>user/signup">Sign Up</a></p>
               <p class="login-box-text"><a href="<?php echo base_url(); ?>user/forgot_password">Forgot Password?</a></p>
               <input type="submit" name="submit" class="sign-in" value="Sign-in">

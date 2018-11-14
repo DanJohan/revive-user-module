@@ -9,20 +9,20 @@
                     <div class="col-xs-12">   
                       <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control login-input" id="name" name="name">
+                        <input type="text" class="form-control login-input" id="name" name="name" autocomplete="off">
                       </div>
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control login-input" id="email" name="email">
+                        <input type="email" class="form-control login-input" id="email" name="email" autocomplete="off">
                       </div>
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Phone Number</label><br>
                            <span class="input-group-addon" id="output"> </span>
-                        <input type="text" class="form-control login-input login_phone" id="phone" name="phone" autocomplete="off">
+                        <input type="text" class="form-control login-input login_phone" id="phone" name="phone" autocomplete="off" onkeypress="return isNumberKey(event)">
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -85,12 +85,21 @@
         }
       }
   });
-
-  $("#phone").keypress(function(){
+function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+          var txtVal = this.value;
+         $("#output").text("+91");
+         
+         
+      }
+  /*$("#phone").keypress(function(){
     var txtVal = this.value;
     $("#output").text("+91");
   
-  });
+  });*/
 
 </script>
 <?php $this->widget->endBlock();?>

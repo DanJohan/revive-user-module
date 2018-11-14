@@ -83,7 +83,7 @@
 	 </div>
 	 <div class="row">
 	    <div class="col-md-12 col-sm-12 col-xs-12">
-		    <span class="callus">Call us:#1245784512</span>
+		    <span class="callus">Call us: +91-9899645800</span>
 		</div>
 	 </div>
 
