@@ -56,7 +56,7 @@
   </div>
 </div> 
 <div class="col-md-12 text-center">
-       <button type="submit" name="submit" class="btn btn-default find-btn">Add Car</button>
+       <button type="submit" name="submit" class="btn btn-primary find-btn btn-round">Add Car</button>
  </div>
 </form>
 

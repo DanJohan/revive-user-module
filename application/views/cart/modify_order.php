@@ -100,7 +100,7 @@
       <table class="modify-margin">
         <tr>
           <th class="item_s">Services</th>
-          <th>Price</th>
+          <th class="text-right">Price</th>
           <th>Delete</th>
         </tr>
          <?php
@@ -113,20 +113,26 @@
           </tr>
         <?php }}else{?>
           <tr>
-            <td>No Items Added In Table</td>
+            <td colspan="3" class="delete-msg ">No Items Added In Table</td>
           </tr>
         <?php }?>
-
-          <tr>
+            <tr>
+          <th class="item_s">Total</th>
+           <th  class="text-right"><?php echo $orderdetails['sub_total'];?></th>
+          <th></th>
+        </tr>
+          <!-- <tr>
             <th class="sr_no">TOTAL</th>
-
-            <th><?php echo $orderdetails['sub_total'];?></th>
-          </tr>
+          
+            <th colspan="3" class="text-right"><?php //echo $orderdetails['sub_total'];?></th>
+            
+          </tr> -->
       </table>
+      <div class="float-right">
        <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>">
-        <button type="button" class="btn btn-primary btn-round">Add More Items</button></a>
-    
-        <button type="submit" class="btn btn-primary btn-round">Proceed</button></a>
+        <button type="button" class="btn-dotted">Add More Items</button></a>
+        <button type="submit" class="btn-round2 proc-btn">Proceed</button></a>
+      </div>
     </div> 
   </div><!--row--end-->
 </div>

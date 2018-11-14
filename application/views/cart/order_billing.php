@@ -131,13 +131,13 @@
 		    	<!-- <a href="<?php //echo base_url();?>cart/cancel_order/<?php //echo $orderdetails['id'];?>">Cancel Order</a></div> -->
 		    	  <?php //} ?>
 
-		    	<a href="<?php echo base_url();?>cart/modify_order/<?php echo $orderdetails['hash'];?>">Modify Order</a>
+		    	<a class="btn-round" href="<?php echo base_url();?>cart/modify_order/<?php echo $orderdetails['hash'];?>">Modify Order</a>
 		    </div>
 
 		  </div>
 		
 		   <div class="col-md-6 col-sm-6 col-xs-12">
-		    <div class="order_btn"><a href="<?php echo base_url();?>cart/selectpaymentmethod/<?php echo $orderdetails['hash']; ?>">Proceed</a></div>
+		    <div class="order_btn "><a class="btn-round" href="<?php echo base_url();?>cart/selectpaymentmethod/<?php echo $orderdetails['hash']; ?>">Proceed</a></div>
 		  </div>
 		<?php } ?>
 	  </div>

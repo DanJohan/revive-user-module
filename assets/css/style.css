@@ -1,5 +1,6 @@
 
 
+
 /**************** nav-bar *************/
 .navbar.navbarbg-margin {
     font-size: .875rem;
@@ -1029,12 +1030,16 @@ section.cart_custom {
     font-size: 12px;
     padding: 6px 20px;
     width: 100%;
-    background-color: #5e1445;
+    /* background-color: #5e1445;
     color: white;
     height: 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px; */
   text-decoration: none;
+}
+.ap_ly a:hover {
+   
+    color: #fff;
 }
 .ap_ly {
     display: block;
@@ -2312,13 +2317,13 @@ a.dropdown-item.drp-clr {
 .select-container{
     padding-bottom:71px;
 }
-button.btn.btn-default.find-btn {
+/* button.btn.btn-default.find-btn {
     background-color: #582c4f;
     color: #fff;
-    /* width: 82%; */
+    width: 82%;
     padding: 8px 70px;
     font-size: 18px;
-}
+} */
 i.fa.fa-minus-circle.mins {
     color: #ccc;
     font-size: 12px;
@@ -2632,8 +2637,8 @@ img.img-fluid.f-body {
     color: #484848;
     border: 1px solid;
     padding: 10px 20px;
+    text-decoration: none;
 }
-
 
 
 
@@ -2975,58 +2980,7 @@ section.custom-wrapper {
     background: #f1f1f1;
     padding-top: 20px;
 }
-@media screen and (max-width: 480px) {
 
-    .l__order img {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    margin-bottom: 12px;
-}
-.inner-full {
-    box-shadow: 1px 1px 10px 3px #a0a0a0;
-    background: #fff;
-    width: 100%;
-    padding: 25px;
-}
-.o_rser_list tr th {
-    width: 36%;
-    font-size: 14px;
-}
-.select-car-wrapper {
-    margin: 0 auto;
-    width: 100%;
-}
-.default a {
-    width: 63%;
-    margin-top: 0px;
-}
-.order_btn a {
-    text-align: center;
-    display: block;
-    background-color: #47143d;
-    /* width: 25%; */
-    color: #fff;
-    padding: 10px 20px;
-    margin: 0 auto;
-    border-radius: 3px;
-}
-.top-box {
-box-shadow: 1px 1px 10px 3px #a0a0a0;
-background: #fff;
-padding: 20px;
-margin: 0 auto;
-margin-bottom: 20px;
-width: 100%;
-}.open__Details2 a {
-font-size: 15px;
-font-weight: bold;
-color: #484848;
-border: 1px solid;
-padding: 10px 16px;
-}
-}
 
 /*************** PROFILE PAGE BALWINDER *****************/
 .form-signin {
@@ -3209,6 +3163,17 @@ margin-top: 146px;
 
 }
 @media only screen and (max-width:425px){
+    .full_box {
+    background-color: #fff;
+    border: 0px solid;
+    padding: 25px;
+    background-color: #fafafa;
+    /* height: 302px; */
+    width: 100%;
+    box-shadow: 2px 2px 18px -5px black;
+    margin: 10px;
+    margin: 7px auto;
+}
 
     .tata__r {
     float: left;
@@ -3230,7 +3195,7 @@ margin-top: 146px;
     font-weight: normal;
     color: #ffffff;
     padding: x;
-    font-size: 20px;
+    font-size: 19px;
 }
     }
 @media only screen and (max-width:600px){
@@ -3375,9 +3340,9 @@ tr:nth-child(even) {
 th.sr_no {
     width: 6%;
 }
-.space_012 th {
+/* .space_012 th {
     text-align: right;
-}
+} */
 td.custom_list {
     text-align: right;
 }
@@ -3387,12 +3352,14 @@ th.item_s {
 .order_btn a {
     text-align: center;
     display: block;
-    background-color: #47143d;
+    /* background-color: #47143d; */
     width: 50%;
-    color: #fff;
-    padding: 10px 20px;
     margin: 0 auto;
-    border-radius: 3px;
+    color: #fff;
+    /* padding: 10px 20px; */
+     border-radius: 3px;
+     text-decoration: none;
+
 }
 
 
@@ -3833,11 +3800,13 @@ span.chekout {
     margin-bottom: 0px;
     padding-bottom: 0px;
 }
-span.chekout a {
-    background-color: #47143d;
-    padding: 10px 22px;
-    border-radius: 22px;
+span.chekout a:hover {
+    /* background-color: #47143d; */
+    /* padding: 10px 22px; */
+    /* border-radius: 22px; */
+    /* color: #fff; */
     color: #fff;
+    text-decoration: none;
 }
 /*************user-info -icons***********/
 .userinfo-icons i.active {
@@ -3884,6 +3853,7 @@ span.chekout a {
     padding: 20px;
     margin: 0 auto;
     margin-bottom: 20px;
+    width: 72%;
 }
 ul.top-appontment li {
     list-style: none;
@@ -3950,7 +3920,9 @@ section.gallery {
     width: 100%;
     margin: 0 auto;
 }
-
+.find-btn.btn-round {
+    padding: 10px 50px;
+}
 /********************Your Order On Its Way balwinder ********************/
 .order__list12 {
     text-align: center;
@@ -4010,7 +3982,8 @@ section.gallery {
     line-height: 30px;
 }
 .sub_it_list {
-    padding-right: 30px;
+    /* padding-right: 30px; */
+    float: left;
 }
 .callus {
     background-color: #e8e8e8;
@@ -4023,6 +3996,16 @@ section.gallery {
     border-radius: 2px;
     font-size: 15px;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+ul.sub__items {
+    margin:0;
+    padding: 0;
+}
+.order-bor {
+    border: 1px solid #ccc;
+    border-top: none;
+    font-weight: 700;
 }
 .s_no {
     text-align: center;
@@ -4032,7 +4015,10 @@ section.gallery {
 }
 .pay_ment {
     border-top: 1px solid #ccc;
-}    
+} 
+th.custom_list {
+    text-align: right;
+}  
 .inner-full {
     box-shadow: 1px 1px 10px 3px #a0a0a0;
     background: #fff;
@@ -4051,14 +4037,20 @@ table.modify-margin {
 table.modify-margin .fa-trash {
     color: #000;
 }
-
+td.delete-msg {
+    width: 50%;
+    text-align: center;
+}
+button.btn-round2.proc-btn {
+    padding: 8px 81px;
+}
 /************btn-round-css*******************/
 
 
 .btn-round {
     background: #47143d;
     border:#47143d;
-    padding: 7px 23px;
+    padding: 8px 30px;
 }
 .btn-round:hover {
     background:#47143d;
@@ -4072,6 +4064,27 @@ button.btn.btn-primary.btn-round:active {
     box-shadow: none !important;
 }
 
+/************btn-dotted-css*******************/
+button.btn-dotted {
+    background: transparent;
+    border: 2px dotted #47143d;
+    color: #47143d;
+    padding: 5px 54px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+button.btn-dotted:focus {
+    outline: none;
+}
+/*****************Btn-round2********************/
+button.btn-round2 {
+    background: #47143d;
+    color: #fff;
+    border: none;
+    padding: 8px 30px;
+    font-size: 14px;
+}
 /************btn-small-cir-css*******************/
 
 .btn-s-cir {
@@ -4124,3 +4137,79 @@ button.btn.btn-primary.btn-lg-cir:active {
 
 
 
+
+@media screen and (max-width: 480px) {
+    .bill__no {
+    padding-left: 68px;
+    float: left;
+    /* width: 30%; */
+    display: table-cell;
+    width: 60%;
+    padding-left: 4px;
+}
+.o_rser_list td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 6px;
+}
+
+    .l__order img {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.inner-full {
+    box-shadow: 1px 1px 10px 3px #a0a0a0;
+    background: #fff;
+    width: 100%;
+    padding: 25px;
+}
+.o_rser_list tr th {
+    width: 36%;
+    font-size: 14px;
+}
+.select-car-wrapper {
+    margin: 0 auto;
+    width: 100%;
+}
+.default a {
+    width: 63%;
+    margin-top: 0px;
+}
+.order_btn a {
+    text-align: center;
+    display: block;
+    background-color: #47143d;
+    /* width: 25%; */
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+.top-box {
+box-shadow: 1px 1px 10px 3px #a0a0a0;
+background: #fff;
+padding: 20px;
+margin: 0 auto;
+margin-bottom: 20px;
+width: 100%;
+}.open__Details2 a {
+font-size: 15px;
+font-weight: bold;
+color: #484848;
+border: 1px solid;
+padding: 10px 16px;
+}
+button.btn-dotted {
+    background: transparent;
+    border: 2px dotted #47143d;
+    color: #47143d;
+    padding: 3px 47px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+}

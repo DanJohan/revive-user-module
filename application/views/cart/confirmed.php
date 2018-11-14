@@ -41,6 +41,7 @@
 		   <tr class="pay_ment">
 		   <td><b class="bill_title">Payment Mode</b><span class="bill__no"></span></td>
 			<td><b class="bill_title"><?php echo $orderdetails['payment_name'];?></b><span class="bill__no"></td>
+				<td></td>
 
 
 		  </tr>
@@ -54,15 +55,15 @@
 	      <div class="col-md-12 col-sm-12 col-xs-12 space_012">
 		      <table class="o_rser_list_2">
 				  <tr>
-					<th class="sr_no">Sr No</th>
+					<th>Sr No</th>
 					<th class="item_s">Packages</th>
-					<th>Price</th>
+					<th class="custom_list">Price</th>
 				  </tr>
 				  <?php 
 				  		$count =1;
 				 		foreach($orderdetails['order_items'] as $order_item){	 ?>
 				  <tr>
-					<td class="s_no"><?php echo $count;?></td>
+					<td ><?php echo $count;?></td>
 					<td><?php echo $order_item['sname'];?></td>
 					<td class="custom_list"><?php echo $order_item['price'];?></td>
 				  </tr>
@@ -71,7 +72,7 @@
                </table>
 		  </div>
         </div>
-        <div class="row">
+        <div class="row order-bor">
 		   <div class="col-sm-12 col-md-12 col-xs-12">
 				 <div class="item_list">
 				  <ul class="sub__items">
