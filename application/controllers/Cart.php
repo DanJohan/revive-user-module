@@ -331,8 +331,8 @@ class Cart extends MY_Controller {
 
 		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order_id));
 		if($is_delete){
-			$total_items = $this->OrderModel->update(array('id'=>$id);
-			dd($total_items);
+			$total_items = $this->OrderModel->update(array('id'=>$id));
+			//dd($total_items);
 			$this->session->set_flashdata('success_msg','Your item is successfully deleted'); 
             }else{
                 $this->session->set_flashdata('error_msg','Some error occur, Try again');
