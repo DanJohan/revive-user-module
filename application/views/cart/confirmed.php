@@ -7,6 +7,8 @@
 		     <span class="order__list12">Thanks for placing your order</span>
 			 <span class="l__order"><img src="<?php echo base_url();?>assets/img/logo.png"></span>
 			  <span class="order__list13">Your Order is Under Process</span>
+			 <p align="center">Our customer care executive will call you for further assistance and confirmation.</p>
+			  
 		  </div>
 	   </div>
 	   <div class="row">

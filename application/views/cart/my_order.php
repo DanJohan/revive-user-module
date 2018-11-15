@@ -27,6 +27,7 @@
 					<div class="open__Details2">
 						<p>Status</p><a href="#">Pending</a>
 						<a href="<?php echo base_url();?>cart/order_billing/<?php echo $order['hash'];?>">Open Details</a>
+						<a href="<?php echo base_url()?>cart/cancel_order/<?php echo $order['id'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
 					</div>
 				</div>
 			</div>

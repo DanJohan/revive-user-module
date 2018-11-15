@@ -9,23 +9,21 @@ class User extends MY_Controller {
 		$this->load->model('UserExternalLoginModel');
 		$this->load->helper(array('string'));
 		$this->load->library('session');
+		$this->load->library('TextMessage');
 		
 	}
 	public function login(){
-		//dd($this->session);
 		$this->load->library('fblogin');
 		$this->load->library('gmailLogin');
 		$data = array();
-			
 		if($this->session->has_userdata('is_user_login') && $this->session->userdata('is_user_login')){
-			
-
 			redirect('cart/userinfo');
 		}
 		
 		if($this->input->post('submit')){
 			$this->form_validation->set_rules('username', 'Email|Phone', 'trim|required');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required');
+			//$this->form_validation->set_rules('otp', 'Otp', 'trim|required');
 
 			if ($this->form_validation->run() == TRUE) {
 				
@@ -55,7 +53,9 @@ class User extends MY_Controller {
 										
 				}
 			}else {
-						$data['msg'] = 'Missing Email/Phone Or Password';
+							
+					redirect('user/verifyLoginOtp',$data);
+					//$data['msg'] = 'Missing Email/Phone Or Password';
 			}
 
 		}
@@ -80,7 +80,59 @@ class User extends MY_Controller {
 			// flash message and redirect
 	}
 }
+	public function otplogin(){
+		if($this->input->post('phone')){
+			$phone = $this->input->post('phone');
+			$result = $this->UserModel->checkPhoneExists($phone);
+			if($result){
+				$otp = generate_otp();
+				$data = array(
+					'phone'=>$phone,
+					'body' =>$otp." otp to login into your Revive auto care acccount."
+				);
+				$message = $this->textmessage->send($data);
+				if(is_object($message) && $message->sid){
+					$update_data = array(
+						'otp'=>$otp,
+					);
+					$updated_otp = $this->UserModel->update($update_data,array('phone'=>$phone));
+					if($updated_otp){
+						$data['msg'] = 'OTP send successfully!';
+						
+					}else{
+						$data['msg'] = 'An error occured!Please try again!';
+					}
+				}else{
+					$data['msg'] = 'Sorry,this phone number is not registerd with us!';
+					
+				}
+			}
+			
+		}
+	}	
 
+	public function verifyLoginOtp(){
+		//dd($_POST);
+		//$data =array();
+		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
+		$this->form_validation->set_rules('otp', 'OTP', 'trim|required');
+		if ($this->form_validation->run() == true){
+			$criteria ['field'] = "id,name,email,phone,created_at";
+			$criteria['conditions'] = array('phone'=>$this->input->post('phone'),'otp'=>$this->input->post('otp'));
+			$criteria['returnType'] ='single';
+			$user = $this->UserModel->search($criteria);
+			if($user){
+				$this->UserModel->update(array('otp'=>null),array('id'=>$user['id']));
+				$response = array('status'=>true,'message'=>'Login successfully','user'=>$user);
+			}else{
+				$response = array('status'=>false, 'message'=>'Otp not valid');
+			}
+		}else{
+			$errors = $this->form_validation->error_array();
+			$response = array('status'=>false,'message'=>$errors);
+		}
+		$this->renderJson($response);
+	}
 	public function fbcallback() {
 		$this->load->library('fblogin');
 		if($this->fblogin->hasAccessToken()){
