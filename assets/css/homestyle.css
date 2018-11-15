@@ -2582,7 +2582,7 @@ p.btn.btn-modal {
     color: #000;
     padding-top: 7px;
     margin-bottom: 0px;
-    font-weight: normal;
+    font-weight: 500;
 }
 .modal-btn .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle {
     background: no-repeat;
@@ -2812,3 +2812,6 @@ a.btn.btn-primary.read-more {
 section#blog img {
     width: 100%;
 }
+
+
+

@@ -5,12 +5,60 @@
 .navbar.navbarbg-margin {
     font-size: .875rem;
     font-weight: 500;
-    padding-bottom: 1rem;
-    padding-top: 2rem;
+    padding-bottom: 6px;
+    padding-top: 27px;
     transition: .3s ease;
 }
+/******************Top-bar-css*****************/
 
-
+.top-bar {
+    background: #6d6b6c2e;
+    /* padding: 6px 0px; */
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    font-size: 10px;
+}
+.social-address {
+    font-size: 12px;
+    padding-top: 10px;
+}
+a.top-icon {
+    color: #000;
+    padding-right: 6px;
+    font-size: 10px;
+    text-decoration: none;
+}
+.social-icons ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 11px;
+    font-size: 13px;
+}
+.social-icons ul li {
+    display: inline-block;
+    padding: 0px 5px;
+}
+.social-icons a {
+    color: #000;
+}
+.fb-color:hover {
+    color: #3B5998;
+}
+a.top-icon:hover {
+    color: #47143d;
+    padding-right: 6px;
+}
+a.top-icon .fa {
+    margin-right: 2px;
+}
+.models_list .btn-modal {
+    padding-bottom: 0px;
+    margin-bottom: 7px;
+    color: #000;
+    font-weight: 500;
+}
 /* .navbarbg-margin.navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.5);
     padding-right: 0px;
@@ -546,6 +594,7 @@ section#testimonals {
     padding: 8px 25px;
     color: #FFFFFF;
     margin: 0 auto;
+    text-decoration: none;
 }
 .btn_car {
     margin: 0 auto;
@@ -686,16 +735,16 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     position: fixed;
     width: 100%;
 }*/
-.top-bar {
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important; */
+/* .top-bar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4) !important;
     background: #6d6b6c2e;
     padding-top: 13px;
     padding-bottom: -14px;
     margin-bottom: 1px;
     opacity: 0.6;
-    /* color: #fff !important; */
+    color: #fff !important;
     font-size: 11px;
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 9999;
     opacity: 1;
@@ -708,7 +757,7 @@ a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-wid
     color: rgb(0, 0, 0) !important;
     font-size: 14px;
     margin-right: 10px;
-}
+} */
 
 
 @media only screen and (min-device-width : 1024px){
@@ -1552,10 +1601,9 @@ legend {
 .checkout {
     margin-top: 0;
     margin-bottom: 0px;
-    padding-top: 81px;
+    padding-top: 30px;
     background-color: #f2f2f2;
-    /* margin-top: 151px;
-    padding-bottom: 60px; */
+    padding-bottom: 30px;
 }
 .time_sloat {
     margin: 0 auto;
@@ -2068,13 +2116,13 @@ h4.m-head {
     margin: 0 auto;
     font-size: 16px;
 }
-p.btn.btn-modal {
+/* p.btn.btn-modal {
     background: no-repeat;
     border: none;
     box-shadow: none;
     color: #000;
     padding-top: 0px;
-}
+} */
 .or-section {
     padding: 25px 85px 5px 85px;
 }
@@ -3548,7 +3596,7 @@ ul.progressbar li.fail:before {
     } */
     .modal-content {
     /* position: absolute; */
-    /* left: 47% !important; */
+    left: 0 !important; 
     top: 30px;
     /* padding: 12px; */
       }
@@ -3672,7 +3720,7 @@ ul.progressbar li.fail:before {
     padding: 0.2em 0.2em 0;
     display: none;
 }*/
-.navbar {
+/* .navbar {
     font-size: .875rem;
     font-weight: 500;
     padding-bottom: 0rem;
@@ -3681,7 +3729,7 @@ ul.progressbar li.fail:before {
     position: absolute;
     top: 32px;
 }
-    
+     */
     /* .ts-background {
     bottom: 16px;
     left: 0;
@@ -3697,46 +3745,47 @@ ul.progressbar li.fail:before {
     position: relative;
     top: 100px!important;
 } */
-.top-icon {
+/* .top-icon {
     float: right;
     right: 0px;
     position: relative;
     width: 97%;
     bottom: 8px;
-}
-.top-icon i {
+} */
+/* .top-icon i {
     float: right;
     width: 7%;
     font-size: 12px;
     position: relative;
     bottom: 11px;
     left: 16px;
-}
-.top-icon {
+} */
+/* .top-icon {
     float: right;
     right: 0px;
     position: relative;
     width: 97%;
     bottom: 8px;
-}
+} */
 i.icon.fa.fa-envelope.icon-margin {
     margin-left: 20px;
 }
-.top-bar {
+/* .top-bar {
     border-bottom: none;
     background: #6d6b6c2e;
     padding-top: 13px;
     padding-bottom: 7px;
     margin-bottom: 1px;
-   /*  opacity: 0.6; */
-    /* color: #fff !important; */
+   opacity: 0.6;
+    color: #fff !important;
     font-size: 11px;
     position: fixed;
     width: 100%;
     position: absolute;
-}
+} */
 .logo {
-    width: 50%;
+    width: 100%;
+    padding-top: 52px;
 }
 .top-text {
     position: relative;
@@ -4084,6 +4133,7 @@ button.btn-round2 {
     border: none;
     padding: 8px 30px;
     font-size: 14px;
+    cursor: pointer;
 }
 /************btn-small-cir-css*******************/
 
