@@ -295,7 +295,7 @@
 
         </div>
         <div class="col-md-12 col-sm-12 col-xs-12">
-        <a href="<?php echo base_url()?>site/gallery" class="btn btn-primary read-more">View All</a></div>
+        <a href="<?php echo base_url()?>site/gallery" class="btn btn-primary read-more ">View All</a></div>
        <!--          end ts-title
                <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
            <div class="slide">
