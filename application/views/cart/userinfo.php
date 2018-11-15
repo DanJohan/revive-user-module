@@ -31,9 +31,9 @@
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 full_box">
             <h2 class="user_d">User Details</h2>
-            <input placeholder="Name" type="text" name="name" value="<?php echo $this->session->userdata('name')?>" class="validation" required="">
-            <input placeholder="Phone" type="text" name="phone" value="<?php echo $this->session->userdata('phone')?>" class="validation" required="">
-            <input placeholder="Email" type="email" name="email" value="<?php echo $this->session->userdata('email')?>" class="validation" required=""> 
+            <input placeholder="Name" type="text" name="name" value="<?php echo $user_detail['name'];?>" class="validation" required="">
+            <input placeholder="Phone" type="text" name="phone" value="<?php echo $user_detail['phone'];?>" class="validation" required="">
+            <input placeholder="Email" type="email" name="email" value="<?php echo $user_detail['email'];?>" class="validation" required=""> 
         </div>
 
         <div class="col-md-4 col-sm-4 col-xs-12 full_box">

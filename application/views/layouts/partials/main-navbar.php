@@ -20,7 +20,7 @@
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#FAQs">FAQs</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
-          <?php if($this->router->fetch_class() != 'service' && $this->router->fetch_method() != 'add_more_service'){ ?>
+          <?php if(($this->router->fetch_class() != 'service' && $this->router->fetch_method() != 'add_more_service') || ($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service')){ ?>
              <?php
             $cart_count =$GLOBALS['cart_count'];
           ?> 

@@ -21,4 +21,8 @@ define('PUSHER_APP_ID',getenv('PUSHER_APP_ID'));
 define('PUSHER_KEY',getenv('PUSHER_KEY'));
 define('PUSHER_SECRET',getenv('PUSHER_SECRET'));
 define('PUSHER_CLUSTER',getenv('PUSHER_CLUSTER'));
+
+define('TWILIO_SID', getenv('TWILIO_SID'));
+define('TWILIO_TOKEN', getenv('TWILIO_TOKEN'));
+define('TWILIO_NUMBER', getenv('TWILIO_NUMBER'));
 ?>

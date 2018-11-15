@@ -3837,7 +3837,7 @@ span.chekout a:hover {
   color:#fff;
 
 }
-#output {
+/* #output {
     position: relative;
     top: 35px;
     z-index: 999999;
@@ -3846,7 +3846,7 @@ span.chekout a:hover {
 
 .login_phone {
     padding-left: 45px;
-}
+} */
 .top-box {
     box-shadow: 1px 1px 10px 3px #a0a0a0;
     background: #fff;

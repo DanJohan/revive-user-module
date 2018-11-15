@@ -6,6 +6,7 @@ class Cart extends MY_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('OrderModel');
+		$this->load->model('UserModel');
 		$this->load->model('OrderItemModel');
 		$this->load->model('CustomerDetailModel');
 		$this->load->model('CarModelsModel');
@@ -87,8 +88,11 @@ class Cart extends MY_Controller {
 			redirect('service/select_service');
 		}
 		$data = array();
-		$model_id= $this->session->userdata('model_id');
+		$model_id = $this->session->userdata('model_id');
+		$user_id = $this->session->userdata('user_id');
+		$data['user_detail']= $this->UserModel->get(array('id'=>$user_id));
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
+		//dd($data);
 
 		if($this->session->has_userdata('car_id')){
 			$car_id = $this->session->userdata('car_id');
