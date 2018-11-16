@@ -15,22 +15,22 @@
 		<table class="o_rser_list">
 		  <tr>
 			<th>SUMMARY</th>
-			<th>BILLING ADDRESS</th>
 			<th>CUSTOMER DETAIL</th>
-		  </tr>
+			<th>BILLING ADDRESS</th>
+		 </tr>
 
 		   
 			<tr>
 			  </tr class="bor__none">
 			  <td><b class="bill_title">Order</b><span class="bill__no"><?php echo $order['order_no']; ?></td>
 			  <td><b class="bill_title"><?php echo $customerdetail['name']; ?></b><span class="bill__no"></td>
-			  <td><b class="bill_title"></b><?php echo $customerdetail['email']; ?><span class="bill__no"></td></td>
+			  <td><b class="bill_title"></b><?php echo $customerdetail['address']; ?>&nbsp;<?php echo $customerdetail['landmark']; ?><span class="bill__no"></td>
 			
 			</tr>
 			
 		  </tr class="bor__none">
 				<td><b class="bill_title">Order Date</b><span class="bill__no"><?php echo $order['pick_up_date']; ?></td>
-			  <td><b class="bill_title"><?php echo $customerdetail['address']; ?>&nbsp;<?php echo $customerdetail['landmark']; ?></b><span class="bill__no"></td>
+			  <td><b class="bill_title"><?php echo $customerdetail['email']; ?></b><span class="bill__no"></td>
 			  <td><b class="bill_title"></b>&nbsp;<span class="bill__no"></td></td>
 		  </tr>
 
@@ -79,6 +79,14 @@
 				 <div class="item_list">
 				  <ul class="sub__items">
 					 <li><span class="sub_it_list">Order Total</span><span><?php echo $order['net_pay_amount']; ?></span></li>
+					 <li><span class="sub_it_list">Loaner Vehicle</span><span><?php $olv = $orderdetails['loaner_vehicle'];
+		    			if($olv == '1'){
+		    				echo "500/- Per Day";
+		    			}else{
+		    				echo "0";
+		    			}
+		    			?></span>
+	    			</li>
 				  </ul>
 			   </div>
 		   </div>

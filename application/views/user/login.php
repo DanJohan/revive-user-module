@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
         <div class="col-md-4 col-xs-12">
-          <form class="login-form" method="post" id="login_form_valid" action="<?php echo base_url(); ?>user/login">
+          <form class="login-form" method="post" id="login_form_valid" action="<?php echo base_url(); ?>user/login" autocomplete="off">
             <div id="ajax-msg"></div>
          <?php 
           if(isset($msg) && !empty($msg)) {
@@ -23,8 +23,8 @@
               </div>
               <div class="form-group">
                 <label for="email">Email/Phone Number</label><br>
-                <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" >+91</span>
-                <input type="text" class="form-control login-input " name="username" id="email" autocomplete="off">
+                <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
+                <input type="text" class="form-control login-input " name="username" id="email">
 
               </div>
               <div class="form-group" id="pwd_input_box">
@@ -82,7 +82,8 @@ if (window.location.hash =='#_=_')window.location.hash = '';
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
 
-      $('#email').css('padding-left','38px');
+      $('#email').css('padding-left','73px');
+      $('#email').css('padding-top','5px');
     
 
   }
@@ -96,15 +97,18 @@ if (window.location.hash =='#_=_')window.location.hash = '';
       $('#country_code').hide();
      
   }
-  if(!phone.match(/^\d+$/)) {
-      $('#country_code').hide();
-  }
+
   if(phone.match(/^\d+$/)&&phone.length<10) {
     $('#otpbtn').hide();
     
   }else{
     $('#otpbtn').show();
     
+  }
+
+  if(!phone.match(/^\d+$/)) {
+      $('#country_code').hide();
+      $('#otpbtn').hide();
   }
     
 });
@@ -127,7 +131,7 @@ $(document).on('keydown','#email',function(e){
   $(document).on('click','#otpbtn',function(){
     $('#login_form_valid').attr('action',config.baseUrl+'user/verifyLoginOtp');
        var phone = $('#email').val();
-       $('#pwd_input_box').hide();
+       
        
         $.ajax({
           url:config.baseUrl+"user/otplogin",
@@ -138,6 +142,7 @@ $(document).on('keydown','#email',function(e){
             if(response.status){
                 $('#ajax-msg').html('<div class="alert alert-success">'+response.message+'</div>');
                 $('#otpbtn').hide();
+                $('#pwd_input_box').hide();
                 $('#otp_input_box').show();
             }else{
               $('#ajax-msg').html('<div class="alert alert-danger">'+response.message+'</div>');
