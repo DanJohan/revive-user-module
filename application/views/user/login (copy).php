@@ -3,7 +3,6 @@
 		<div class="row">
         <div class="col-md-4 col-xs-12">
           <form class="login-form" method="post" id="login_form_valid" action="<?php echo base_url(); ?>user/login">
-            <div id="ajax-msg"></div>
          <?php 
           if(isset($msg) && !empty($msg)) {
             ?>
@@ -23,22 +22,25 @@
               </div>
               <div class="form-group">
                 <label for="email">Email/Phone Number</label>
-                <input type="text" class="form-control" id="country_code" style="border-right:0px;display: none;" value="+91">
-                <input type="text" class="form-control login-input" name="username" id="email" autocomplete="off">
+                <input type="text" class="form-control login-input" name="username" id="email" onkeypress="return isNumberKey(event)" onkeydown="function(e)" autocomplete="off">
               </div>
-              <div class="form-group" id="pwd_input_box">
+              <div class="form-group" id="pwd">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control login-input" name="password" id="pwd">
               </div>
-              <div class="form-group" id="otp_input_box" style="display: none;">
+              <div class="form-group" id="otp">
                 <label for="pwd">Enter OTP:</label>
                 <input type="text" class="form-control login-input" name="otp" id="otp">
               </div>
+             <!--  <div class="form-group form-check">
+               <label class="form-check-label">
+                 <input class="form-check-input" type="checkbox"> Remember me
+               </label>
+             </div> -->
               <p class="login-box-text">Not registered yet? <a href="<?php echo base_url(); ?>user/signup">Sign Up</a></p>
              
               <p class="login-box-text"><a href="<?php echo base_url(); ?>user/forgot_password">Forgot Password?</a></p>
-              <!-- <p><div id="otplogin"></div></p> -->
-              <button type="button" name="otpsubmit" class="btn btn__otp" id="otpbtn" style="display: none;">Login via OTP</button>
+              <p><div id="otplogin"></div></p>
               <input type="submit" name="submit" class="sign-in" value="Sign-in">
           </form>
 
@@ -74,74 +76,44 @@ if (window.location.hash =='#_=_')window.location.hash = '';
      }
  });
 </script>
-<script type="text/javascript">
-  $(document).on('keyup','#email',function(e){
-  var phone = $(this).val();
-
-    if(phone.match(/^\d+$/)&&phone.length>2) {
-      $('#country_code').show();
-     // $('#otpbtn').show();
-      
-
-  }
-    if(phone.match(/^\d+$/)&&phone.length<3) {
-      $('#country_code').hide();
-     // $('#otpbtn').hide();
-  }
-  if(!phone.match(/^\d+$/)) {
-      $('#country_code').hide();
-  }
-
-  /*if(phone.match(/^\d+$/)&&phone.length==10) {
-      $('#otp_input_box').show();
-      $('#pwd_input_box').hide();
-  }*/
-  if(phone.match(/^\d+$/)&&phone.length<10) {
-    //  $('#otp_input_box').hide();
-      //$('#pwd_input_box').show();
-      $('#otpbtn').hide();
-     // $('#login_form_valid').attr('action',config.baseUrl+'user/login');
-
-  }else{
-    $('#otpbtn').show();
-    //$('#login_form_valid').attr('action',config.baseUrl+'user/login');
-  }
-    
-});
-
-$(document).on('keydown','#email',function(e){
-  var phone = $(this).val();
-  //console.log(phone.length);
-  //console.log(e.keyCode);
-
-    if(phone.match(/^\d+$/)&&(phone.length==10)) {
-
-        if((e.keyCode == 8) || (e.keyCode ==37) || (e.keyCode == 39) || (e.keyCode ==46) ) {
+ 
+  <script type="text/javascript">
+    $(document).ready(function() {
+     $('#otp').hide();
+    });
+     /*check enter text is phone or email*/
+  function isNumberKey(evt){
+        var txtVal = $('#email').val();
+        var myLength = txtVal.length;
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
           return true;
-        }else{
-          return false;
-        }
-    }
-    
-});
+            if(myLength ==0){
+                $('#email').val("+91");
+                $('#otplogin').append('<button type="button" name="otpsubmit" class="btn" id="otpbtn">Login via OTP</button>');
+              }
+          }
+  $("#email").keydown(function(e){
+                // backspace
+                if ((e.keyCode || e.which) == 8)
+                {   
+                     $('#otplogin').hide('<button type="button" name="otpsubmit" class="btn" id="otpbtn">Login via OTP</button>');
+                }
+            });        
   $(document).on('click','#otpbtn',function(){
-    $('#login_form_valid').attr('action',config.baseUrl+'user/verifyLoginOtp');
+       $('#pwd').hide();
+       $('#otp').show();
        var phone = $('#email').val();
-       $('#pwd_input_box').hide();
-       $('#otp_input_box').show();
+       //alert(phone);
         $.ajax({
           url:config.baseUrl+"user/otplogin",
           method:"POST",
           data:{'phone':phone},
           success:function(response){
-            $('ajax-msg').html('');
-            if(response.status){
-                $('#ajax-msg').html('<div class="alert alert-success">'+response.message+'</div>');
-                $('#otpbtn').hide();
-            }else{
-              $('#ajax-msg').html('<div class="alert alert-danger">'+response.message+'</div>');
-            }
-            
+            console.log();
+             /*if(response.status){
+                $('.alert').html(response.template);
+             }*/
           }
         });
      });

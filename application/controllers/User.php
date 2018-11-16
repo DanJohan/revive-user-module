@@ -38,9 +38,6 @@ class User extends MY_Controller {
 						$user_data = array(
 							'user_id' => $user['id'],
 							'name' => $user['name'],
-							'phone' => $user['phone'],
-							'email' => $user['email'],
-							'pic'  => $user['profile_image'],
 						 	'is_user_login' => TRUE
 						);
 							$this->session->set_userdata($user_data);
@@ -82,7 +79,7 @@ class User extends MY_Controller {
 }
 	public function otplogin(){
 		if($this->input->post('phone')){
-			$phone = $this->input->post('phone');
+			$phone = '+91'.$this->input->post('phone');
 			$result = $this->UserModel->checkPhoneExists($phone);
 			if($result){
 				$otp = generate_otp();
@@ -96,42 +93,53 @@ class User extends MY_Controller {
 						'otp'=>$otp,
 					);
 					$updated_otp = $this->UserModel->update($update_data,array('phone'=>$phone));
-					if($updated_otp){
-						$data['msg'] = 'OTP send successfully!';
-						
-					}else{
-						$data['msg'] = 'An error occured!Please try again!';
-					}
+					$response = array('status'=>true,'message'=>'Please enter OTP sent to your number!');
 				}else{
-					$data['msg'] = 'Sorry,this phone number is not registerd with us!';
+					$response = array('status'=>false,'message'=>'Somthing went wrong!Please try again');
+					//$data['msg'] = 'Sorry,this phone number is not registerd with us!';
 					
 				}
+			}else{
+				$response = array('status'=>false,'message'=>'Sorry this number is not registered with us!');
 			}
 			
+		}else{
+			$response = array('status'=>false,'message'=>'Please enter your number!');
 		}
+		$this->renderJson($response);
 	}	
 
 	public function verifyLoginOtp(){
 		//dd($_POST);
 		//$data =array();
-		$this->form_validation->set_rules('phone', 'Phone', 'trim|required');
+		$this->form_validation->set_rules('username', 'Phone', 'trim|required');
 		$this->form_validation->set_rules('otp', 'OTP', 'trim|required');
 		if ($this->form_validation->run() == true){
 			$criteria ['field'] = "id,name,email,phone,created_at";
-			$criteria['conditions'] = array('phone'=>$this->input->post('phone'),'otp'=>$this->input->post('otp'));
+			$criteria['conditions'] = array('phone'=>'+91'.$this->input->post('username'),'otp'=>$this->input->post('otp'));
 			$criteria['returnType'] ='single';
 			$user = $this->UserModel->search($criteria);
+			//echo $this->db->last_query();
+			//dd($user);
 			if($user){
+
 				$this->UserModel->update(array('otp'=>null),array('id'=>$user['id']));
-				$response = array('status'=>true,'message'=>'Login successfully','user'=>$user);
+				$user_data = array(
+					'user_id' => $user['id'],
+					'name' => $user['name'],
+				 	'is_user_login' => TRUE
+				);
+				$this->session->set_userdata($user_data);
+				//die;
+				redirect(base_url('cart/userinfo'), 'refresh');
 			}else{
-				$response = array('status'=>false, 'message'=>'Otp not valid');
+				$this->session->set_flashdata("error_msg","Sorry your otp doesn\'t match");
 			}
 		}else{
-			$errors = $this->form_validation->error_array();
-			$response = array('status'=>false,'message'=>$errors);
+			$this->session->set_flashdata("error_msg",validation_errors());
 		}
-		$this->renderJson($response);
+		//die;
+		redirect('user/login');
 	}
 	public function fbcallback() {
 		$this->load->library('fblogin');
@@ -181,7 +189,6 @@ class User extends MY_Controller {
 				$user = array(
 						'user_id' => $user_data['id'],
 						'name' => $user_data['name'],
-						'pic'  => $user_data['profile_image'],
 					 	'is_user_login' => TRUE
 				);
 				
@@ -215,7 +222,6 @@ class User extends MY_Controller {
 					$user = array(
 							'user_id' => $user_data['id'],
 							'name' => $user_data['name'],
-							'pic'  => $user_data['profile_image'],
 						 	'is_user_login' => TRUE
 					);
 				
@@ -253,7 +259,6 @@ class User extends MY_Controller {
 						$user = array(
 							'user_id' => $userInfo['id'],
 							'name' => $userInfo['name'],
-							'pic'  => $userInfo['profile_image'],
 						 	'is_user_login' => TRUE
 						);
 					

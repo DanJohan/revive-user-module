@@ -2231,6 +2231,17 @@ a.loginBtn .fab {
     border-color: #47143d;
     cursor: pointer;
 }
+.btn__otp{
+    background: #47143d !important;
+    width: 100%;
+    border-radius: inherit;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 20px;
+    border-color: #47143d;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 p.login-box-text {
     margin-bottom: 2px;
     color: #000;
