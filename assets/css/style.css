@@ -2471,6 +2471,7 @@ section.gallery {
 }
 .find-btn.btn-round {
     padding: 10px 50px;
+    margin-top: 20px;
 }
 /********************Your Order On Its Way balwinder ********************/
 .order__list12 {
@@ -2791,10 +2792,10 @@ tr:nth-child(even) {
     width: 60%;
     padding-left: 18px;
 }
-.bill_title {
+/* .bill_title {
     float: left;
     width: 30%;
-}
+} */
 .main_td {
     float: left;
     width: 100%;
@@ -3122,8 +3123,11 @@ span#country_code {
     left: 4px;
 }
 
+.find-btn .next_C.btn-round {
+    padding: 10px 50px;
+    margin-top: 20px;
+}
 
-/***************gallery page css********************/
 
 /***************Responsive start* *******************/
 
@@ -3132,6 +3136,24 @@ span#country_code {
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     h2.record {
     width: 88%;
+}
+section#login {
+    padding-top: 200px;
+}
+.register-form {
+    box-sizing: border-box;
+    margin: 4em 0 0 0;
+    padding: 3em 2em 2em 2em;
+    background: #f8f8f8;
+    box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px, rgba(0,0,0,0.09804) 0px 1px 2px 0px;
+    width: 317px; 
+}
+section#signup {
+    padding-top: 226px;
+}
+.bill_title {
+    float: left;
+    /* width: 30%; */
 }
 
     .select-services-banner {
@@ -3351,7 +3373,7 @@ button.btn-round2.proc-btn {
     display: block;
     text-align: center;
     margin: 0 auto;
-    width: 100%;
+    width: 70%;
     margin-bottom: 12px;
 }
 .inner-full {

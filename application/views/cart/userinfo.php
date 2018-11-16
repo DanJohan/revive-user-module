@@ -146,7 +146,7 @@
     </div>
     
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <button type="submit" name="submit" class="btn btn-primary btn-round  find-btn next_C nextmargin">Book Now</button>
+      <button type="submit" name="submit" class="btn btn-primary btn-round   next_C nextmargin">Book Now</button>
     </div>
 
 
