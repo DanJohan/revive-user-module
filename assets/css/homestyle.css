@@ -2327,6 +2327,10 @@ figure.icon {
     h4 {
         font-size: 1.125rem;
     }
+       a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-width__auto.down-btn {
+    margin-top: 10px;
+}
+
 }
 
 @media (min-width: 48rem) {
@@ -2340,12 +2344,20 @@ figure.icon {
 }
 
 @media (max-width: 61.9375rem) {
+     a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-width__auto.down-btn {
+    margin-top: 10px;
+}
+
     .ts-card__image {
         height: 15.625rem;
     }
 }
 
 @media (min-width: 36rem) {
+     a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-width__auto.down-btn {
+    margin-top: 10px;
+}
+
     .navbar.navbar-expand-sm .ts-background {
         opacity: 0;
     }
@@ -2673,6 +2685,15 @@ img.img-fluid.logo {
 /* Responsive */
 
 @media screen and (max-width: 480px) {
+
+  .darkHeader img.img-fluid.logo {
+    margin-top: 23px;
+}
+
+ /*  .darkHeader {
+   margin-top: 0px !important; 
+   padding-top: 0px !important;
+ } */
   .tooltip2 {
     position: relative;
     display: inline-block;
@@ -2815,3 +2836,6 @@ section#blog img {
 
 
 
+nav.navbar.navbar-expand-lg.navbar-light.navbar-bg.fixed-top.ts-separate-bg-element.darkHeader  {
+    padding-top: 0px;
+}

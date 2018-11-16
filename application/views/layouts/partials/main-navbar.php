@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top navbarbg-margin"data-bg-color="#fff">
-  <div class="container"> <a class="navbar-brand" href="<?php echo base_url();?>"> <img class="logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
+  <div class="container"> <a class="navbar-brand" href="<?php echo base_url();?>"> <img class="img-fluid logo" src="<?php echo base_url();?>assets/img/logo.png" alt=""> </a> 
     <!--end navbar-brand-->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
     <!--end navbar-toggler-->
