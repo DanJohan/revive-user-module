@@ -285,10 +285,11 @@ class User extends MY_Controller {
 	}
 
     public function insert_user(){  //insert user
+    	//dd($_POST);
 			$this->session->set_flashdata('post_data',$this->input->post());
 			if($this->input->post('submit')){  //inserting 
 					
-					$phone= $this->input->post('phone');
+					$phone= '+91'.$this->input->post('phone');
 					$phone = $phone;
 					$email = $this->input->post('email');
 				    $userPhoneInfo =	$this->UserModel->checkPhoneExists($phone);
@@ -299,7 +300,7 @@ class User extends MY_Controller {
 							'name' => $this->input->post('name'),
 							'email' => $this->input->post('email'),
 							'password' => password_hash($this->input->post('password'), PASSWORD_BCRYPT),
-							'phone' => ($this->input->post('phone')) ? $this->input->post('phone') : '',
+							'phone' => ($this->input->post('phone')) ? '+91'.$this->input->post('phone') : '',
 							'created_at' => date('Y-m-d H:i:s')
 						);
 

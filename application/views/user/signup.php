@@ -9,19 +9,21 @@
                     <div class="col-xs-12">   
                       <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control login-input" id="name" name="name" autocomplete="off">
+                        <input type="text" class="form-control login-input" id="name" name="name" >
                       </div>
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control login-input" id="email" name="email" autocomplete="off">
+                        
+                        <input type="email" class="form-control login-input" id="email" name="email">
                       </div>
                     </div>
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Phone Number</label><br>
-                        <input type="text" class="form-control login-input" id="phone" name="phone" autocomplete="off" onkeypress="return isNumberKey(event)">
+                         <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
+                        <input type="text" class="form-control login-input" id="phone" name="phone" onkeypress="return isNumberKey(event)"> 
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -84,7 +86,7 @@
         }
       }
   });
-function isNumberKey(evt){
+/*function isNumberKey(evt){
         var txtVal = this.value;
         var myLength = $("#phone").val().length;
         var charCode = (evt.which) ? evt.which : event.keyCode;
@@ -95,6 +97,43 @@ function isNumberKey(evt){
                 $('#phone').val("+91");
               } 
             } 
-          }  
+          }  */
 </script>
+<script type="text/javascript">
+  $(document).on('keyup','#phone',function(e){
+  var phone = $(this).val();
+    
+    if(phone.match(/^\d+$/)&&phone.length>2) {
+      $('#country_code').show();
+
+      $('#phone').css('padding-left','73px');
+      $('#phone').css('padding-top','5px');
+    }
+    if(phone.match(/^\d+$/)&&phone.length<3) {
+      $('#country_code').hide();
+      $('#phone').css('padding-left','10px');
+    }
+    if(phone.match(/^\d+$/)&&phone.length<3) {
+      $('#country_code').hide();
+    }
+
+});
+
+$(document).on('keydown','#phone',function(e){
+  var phone = $(this).val();
+  //console.log(phone.length);
+  //console.log(e.keyCode);
+
+    if(phone.match(/^\d+$/)&&(phone.length==10)) {
+
+        if((e.keyCode == 8) || (e.keyCode ==37) || (e.keyCode == 39) || (e.keyCode ==46) ) {
+          return true;
+        }else{
+          return false;
+        }
+    }
+    
+});
+</script>
+
 <?php $this->widget->endBlock();?>
