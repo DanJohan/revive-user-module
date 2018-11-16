@@ -78,33 +78,28 @@ if (window.location.hash =='#_=_')window.location.hash = '';
   $(document).on('keyup','#email',function(e){
   var phone = $(this).val();
 
+
+  if (e.keyCode >= 65 && e.keyCode <= 90){
+        $('#otpbtn').hide();
+      }
+    
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
-     // $('#otpbtn').show();
-      
-
+  
   }
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
-     // $('#otpbtn').hide();
+     
   }
   if(!phone.match(/^\d+$/)) {
       $('#country_code').hide();
   }
-
-  /*if(phone.match(/^\d+$/)&&phone.length==10) {
-      $('#otp_input_box').show();
-      $('#pwd_input_box').hide();
-  }*/
   if(phone.match(/^\d+$/)&&phone.length<10) {
-    //  $('#otp_input_box').hide();
-      //$('#pwd_input_box').show();
-      $('#otpbtn').hide();
-     // $('#login_form_valid').attr('action',config.baseUrl+'user/login');
-
+    $('#otpbtn').hide();
+    
   }else{
     $('#otpbtn').show();
-    //$('#login_form_valid').attr('action',config.baseUrl+'user/login');
+    
   }
     
 });

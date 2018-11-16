@@ -2004,6 +2004,7 @@ E. Template Specific Elements
 
 figure.icon {
     position: relative;
+    cursor: pointer;
 }
 
 .ts-svg__organic-shape-01 {
@@ -2354,9 +2355,6 @@ figure.icon {
 }
 
 @media (min-width: 36rem) {
-     a.nav-item.nav-link.ts-scroll.btn.btn-primary.btn-sm.text-white.ml-3.px-3.ts-width__auto.down-btn {
-    margin-top: 10px;
-}
 
     .navbar.navbar-expand-sm .ts-background {
         opacity: 0;
@@ -2838,4 +2836,5 @@ section#blog img {
 
 nav.navbar.navbar-expand-lg.navbar-light.navbar-bg.fixed-top.ts-separate-bg-element.darkHeader  {
     padding-top: 0px;
+
 }
