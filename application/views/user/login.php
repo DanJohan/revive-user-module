@@ -22,9 +22,9 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="email">Email/Phone Number</label>
-                <input type="text" class="form-control" id="country_code" style="border-right:0px;display: none;" value="+91">
-                <input type="text" class="form-control login-input" name="username" id="email" autocomplete="off">
+                <label for="email">Email/Phone Number</label><br>
+                <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" >+91</span>
+                <input type="text" class="form-control login-input " name="username" id="email" autocomplete="off">
               </div>
               <div class="form-group" id="pwd_input_box">
                 <label for="pwd">Password:</label>
@@ -80,12 +80,14 @@ if (window.location.hash =='#_=_')window.location.hash = '';
 
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
+      $('#email').css('padding-left','38px');
      // $('#otpbtn').show();
       
 
   }
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
+      $('#email').css('padding-left','10px');
      // $('#otpbtn').hide();
   }
   if(!phone.match(/^\d+$/)) {

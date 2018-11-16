@@ -3112,6 +3112,17 @@ ul.top-appontment li {
     color: #000;
     font-weight: 600;
 }
+
+span#country_code {
+    /* float: left; */
+    /* width: 100%; */
+    position: absolute;
+    top: 35px;
+    z-index: 9999999999;
+    left: 4px;
+}
+
+
 /***************gallery page css********************/
 
 /***************Responsive start* *******************/
@@ -3497,4 +3508,6 @@ margin-top: 146px;
     /* width: 73%; */
 }
 }
+
 /********media query 991 end**********/
+
