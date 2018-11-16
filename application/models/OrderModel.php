@@ -19,12 +19,13 @@ class OrderModel extends MY_Model {
 
 
 	public function getByUserId($user_id) {
-		$this->db->select('o.id,o.hash, o.order_no,o.pick_up_date,o.pick_up_time,o.created_at,cb.brand_name,cm.model_name');
+		$this->db->select('o.id,o.hash,o.status, o.order_no,o.pick_up_date,o.pick_up_time,o.created_at,cb.brand_name,cm.model_name');
 		$this->db->from($this->table." AS o");
 		$this->db->join('cars AS c','o.car_id = c.id');
 		$this->db->join('car_models AS cm','c.model_id = cm.id');
 		$this->db->join('car_brands AS cb','c.brand_id = cb.id');
 		$this->db->where('o.user_id',$user_id);
+		$this->db->where('o.status!=',2);
 		$this->db->order_by('o.id','desc');
 		$query = $this->db->get();
 		$result = $query->result_array();

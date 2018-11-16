@@ -25,6 +25,7 @@
                 <label for="email">Email/Phone Number</label><br>
                 <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" >+91</span>
                 <input type="text" class="form-control login-input " name="username" id="email" autocomplete="off">
+
               </div>
               <div class="form-group" id="pwd_input_box">
                 <label for="pwd">Password:</label>
@@ -77,36 +78,33 @@ if (window.location.hash =='#_=_')window.location.hash = '';
 <script type="text/javascript">
   $(document).on('keyup','#email',function(e){
   var phone = $(this).val();
-
+    
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
+
       $('#email').css('padding-left','38px');
-     // $('#otpbtn').show();
-      
+    
 
   }
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
       $('#email').css('padding-left','10px');
-     // $('#otpbtn').hide();
+
+  
+  }
+    if(phone.match(/^\d+$/)&&phone.length<3) {
+      $('#country_code').hide();
+     
   }
   if(!phone.match(/^\d+$/)) {
       $('#country_code').hide();
   }
-
-  /*if(phone.match(/^\d+$/)&&phone.length==10) {
-      $('#otp_input_box').show();
-      $('#pwd_input_box').hide();
-  }*/
   if(phone.match(/^\d+$/)&&phone.length<10) {
-    //  $('#otp_input_box').hide();
-      //$('#pwd_input_box').show();
-      $('#otpbtn').hide();
-     // $('#login_form_valid').attr('action',config.baseUrl+'user/login');
-
+    $('#otpbtn').hide();
+    
   }else{
     $('#otpbtn').show();
-    //$('#login_form_valid').attr('action',config.baseUrl+'user/login');
+    
   }
     
 });
@@ -130,7 +128,7 @@ $(document).on('keydown','#email',function(e){
     $('#login_form_valid').attr('action',config.baseUrl+'user/verifyLoginOtp');
        var phone = $('#email').val();
        $('#pwd_input_box').hide();
-       $('#otp_input_box').show();
+       
         $.ajax({
           url:config.baseUrl+"user/otplogin",
           method:"POST",
@@ -140,6 +138,7 @@ $(document).on('keydown','#email',function(e){
             if(response.status){
                 $('#ajax-msg').html('<div class="alert alert-success">'+response.message+'</div>');
                 $('#otpbtn').hide();
+                $('#otp_input_box').show();
             }else{
               $('#ajax-msg').html('<div class="alert alert-danger">'+response.message+'</div>');
             }

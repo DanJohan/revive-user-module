@@ -277,6 +277,7 @@ class Cart extends MY_Controller {
 		$data = array();
 		$user_id = $this->session->userdata('user_id');
 		$data['my_order'] = $this->OrderModel->getByUserId($user_id);
+		//dd($data);
 		$this->render('cart/my_order',$data);
 	}
 
@@ -343,7 +344,8 @@ class Cart extends MY_Controller {
 	}
 	
 	public function cancel_order($order_id){
-		$this->OrderModel->delete(array('id'=>$order_id));
+		$this->OrderModel->update(array('status'=>2),array('id'=>$order_id));
+		//echo $this->db->last_query();die;
 		redirect('cart/my_order');
 	}
 	
