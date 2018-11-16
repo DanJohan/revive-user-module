@@ -35,7 +35,7 @@
 	</div>
 	<?php }}else {?><h2 class="record">NO  RECORD FOUND</h2>
 			<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-           <a href="<?php echo base_url(); ?>"><button type="button" class="btn book__now">GO BACK</button></a>
+           <a href="<?php echo base_url(); ?>car/show_car"><button type="button" class="btn book__now">GO BACK</button></a>
           </div>
 	  <?php }?>	
   </div>

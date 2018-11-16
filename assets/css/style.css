@@ -932,6 +932,9 @@ legend {
 .error-input {
     border-color: #FF1744;
 }
+label.error {
+    color: #E14B3E;
+}
 .next_C {
     margin-top: 0px;
     text-align: right;
@@ -2470,7 +2473,8 @@ section.gallery {
     margin: 0 auto;
 }
 .find-btn.btn-round {
-    padding: 10px 50px;
+padding: 10px 50px;
+margin-top: 20px;
 }
 /********************Your Order On Its Way balwinder ********************/
 .order__list12 {
