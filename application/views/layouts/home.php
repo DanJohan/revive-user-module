@@ -31,6 +31,22 @@
     $(".flash-msg").fadeTo(2000, 500).slideUp(500, function(){
         $(".flash-msg").slideUp(500);
     });
+
+
+    $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll>10) {
+        //clearHeader, not clearheader - caps H
+        $("nav").addClass("darkHeader");
+    }else{
+    	$("nav").removeClass("darkHeader");
+    }
+});
+
+
+    
 </script>
 <?php if(!$this->session->has_userdata('location')) { ?>
 <script type="text/javascript">
