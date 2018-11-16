@@ -5,6 +5,10 @@ class Cart extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		if (!$this->session->userdata['is_user_login'] == TRUE)
+			{
+			   redirect('user/login'); //redirect to login page
+			}
 		$this->load->model('OrderModel');
 		$this->load->model('UserModel');
 		$this->load->model('OrderItemModel');
@@ -14,7 +18,9 @@ class Cart extends MY_Controller {
 		$this->load->model('ServiceCategoryModel');
 		$this->load->library('sequence');
 	}
-
+	public function index() {
+			redirect('car/show_car');
+		}
 	public function add(){
 		$is_added =false;
 		if($this->input->post('service_id')){

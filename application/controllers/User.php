@@ -12,6 +12,9 @@ class User extends MY_Controller {
 		$this->load->library('TextMessage');
 		
 	}
+	public function index() {
+		redirect('/');
+		}
 	public function login(){
 		$this->load->library('fblogin');
 		$this->load->library('gmailLogin');
