@@ -23,7 +23,7 @@
               </div>
               <div class="form-group">
                 <label for="email">Email/Phone Number</label>
-                <input type="text" class="form-control" id="country_code" style="border-right:0px;display: none;" value="+91">
+                <span id="country_code" style="display: none;">+91</span>
                 <input type="text" class="form-control login-input" name="username" id="email" autocomplete="off">
               </div>
               <div class="form-group" id="pwd_input_box">
@@ -128,7 +128,7 @@ $(document).on('keydown','#email',function(e){
     $('#login_form_valid').attr('action',config.baseUrl+'user/verifyLoginOtp');
        var phone = $('#email').val();
        $('#pwd_input_box').hide();
-       $('#otp_input_box').show();
+       
         $.ajax({
           url:config.baseUrl+"user/otplogin",
           method:"POST",
@@ -138,6 +138,7 @@ $(document).on('keydown','#email',function(e){
             if(response.status){
                 $('#ajax-msg').html('<div class="alert alert-success">'+response.message+'</div>');
                 $('#otpbtn').hide();
+                $('#otp_input_box').show();
             }else{
               $('#ajax-msg').html('<div class="alert alert-danger">'+response.message+'</div>');
             }

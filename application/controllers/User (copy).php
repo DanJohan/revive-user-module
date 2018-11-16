@@ -23,14 +23,14 @@ class User extends MY_Controller {
 		if($this->input->post('submit')){
 			$this->form_validation->set_rules('username', 'Email|Phone', 'trim|required');
 			$this->form_validation->set_rules('password', 'Password', 'trim|required');
-			
+			//$this->form_validation->set_rules('otp', 'Otp', 'trim|required');
+
 			if ($this->form_validation->run() == TRUE) {
 				
 				$username = $this->input->post('username');   
 				$password = $this->input->post('password');
 				
 				$user = $this->UserModel->check_user_exits(array('username'=>$username));
-			
 				if($user){
 					$is_verified = password_verify($password,$user['password']);
 					if($is_verified){
@@ -38,10 +38,8 @@ class User extends MY_Controller {
 						$user_data = array(
 							'user_id' => $user['id'],
 							'name' => $user['name'],
-							'phone' => $user['phone'],
 						 	'is_user_login' => TRUE
 						);
-						// /dd($user_data);
 							$this->session->set_userdata($user_data);
 							redirect(base_url('cart/userinfo'), 'refresh');
 						}else{
@@ -54,7 +52,7 @@ class User extends MY_Controller {
 			}else {
 							
 					redirect('user/verifyLoginOtp',$data);
-					
+					//$data['msg'] = 'Missing Email/Phone Or Password';
 			}
 
 		}
@@ -81,7 +79,7 @@ class User extends MY_Controller {
 }
 	public function otplogin(){
 		if($this->input->post('phone')){
-			$phone = '+91'.$this->input->post('phone');
+			$phone = $this->input->post('phone');
 			$result = $this->UserModel->checkPhoneExists($phone);
 			if($result){
 				$otp = generate_otp();
@@ -118,7 +116,7 @@ class User extends MY_Controller {
 		$this->form_validation->set_rules('otp', 'OTP', 'trim|required');
 		if ($this->form_validation->run() == true){
 			$criteria ['field'] = "id,name,email,phone,created_at";
-			$criteria['conditions'] = array('phone'=>'+91'.$this->input->post('username'),'otp'=>$this->input->post('otp'));
+			$criteria['conditions'] = array('phone'=>$this->input->post('username'),'otp'=>$this->input->post('otp'));
 			$criteria['returnType'] ='single';
 			$user = $this->UserModel->search($criteria);
 			//echo $this->db->last_query();
