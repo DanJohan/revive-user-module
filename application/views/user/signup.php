@@ -22,8 +22,8 @@
                     <div class="col-xs-12">
                       <div class="form-group">
                         <label>Phone Number</label><br>
-                         <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
-                        <input type="text" class="form-control login-input" id="phone" name="phone" onkeypress="return isNumberKey(event)"> 
+                         <span class="phnno" id="country_code" style="display: none; position: relative;top: 23px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
+                        <input type="text" class="form-control login-input" id="phone" name="phone"> <span id="errmsg" style="color: red;"></span>
                         </div>
                     </div>
                     <div class="col-xs-12">
@@ -86,29 +86,35 @@
         }
       }
   });
-/*function isNumberKey(evt){
-        var txtVal = this.value;
-        var myLength = $("#phone").val().length;
-        var charCode = (evt.which) ? evt.which : event.keyCode;
-         if (charCode > 31 && (charCode < 48 || charCode > 57)){
-          return false;
-        }else{
-            if(myLength == 0){
-                $('#phone').val("+91");
-              } 
-            } 
-          }  */
+
 </script>
 <script type="text/javascript">
-  $(document).on('keyup','#phone',function(e){
-  var phone = $(this).val();
-    
+  $(document).ready(function () {
+  //called when key is pressed in textbox
+  $("#phone").keypress(function (e) {
+  if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+  });
+});
+  $(document).on('keyup','#phone',function(e){   
+    var phone = $(this).val();
+      
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
-
+      $('#phone').css('margin-top','-15px');
       $('#phone').css('padding-left','73px');
-      $('#phone').css('padding-top','5px');
+      $('#phone').css('padding-top','7px');
     }
+    if(phone.match(/^\d+$/)&&phone.length<=2) {
+      $('#country_code').show();
+      $('#phone').css('margin-top','0px');
+      $('#phone').css('padding-left','73px');
+      $('#phone').css('padding-top','7px');
+    }
+
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
       $('#phone').css('padding-left','10px');
@@ -116,7 +122,7 @@
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
     }
-
+ 
 });
 
 $(document).on('keydown','#phone',function(e){

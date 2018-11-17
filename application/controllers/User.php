@@ -13,7 +13,11 @@ class User extends MY_Controller {
 		
 	}
 	public function index() {
-		redirect('/');
+		if (!$this->session->userdata['is_user_login'] == TRUE)
+			{
+			   redirect('user/login'); //redirect to login page
+			}
+				redirect('/');
 		}
 	public function login(){
 		$this->load->library('fblogin');
@@ -372,9 +376,11 @@ class User extends MY_Controller {
 				$update_data = array(
 					'name'  =>   $this->input->post('name'),
 					'email' =>   $this->input->post('email'),
-					'phone' =>   $this->input->post('phone')
+					'phone' =>   $this->input->post('phone'),
+					
 				);
-			
+			//dd($update_data);
+
 			$result = $this->UserModel->update($update_data,array('id'=>$id));
 				if($result){
 				$this->session->set_flashdata('success_msg','Your profile is successfully updated'); 

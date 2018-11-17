@@ -23,7 +23,7 @@
               </div>
               <div class="form-group">
                 <label for="email">Email/Phone Number</label><br>
-                <span class="phnno" id="country_code" style="display: none; position: relative;top: 35px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
+                <span class="phnno" id="country_code" style="display: none; position: relative;top: 15px;z-index: 9999999999;left: 4px;" ><img src="<?php echo base_url();?>/assets/img/flag.png">&nbsp;+91</span>
                 <input type="text" class="form-control login-input " name="username" id="email">
 
               </div>
@@ -81,11 +81,15 @@ if (window.location.hash =='#_=_')window.location.hash = '';
     
     if(phone.match(/^\d+$/)&&phone.length>2) {
       $('#country_code').show();
-
       $('#email').css('padding-left','73px');
+      $('#email').css('margin-top','-20px');
       $('#email').css('padding-top','5px');
-    
-
+  }
+  if(phone.match(/^\d+$/)&&phone.length<=2) {
+      $('#country_code').show();
+      $('#email').css('padding-left','73px');
+      $('#email').css('margin-top','0px');
+      $('#email').css('padding-top','5px');
   }
     if(phone.match(/^\d+$/)&&phone.length<3) {
       $('#country_code').hide();
@@ -131,8 +135,7 @@ $(document).on('keydown','#email',function(e){
   $(document).on('click','#otpbtn',function(){
     $('#login_form_valid').attr('action',config.baseUrl+'user/verifyLoginOtp');
        var phone = $('#email').val();
-       
-       
+           
         $.ajax({
           url:config.baseUrl+"user/otplogin",
           method:"POST",

@@ -5,10 +5,6 @@ class Service extends MY_Controller {
 
 		public function __construct(){
 			parent::__construct();
-			if (!$this->session->userdata['is_user_login'] == TRUE)
-			{
-			   redirect('user/login'); //redirect to login page
-			}
 			$this->load->model('CarBrandModel');
 			$this->load->model('CarModelsModel');
 			$this->load->model('ServiceModel');
@@ -16,6 +12,10 @@ class Service extends MY_Controller {
 			$this->load->model('OrderItemModel');
 		}
 		public function index() {
+			if (!$this->session->userdata['is_user_login'] == TRUE)
+			{
+			   redirect('user/login'); //redirect to login page
+			}
 			redirect('car/show_car');
 		}
 		public function set_location($location =null){

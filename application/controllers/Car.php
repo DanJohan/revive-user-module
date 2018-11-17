@@ -5,10 +5,6 @@ class Car extends MY_Controller {
 
 		public function __construct(){
 			parent::__construct();
-		if (!$this->session->userdata['is_user_login'] == TRUE)
-			{
-			   redirect('user/login'); //redirect to login page
-			}
 			$this->load->model('CarBrandModel');
 			$this->load->model('CarModelsModel');
 			$this->load->model('CarModel');
@@ -16,7 +12,11 @@ class Car extends MY_Controller {
 		}
 
 		public function index() {
-			redirect('car/add_car');
+			if (!$this->session->userdata['is_user_login'] == TRUE)
+			{
+			   redirect('user/login'); //redirect to login page
+			}
+			   redirect('car/add_car');
 		}
 		public function add_car(){ // layout display
 			$data = array();

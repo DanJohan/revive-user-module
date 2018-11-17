@@ -81,15 +81,16 @@
       <div>
           <input placeholder="Landmark" type="text" name="landmark" id="landmark" value="<?php echo $orderdetails['landmark'];?>">
       </div>
-       <div class="userinfo-icons">
       <div class="userinfo-icons"> 
-         <ul class="info-icons">
-            <li><i class="fa fa-home active" aria-hidden="true"></i><span>Home</span></li>
-            <li><i class="fa fa-building" aria-hidden="true"></i><span>Office</span></li>
-            <li><i class="fas fa-map-marker-alt"></i><span>Others</span></li>
+         <ul class="info-icons" id="myid">
+         
+            <li id="1"><i class="fa fa-home active" aria-hidden="true"></i><span>Home</span></li>
+            <li id="2"><i class="fa fa-building" aria-hidden="true"></i><span>Office</span></li>
+            <li id="3"><i class="fas fa-map-marker-alt"></i><span>Others</span></li>
          </ul>  
+       
+       <input type="hidden" name="location_type" id="results" value="<?php echo $orderdetails['location']; ?>">
       </div>
-    </div>
   </div>
  </div>
 </div>
@@ -172,6 +173,11 @@ $(function() {
   $('.info-icons li i').click(function(){
     $('li i').removeClass("active");
     $(this).addClass("active");
+    $("#myid li").click(function() {
+    var locid = $(this).attr("id"); // get id of clicked li
+     $("#results").val(locid);
+});
 });
 });</script>
+
 <?php $this->widget->endBlock();?>

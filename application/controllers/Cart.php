@@ -5,10 +5,6 @@ class Cart extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		if (!$this->session->userdata['is_user_login'] == TRUE)
-			{
-			   redirect('user/login'); //redirect to login page
-			}
 		$this->load->model('OrderModel');
 		$this->load->model('UserModel');
 		$this->load->model('OrderItemModel');
@@ -19,7 +15,11 @@ class Cart extends MY_Controller {
 		$this->load->library('sequence');
 	}
 	public function index() {
-			redirect('car/show_car');
+		if (!$this->session->userdata['is_user_login'] == TRUE)
+			{
+			   redirect('user/login'); //redirect to login page
+			}
+			   redirect('car/show_car');
 		}
 	public function add(){
 		$is_added =false;
@@ -114,7 +114,7 @@ class Cart extends MY_Controller {
 	} 
 	
 	public function store_order(){
-		//dd($_SESSION);
+		$this->load->library('sequence');
 		if(count($_POST) > 0 ) { 
 
 			if($this->session->has_userdata('car_id')){
@@ -175,9 +175,13 @@ class Cart extends MY_Controller {
 					'email' => $this->input->post('email'),
 					'phone' => $this->input->post('phone'),
 					'address' => $this->input->post('address'),
-					'landmark' => $this->input->post('landmark')
+					'landmark' => $this->input->post('landmark'),
+					'location_type' => $this->input->post('location_type')
 				);
+				$addressData = implode(', ', array($customer_data['address']));
 				
+				$data_arr = geocode($addressData);
+				print_r($data_arr);die;
 				$this->CustomerDetailModel->insert($customer_data);
 
 				$order_items = $this->basket->getItems();

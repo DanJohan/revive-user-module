@@ -134,11 +134,12 @@
       </div>
        <div class="userinfo-icons">
       <div class="userinfo-icons"> 
-         <ul class="info-icons">
-            <li><!-- <a href=""> --><i class="fa fa-home active" aria-hidden="true"></i><span>Home</span><!-- </a> --></li>
-            <li><!-- <a href=""> --><i class="fa fa-building" aria-hidden="true"></i><span>Office</span><!-- </a> --></li>
-            <li><!-- <a href=""> --><i class="fas fa-map-marker-alt"></i><span>Others</span><!-- </a> --></li>
+         <ul class="info-icons" id="myid">
+            <li id="1"><i class="fa fa-home active" aria-hidden="true"></i><span>Home</span></li>
+            <li id="2"><i class="fa fa-building" aria-hidden="true"></i><span>Office</span></li>
+            <li id="3"><i class="fas fa-map-marker-alt"></i><span>Others</span></li>
          </ul>  
+          <input type="hidden" name="location_type" id="results">
       </div>
  
 </div>
@@ -181,54 +182,6 @@ $(function() {
   </script>
   <!-- datepicker script end -->
   <script type="text/javascript">
-    /*var currentTab = 0;
-    showTab(currentTab);
-
-    function showTab(n) {
-      var x = document.getElementsByClassName("tab");
-      x[n].style.display = "block";
-      if (n == 0) {
-        document.getElementById("prevBtn").style.display = "none";
-      } else {
-        document.getElementById("prevBtn").style.display = "inline";
-      }
-      if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Book Now";
-      } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
-      }
-    }
-
-function nextPrev(n) {
-  var x = document.getElementsByClassName("tab");
-  if (n == 1 && !validateForm()){ 
-    return false;
-  }
-
-  x[currentTab].style.display = "none";
-
-  currentTab = currentTab + n;
-
-  if (currentTab >= x.length) {
-
-    document.getElementById("regForm").submit();
-    return false;
-  }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
-}*/
-//function validateForm() {
- /*   var v = $("#regForm").validate({
-        debug: true,
-        errorClass: "error"
-    });
-    v.form();
-    if($('#regForm').valid()){
-        return true;
-    }else{
-        return false;
-    }*/
-//}
 /*loaner car popup on load*/
 bootbox.confirm({
     message: "Do you need a loaner or replacement vehicle? It will cost Rs. 500/- per day.The total charges for replacement car will be mentioned in the final bill.",
@@ -265,6 +218,15 @@ bootbox.confirm({
   $('.info-icons li i').click(function(){
     $('li i').removeClass("active");
     $(this).addClass("active");
+   
 });
 });</script>
+<script type="text/javascript">
+  $("#myid li").click(function() {
+    var locid = $(this).attr("id"); // get id of clicked li
+     //  alert(dataString);
+     $("#results").val(locid);
+});
+</script>
+
 <?php $this->widget->endBlock();?>
