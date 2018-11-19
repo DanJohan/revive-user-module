@@ -2610,6 +2610,8 @@ a.top-icon:hover {
     margin: 0;
     padding: 0;
     list-style: none;
+    /* width: 50%; */
+    display: inline;
 }
 .social-icons ul li {
     display: inline-block;
@@ -2710,38 +2712,7 @@ span.or-text {
 img.img-fluid.logo {
     margin-top: 14px;
 }
-/* Responsive */
 
-@media screen and (max-width: 480px) {
-
-  .darkHeader img.img-fluid.logo {
-    margin-top: 23px;
-}
-
- /*  .darkHeader {
-   margin-top: 0px !important; 
-   padding-top: 0px !important;
- } */
-  .tooltip2 {
-    position: relative;
-    display: inline-block;
-    /* border-bottom: 1px dotted black; */
-    margin-bottom: 128px;
-}
-figure.icon h4 {
-    font-size: 15px;
-}
-    
-.modal-content {
-    position: absolute;
-    left: 0;
-    top: 30px;
-    padding: 12px;
-}
-img.img-fluid.logo {
-    margin-top: 62px;
-}
- }
  .container.align-self-center h3 {
     color: #fff;
 }
@@ -2757,17 +2728,6 @@ ul.list-unstyled h6 {
 .copyright p {
     font-size: 12px;
 }
-
- @media screen and (max-width: 768px) {
-    
-.modal-content {
-    position: absolute;
-    left: 0;
-    top: 30px;
-    padding: 12px;
-}
-
- }
 
 
 
@@ -2865,9 +2825,66 @@ section#blog img {
     width: 100%;
 }
 
-
+.top-bar-list {
+    text-align: right;
+}
 
 nav.navbar.navbar-expand-lg.navbar-light.navbar-bg.fixed-top.ts-separate-bg-element.darkHeader  {
     padding-top: 0px;
 
 }
+
+/* Responsive */
+
+@media screen and (max-width: 480px) {
+  
+  .top-bar-list {
+    text-align: center;
+}
+.top-bar {
+    background: #6d6b6c2e;
+    /* padding: 6px 0px; */
+    /* position: absolute; */
+    z-index: 99999;
+    text-align: center;
+}
+
+
+  .darkHeader img.img-fluid.logo {
+    margin-top: 23px;
+}
+
+ /*  .darkHeader {
+   margin-top: 0px !important; 
+   padding-top: 0px !important;
+ } */
+  .tooltip2 {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+    margin-bottom: 128px;
+}
+figure.icon h4 {
+    font-size: 15px;
+}
+    
+.modal-content {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    padding: 12px;
+}
+img.img-fluid.logo {
+    margin-top: 62px;
+}
+ }
+ @media screen and (max-width: 768px) {
+    
+.modal-content {
+    position: absolute;
+    left: 0;
+    top: 30px;
+    padding: 12px;
+}
+
+ }
