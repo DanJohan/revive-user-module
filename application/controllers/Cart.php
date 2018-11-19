@@ -13,6 +13,7 @@ class Cart extends MY_Controller {
 		$this->load->model('CarModel');
 		$this->load->model('ServiceCategoryModel');
 		$this->load->library('sequence');
+		//$this->load->library('googlegeocoder');
 	}
 	public function index() {
 		if (!$this->session->userdata['is_user_login'] == TRUE)
@@ -114,7 +115,7 @@ class Cart extends MY_Controller {
 	} 
 	
 	public function store_order(){
-		$this->load->library('sequence');
+		
 		if(count($_POST) > 0 ) { 
 
 			if($this->session->has_userdata('car_id')){
@@ -169,21 +170,37 @@ class Cart extends MY_Controller {
 			$order_id = $this->OrderModel->insert($order_data);
 			if($order_id) {
 				$this->sequence->updateSequence();
-				$customer_data = array(
+                /*
+				$addressData = implode(', ', array($this->input->post('address')));
+				$data_arr = geocode($addressData);
+				print_r($data_arr);die;
+				*/
+
+			/*$address = $this->input->post('address');  // Address
+
+			// Get JSON results from this request
+			$geo = file_get_contents('http://maps.googleapis.com/maps/api/geocode/json?address='.urlencode($address).'&sensor=false');
+			$geo = json_decode($geo, true); // Convert the JSON to an array
+
+			if (isset($geo['status']) && ($geo['status'] == 'OK')) {
+			 echo $latitude = $geo['results'][0]['geometry']['location']['lat']; // Latitude
+			 echo $longitude = $geo['results'][0]['geometry']['location']['lng']; // Longitude 
+			}*/
+  				$customer_data = array(
 					'order_id' => $order_id,
 					'name' => $this->input->post('name'),
 					'email' => $this->input->post('email'),
 					'phone' => $this->input->post('phone'),
 					'address' => $this->input->post('address'),
 					'landmark' => $this->input->post('landmark'),
-					'location_type' => $this->input->post('location_type')
+					'location_type' => $this->input->post('location_type'),
+					/*'latitude' => '0.00000',
+					'longitude' => '0.00000'*/
+					
 				);
-				$addressData = implode(', ', array($customer_data['address']));
 				
-				$data_arr = geocode($addressData);
-				print_r($data_arr);die;
 				$this->CustomerDetailModel->insert($customer_data);
-
+				//dd($customer_data);
 				$order_items = $this->basket->getItems();
 				if(!empty($order_items)) {
 					foreach ($order_items as $index => $order_item) {

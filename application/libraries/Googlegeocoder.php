@@ -4,12 +4,13 @@ class GoogleGeocoder
 {
     public function __construct()
     {
-        $this->baseURL = "https://maps.google.com/maps/api/geocode/json?sensor=false";
+        $this->baseURL = "https://maps.google.com/maps/api/geocode/json?key=AIzaSyBg6Ws3Vj6snR1AWd4vYxG8mU3sVcrXYP4&sensor=false";
+      
     }
 
     public function geocode($address)
     {
-        $url = $this->baseURL . "&address=" . urlencode($address);
+       $url = $this->baseURL . "&address=" . urlencode($address);
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

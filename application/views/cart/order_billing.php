@@ -33,7 +33,7 @@
    
    <tr>
     </tr class="bor__none">
-     <td><b class="bill_title">Name </b><span class="bill__no"><?php echo $this->session->userdata('name'); ?></b></td>
+     <td><b class="bill_title">Name </b><span class="bill__no"><?php echo $orderdetails['customer_name'];?></b></td>
       <td><b class="bill_title">Car Brand & Model</b><span class="bill__no"><?php echo $orderdetails['brand_name'];?>&nbsp;<?php echo $orderdetails['model_name'];?></td>
       <td><b class="bill_title">OrderNo </b><span class="bill__no"><?php echo $orderdetails['order_no'];?></td>
 	</tr>
@@ -45,7 +45,7 @@
   </tr>
   
   <tr>
-   <td><b class="bill_title">Email Address </b><span class="bill__no"><?php echo $this->session->userdata('email'); ?></span></td>
+   <td><b class="bill_title">Email Address </b><span class="bill__no"><?php echo $orderdetails['customer_email'];?></span></td>
     <td><b class="bill_title">Service  </b><span class="bill__no"><?php echo $orderdetails['name'];?></span></td>
      <td><b class="bill_title">Pickup Date</b><span class="bill__no"><?php echo date('d-m-Y',strtotime($orderdetails['pick_up_date']));?></span></td>
    	
@@ -53,7 +53,7 @@
   </tr>
     
 	<tr>
-   <td><b class="bill_title">Phone </b><span class="bill__no"><?php echo $this->session->userdata('phone'); ?></span></td>
+   <td><b class="bill_title">Phone </b><span class="bill__no"><?php echo $orderdetails['customer_phone'];?></span></td>
 
     <td>
     <b class="bill_title">Loaner Vehicle</b>&nbsp;&nbsp;
