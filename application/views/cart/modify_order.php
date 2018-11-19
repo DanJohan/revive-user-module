@@ -40,7 +40,7 @@
 
          <div class="col-md-3 col-sm-3 col-xs-12 full_box">
            <div id="datepicker"></div>
-            <input type="hidden" id="datepicker2" value="<?php echo $orderdetails['pick_up_date'];?>" name="pick_up_date" readonly required>
+            <input type="hidden" id="datepicker2" value="<?php echo $orderdetails['pick_up_date'];?>" name="pick_up_date" readonly>
             <select class="time_sloat2 validation form-control" name="pick_up_time" id="pick_up_time" required="">
                 <?php
                 $pick_up_time_values = array(
@@ -84,7 +84,7 @@
       <div class="userinfo-icons"> 
          <ul class="info-icons" id="myid">
          
-            <li id="1"><i class="fa fa-home active" aria-hidden="true"></i><span>Home</span></li>
+            <li id="1"><i class="fa fa-home" aria-hidden="true"></i><span>Home</span></li>
             <li id="2"><i class="fa fa-building" aria-hidden="true"></i><span>Office</span></li>
             <li id="3"><i class="fas fa-map-marker-alt"></i><span>Others</span></li>
          </ul>  
@@ -174,10 +174,16 @@ $(function() {
     $('li i').removeClass("active");
     $(this).addClass("active");
     $("#myid li").click(function() {
-    var locid = $(this).attr("id"); // get id of clicked li
-     $("#results").val(locid);
-});
-});
-});</script>
+      var locid = $(this).attr("id"); // get id of clicked li
+      //var locid = '<?php //echo $orderdetails['location']?>';
+      var result = $("#results").val(locid);
+      var result_id = '<?php echo $orderdetails['location']?>'
+      if("#myid li" === result_id){
+        $("#myid li").addClass("active");
+       }
+      });
+    });
+  });
+</script>
 
 <?php $this->widget->endBlock();?>

@@ -35,9 +35,8 @@ class User extends MY_Controller {
 				
 				$username = $this->input->post('username');   
 				$password = $this->input->post('password');
-				
 				$user = $this->UserModel->check_user_exits(array('username'=>$username));
-			
+
 				if($user){
 					$is_verified = password_verify($password,$user['password']);
 					if($is_verified){
@@ -48,7 +47,7 @@ class User extends MY_Controller {
 							'phone' => $user['phone'],
 						 	'is_user_login' => TRUE
 						);
-						// /dd($user_data);
+						//dd($user_data);
 							$this->session->set_userdata($user_data);
 							redirect(base_url('cart/userinfo'), 'refresh');
 						}else{
@@ -373,10 +372,16 @@ class User extends MY_Controller {
 	public function update_profile($id=null){
 		if(count($_POST) > 0 ) { 
 				$id = $this->input->post('id');
+				$phone_check =   $this->input->post('phone');
+				if(substr($phone_check, 0, 3) === '+91'){
+					$phone =   $phone_check;
+				}else{
+					$phone =   '+91'.$this->input->post('phone');
+				}
 				$update_data = array(
 					'name'  =>   $this->input->post('name'),
 					'email' =>   $this->input->post('email'),
-					'phone' =>   $this->input->post('phone'),
+					'phone' =>   $phone,
 					
 				);
 			//dd($update_data);
