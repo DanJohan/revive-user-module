@@ -5,17 +5,30 @@ class Site extends MY_Controller {
 
 	public function __construct(){
 		parent::__construct();
+		$this->load->model('BlogModel');
+		$this->load->model('GalleryModel');
+		$this->load->model('TestimonialModel');
 		
 	}
 	public function index(){
 		$data= array();
-		//dd($this->session);
-		$this->render('site/index',$data,'layouts/home');
+        $data['blogs'] = $this->BlogModel->getBlogs(); 
+        $data['gallery_images'] = $this->GalleryModel->getGallery();
+        $data['testimonials'] = $this->TestimonialModel->get_all();
+      	$this->render('site/index',$data,'layouts/home');
 
 	}
 	public function gallery(){
 		$data= array();
+		$data['all_gallery'] = $this->GalleryModel->get_all();
 		$this->render('site/gallery',$data);
+
+	}
+
+	public function blog(){
+		$data= array();
+		$data['allblog'] = $this->BlogModel->get_all();
+		$this->render('site/blog',$data);
 
 	}
 

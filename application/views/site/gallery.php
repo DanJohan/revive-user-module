@@ -3,32 +3,31 @@
     <div class="container">    
         <div class="row">
         </div>
-        
-        <ul class="row">
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-1.png">
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-2.png">
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-3.png">
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-4.png">
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-5.png">
-            </li>
-            <li class="col-md-4 col-sm-4 col-xs-4">
-                <img class="img-responsive" src="<?php echo base_url();?>assets/img/g-6.png">
-            </li>
-            
-          </ul>             
-    </div> <!-- /container -->
-    </section>  
+        <section id="blog" class="blogs text-center">
+            <div class="container">
+                <div class="blog-head">
+                    <h2>Gallery</h2>
+                </div>
+                 <ul class="row">
+                    <?php  if(!empty($all_gallery)){
+                            foreach ($all_gallery as $gallery) {
+                    ?>
+
+                    <li class="col-md-4 col-sm-4 col-xs-4">
+                        <img class="img-responsive" src="<?php echo CRM_BASE_URL; ?>uploads/site/<?php echo $gallery['image']; ?>">
+                    </li>
+                
+                  <?php } }else{?>  
+                   </ul> 
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h2>No Images Found</h2>
+                    </div>
+                   <?php } ?> 
+                </div> <!-- /container -->           
+            </section>  
+          </div>
+</section> 
     
-     
     <div class="modal fade" id="galleryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="gallery-modal modal-dialog">
         <div class="g-content modal-content">         

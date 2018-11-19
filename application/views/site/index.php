@@ -220,45 +220,37 @@
     <!--end ts-title-->
        <div class="row">
             <div class="col-md-8 offset-md-2">
-                <div class="owl-carousel ts-carousel-blockquote" data-owl-dots="1" data-animate="ts-zoomInShort"><blockquote class="blockquote">
-            <!--person image-->
-            <figure>
-            <div class="ts-circle__lg" data-bg-image="<?php echo base_url();?>assets/img/person-05.jpg"></div>
-            </figure>
-            <!--end person image-->
-            <!--cite-->
-            <p>Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl.uthicula sagitti</p>
-            <!--end cite-->
-            <!--person name-->
-            <footer class="blockquote-footer">
-                <h4>Prachi Tehlan</h4>
-                <h6>CEO at MarketsGuru</h6>
-            </footer>
-            <!--end person name-->
-            </blockquote>
-            <!--end blockquote-->
-            <blockquote class="blockquote">
-            <!--person image-->
-                <figure>
-                    <div class="ts-circle__lg" data-bg-image="<?php echo base_url();?>assets/img/person-05.jpg"></div>
-                </figure>
-            <!--end person image-->
-            <!--cite-->
-                <p>Morbi et nisl a sapien malesuada scelerisque. Suspendisse tempor turpis mattis nibh posuere. Aenean sagittis nisl.uthicula sagitti</p>
-                <!--end cite-->
-                <!--person name-->
-            <footer class="blockquote-footer">
-                <h4>Jane Doe</h4>
-                <h6>CEO at MarketsGuru</h6>
-            </footer>
-            <!--end person name-->
-            </blockquote>
-            <!--end blockquote-->
+                <div class="owl-carousel ts-carousel-blockquote" data-owl-dots="1" data-animate="ts-zoomInShort">
+                    <?php  if(!empty($testimonials)){
+                            foreach ($testimonials as $testimonial) {
+                    ?>
+                    <blockquote class="blockquote">
+                        <!--person image-->
+                        <figure>
+                        <div class="ts-circle__lg" data-bg-image="<?php echo CRM_BASE_URL; ?>uploads/site/<?php echo $testimonial['author_image']; ?>"></div>
+                        </figure>
+                        <!--end person image-->
+                        <!--cite-->
+                        <p><?php echo $testimonial['description']; ?></p>
+                        <!--end cite-->
+                        <!--person name-->
+                        <footer class="blockquote-footer">
+                            <h4><?php echo $testimonial['author_name']; ?></h4>
+                            <h6><?php echo $testimonial['author_designation']; ?></h6>
+                        </footer>
+                        <!--end person name-->
+                    </blockquote>
+                    <!--end blockquote-->
+                    <?php } }else{?>  
+                    <div class="col-md-8 offset-md-2">
+                        <h2>No Testimonials Found</h2>
+                    </div>
+                   <?php } ?> 
                 </div>
             </div>
-            </div>
-            </div>
-            </section>
+        </div>
+    </div>
+</section>
             <!--end #our-clients.ts-block-->
 <!--Gallery start-->
 <section id="gallery" class="g-bg">
@@ -267,49 +259,23 @@
             <h2>Gallery</h2>
         </div>
         <div class="row">
+            <?php  if(!empty($gallery_images)){
+                    foreach ($gallery_images as $galleryimages) {
+            ?>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-1.png"  alt="">
+                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo CRM_BASE_URL; ?>uploads/site/<?php echo $galleryimages['image']; ?>">
             </div>
+          <?php } }else{?>  
             <div class="col-md-4 col-sm-4 col-xs-12">
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-2.png"  alt="">
+                <h2>No Images Found</h2>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-3.png"  alt="">
-            </div>
-
+           <?php } ?> 
         </div>
-        <div class="row gallery-img">
-            <div class="col-md-4">
-                
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-4.png"  alt="">
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-5.png"  alt="">
-            </div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                
-                <img class="ts-shadow__md ts-border-radius__md" src="<?php echo base_url();?>assets/img/g-6.png"  alt="">
-            </div>
 
-        </div>
         <div class="col-md-12 col-sm-12 col-xs-12">
         <a href="<?php echo base_url()?>site/gallery" class="btn btn-primary read-more ">View All</a></div>
-       <!--          end ts-title
-               <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
-           <div class="slide">
-               <img src="<?php //echo base_url();?>assets/img/g-1.png" class="ts-shadow__md ts-border-radius__md" alt="">
-           </div>
-           <div class="slide">
-               <img src="<?php //echo base_url();?>assets/img/g-2.png" class="ts-shadow__md ts-border-radius__md" alt="">
-           </div>
-           <div class="slide">
-               <img src="<?php //echo base_url();?>assets/img/g-3.png" class="ts-shadow__md ts-border-radius__md" alt="">
-           </div>
-               </div> -->
-       <!--  <div class="owl-carousel ts-carousel-centered py-2 mb-5" data-owl-loop="1" data-owl-nav="1" data-owl-items="3" data-owl-margin="30" data-owl-center="1">
-       </div> -->
+     
    </div>
 </section>
  <!--gallery end-->
@@ -454,24 +420,18 @@
         </div>
         <!--end ts-title-->
         <div class="row">
+           <?php if(!empty($blogs)){
+                    foreach ($blogs as $blog) {
+            ?>
             <div class="col-md-4">
-                <a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-01.png" width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">How to get rid of the stubborn road paint from your car?</h4></a>
+                <a href="https://medium.com/@revive.auto/<?php echo $blog['slug'] ?>" target="_blank"><img src="<?php echo CRM_BASE_URL; ?>uploads/site/<?php echo $blog['image']; ?>" width="300px" class="mb-5" alt="">
+                    <h4 class="mb-3"><?php echo $blog['title']; ?></h4></a>
                     <!-- <p><a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank">read full article</a>
                     </p> -->
             </div>
-            <div class="col-md-4">
-                <a href="https://medium.com/@revive.auto/how-to-take-care-of-your-cars-paint-job-e0e5f086235a" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-02.png"  width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">How To Take Care of Your Car's Paint Job</h4></a>
-                    <!-- <p><a href="https://medium.com/@revive.auto/how-to-take-care-of-your-cars-paint-job-e0e5f086235a" target="_blank">read full article</a>
-                    </p> -->
-            </div>
-            <div class="col-md-4">
-                <a href="https://medium.com/@revive.auto/cool-car-paint-jobs-we-love-8de5dea3b7cc" target="_blank"><img src="<?php echo base_url();?>assets/img/icon-preview-03.png"  width="300px" class="mb-5" alt="">
-                    <h4 class="mb-3">Cool Car Paint Jobs We Love</h4></a>
-                    <!-- <p><a href="https://medium.com/@revive.auto/cool-car-paint-jobs-we-love-8de5dea3b7cc" target="_blank">read full article</a>
-                    </p> -->
-            </div>
+        <?php } }?>
+         <div class="col-md-12 col-sm-12 col-xs-12">
+        <a href="<?php echo base_url()?>site/blog" class="btn btn-primary read-more ">View All</a></div>
         </div>
         <!--end row-->
     </div>
