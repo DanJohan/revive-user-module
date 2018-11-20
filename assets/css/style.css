@@ -187,6 +187,26 @@ section#about-us {
 section.blog h1 {
     font-size: 35px;
 }
+.blog-head h2 {
+    font-size: 35px;
+    margin-bottom: 35px;
+}
+#blog h4 {
+    font-size: 21px;
+    font-weight: 600;
+}
+#blog img {
+    width: 100%;
+    margin-bottom: 3rem!important;
+}
+.blogs a {
+    color: #47143d;
+    text-decoration: none;
+}
+.blogs a:hover {
+    color: #ab6aba;
+    text-decoration: none;
+}
 /******************30-10-18 Komal***************/
 .jobs-wrapper .img-fluid {
     width: 36%;
@@ -1876,6 +1896,7 @@ img.img-fluid.f-body {
     color: #fff;
     padding: 10px 20px;
     border-radius: 3px;
+    text-decoration: none;
 }
 .order__time {
     text-align: center;
@@ -3143,6 +3164,13 @@ span#country_code {
 /********media query 320 to 480 start**********/
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
+    #blog img {
+    width: 100%;
+    margin-bottom: 0rem!important; 
+}
+    section#blog {
+    padding-top: 60px;
+}
     .top-bar-list {
     text-align: center;
 }
@@ -3394,7 +3422,11 @@ button.btn-round2.proc-btn {
 .o_rser_list td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 6px;
+    padding: 0px;
+}
+th.sr_no {
+    /* width: 6%; */
+    font-size: 14px;
 }
 
     .l__order img {

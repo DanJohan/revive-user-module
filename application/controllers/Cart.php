@@ -69,15 +69,12 @@ class Cart extends MY_Controller {
 		if($this->basket->isEmpty()){
 			redirect('service/select_service');
 		} 
-		
-		//dd($data);
 		// Get all items in the cart
 		$data = array();
 		$model_id= $this->session->userdata('model_id');
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
 		$service_id = $this->session->userdata('service_cat_id');
 		$data['service_detail']= $this->ServiceCategoryModel->getCategoryName($service_id);
-		//dd($data['service_detail']);
 		$data['allItems'] = $this->basket->getItems();
 
 		$this->render('cart/checkout',$data);
@@ -99,16 +96,13 @@ class Cart extends MY_Controller {
 		$user_id = $this->session->userdata('user_id');
 		$data['user_detail']= $this->UserModel->get(array('id'=>$user_id));
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
-		//dd($data);
-
+		
 		if($this->session->has_userdata('car_id')){
 			$car_id = $this->session->userdata('car_id');
 			$data['car_reg_no'] = $this->CarModel->getRegNoByCarID($car_id);
 		}else{
 			$data['car_reg_no']['registration_no'] = '';
 		}
-
-		//dd($data);
 		$this->render('cart/userinfo',$data);
 
 	
@@ -166,10 +160,16 @@ class Cart extends MY_Controller {
 				'car_id' => $car_id,
 				'created_at' =>date('Y-m-d H:i:s')
 			);
-			//dd($order_data);
+			
 			$order_id = $this->OrderModel->insert($order_data);
 			if($order_id) {
 				$this->sequence->updateSequence();
+				$location_type = $this->input->post('location_type');
+				if($location_type == ''){
+					$location_type = '1';
+				}else{
+					$location_type = $this->input->post('location_type');
+				}
                 /*
 				$addressData = implode(', ', array($this->input->post('address')));
 				$data_arr = geocode($addressData);
@@ -193,14 +193,12 @@ class Cart extends MY_Controller {
 					'phone' => $this->input->post('phone'),
 					'address' => $this->input->post('address'),
 					'landmark' => $this->input->post('landmark'),
-					'location_type' => $this->input->post('location_type'),
+					'location_type' => $location_type,
 					/*'latitude' => '0.00000',
 					'longitude' => '0.00000'*/
 					
 				);
-				
 				$this->CustomerDetailModel->insert($customer_data);
-				//dd($customer_data);
 				$order_items = $this->basket->getItems();
 				if(!empty($order_items)) {
 					foreach ($order_items as $index => $order_item) {
@@ -258,7 +256,7 @@ class Cart extends MY_Controller {
 		if(!$hash){
 			redirect('/');
 		}
-	    $this->OrderModel->update(array('payment_type_id'=>1),array('hash'=>$hash));
+	    $this->OrderModel->update(array('payment_type_id'=>1,'paid'=>1),array('hash'=>$hash));
 		redirect('cart/confirmed/'.$hash);
 	}
 
@@ -376,19 +374,28 @@ class Cart extends MY_Controller {
 		redirect('cart/my_order');
 	}
 	
-	public function remove_order_item($id=null,$order_id=null,$hash=null){
-		if(!$id || !$order_id || !$hash){
+	public function remove_order_item($id=null,$hash=null){
+		if(!$id || !$hash){
 			redirect('cart/my_order');
 		}
 		$data =array();
-		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order_id));
+		$criteria['field'] = 'id';
+		$criteria['conditions'] = array('hash'=>$hash);
+		$criteria['returnType'] = 'single';
+		$order = $this->OrderModel->search($criteria);
 
+		if(empty($order)) {
+			redirect('cart/modify_order/'.$hash);
+		}
+
+		$is_delete = $this->OrderItemModel->delete(array('id'=>$id,'order_id' =>$order['id']));
+		//echo $this->db->last_query();die;
 		if($is_delete){
-			$total_items = $this->OrderModel->update(array('id'=>$id));
+			$total_items = $this->OrderModel->update(array('id'=>$order['id']));
 
-			$total_items = $this->OrderItemModel->getItemPriceByOrderId($order_id);
+			$total_items = $this->OrderItemModel->getItemPriceByOrderId($order['id']);
 			$final_total = array_sum(array_column($total_items, 'price'));
-			$this->OrderModel->update(array('sub_total'=>$final_total,'net_pay_amount'=>$final_total),array('id'=>$order_id));
+			$this->OrderModel->update(array('sub_total'=>$final_total,'net_pay_amount'=>$final_total),array('id'=>$order['id']));
 
 			$this->session->set_flashdata('success_msg','Your item is successfully deleted'); 
         }else{
@@ -466,7 +473,6 @@ class Cart extends MY_Controller {
 	}
 
 	public function update_order($hash=null){
-		//dd($_POST);
 		$data=array();
 		if(count($_POST) > 0 ) { 
 			$order_id =$this->input->post('order_id');

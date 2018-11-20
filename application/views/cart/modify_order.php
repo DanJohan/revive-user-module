@@ -109,7 +109,7 @@
           <tr>
             <td><?php echo $order_item['sname'];?></td>
             <td class="custom_list"><?php echo $order_item['price'];?></td>
-            <td><a href="<?php echo base_url()?>cart/remove_order_item/<?php echo $order_item['item_id']."/".$orderdetails['id']."/".$orderdetails['hash'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+            <td><a href="<?php echo base_url()?>cart/remove_order_item/<?php echo $order_item['item_id']."/".$orderdetails['hash'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
           </tr>
         <?php }}else{?>
           <tr>
@@ -121,17 +121,10 @@
            <th  class="text-right"><?php echo $orderdetails['sub_total'];?></th>
           <th></th>
         </tr>
-          <!-- <tr>
-            <th class="sr_no">TOTAL</th>
-          
-            <th colspan="3" class="text-right"><?php //echo $orderdetails['sub_total'];?></th>
-            
-          </tr> -->
       </table>
       <div class="float-right">
-       <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>">
-        <button type="button" class="btn-dotted">Add More Items</button></a>
-        <button type="submit" class="btn-round2 proc-btn">Proceed</button></a>
+         <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>"><button type="button" class="btn-dotted">Add More Items</button></a>
+            <button type="submit" class="btn-round2 proc-btn">Proceed</button>
       </div>
     </div> 
   </div><!--row--end-->

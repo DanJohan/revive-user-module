@@ -19,7 +19,7 @@ class UserModel extends MY_Model {
 
 	public function check_user_exits($data = array()) {
 		$this->db->select('*',false);
-		$this->db->where("(phone='".'+91'.$data['username']."' OR email='".$data['username']."')");
+		$this->db->where("(phone='".$data['username']."' OR email='".$data['username']."')");
 		$query=$this->db->get($this->table);
 		$result=$query->row_array();
 		return (!empty($result))?$result:false;

@@ -2823,6 +2823,7 @@ a.btn.btn-primary.read-more {
 }
 section#blog img {
     width: 100%;
+    margin-bottom: 3rem!important;
 }
 
 .top-bar-list {

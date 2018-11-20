@@ -84,7 +84,7 @@
 				  <tr>
 					<th class="sr_no">Sr No</th>
 					<th class="item_s">Services</th>
-					<th>Price</th>
+					<th class="text-right">Price</th>
 				  </tr>
 				  <?php if(!empty($orderdetails['order_items'])){
 				  $count =1;
@@ -105,12 +105,12 @@
 				   <tr>
 					<th class="sr_no">TOTAL</th>
 					<th class="item_s"></th>
-					<th><?php echo $orderdetails['sub_total'];?></th>
+					<th class="text-right"><?php echo $orderdetails['sub_total'];?></th>
 				  </tr>
 				  <tr>
 					<th class="sr_no">Loaner Vehicle</th>
 					<th class="item_s"></th>
-					<th><?php $olv = $orderdetails['loaner_vehicle'];
+					<th class="text-right"><?php $olv = $orderdetails['loaner_vehicle'];
 		    			if($olv == '1'){
 		    				echo "500/- Per Day";
 		    			}else{
