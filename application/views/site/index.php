@@ -167,7 +167,7 @@
                                         <h6 class="my-2">Paint Repair Jobs</h6>
                                     </a>
 
-                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                                    <a href="<?php echo base_url();?>service/select_service/2" class="ser-btn" >Book Now</a>
                                     <div class="collapse" id="feature-2">
 
                                        <div class="jobs-wrapper">
@@ -185,7 +185,7 @@
                                     <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-3">
                                         <h6 class="my-2">Full Body Car Paint</h6>
                                     </a>
-                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                                    <a href="<?php echo base_url();?>service/select_service/3" class="ser-btn" >Book Now</a>
                                     <div class="collapse" id="feature-3">
                                         <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/full-body.png">
@@ -199,7 +199,7 @@
                     <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-4">
                     <h6 class="my-2">Exterior Customisations</h6>
                     </a>
-                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                    <a href="<?php echo base_url();?>service/select_service/4" class="ser-btn" >Book Now</a>
                     <div class="collapse" id="feature-4">
                         <div class="jobs-wrapper">
                             <img class="img-fluid" src="<?php echo base_url();?>assets/img/exterior.png">
@@ -213,7 +213,7 @@
                     <a href="javascript:void(0);" class="ts-font-color__black"  role="button" aria-expanded="false" aria-controls="feature-5">
                     <h6 class="my-2">Interior Customisations</h6>
                     </a>
-                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                    <a href="<?php echo base_url();?>service/select_service/5" class="ser-btn" >Book Now</a>
                         <div class="collapse" id="feature-5">
                             <div class="jobs-wrapper">
                                 <img class="img-fluid" src="<?php echo base_url();?>assets/img/interior.png">
