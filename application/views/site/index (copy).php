@@ -130,11 +130,11 @@
                 <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
                             <!--features list-->
                             <ul class="list-unstyled ts-list-divided">
-                                <li>
+                                <li class="com_box offer1">
                                     <a href="#feature-1" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-1">
                                         <h6 class="my-2">Dent Repair Jobs</h6>
                                     </a>
-                                    <div class="collapse">
+                                    <div class="collapse" id="view-btn1">
                                         <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/dent-jobs.png">
                                           <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
@@ -143,11 +143,11 @@
                                     </div>
                                     <!--end collapse-->
                                 </li>
-                                <li>
+                                <li class="com_box offer2">
                                     <a href="#feature-2" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-2">
                                         <h6 class="my-2">Paint Repair Jobs</h6>
                                     </a>
-                                    <div class="collapse">
+                                    <div class="collapse" id="view-btn2">
                                        <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/paint.png">
                                           <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p>
@@ -156,11 +156,11 @@
                                     </div>
                                     <!--end collapse-->
                                 </li>
-                               <li>
+                               <li class="com_box offer3">
                                     <a href="#feature-3" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
                                         <h6 class="my-2">Full Body Car Paint</h6>
                                     </a>
-                                    <div class="collapse">
+                                    <div class="collapse" id="view-btn3">
                                        <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/full-body.png">
                                           <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle's color and spray the vehicle with the exact match - Giving out exactly the way you pictured.</p>
@@ -563,6 +563,46 @@ for (i = 0; i < acc.length; i++) {
         if( document.getElementsByClassName("ts-full-screen").length ) {
             document.getElementsByClassName("ts-full-screen")[0].style.height = window.innerHeight + "px";
         }
-</script> 
+    </script> 
+    <!------------------------ Unique Offerings ---------------->
+<script type="text/javascript">
+$(document).on('click','.com_box',function(){
+var id = $(this).attr('id');
+  if(id =='offer1'){
+  $('#view-btn1').collapse('toggle');
+  $('#view-btn2').collapse('hide');
+  $('#view-btn3').collapse('hide');
+  $('#view-btn4').collapse('hide');
+
+  }else if(id == 'offer2'){
+  $('#view-btn2').collapse('toggle');
+  $('#view-btn3').collapse('hide');
+  $('#view-btn4').collapse('hide');
+  $('#view-btn1').collapse('hide');
+  }
+  else if(id == 'offer3'){
+  $('#view-btn3').collapse('toggle');
+  $('#view-btn2').collapse('hide');
+  $('#view-btn4').collapse('hide');
+  $('#view-btn1').collapse('hide');
+  }else {
+  $('#view-btn4').collapse('toggle');
+  $('#view-btn3').collapse('hide');
+  $('#view-btn2').collapse('hide');
+  $('#view-btn1').collapse('hide');
+  }
+
+  });
+
+/*$('#wave-1').wavify({
+  height: 50,
+});
+
+$('#wave-2').wavify({
+  height: 50,
+
+});*/
+ 
+</script>
 
 <?php $this->widget->endBlock(); ?>
