@@ -126,12 +126,12 @@
 			<?php }else {?>	
 		  <div class="col-md-6 col-sm-6 col-xs-12">
 		    <div class="order_btn">
-		    	<?php 
-		    	 //foreach($orderdetails['order_items'] as $order_item){?>	
-		    	<!-- <a href="<?php //echo base_url();?>cart/cancel_order/<?php //echo $orderdetails['id'];?>">Cancel Order</a></div> -->
-		    	  <?php //} ?>
+		    	
+		    	  <?php $order_status = $orderdetails['status'];
+							if($order_status != 3){	?>
 
 		    	<a class="btn-round" href="<?php echo base_url();?>cart/modify_order/<?php echo $orderdetails['hash'];?>">Modify Order</a>
+		    <?php }else{}?>
 		    </div>
 
 		  </div>

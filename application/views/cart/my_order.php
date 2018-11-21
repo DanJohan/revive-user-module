@@ -39,7 +39,12 @@
 						<a href="#"><?php echo $order_status;?></a>
 						
 						<a href="<?php echo base_url();?>cart/order_billing/<?php echo $order['hash'];?>">Open Details</a>
+						<?php 
+						$order_status = $order['status'];
+					    $order_paid = $order['paid'];
+						if($order_status !=3 && $order_paid == 0){?>
 						<a href="<?php echo base_url()?>cart/cancel_order/<?php echo $order['id'];?>"><i class="fa fa-trash" aria-hidden="true"></i></a>
+					<?php }else{ }?>
 					</div>
 				</div>
 			</div>
