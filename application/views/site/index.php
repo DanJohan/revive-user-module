@@ -167,8 +167,6 @@
                                         <h6 class="my-2">Paint Repair Jobs</h6>
                                     </a>
 
-                                    <div class="collapse">
-
                                     <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
                                     <div class="collapse" id="feature-2">
 
@@ -181,6 +179,7 @@
                                     <!--end collapse-->
                                 </li>
 
+                               
 
                                 <li class="com_box" id="offer3" data-toggle="collapse">
                                     <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-3">
