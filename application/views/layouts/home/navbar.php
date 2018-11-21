@@ -15,8 +15,9 @@
                     <a class="nav-item nav-link active ts-scroll" href="<?php echo base_url()."site/index"?>">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#about-us">About us</a>
                     <!-- <a class="nav-item nav-link ts-scroll" href="#services">Services</a> -->
-                     <li class="nav-item dropdown"> <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                        <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
+                     <li class="nav-item dropdown"> 
+                        <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="<?php echo base_url();?>#services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
+                       <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/1">Dent Repair Jobs</a>
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/2">Paint Repair Jobs</a>
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/3">Full Body Car Paint</a> 
@@ -26,7 +27,7 @@
                     </li>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#faqs">FAQs</a>
-                    <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
+                    <a class="nav-item nav-link ts-scroll" href="javascript:void(0);">Contact us</a>
                      <?php 
                      if($this->session->has_userdata('is_user_login')) {
                      if($this->router->fetch_class() == 'site' && $this->router->fetch_method() == 'index'){ ?>
@@ -60,7 +61,7 @@
     <!--end navbar-->
 <!--*************** HERO CONTENT ************************-->
 <div class="container align-self-center">
-    <div class="row align-items-center">
+    <div class="row align-items-center hero-content">
         <div class="col-sm-7">
             <h3>Revive your ride</h3>
             <h1>The Ultimate Body Shop Experience!</h1>
@@ -68,18 +69,19 @@
             <a href="<?php echo base_url();?>user/login" class="btn btn-primary btn-lg ts-scroll" data-bg-color="#47143d">Service Status</a>
         </div>
 <!--end col-sm-7 col-md-7-->
-        <div class="col-sm-5 d-none d-sm-block slider-top">
-            <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1">
-                <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/tutorial2.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/tutorial3.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/tutorial4.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/tutorial5.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-                <img src="<?php echo base_url();?>assets/img/img-phone-2nd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
-            </div>
-        </div>
+       <!--  <div class="col-sm-5 d-none d-sm-block slider-top">
+           <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1">
+               <img src="<?php //echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/tutorial2.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/tutorial3.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/tutorial4.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/tutorial5.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+               <img src="<?php //echo base_url();?>assets/img/img-phone-2nd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+           </div>
+       </div> -->
 <!--end col-sm-5 col-md-5 col-xl-5-->
+
     </div>
     <!--end row-->
 </div>

@@ -11,8 +11,9 @@
             <!--end ts-title-->
             <div class="row">
                 <div class="col-md-6 col-xs-6 text-justify" data-animate="ts-fadeInUp" data-offset="100">
-                    <p>Revive is a network of dedicated bodyshops for dent repairs of your car with complete ease and convenience. Our mission is to make sure the love towards your car remains forever. We help you maintain your car spot-free, hassle-free. We understand not everybody is comfortable driving in a scratched car.</p>
-                    <p>We specialize in making your car dent and scratch free, in the minimum time and with maximum comfort. We treat your car with utmost care and give it the quality treatment it deserves, all the while keeping you updated and anxiety-free. We also make sure the separation doesn't affect your daily routines, and offer alternate cars for your use till the time the repairs are completed.</p>
+                    <ul>
+                        <li><p>Revive is a network of dedicated bodyshops for dent repairs of your car with complete ease and convenience. Our mission is to make sure the love towards your car remains forever. We help you maintain your car spot-free, hassle-free. We understand not everybody is comfortable driving in a scratched car.</p></li>
+                        <li><p>We specialize in making your car dent and scratch free, in the minimum time and with maximum comfort. We treat your car with utmost care and give it the quality treatment it deserves, all the while keeping you updated and anxiety-free. We also make sure the separation doesn't affect your daily routines, and offer alternate cars for your use till the time the repairs are completed.</p></li></ul>
                 </div>
                  <!--end col-xs-5-->
                 <div class="col-md-6 col-xs-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
@@ -127,82 +128,105 @@
                         When's the last time you gave your car a second look? Or ran your fingers along the hood? It's time you fell back in love with your car again. Let us transform your weathered wagon with a new coat of paint, and soon you'll be driving the car you always wanted, again.
                     </p>
                 </div>
+                
+                     <div class="col-sm-6  d-sm-block slider-top">
+            <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1">
+                <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/tutorial2.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/tutorial3.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/tutorial4.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/tutorial5.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+                <img src="<?php echo base_url();?>assets/img/img-phone-2nd-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
+            </div>
+       
+                            
+                </div>
                 <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
-                            <!--features list-->
+                    <!--features list-->
                             <ul class="list-unstyled ts-list-divided">
-                                <li>
-                                    <a href="#feature-1" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-1">
+                                <li class="com_box" id="offer1" data-toggle="collapse">
+                                    <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-1" >
                                         <h6 class="my-2">Dent Repair Jobs</h6>
+
                                     </a>
-                                    <div class="collapse">
+                                   
+                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn"style="background-color: #47143d; border-color: #47143d" >Book Now</a>
+                                    <div class="collapse" id="feature-1">
                                         <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/dent-jobs.png">
                                           <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
-                                        </div>
-                                        <a href="<?php echo base_url();?>service/select_service/1" class="btn btn-primary ts-scroll" style="background-color: #47143d; border-color: #47143d">Book Now</a>
+                              </div>
+                                        
+
                                     </div>
                                     <!--end collapse-->
                                 </li>
-                                <li>
-                                    <a href="#feature-2" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-2">
+                                <li class="com_box" id="offer2" data-toggle="collapse">
+                                    <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-2">
                                         <h6 class="my-2">Paint Repair Jobs</h6>
                                     </a>
+
                                     <div class="collapse">
+
+                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                                    <div class="collapse" id="feature-2">
+
                                        <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/paint.png">
                                           <p>Remove and repair flakes, chips, dings and scratches on your car's finish before the rust sets in. It just takes just a few minutes with our techniques to make the blemishes less noticeable and delay the onset of rust-through.</p>
                               </div>
-                                        <a href="<?php echo base_url();?>service/select_service/2" class="btn btn-primary ts-scroll" style="background-color: #47143d; border-color: #47143d">Book Now</a>
+                                       
                                     </div>
                                     <!--end collapse-->
                                 </li>
-                               <li>
-                                    <a href="#feature-3" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+
+
+                                <li class="com_box" id="offer3" data-toggle="collapse">
+                                    <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-3">
                                         <h6 class="my-2">Full Body Car Paint</h6>
                                     </a>
-                                    <div class="collapse">
-                                       <div class="jobs-wrapper">
+                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
+                                    <div class="collapse" id="feature-3">
+                                        <div class="jobs-wrapper">
                                           <img class="img-fluid" src="<?php echo base_url();?>assets/img/full-body.png">
                                           <p>Full body car painting (same or colour change) is more of an art than a science. Therefore, to ensure a factory finish, our technicians mix the colored base coat to match the vehicle's color and spray the vehicle with the exact match - Giving out exactly the way you pictured.</p>
                               </div>
-                                        <a href="<?php echo base_url();?>service/select_service/3" class="btn btn-primary ts-scroll" style="background-color: #47143d; border-color: #47143d">Book Now</a>
+                                       
                                     </div>
                                     <!--end collapse-->
                                 </li>
-                            </ul>
-                            <!--end features list-->
-                </div>
-                <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
-                            <!--features list-->
-                <ul class="list-unstyled ts-list-divided">
-                    <li>
-                    <a href="#feature-4" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-1">
+                                <li class="com_box" id="offer4" data-toggle="collapse">
+                    <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-4">
                     <h6 class="my-2">Exterior Customisations</h6>
                     </a>
+                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
                     <div class="collapse" id="feature-4">
                         <div class="jobs-wrapper">
                             <img class="img-fluid" src="<?php echo base_url();?>assets/img/exterior.png">
                             <p>For Exterior Car Modifications, we deal in accessory and comdetic based changes. We do the modifications in such a way that the car turns out to be totally different from what it was earlier. We strive to help you modify your car into your dream & provide you with all the expertise you need from us for all that.</p>
                       </div>
-                            <a href="<?php echo base_url();?>service/select_service/4" class="btn btn-primary ts-scroll"style="background-color: #47143d; border-color: #47143d">Book Now</a>
+                            
                     </div>
                     <!--end collapse-->
                     </li>
-                    <li>
-                    <a href="#feature-5" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-2">
+                   <li class="com_box" id="offer5" data-toggle="collapse">
+                    <a href="javascript:void(0);" class="ts-font-color__black"  role="button" aria-expanded="false" aria-controls="feature-5">
                     <h6 class="my-2">Interior Customisations</h6>
                     </a>
+                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
                         <div class="collapse" id="feature-5">
                             <div class="jobs-wrapper">
                                 <img class="img-fluid" src="<?php echo base_url();?>assets/img/interior.png">
                                     <p>Re-trim, upholster and customise yo ur car interior with some of the best accessories recommended by our techinicians to suit your style. The dashboard, door panels, car seats and even the steering wheel can be upholstered in a range of different materials from leather to felt and velvet feeling fabrics and a lot more.</p>
                         </div>
-                                <a href="<?php echo base_url();?>service/select_service/5" class="btn btn-primary ts-scroll" style="background-color: #47143d; border-color: #47143d">Book Now</a>
+                                
                         </div>
                         <!--end collapse-->
                      </li>
                 </ul>
-                 <!--end features list-->
+                <!--end features list-->
+            
             </div>
         <!--end col-xs-5-->
         </div>
@@ -279,33 +303,7 @@
    </div>
 </section>
  <!--gallery end-->
-<!--*****Appp store IMG start*********--->
- <section id="download" class="app-store-img">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            <div class=" text-center">
-                                <div class="bg-white  ts-border-radius__round-shape">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <a href="#">
-                                                <img src="<?php echo base_url();?>assets/img/download-appstore.png" class="mw-100 py-3" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <a href="#">
-                                                <img src="<?php echo base_url();?>assets/img/download-play.png" class="mw-100 py-3" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="position-absolute ts-top__0 ts-bottom__0 m-auto w-100 ts-z-index__-1">
-</section>
-<!--*****Appp store IMG end*********--->
+
 <!--***************FAQS*******************-->
 <section id="faqs" class="faqs-wrapper"  data-bg-color="#f7f7f7">
     <div class="container">
@@ -411,7 +409,34 @@
     </div>
     <!--end container-->
 </section>
-<!--***********Faqs end***********-->    
+<!--***********Faqs end***********--> 
+<!--*****Appp store IMG start*********--->
+ <section id="download" class="app-store-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <div class=" text-center">
+                                <div class="bg-white  ts-border-radius__round-shape">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="#">
+                                                <img src="<?php echo base_url();?>assets/img/download-appstore.png" class="mw-100 py-3" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a href="#">
+                                                <img src="<?php echo base_url();?>assets/img/download-play.png" class="mw-100 py-3" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="position-absolute ts-top__0 ts-bottom__0 m-auto w-100 ts-z-index__-1">
+</section>
+<!--*****Appp store IMG end*********--->   
 <!--***********Blog Start**********-->        
 <section id="blog" class="blogs text-center">
     <div class="container">
@@ -542,7 +567,56 @@ if ($('#back-to-top').length) {
 }
 
 </script>
+<!------------------------ Our Services ---------------->
+<script type="text/javascript">
+$(document).on('click','.com_box',function(){
+var id = $(this).attr('id');
+if(id =='offer1'){
+$('#feature-1').collapse('toggle');
+$('#feature-2').collapse('hide');
+$('#feature-3').collapse('hide');
+$('#feature-4').collapse('hide');
+$('#feature-5').collapse('hide');
 
+}else if(id == 'offer2'){
+$('#feature-2').collapse('toggle');
+$('#feature-3').collapse('hide');
+$('#feature-4').collapse('hide');
+$('#feature-1').collapse('hide');
+$('#feature-5').collapse('hide');
+}
+else if(id == 'offer3'){
+$('#feature-3').collapse('toggle');
+$('#feature-2').collapse('hide');
+$('#feature-4').collapse('hide');
+$('#feature-1').collapse('hide');
+$('#feature-5').collapse('hide');
+}else if(id == 'offer4'){
+$('#feature-4').collapse('toggle');
+$('#feature-1').collapse('hide');
+$('#feature-2').collapse('hide');
+$('#feature-3').collapse('hide');
+$('#feature-5').collapse('hide');
+}else {
+$('#feature-5').collapse('toggle');
+$('#feature-4').collapse('hide');
+$('#feature-3').collapse('hide');
+$('#feature-2').collapse('hide');
+$('#feature-1').collapse('hide');
+}
+
+});
+
+/*$('#wave-1').wavify({
+height: 50,
+});
+
+$('#wave-2').wavify({
+height: 50,
+
+});*/
+
+</script>
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
