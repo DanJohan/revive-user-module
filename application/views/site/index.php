@@ -2,119 +2,6 @@
 <!--************ CONTENT ************************************************************************************-->
 <!--*********************************************************************************************************-->
 <main id="ts-content">
-<!--******* WHAT DOES REVIVE DO start *************-->
-<section id="about-us" class="about">
-        <div class="container">
-            <div class="about-head">
-                <h2 class="text-center">What does Revive do</h2>
-            </div>
-            <!--end ts-title-->
-            <div class="row">
-                <div class="col-md-6 col-xs-6 text-justify" data-animate="ts-fadeInUp" data-offset="100">
-                    <ul>
-                        <li><p>Revive is a network of dedicated bodyshops for dent repairs of your car with complete ease and convenience. Our mission is to make sure the love towards your car remains forever. We help you maintain your car spot-free, hassle-free. We understand not everybody is comfortable driving in a scratched car.</p></li>
-                        <li><p>We specialize in making your car dent and scratch free, in the minimum time and with maximum comfort. We treat your car with utmost care and give it the quality treatment it deserves, all the while keeping you updated and anxiety-free. We also make sure the separation doesn't affect your daily routines, and offer alternate cars for your use till the time the repairs are completed.</p></li></ul>
-                </div>
-                 <!--end col-xs-5-->
-                <div class="col-md-6 col-xs-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
-                    <div class="px-3">
-                        <img src="<?php echo base_url();?>assets/img/a-car.png" class="mw-100 ts-border-radius__md" alt="">
-                    </div>
-            </div>
-            <!--end col-xs-7-->
-        </div>
-        <!--end row-->
-    </div>
-    <!--end container-->
-</section>
-<!--****************WHAT DOES REVIVE DO end********-->
-<!--********HOW IT WORKS Start*********-->
-<section id="how-it-works" class="text-center s-bg">
-        <div class="container">
-            <div class="unique-head">
-                <h2>Unique Offerings</h2>
-            </div>
-            <!--end ts-title-->
-            <div class="row">
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
-                    <div class="tooltip2">  
-                        <figure data-animate="ts-fadeInUp">
-                            <figure class="icon mb-5 p-2">
-                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-watch-heart.png" alt="">
-                                <h4>Complete Convenience & Peace of mind</h4>
-                            </figure>
-                        </figure>
-                        <span class="tooltip2text"> 
-                            <ul class="cirlist1">
-                                <li> Free doorstep Pick up and Drop services</li>
-                                <li>Spare car facility on request</li>
-                                <li>Real time location tracking and work updates</li>
-                                <li> Workshop close to your location</li>
-                            </ul>
-                        </span>
-                    </div>
-                </div>
-                <!--end col-xs-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
-                    <div class="tooltip2">
-                        <figure data-animate="ts-fadeInUp" data-delay="0.1s">
-                            <figure class="icon mb-5 p-2">
-                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-lcd-chart.png" alt="">
-                                <h4>Fast & Committed Delivery Timelines</h4>
-                            </figure>
-                        </figure>
-                        <span class="tooltip2text"> 
-                            <ul class="cirlist1">
-                                <li>Use of advanced tech-based tools for forecasting and planning our bodyshop</li>
-                                <li>No unnecessary operational or work-related delays, and constant real time updates</li>
-                                
-                            </ul>
-                        </span>
-                    </div>
-                </div>
-                <!--end col-xs-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
-                    <div class="tooltip2">  
-                        <figure data-animate="ts-fadeInUp" data-delay="0.2s">
-                            <figure class="icon mb-5 p-2">
-                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-cup-winner.png" alt="">
-                                <h4>Quality Repairs & Uncompromised Workmanship</h4>
-                            </figure>
-                        </figure>
-                            <span class="tooltip2text"> 
-                                <ul class="cirlist1">
-                                    <li> Only auto brands approved paint material</li>
-                                    <li>Use of complete range of bodyshop equipments</li>
-                                    <li>  All manpower is trained by a leading paint company, and specializes in quick quality repair</li>
-                                    <li>1-year Paint Warranty against any discoloration / chipping or any other fault</li>
-                                </ul>
-                            </span>
-                     </div>
-                </div>
-                <!--end col-xs-4-->
-                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
-                    <div class="tooltip2"> 
-                        <figure data-animate="ts-fadeInUp" data-delay="0.2s">
-                            <figure class="icon mb-5 p-2">
-                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon4.png" alt="">
-                                <h4>Affordable Transparent Pricing</h4>
-                            </figure>
-                            </figure>
-                                <span class="tooltip2text"> 
-                                 <ul class="cirlist1">
-                                <li>No hidden charges or taxes. What you see is what you pay. What everyone else pays.</li>
-                                <li>All repair estimates given prior to using our services. Absolutely No pre-repair anxiety of being overcharged.</li>
-                                <li>Optimized bodyshop facility in terms of location and operations to keep costs under check</li>
-                            </ul>
-                                </span>
-                    </div>
-                </div>
-            </div>
-            <!--end row-->
-    </div>
-    <!--end container-->
-</section>
-<!--************END HOW IT end ***********-->
 <!--*******Services Start******-->
 <section id="services" class="services-wrapper">
         <div class="container">
@@ -234,6 +121,120 @@
     <!--end container-->
 </section>
 <!--***********services end***********--> 
+<!--********HOW IT WORKS Start*********-->
+<section id="how-it-works" class="text-center s-bg">
+        <div class="container">
+            <div class="unique-head">
+                <h2>Unique Offerings</h2>
+            </div>
+            <!--end ts-title-->
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
+                    <div class="tooltip2">  
+                        <figure data-animate="ts-fadeInUp">
+                            <figure class="icon mb-5 p-2">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-watch-heart.png" alt="">
+                                <h4>Complete Convenience & Peace of mind</h4>
+                            </figure>
+                        </figure>
+                        <span class="tooltip2text"> 
+                            <ul class="cirlist1">
+                                <li> Free doorstep Pick up and Drop services</li>
+                                <li>Spare car facility on request</li>
+                                <li>Real time location tracking and work updates</li>
+                                <li> Workshop close to your location</li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
+                    <div class="tooltip2">
+                        <figure data-animate="ts-fadeInUp" data-delay="0.1s">
+                            <figure class="icon mb-5 p-2">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-lcd-chart.png" alt="">
+                                <h4>Fast & Committed Delivery Timelines</h4>
+                            </figure>
+                        </figure>
+                        <span class="tooltip2text"> 
+                            <ul class="cirlist1">
+                                <li>Use of advanced tech-based tools for forecasting and planning our bodyshop</li>
+                                <li>No unnecessary operational or work-related delays, and constant real time updates</li>
+                                
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
+                    <div class="tooltip2">  
+                        <figure data-animate="ts-fadeInUp" data-delay="0.2s">
+                            <figure class="icon mb-5 p-2">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon-cup-winner.png" alt="">
+                                <h4>Quality Repairs & Uncompromised Workmanship</h4>
+                            </figure>
+                        </figure>
+                            <span class="tooltip2text"> 
+                                <ul class="cirlist1">
+                                    <li> Only auto brands approved paint material</li>
+                                    <li>Use of complete range of bodyshop equipments</li>
+                                    <li>  All manpower is trained by a leading paint company, and specializes in quick quality repair</li>
+                                    <li>1-year Paint Warranty against any discoloration / chipping or any other fault</li>
+                                </ul>
+                            </span>
+                     </div>
+                </div>
+                <!--end col-xs-4-->
+                <div class="col-sm-6 offset-sm-3 col-md-3 offset-md-0 col-xs-3">
+                    <div class="tooltip2"> 
+                        <figure data-animate="ts-fadeInUp" data-delay="0.2s">
+                            <figure class="icon mb-5 p-2">
+                                <img class="zoom" src="<?php echo base_url();?>assets/img/icon4.png" alt="">
+                                <h4>Affordable Transparent Pricing</h4>
+                            </figure>
+                            </figure>
+                                <span class="tooltip2text"> 
+                                 <ul class="cirlist1">
+                                <li>No hidden charges or taxes. What you see is what you pay. What everyone else pays.</li>
+                                <li>All repair estimates given prior to using our services. Absolutely No pre-repair anxiety of being overcharged.</li>
+                                <li>Optimized bodyshop facility in terms of location and operations to keep costs under check</li>
+                            </ul>
+                                </span>
+                    </div>
+                </div>
+            </div>
+            <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--************END HOW IT end ***********-->
+<!--******* WHAT DOES REVIVE DO start *************-->
+<section id="about-us" class="about">
+        <div class="container">
+            <div class="about-head">
+                <h2 class="text-center">What does Revive do</h2>
+            </div>
+            <!--end ts-title-->
+            <div class="row">
+                <div class="col-md-6 col-xs-6 text-justify" data-animate="ts-fadeInUp" data-offset="100">
+                    <ul>
+                        <li><p>Revive is a network of dedicated bodyshops for dent repairs of your car with complete ease and convenience. Our mission is to make sure the love towards your car remains forever. We help you maintain your car spot-free, hassle-free. We understand not everybody is comfortable driving in a scratched car.</p></li>
+                        <li><p>We specialize in making your car dent and scratch free, in the minimum time and with maximum comfort. We treat your car with utmost care and give it the quality treatment it deserves, all the while keeping you updated and anxiety-free. We also make sure the separation doesn't affect your daily routines, and offer alternate cars for your use till the time the repairs are completed.</p></li></ul>
+                </div>
+                 <!--end col-xs-5-->
+                <div class="col-md-6 col-xs-6 text-center" data-animate="ts-fadeInUp" data-delay="0.1s" data-offset="100">
+                    <div class="px-3">
+                        <img src="<?php echo base_url();?>assets/img/a-car.png" class="mw-100 ts-border-radius__md" alt="">
+                    </div>
+            </div>
+            <!--end col-xs-7-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
+<!--****************WHAT DOES REVIVE DO end********-->
+
 <!--*********Our clients start********-->
 <section id="our-clients" class="clients text-center">
     <div class="container">

@@ -207,7 +207,39 @@ bootbox.confirm({
 
   } 
 });
-
+$("#regForm").validate({
+      errorClass: "error",
+      rules: {
+        name:{
+          required:true
+        },
+        email:{
+          required:true
+        },
+        phone:{
+          required:true
+        },
+        reg_no: {
+          required: true
+        }
+      
+    },
+    messages:{
+     
+      name:{
+         required:"Please enter name"
+      },
+      email:{
+         required:"Please enter email"
+      },
+      phone:{
+         required:"Please enter valid phone no."
+      },
+      reg_no:{
+         required:"Please enter valid reg no."
+      },
+    }
+  });
 /*uppercase registration number input box*/
  $('#upcase').keyup(function(){
         $(this).val($(this).val().toUpperCase());

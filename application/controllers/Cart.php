@@ -13,6 +13,7 @@ class Cart extends MY_Controller {
 		$this->load->model('CarModel');
 		$this->load->model('ServiceCategoryModel');
 		$this->load->library('sequence');
+		$this->load->library('mailer');
 		//$this->load->library('googlegeocoder');
 	}
 	public function index() {
@@ -283,9 +284,6 @@ class Cart extends MY_Controller {
 		$data['order'] = $this->OrderModel->getById($order['id']);
 		$data['customerdetail'] = $this->CustomerDetailModel->getByOrderId($order['id']);
 		$order_details = $this->OrderModel->getDetailByOrderId($order['id']);
-		//print_r($order_details);die;
-		//echo $this->db->last_query();die;
-		
 		$order_item_keys= array('item_id','sname','price');
 		$order_items = array_unique(array_column_multi($order_details,$order_item_keys),SORT_REGULAR);
 		$order_details = $order_details[0];
@@ -293,9 +291,20 @@ class Cart extends MY_Controller {
 		   unset($order_details[$key]);
 		}
 		$order_details['order_items'] = $order_items;
-		$data['orderdetails'] =$order_details;
-		//dd($data);
-		$this->render('cart/confirmed',$data);
+	    $data['orderdetails'] =$order_details;
+	   //dd($data);
+	       		$from_email = $data['orderdetails']['customer_email'];
+        	    $name = $data['orderdetails']['customer_name']; 
+        	    $to_email = "contact@reviveauto.in";
+        	    $message = "Booking Order Details"; 
+        		$this->mailer->setFrom(MAIL_USERNAME);
+        		$this->mailer->addAddress($to_email);
+        		$this->mailer->subject('Revive Auto Booking Order Details');
+        	    //$this->mailer->body('Testing Email');
+        		$this->mailer->body($this->load->view('cart/email_order',$data,true));
+        		$this->mailer->isHTML();
+        		$mail=$this->mailer->send();
+        		$this->render('cart/confirmed',$data);
 
 	}
 	public function my_order(){

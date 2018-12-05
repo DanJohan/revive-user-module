@@ -5,7 +5,7 @@
     <!--end navbar-toggler-->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto"> <a class="nav-item nav-link ts-scroll active" href="<?php echo base_url()."site/index"?>">Home <span class="sr-only">(current)</span></a> 
-          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#about-us"">About us</a> 
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#about-us">About us</a> 
           <!-- <a class="nav-item nav-link ts-scroll" href="#services">Services</a> -->
           
          <li class="nav-item dropdown"> <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="#" id="services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
@@ -19,7 +19,7 @@
           </li>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
           <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#FAQs">FAQs</a>
-          <a class="nav-item nav-link ts-scroll" href="javascript:void(0);">Contact us</a>
+          <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
           <?php if(($this->router->fetch_class() != 'service' && $this->router->fetch_method() != 'add_more_service') || ($this->router->fetch_class() == 'service' && $this->router->fetch_method() == 'find_service')){ ?>
              <?php
             $cart_count =$GLOBALS['cart_count'];

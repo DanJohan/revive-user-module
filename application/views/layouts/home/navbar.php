@@ -27,7 +27,7 @@
                     </li>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#faqs">FAQs</a>
-                    <a class="nav-item nav-link ts-scroll" href="javascript:void(0);">Contact us</a>
+                    <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
                      <?php 
                      if($this->session->has_userdata('is_user_login')) {
                      if($this->router->fetch_class() == 'site' && $this->router->fetch_method() == 'index'){ ?>
