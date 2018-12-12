@@ -73,17 +73,17 @@ class Car extends MY_Controller {
 				$this->render('car/my_car',$data);
 			}
 
-			public function show_car(){ 
+			public function show_car($service_id=null){ 
 
 				if(! $this->session->has_userdata('is_user_login')){
 					redirect('user/login/');
 				}
 				$data = array();
+				$data['service_id'] = $service_id;
 				$user_id= $this->session->userdata('user_id');
 				$data['car_detail']= $this->CarModel->getByUserId($user_id);
-				//dd($data);
 				$this->render('car/my_car',$data);
-	
+				//dd($data);
 			}
 
 			public function del_car($id){

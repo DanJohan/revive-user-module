@@ -16,13 +16,14 @@
 			<h6 class="text-center paytem-text">Select Payment Mode</h6>
 				<div class="row paytem-wrapper">
 			 <div class="col-md-4">
-			 	<a href="#"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/m-card.png">
+			 	<!--<a href="#"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/m-card.png">
 			 	    <span class="pay-text">Pay via Credit/Debit card/Net Banking </span>
-			    </a>
+			    </a>-->
 				</div>
 				<div class="col-md-4">
-		
-			 			<img class="img-fluid pay" src="<?php echo base_url();?>assets/img/paytem.png">
+			<a href="<?php echo base_url();?>cart/cashondelievery/<?php echo $order['hash']; ?>"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/cash.png"><span class="pay-text__cash">Pay Cash on Delivery</span>
+					</a>
+			 		<!--	<img class="img-fluid pay" src="<?php echo base_url();?>assets/img/paytem.png">
 			 			<form method="post" action="<?php echo base_url();?>paytm/paytmpost">
 			 				<input type="hidden" name="order_id" value="<?php echo $order['id']; ?>">
 					        <input type="hidden" id="ORDER_ID" tabindex="1" maxlength="20" size="20" name="ORDER_ID" autocomplete="off" value="<?php echo  "ORDS" . mt_rand(10000000,99999999)?>">
@@ -30,19 +31,18 @@
 				            <input type="hidden" id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
 				            <input type="hidden" id="CHANNEL_ID" tabindex="4" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
 				          <!--   <input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="<?php echo $order['net_pay_amount']; ?>"> -->
-				            <input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="1.00">
+				            <!--<input type="hidden" title="TXN_AMOUNT" tabindex="10" type="text" name="TXN_AMOUNT" value="1.00">
 				            <input type="hidden" title="EMAIL" tabindex="10" type="text" name="EMAIL" value="<?php echo $this->session->userdata('email'); ?>">
 				            <input type="hidden" title="MOBILE_NO" tabindex="10" type="text" name="MOBILE_NO" value="<?php echo $this->session->userdata('phone'); ?>">
 				       
 				        <button type="submit" class="pay-text">Pay Via Paytm</button>
 
 
-				        </form>
+				        </form>-->
 				
 				</div>
 				<div class="col-md-4">
-			 		<a href="<?php echo base_url();?>cart/cashondelievery/<?php echo $order['hash']; ?>"><img class="img-fluid pay" src="<?php echo base_url();?>assets/img/cash.png"><span class="pay-text__cash">Pay Cash on Delivery</span>
-					</a>
+			 	
 				</div>
 				
 			</div>

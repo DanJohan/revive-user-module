@@ -28,11 +28,11 @@
 						<p>Status</p>
 						<?php $order_status = $order['status'];
 							if($order_status == 1){
-								$order_status = "Pending";
+								$order_status = "Incomplete";
 							}elseif($order_status == 2){
 								$order_status = "Cancel";
 							}else{
-								$order_status = "Confirmed";
+								$order_status = "Order Complete";
 							}
 
 						?>

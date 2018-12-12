@@ -121,6 +121,14 @@
            <th  class="text-right"><?php echo $orderdetails['sub_total'];?></th>
           <th></th>
         </tr>
+          <?php $olv = $orderdetails['loaner_vehicle']; 
+              if($olv == '1'){?>
+        <tr>
+          <th class="item_s">Loaner Vehicle</th>
+            <th class="text-right"><?php echo "500/- Per Day";?></th>
+        <td><a href="<?php echo base_url()?>cart/remove_lv/<?php echo $orderdetails['hash']?>"<i class="fa fa-trash" aria-hidden="true"></i></a></td>
+        </tr>
+      <?php }?>
       </table>
       <div class="float-right">
          <a href="<?php echo base_url();?>service/add_more_service/?hash=<?php echo $orderdetails['hash']."&service_cat_id=".$orderdetails['service_id']."&model_id=".$orderdetails['model_id'];?>"><button type="button" class="btn-dotted">Add More Items</button></a>

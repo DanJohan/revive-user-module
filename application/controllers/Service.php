@@ -26,15 +26,16 @@ class Service extends MY_Controller {
 		}
 
 		public function select_service($service_id=null){
-		 //display carservice page 
-			if($this->session->has_userdata('is_user_login')){
-					redirect('car/show_car/');
-				}
+			 //display carservice page 
 			$data=array();
 			$data['service_id'] = $service_id;
+			if($this->session->has_userdata('is_user_login')){
+					redirect('car/show_car/'.$service_id);
+				}
+				
 			$data['all_carbrand'] =  $this->CarBrandModel->get_all();
 			$data['all_carmodel'] =  $this->CarModelsModel->getModelsWithBrand();
-			
+			//dd($data['service_id']);
 			$this->render('service/select_service',$data);
 			
 		}

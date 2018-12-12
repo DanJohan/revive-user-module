@@ -16,7 +16,7 @@
                     </p>
                 </div>
                 
-                     <div class="col-sm-6  d-sm-block slider-top">
+                     <div class="col-sm-6 d-sm-block slider-top">
             <div class="owl-carousel text-center" data-owl-nav="1" data-owl-loop="1">
                 <img src="<?php echo base_url();?>assets/img/img-phone-1st-screen.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
                 <img src="<?php echo base_url();?>assets/img/tutorial1.png" class="d-inline-block mw-100 p-md-5 p-lg-0 ts-width__auto" alt="">
@@ -32,29 +32,12 @@
                 <div class="col-md-6 col-xs-6" data-animate="ts-fadeInUp" data-offset="100">
                     <!--features list-->
                             <ul class="list-unstyled ts-list-divided">
-                                <li class="com_box" id="offer1" data-toggle="collapse">
-                                    <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-1" >
-                                        <h6 class="my-2">Dent Repair Jobs</h6>
-
-                                    </a>
-                                   
-                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn"style="background-color: #47143d; border-color: #47143d" >Book Now</a>
-                                    <div class="collapse" id="feature-1">
-                                        <div class="jobs-wrapper">
-                                          <img class="img-fluid" src="<?php echo base_url();?>assets/img/dent-jobs.png">
-                                          <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
-                              </div>
-                                        
-
-                                    </div>
-                                    <!--end collapse-->
-                                </li>
                                 <li class="com_box" id="offer2" data-toggle="collapse">
                                     <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-2">
                                         <h6 class="my-2">Paint Repair Jobs</h6>
                                     </a>
 
-                                    <a href="<?php echo base_url();?>service/select_service/2" class="ser-btn" >Book Now</a>
+                                    <a href="<?php echo base_url();?>service/select_service/1" class="ser-btn" >Book Now</a>
                                     <div class="collapse" id="feature-2">
 
                                        <div class="jobs-wrapper">
@@ -65,8 +48,24 @@
                                     </div>
                                     <!--end collapse-->
                                 </li>
+                                <li class="com_box" id="offer1" data-toggle="collapse">
+                                    <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-1" >
+                                        <h6 class="my-2">Dent Repair Jobs</h6>
 
-                               
+                                    </a>
+                                   
+                                    <a href="<?php echo base_url();?>service/select_service/2" class="ser-btn"style="background-color: #47143d; border-color: #47143d" >Book Now</a>
+                                    <div class="collapse" id="feature-1">
+                                        <div class="jobs-wrapper">
+                                          <img class="img-fluid" src="<?php echo base_url();?>assets/img/dent-jobs.png">
+                                          <p>Using extensive tools combined with our expertise of years, the backside of each dent is analysed and pressure is tenderly applied to remove the dent without affecting the fine finish. No dry ice, heat or suction is involved in the process. The dent won't "fly" back in later, and is a changeless repair.</p>
+                              </div>
+                                        
+
+                                    </div>
+                                    <!--end collapse-->
+                                </li>
+                                                      
 
                                 <li class="com_box" id="offer3" data-toggle="collapse">
                                     <a href="javascript:void(0);" class="ts-font-color__black" role="button" aria-expanded="false" aria-controls="feature-3">
@@ -277,7 +276,7 @@
 </section>
             <!--end #our-clients.ts-block-->
 <!--Gallery start-->
-<section id="gallery" class="g-bg">
+<!--<section id="gallery" class="g-bg">
     <div class="container">
         <div class="gallery-head text-center">
             <h2>Gallery</h2>
@@ -301,7 +300,7 @@
         <a href="<?php echo base_url()?>site/gallery" class="btn btn-primary read-more ">View All</a></div>
      
    </div>
-</section>
+</section>-->
  <!--gallery end-->
 
 <!--***************FAQS*******************-->
@@ -310,15 +309,15 @@
         <div class="row">
             <div class="col-md-12 col-xs-12" data-animate="ts-fadeInUp" data-offset="100">
                 <div class="faq-head text-center">
-                    <h2>Faqs</h2>
+                    <h2>FAQs</h2>
                 </div>
                 <!--end ts-title-->
             </div>
             <div class="col-md-12 col-xs-12" data-animate="ts-fadeInUp" data-offset="100">
             <!--features list-->
                 <ul class="list-unstyled ts-list-divided">
-                    <li>
-                    <a href="#faqs-1" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-1">
+                    <li class="faq" id= "faq1" data-toggle="collapse">
+                    <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-1">
                     <h6 class="my-2">Are there any specific brand of cars that you work on?</h6>
                      </a>
                     <div class="collapse" id="faqs-1">
@@ -327,8 +326,8 @@
                     </div>
                     <!--end collapse-->
                     </li>
-                    <li>
-                        <a href="#faqs-2" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-2">
+                    <li class="faq" id= "faq2" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-2">
                         <h6 class="my-2">Can Revive make my car look like it did before the damage?</h6>
                         </a>
                         <div class="collapse" id="faqs-2">
@@ -336,8 +335,8 @@
                         </div>
                         <!--end collapse-->
                     </li>
-                    <li>
-                        <a href="#faqs-3" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                     <li class="faq" id= "faq3" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-3">
                         <h6 class="my-2">How long do most repairs take?</h6>
                         </a>
                         <div class="collapse" id="faqs-3">
@@ -345,8 +344,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                            <a href="#faqs-4" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq4" data-toggle="collapse">
+                            <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-4">
                             <h6 class="my-2">How do I know that there would be no quality issues – like paint matching or chipping or discolouration? </h6>
                             </a>
                         <div class="collapse" id="faqs-4">
@@ -355,8 +354,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                        <a href="#faqs-5" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq5" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-5">
                         <h6 class="my-2">Your pricing chart seem to be on a higher side?</h6>
                         </a>
                         <div class="collapse" id="faqs-5">
@@ -364,8 +363,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                        <a href="#faqs-6" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq6" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-6">
                         <h6 class="my-2">Can I see your facility before handing over my car for repairs?</h6>
                         </a>
                         <div class="collapse" id="faqs-6">
@@ -373,8 +372,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                        <a href="#faqs-7" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq7" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-7">
                         <h6 class="my-2">Can I book directly from your website?</h6>
                         </a>
                         <div class="collapse" id="faqs-7">
@@ -382,8 +381,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                        <a href="#faqs-8" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq8" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-8">
                         <h6 class="my-2">But I have to go to office tomorrow?</h6>
                         </a>
                         <div class="collapse" id="faqs-8">
@@ -391,8 +390,8 @@
                         </div>
                         <!--end collapse-->
                         </li>
-                        <li>
-                        <a href="#faqs-9" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="feature-3">
+                         <li class="faq" id= "faq9" data-toggle="collapse">
+                        <a href="javascript:void(0);" class="ts-font-color__black" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="faqs-9">
                         <h6 class="my-2">How do I trust you guys?</h6>
                         </a>
                         <div class="collapse" id="faqs-9">
@@ -438,30 +437,30 @@
 </section>
 <!--*****Appp store IMG end*********--->   
 <!--***********Blog Start**********-->        
-<section id="blog" class="blogs text-center">
+<!--<section id="blog" class="blogs text-center">
     <div class="container">
         <div class="blog-head">
             <h2>Blog</h2>
         </div>
         <!--end ts-title-->
-        <div class="row">
-           <?php if(!empty($blogs)){
-                    foreach ($blogs as $blog) {
+        <!--<div class="row">
+           <?php //if(!empty($blogs)){
+                    //foreach ($blogs as $blog) {
             ?>
             <div class="col-md-4">
                 <a  href="https://medium.com/@revive.auto/<?php echo $blog['slug'] ?>" target="_blank"><img class="img-responsive" src="<?php echo CRM_BASE_URL; ?>uploads/site/<?php echo $blog['image']; ?>" width="300px" class="mb-5" alt="">
                     <h4 class="mb-3"><?php echo $blog['title']; ?></h4></a>
                     <!-- <p><a href="https://medium.com/@revive.auto/how-to-get-rid-of-the-stubborn-road-paint-from-your-car-3f7828dd3df5" target="_blank">read full article</a>
                     </p> -->
-            </div>
-        <?php } }?>
-         <div class="col-md-12 col-sm-12 col-xs-12">
+            <!--</div>-->
+        <?php //} }?>
+         <!--<div class="col-md-12 col-sm-12 col-xs-12">
         <a href="<?php echo base_url()?>site/blog" class="btn btn-primary read-more ">View All</a></div>
-        </div>
+        </div>-->
         <!--end row-->
-    </div>
+   <!-- </div>
     <!--end container-->
-</section>
+<!--</section>-->
 <!--***********Blog end***********--> 
 </div>
 <!--***********Contact start***********-->     
@@ -606,15 +605,103 @@ $('#feature-1').collapse('hide');
 }
 
 });
-
-/*$('#wave-1').wavify({
-height: 50,
+</script>
+<!------------------------ faqs ---------------->
+<script type="text/javascript">
+$(document).on('click','.faq',function(){
+var id = $(this).attr('id');
+if(id =='faq1'){
+$('#faqs-1').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq2'){
+$('#faqs-2').collapse('toggle');
+$('#faqs-1').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq3'){
+$('#faqs-3').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq4'){
+$('#faqs-4').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq5'){
+$('#faqs-5').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq6'){
+$('#faqs-6').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq7'){
+$('#faqs-7').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-9').collapse('hide');
+}if(id =='faq8'){
+$('#faqs-8').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-1').collapse('hide');
+$('#faqs-9').collapse('hide');
+}else{
+$('#faqs-9').collapse('toggle');
+$('#faqs-2').collapse('hide');
+$('#faqs-3').collapse('hide');
+$('#faqs-4').collapse('hide');
+$('#faqs-5').collapse('hide');
+$('#faqs-6').collapse('hide');
+$('#faqs-7').collapse('hide');
+$('#faqs-8').collapse('hide');
+$('#faqs-1').collapse('hide');
+}
 });
-
-$('#wave-2').wavify({
-height: 50,
-
-});*/
 
 </script>
 <script>

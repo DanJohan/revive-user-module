@@ -14,21 +14,33 @@
     text-align: right;
 }
 .top-bar {
-    background: #6d6b6c2e;
-    /* padding: 6px 0px; */
-    position: absolute;
-    z-index: 99999;
-    width: 100%;
-    font-size: 10px;
+background: #6d6b6c2e;
+/* padding: 6px 0px; */
+position: fixed;
+z-index: 99999;
+width: 100%;
+font-size: 10px;
+}
+button.close.hide.btn-clse {
+position: absolute;
+top: 66px;
+z-index: 9999;
+right: 20px;
+}
+
+nav.navbar.navbar-expand-lg.bg-white.navbar-light.fixed-top.navbarbg-margin.darkHeader {
+/*margin-top: 0px;
+padding-top: 31px;*/
 }
 .social-address {
-    font-size: 12px;
-    padding-top: 10px;
+   font-size: 12px;
+    padding-top:10px; 
 }
 a.top-icon {
     color: #000;
     padding-right: 6px;
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: normal;
     text-decoration: none;
 }
 .social-icons ul {
@@ -87,7 +99,7 @@ h1.color_white {
 section  h1 {
     font-size: 35px;
     font-weight: 600;
-    font-variant: all-petite-caps;
+    /*font-variant: all-petite-caps;*/
     margin-bottom:20px;
 }
 
@@ -1176,11 +1188,8 @@ a.pay_cash:hover {
     padding-top: 20px;
 }
 
-
-
-
 img.logo {
-    margin-top: 23px;
+margin-top: 23px;
 }
 .checkout-top {
     background: #f2f2f2;
@@ -1494,10 +1503,10 @@ h2.selected-city-name {
     font-size: 14px;
     color: #555;
 }
-h4.m-head {
+.m-head {
     /* text-align: center; */
-    margin: 0 auto;
-    font-size: 16px;
+     margin: 0 auto;
+    font-size: 18px !important;
 }
 /* p.btn.btn-modal {
     background: no-repeat;
@@ -1948,16 +1957,13 @@ img.img-fluid.f-body {
     margin-top: 50px;
 }
 .open__Details2 a {
-    font-size: 15px;
-    font-weight: bold;
-    color: #484848;
-    border: 1px solid;
-    padding: 10px 20px;
-    text-decoration: none;
+font-size: 14px;
+font-weight: bold;
+color: #484848;
+border: 1px solid;
+padding: 10px 20px;
+text-decoration: none;
 }
-
-
-
 /*****************************About bg tooltip2  29-10-18 komal*******************/
  
 .tooltip2 {
@@ -2610,10 +2616,6 @@ th.custom_list {
     padding: 218px 0px 62px;
 }
 
-nav.navbar.navbar-expand-lg.bg-white.navbar-light.fixed-top.navbarbg-margin.darkHeader {
-    margin-top: 0px;
-    padding-top: 0px;
-}
 table.modify-margin {
     margin-bottom: 16px;
 }
@@ -3012,9 +3014,19 @@ ul.progressbar li.fail:before {
 .find-car {
     margin-top: 62px;
 }
-.copyright p {
+/* .copyright p {
     font-size: 12px;
     color: rgba(0, 0, 0, .5);
+} */
+.copyright p {
+    font-size: 12px;
+    color: #fff;
+    line-height: 48px;
+    margin-bottom: 0;
+}
+.copyright {
+    background-color: #010102;
+    color: #fff;
 }
 .pri__file_page .btn-block {
     background: #47143d;
@@ -3174,15 +3186,7 @@ span#country_code {
     .top-bar-list {
     text-align: center;
 }
-.top-bar {
-    background: #6d6b6c2e;
-    /* padding: 6px 0px; */
-    position: absolute;
-    z-index: 99999;
-    width: 100%;
-    font-size: 10px;
-    text-align: center;
-}
+
 .models_list .btn-modal {
     padding-bottom: -1px;
     margin-bottom: 7px;
@@ -3378,10 +3382,16 @@ button.btn-round2.proc-btn {
     left: 0px;
     margin: 7px 0px;
 }
- .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-    border: 1px solid #b6b6b6 !important;
-    background: #b6b6b6 !important;
-    font-weight: normal;
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+border: 1px solid #ffffff !important;
+background: #515151 !important;
+font-weight: normal;
+color: #026890;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    /* border: 1px solid #b6b6b6 !important; /
+    / background: #b6b6b6 !important; /
+    / font-weight: normal; */
     color: #ffffff;
     padding: x;
     font-size: 19px;
@@ -3396,15 +3406,15 @@ button.btn-round2.proc-btn {
     top: 202px;
 }
 .order__list1 {
-    margin-top: 293px;
+    /*margin-top: 293px;*/
 }
 table.o_rser_list {
     margin-top: 27px;
 }
 
-      .darkHeader img.img-fluid.logo {
+/*       .darkHeader img.img-fluid.logo {
     margin-top: 23px;
-}
+} */
 button.btn-round2.proc-btn {
     padding: 8px 73px;
     text-align: center;
@@ -3592,4 +3602,3 @@ margin-top: 146px;
 }
 
 /********media query 991 end**********/
-

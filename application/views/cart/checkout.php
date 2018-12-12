@@ -88,9 +88,7 @@
              success:function(response){
                 if(response.status){
                   location.reload('true');
-                  // cartBtn.text("Add To Cart");
-                 //  cartBtn.removeClass('cart-remove-item');
-                 //  cartBtn.addClass('cart-item');
+                 
                 }
               }
             });

@@ -97,17 +97,33 @@ class Cart extends MY_Controller {
 		$user_id = $this->session->userdata('user_id');
 		$data['user_detail']= $this->UserModel->get(array('id'=>$user_id));
 		$data['car_detail']= $this->CarModelsModel->getCarByModelId($model_id);
-		
+		$data['pre_orders']= $this->CustomerDetailModel->get(array('email'=>$data['user_detail']['email'],'location_type' =>'1'));
+		//dd($data['pre_orders']);
 		if($this->session->has_userdata('car_id')){
 			$car_id = $this->session->userdata('car_id');
 			$data['car_reg_no'] = $this->CarModel->getRegNoByCarID($car_id);
 		}else{
 			$data['car_reg_no']['registration_no'] = '';
 		}
-		$this->render('cart/userinfo',$data);
 
-	
-	} 
+		$this->render('cart/userinfo',$data);
+	}
+
+	public function loc_address(){
+		$email = $this->input->post('email');
+		$locid = $this->input->post('locid');
+		$pre_order= $this->CustomerDetailModel->get(array('email'=>$email,'location_type'=> $locid));
+		if($pre_order){
+			
+			$response = array('status'=>true,'message'=>'Location find successfully!','data'=>$pre_order);
+			//return true;
+		}else{
+			$response = array('status'=>false,'message'=>'No Address saved before!');
+		}
+
+		$this->renderJson($response);
+	}	
+
 	
 	public function store_order(){
 		
@@ -136,6 +152,12 @@ class Cart extends MY_Controller {
             }
            else if($location == "gurugram"){
               $service_center = '3';
+            }
+            else if($location == "gaziabad"){
+              $service_center = '4';
+            }
+            else{
+            	$service_center = '0';
             }
 
             if($this->session->has_userdata('service_cat_id')) {
@@ -354,9 +376,7 @@ class Cart extends MY_Controller {
 		$criteria['field'] = 'id';
 		$criteria['conditions'] = array('hash'=>$hash);
 		$criteria['returnType'] = 'single';
-
 		$order = $this->OrderModel->search($criteria);
-
 		if(!$order){
 			redirect('/');
 		}
@@ -481,6 +501,12 @@ class Cart extends MY_Controller {
 		//redirect('cart/modify_order/'.$hash);
 	}
 
+	public function remove_lv($hash=null){
+		
+		$this->OrderModel->update(array('loaner_vehicle'=>0),array('hash'=>$hash));
+		echo $this->db->last_query();
+		
+	}
 	public function update_order($hash=null){
 		$data=array();
 		if(count($_POST) > 0 ) { 

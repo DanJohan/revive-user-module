@@ -912,7 +912,7 @@ blockquote {
     font-size: 1.125rem;
     position: relative;
     background-size: contain;
-    background-image: url("../svg/bubble.svg");
+    /* background-image: url("../svg/bubble.svg"); */
     background-repeat: no-repeat;
     background-position: center 3.75rem;
     padding-bottom: 3.75rem;

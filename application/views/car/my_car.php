@@ -39,23 +39,30 @@
   <?php $this->load->view('common/modal'); ?>
 <?php $this->widget->beginBlock('scripts'); ?>
 <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.min.js"></script>
-  
+  <?php
+          $services = array(
+              array('id'=>1,'name'=>'Paint repair jobs'),
+              array('id'=>2, 'name'=>'Dent repair jobs'),
+              array('id'=>3, 'name' => 'Full Body car paint'),
+              array('id'=>4, 'name'=>'Exterior customisations'),
+              array('id' =>5, 'name' =>'Interior Customisations')
+          );
+      
+        ?>
     <script type="text/javascript">
      $(document).on('click','#book_now',function(){
             var model_id = $(this).data('model-id');
             var car_id = $(this).data('car-id');
-
-              var html = '<form id="service_popup" action="'+config.baseUrl+'service/find_service" method="GET" class="car-book-wrapper">'+
+            var jArray = <?php echo json_encode($services); ?>;
+            var html = '<form id="service_popup" action="'+config.baseUrl+'service/find_service" method="GET" class="car-book-wrapper">'+
                 '<input type="hidden" name="model_id" value="'+model_id+'">'+
                 '<input type="hidden" name="car_id" value="'+car_id+'">'+
                 '<div class="form-group">'+
-                '<select name="service_cat_id" class="form-control" id="service">'+
+                '<select name="service_cat_id" class="form-control" id="service_id">'+
                 '<option value="">Please select</option>'+
-                '<option value="1">Dent Repair Jobs</option>'+
-                '<option value="2">Paint Repair Jobs</option>'+
-                '<option value="3">Full Body Car Paint</option>'+
-                '<option value="4">Exterior Customisations</option>'+
-                '<option value="5">Interior Customisations</option>'+
+                '<?php foreach ($services as $index => $service) {?>'+
+                '<option value="<?php echo $service['id']; ?>"  <?php echo ($service_id==$service['id']) ? 'selected' :''; ?> ><?php echo $service['name']; ?></option>'+
+                '<?php }?>'+
                 '</select>'+
                 '</div>'+
                 '<div class="form-group">'+

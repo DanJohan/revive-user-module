@@ -11,10 +11,10 @@
                         
                             <div class="social-icons">
                             <ul>
-                                <li>
-                                <a href="#"><i class="fab fa-facebook-f fb-color"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter twtr-color"></i></a></li>
-                                <li><a href="#"><i class="fab fa-google-plus-g plus-color"></i></a></li>
+                               <li>
+                                <a href="https://www.facebook.com/ReviveAuto.in/"><i class="fab fa-facebook-f fb-color"></i></a></li>
+                                <li><a href="https://twitter.com/ReviveAuto_in"><i class="fab fa-twitter twtr-color"></i></a></li>
+                                <li><a href="https://www.instagram.com/reviveauto.in/"><i class="fab fa-instagram plus-color"></i></a></li>
                             </ul>
                             <ul class="models_list">
                                 <a href="#"><p class="btn btn-modal" data-toggle="modal" data-target="#myModal"><?php echo ($this->session->has_userdata('location')) ? ucfirst($this->session->userdata('location')) : 'Select Your City'; ?>

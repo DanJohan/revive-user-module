@@ -8,8 +8,8 @@
               <a id="carBrand"><?php echo $car_detail['brand_name'];?></a>
               <span>&gt;</span><a id="carModel" onclick="setFlag(2);"><?php echo $car_detail['model_name'];?></a>
               </li>
-              <li class="current" style="width: 25%;">Select Service</li>
-              <li  style="width: 25%;">Enter Pick-Up Details</li>
+              <li class="current" style="width: 25%;">Job Details</li>
+              <li  style="width: 25%;">Pick-Up Details</li>
               <li style="width: 25%;">Confirm Order</li>
             </ul>
           </div>

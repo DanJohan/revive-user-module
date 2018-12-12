@@ -2,7 +2,7 @@
  <!--*****************NAVIGATION **************************-->
      <nav class="navbar navbar-expand-lg navbar-light navbar-bg fixed-top ts-separate-bg-element">
         <div class="container">
-            <a class="navbar-brand" href="#page-top">
+            <a class="navbar-brand" href="<?php echo base_url();?>">
             <img class="img-fluid logo" src="<?php echo base_url();?>assets/img/logo.png" alt="">
             </a>
         <!--end navbar-brand-->
@@ -12,20 +12,20 @@
         <!--end navbar-toggler-->
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link active ts-scroll" href="<?php echo base_url()."site/index"?>">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link active ts-scroll" href="<?php echo base_url();?>">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#about-us">About us</a>
                     <!-- <a class="nav-item nav-link ts-scroll" href="#services">Services</a> -->
                      <li class="nav-item dropdown"> 
                         <a class="nav-item nav-link ts-scroll nav-link dropdown-toggle" href="<?php echo base_url();?>#services" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
                        <div class="dropdown-menu dp-clr" aria-labelledby="dropdown01"> 
-                        <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/1">Dent Repair Jobs</a>
-                        <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/2">Paint Repair Jobs</a>
+                        <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/1">Paint Repair Jobs</a>
+                        <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/2">Dent Repair Jobs</a>
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/3">Full Body Car Paint</a> 
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/4"> Exterior Customisations</a>
                         <a class="dropdown-item drp-clr" href="<?php echo base_url();?>service/select_service/5">Interior Customisations</a>
                         </div>
                     </li>
-                    <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>
+                    <!--<a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#gallery">Gallery</a>-->
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#faqs">FAQs</a>
                     <a class="nav-item nav-link ts-scroll" href="<?php echo base_url();?>#contact">Contact us</a>
                      <?php 

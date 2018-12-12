@@ -16,8 +16,8 @@
         <a id="carBrand"><?php echo $car_detail['brand_name'];?></a>
         <span>&gt;</span><a id="carModel" onclick="setFlag(2);"><?php echo $car_detail['model_name'];?></a>
         </li>
-        <li class="done" style="width: 25%;">Select Service</li>
-        <li  class="current" style="width: 25%;">Enter Pick-Up Details</li>
+        <li class="done" style="width: 25%;">Job Details</li>
+        <li  class="current" style="width: 25%;">Pick-Up Details</li>
         <li style="width: 25%;">Confirm Order</li>
       </ul>
   </div>
@@ -126,12 +126,14 @@
     
     <div class="col-md-7 col-sm-7 col-xs-12 full_box__1">
       <span class="orde__r">Pickup Address</span>
+            
       <div>
-            <input placeholder="Address" type="text" name="address" id="pickup_address" class="validation" required="">
+            <input placeholder="Address" type="text" name="address" id="pickup_address" class="validation" value="<?php echo $pre_orders['address'];?>" required="">
       </div>
       <div>
-          <input placeholder="Landmark" type="text" name="landmark" id="landmark">
+          <input placeholder="Landmark" type="text" name="landmark" value=" <?php echo $pre_orders['landmark'];?>" id="landmark">
       </div>
+ 
        <div class="userinfo-icons">
       <div class="userinfo-icons"> 
          <ul class="info-icons" id="myid">
@@ -147,7 +149,7 @@
     </div>
     
     <div class="col-md-4 col-sm-4 col-xs-12">
-      <button type="submit" name="submit" class="btn btn-primary btn-round   next_C nextmargin">Book Now</button>
+      <button type="submit" name="submit" class="btn btn-primary btn-round next_C nextmargin">Book Now</button>
     </div>
 
 
@@ -253,12 +255,36 @@ $("#regForm").validate({
    
 });
 });</script>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $("#myid li").click(function() {
     var locid = $(this).attr("id"); // get id of clicked li
-     //  alert(dataString);
-     $("#results").val(locid);
+    //alert(locid);
+    $("#results").val(locid);
+    
 });
+</script> -->
+<script type="text/javascript">
+   $(document).on('click','#myid li',function(){
+         var locid = $(this).attr("id"); // get id of clicked li
+         var email = '<?php echo $user_detail['email'];?>';
+         //alert(email);
+          $("#results").val(locid);
+            $.ajax({
+              url:config.baseUrl+'cart/loc_address',
+              method:"POST",
+              data:{'locid':locid,'email':email},
+             success:function(response){
+              console.log();
+              if(response.status == true){
+                  $("#pickup_address").val(response.data.address);
+                  $("#landmark").val(response.data.landmark);
+                 
+                }
+              }
+            });
+          
+        });
+// end of ready function
 </script>
 
 <?php $this->widget->endBlock();?>

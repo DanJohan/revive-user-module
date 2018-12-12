@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
   <meta name="author" content="ThemeStarz">
-     <title>Revive auto care</title>
+     <title>Revive Auto Care</title>
      <?php $this->load->view('layouts/partials/head'); ?>
      <?php $this->widget->beginBlock('stylesheet',true); ?>
      <?php $this->widget->endBlock(); ?>
@@ -60,13 +62,13 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 </script>
-<?php if(!$this->session->has_userdata('location')) { ?>
+<?php //if(!$this->session->has_userdata('location')) { ?>
 <script type="text/javascript">
-$("#myModal").modal({
-  'backdrop':"static"
-});
+//$("#myModal").modal({
+  //'backdrop':"static"
+//});
 </script>
-<?php } ?>
+<?php //} ?>
 
 <?php $this->widget->beginBlock('scripts',true); ?>
 <?php $this->widget->endBlock(); ?>

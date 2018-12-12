@@ -6,8 +6,8 @@
 	      <div class="col-md-12 col-sm-12 col-xs-12">
 		     <span class="order__list12">Thanks for placing your order</span>
 			 <span class="l__order"><img src="<?php echo base_url();?>assets/img/logo.png"></span>
-			  <span class="order__list13">Your Order is Under Process</span>
-			 <p align="center">Our customer care executive will call you for further assistance and confirmation.</p>
+			  <span class="order__list13">Your Order is Confirmed</span>
+			 <p align="center">Our customer care executive will call you for further assistance.</p>
 			  
 		  </div>
 	   </div>
@@ -93,7 +93,7 @@
 	 </div>
 	 <div class="row">
 	    <div class="col-md-12 col-sm-12 col-xs-12">
-		    <span class="callus">Call us: +91-9899645800</span>
+		    <span class="callus">Please get in touch with us at +91-9899645800</span>
 		</div>
 	 </div>
 
